@@ -1,0 +1,25 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix to:   <https://w3id.org/transonto#> .
+
+# TransOnto v1.0 — see README.md for full documentation
+# Full file: 697 triples, 829 lines
+# IRI: https://w3id.org/transonto
+# Version: https://w3id.org/transonto/1.0
+#
+# NOTE: This is a stub. Upload the full transonto.ttl from outputs/
+# using a GitHub-compatible tool or CLI upload.
+# The complete ontology is available in the transonto-release package.
+
+<https://w3id.org/transonto>
+    a owl:Ontology ;
+    dcterms:title "TransOnto: Transliteration Knowledge Ontology"@en ,
+                  "TransOnto: ออนโทโลยีความรู้การทับศัพท์"@th ;
+    owl:versionIRI <https://w3id.org/transonto/1.0> ;
+    owl:versionInfo "1.0" ;
+    dcterms:created "2025-09-01"^^xsd:date ;
+    dcterms:modified "2026-06-13"^^xsd:date .

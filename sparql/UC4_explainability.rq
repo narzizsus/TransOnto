@@ -1,0 +1,48 @@
+# ============================================================
+# UC4_explainability.rq — CQ9 Explainability Path
+# TransOnto v1.0 / RoyalSocietyTransKG
+# ============================================================
+# Why is word W transliterated as T?
+# Path: LexicalEntry → ThaiForm → Rule → Ambiguity → Decision
+#
+# Load: transonto.ttl + kg_de.ttl (or kg_all.ttl)
+# Usage: sparql --data merged.ttl --query UC4_explainability.rq
+# ============================================================
+
+PREFIX to:    <https://w3id.org/transonto#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT
+  ?sourceForm
+  ?thaiScript
+  ?isPreferred
+  ?ruleNum
+  ?ruleText
+  ?ambiguityDescription
+  ?decisionJustification
+WHERE {
+  ?entry  a to:LexicalEntry ;
+          to:sourceForm  ?sourceForm ;
+          to:hasThaiForm ?tf ;
+          to:exemplifiesRule ?rule .
+
+  ?tf     to:thaiScript  ?thaiScript ;
+          to:isPreferred ?isPreferred .
+
+  ?rule   to:ruleNumber  ?ruleNum ;
+          to:ruleText    ?ruleText .
+
+  OPTIONAL {
+    ?rule to:hasAmbiguity ?amb .
+    ?amb  to:ambiguityDescription ?ambiguityDescription .
+    OPTIONAL {
+      ?amb to:justifiedByDecision ?dec .
+      ?dec to:decisionJustification ?decisionJustification .
+    }
+  }
+
+  # Change "Berg" to any sourceForm value
+  FILTER(?sourceForm = "Berg")
+}
+ORDER BY DESC(?isPreferred) ?ruleNum

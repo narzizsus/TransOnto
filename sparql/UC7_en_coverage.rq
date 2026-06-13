@@ -1,0 +1,31 @@
+# ============================================================
+# UC7_en_coverage.rq — English Rule Distribution
+# TransOnto v1.0 / RoyalSocietyTransKG
+# ============================================================
+# How many benchmark items cover each English rule?
+#
+# Load: transonto.ttl + kg_en.ttl (or kg_all.ttl)
+# ============================================================
+
+PREFIX to:   <https://w3id.org/transonto#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT
+  ?ruleNum
+  ?ruleLabel
+  (COUNT(DISTINCT ?bm) AS ?benchmarkItems)
+WHERE {
+  ?rule a to:Rule ;
+        to:ruleNumber ?ruleNum ;
+        rdfs:label ?ruleLabel ;
+        to:appliedToLanguage to:English .
+
+  OPTIONAL {
+    ?bm a to:BenchmarkItem ;
+        to:evaluatesRule ?rule .
+  }
+
+  FILTER(lang(?ruleLabel) = "en")
+}
+GROUP BY ?ruleNum ?ruleLabel
+ORDER BY ?ruleNum

@@ -1,0 +1,50 @@
+cff-version: 1.2.0
+message: "If you use TransOnto or RoyalSocietyTransKG, please cite as below."
+type: dataset
+title: "TransOnto v1.0 + RoyalSocietyTransKG v1.0"
+version: "1.0.0"
+date-released: "2026-06-13"
+abstract: >
+  TransOnto is an OWL 2 ontology for representing prescriptive transliteration
+  standards and their computational formalization. RoyalSocietyTransKG is its
+  instantiation as a knowledge graph with 13,591 triples covering German, French,
+  and English transliteration guidelines from the Royal Society of Thailand.
+  The release includes 572 lexical entries, 564 benchmark items, 43 rules,
+  14 rule additions, 12 ambiguities, and 12 expert decisions, together with
+  7 validated SPARQL use-case queries.
+license: CC-BY-4.0
+repository-code: "https://github.com/transonto/transonto"
+url: "https://w3id.org/transonto"
+doi: "10.5281/zenodo.XXXXXXX"
+
+authors:
+  - family-names: "Atnatho"
+    given-names: "Pathama"
+    affiliation: "NLP and Semantics Technology Team, NECTEC, NSTDA, Thailand"
+
+keywords:
+  - transliteration
+  - ontology
+  - knowledge graph
+  - Thai NLP
+  - computational linguistics
+  - semantic web
+  - RDF
+  - OWL
+  - Royal Society of Thailand
+  - linguistic standards
+  - computational readiness
+  - SPARQL
+
+references:
+  - type: conference-paper
+    title: >
+      TransOnto: An Ontology and Knowledge Graph for Formalizing
+      Prescriptive Multilingual Transliteration Standards
+    conference:
+      name: "International Joint Conference on Knowledge Graphs (IJCKG 2026)"
+    year: 2026
+    authors:
+      - family-names: "Atnatho"
+        given-names: "Pathama"
+        affiliation: "NECTEC, NSTDA, Thailand"

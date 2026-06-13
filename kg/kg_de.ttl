@@ -1,0 +1,4869 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix to:   <https://w3id.org/transonto#> .
+
+# ============================================================
+# RoyalSocietyTransKG — German KG (kg_de.ttl)
+# Phase 2.1: Full German lexical entries + benchmark + expert decisions
+# Source: readme_de.html (Royal Society Thai Transliteration, German)
+# Generated: 2026-06-13
+# ============================================================
+
+<https://w3id.org/transonto/kg/de>
+    a owl:Ontology ;
+    owl:imports <https://w3id.org/transonto/1.0> ;
+    dcterms:title "RoyalSocietyTransKG — German"@en ;
+    dcterms:description "German transliteration knowledge graph with 180 lexical entries, benchmark items, gold labels, and expert decisions."@en ;
+    owl:versionInfo "1.0" .
+
+# ============================================================
+# Expert
+# ============================================================
+
+to:Expert_RoyalSociety_DE
+    a owl:NamedIndividual , to:Expert ;
+    rdfs:label "Royal Society of Thailand — German Committee"@en ,
+               "คณะกรรมการทับศัพท์ภาษาเยอรมัน ราชบัณฑิตยสภา"@th ;
+    dcterms:description "Expert committee responsible for adjudicating German transliteration decisions."@en .
+
+# ============================================================
+# Expert Decisions (extended)
+# ============================================================
+
+to:Decision_DE_17_Rad
+    a owl:NamedIndividual , to:ExpertDecision ;
+    rdfs:label "Decision DE 17 Rad"@en ;
+    to:decisionJustification "For Rad and similar VC̄ words where r can be [ʁ], [r], or [ʀ]: use รัท as default; regional variants may use รา."@en ;
+    to:madeByExpert to:Expert_RoyalSociety_DE .
+
+to:Decision_DE_21_final_r
+    a owl:NamedIndividual , to:ExpertDecision ;
+    rdfs:label "Decision DE 21 final r"@en ;
+    to:decisionJustification "Final coda r after a short vowel: retain as ร์ in Thai. Karl→คาร์ล. r is not dropped but its syllabic value depends on stress."@en ;
+    to:madeByExpert to:Expert_RoyalSociety_DE .
+
+to:Decision_DE_25_loanword
+    a owl:NamedIndividual , to:ExpertDecision ;
+    rdfs:label "Decision DE 25 loanword"@en ;
+    to:decisionJustification "French loanwords in German that retain French phonology are identified by ʒ, ɲ in IPA. Genie, Blammage confirmed as French-phonology items."@en ;
+    to:madeByExpert to:Expert_RoyalSociety_DE .
+
+to:Decision_DE_27_von
+    a owl:NamedIndividual , to:ExpertDecision ;
+    rdfs:label "Decision DE 27 von"@en ;
+    to:decisionJustification "von→ฟอน (standard); zu→ซู (standard). No context-dependent variation; committee uses these forms consistently."@en ;
+    to:madeByExpert to:Expert_RoyalSociety_DE .
+
+# ============================================================
+# Ambiguity → Decision links (additional)
+# ============================================================
+
+to:Ambiguity_DE_17
+    to:justifiedByDecision to:Decision_DE_17_Rad .
+
+to:Ambiguity_DE_21
+    to:justifiedByDecision to:Decision_DE_21_final_r .
+
+to:Ambiguity_DE_25
+    to:justifiedByDecision to:Decision_DE_25_loanword .
+
+to:Ambiguity_DE_27
+    to:justifiedByDecision to:Decision_DE_27_von .
+
+# ============================================================
+# Lexical Entries (180 items)
+# ============================================================
+
+to:Entry_DE_Schule
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Schule"@de ;
+    to:sourceForm "Schule"^^xsd:string ;
+    to:ipa "[ʃuːlə]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Schule ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_06 ;
+    to:exemplifiesRule to:Rule_DE_12 ;
+    to:exemplifiesRule to:Rule_DE_13 .
+
+to:Thai_DE_Schule
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ช"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:Entry_DE_ich
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "ich"@de ;
+    to:sourceForm "ich"^^xsd:string ;
+    to:ipa "[ɪç]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_ich ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_05 ;
+    to:exemplifiesRule to:Rule_DE_15 ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_ich
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "อิ"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_ich
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: ich"@en ;
+    to:hasGoldLabel to:GL_DE_ich ;
+    to:evaluatesRule to:Rule_DE_05 ;
+    to:evaluatesRule to:Rule_DE_15 .
+
+to:GL_DE_ich
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: อิ"@th ;
+    to:thaiScript "อิ"^^xsd:string .
+
+to:Entry_DE_Massage
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Massage"@de ;
+    to:sourceForm "Massage"^^xsd:string ;
+    to:ipa "[masaːʒə]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Massage ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_12 ;
+    to:exemplifiesRule to:Rule_DE_19 ;
+    to:exemplifiesRule to:Rule_DE_22 .
+
+to:Thai_DE_Massage
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ม"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:Entry_DE_singen
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "singen"@de ;
+    to:sourceForm "singen"^^xsd:string ;
+    to:ipa "[zɪŋən]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_singen ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_05 ;
+    to:exemplifiesRule to:Rule_DE_20 .
+
+to:Thai_DE_singen
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ซิ"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_singen
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: singen"@en ;
+    to:hasGoldLabel to:GL_DE_singen ;
+    to:evaluatesRule to:Rule_DE_05 ;
+    to:evaluatesRule to:Rule_DE_20 .
+
+to:GL_DE_singen
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ซิ"@th ;
+    to:thaiScript "ซิ"^^xsd:string .
+
+to:Entry_DE_l
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Öl"@de ;
+    to:sourceForm "Öl"^^xsd:string ;
+    to:ipa "[øːl]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_l ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_08 .
+
+to:Thai_DE_l
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เอิล"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_l
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Öl"@en ;
+    to:hasGoldLabel to:GL_DE_l ;
+    to:evaluatesRule to:Rule_DE_08 .
+
+to:GL_DE_l
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เอิล"@th ;
+    to:thaiScript "เอิล"^^xsd:string .
+
+to:Entry_DE_ffnen
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "öffnen"@de ;
+    to:sourceForm "öffnen"^^xsd:string ;
+    to:ipa "[ɶfnən]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_ffnen ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_08 ;
+    to:exemplifiesRule to:Rule_DE_19 .
+
+to:Thai_DE_ffnen
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เอิฟ"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_ffnen
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: öffnen"@en ;
+    to:hasGoldLabel to:GL_DE_ffnen ;
+    to:evaluatesRule to:Rule_DE_08 ;
+    to:evaluatesRule to:Rule_DE_19 .
+
+to:GL_DE_ffnen
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เอิฟ"@th ;
+    to:thaiScript "เอิฟ"^^xsd:string .
+
+to:Entry_DE_Kuss
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Kuss"@de ;
+    to:sourceForm "Kuss"^^xsd:string ;
+    to:ipa "[kʊs]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Kuss ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_06 ;
+    to:exemplifiesRule to:Rule_DE_19 ;
+    to:exemplifiesRule to:Rule_DE_22 .
+
+to:Thai_DE_Kuss
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "คุ"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Kuss
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Kuss"@en ;
+    to:hasGoldLabel to:GL_DE_Kuss ;
+    to:evaluatesRule to:Rule_DE_06 ;
+    to:evaluatesRule to:Rule_DE_19 .
+
+to:GL_DE_Kuss
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: คุ"@th ;
+    to:thaiScript "คุ"^^xsd:string .
+
+to:Entry_DE_m_ssen
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "müssen"@de ;
+    to:sourceForm "müssen"^^xsd:string ;
+    to:ipa "[mʏsən]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_m_ssen ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_06 ;
+    to:exemplifiesRule to:Rule_DE_19 ;
+    to:exemplifiesRule to:Rule_DE_22 .
+
+to:Thai_DE_m_ssen
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "มือ"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_m_ssen
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: müssen"@en ;
+    to:hasGoldLabel to:GL_DE_m_ssen ;
+    to:evaluatesRule to:Rule_DE_06 ;
+    to:evaluatesRule to:Rule_DE_19 .
+
+to:GL_DE_m_ssen
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: มือ"@th ;
+    to:thaiScript "มือ"^^xsd:string .
+
+to:Entry_DE_H_tte
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Hütte"@de ;
+    to:sourceForm "Hütte"^^xsd:string ;
+    to:ipa "[hʏtə]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_H_tte ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_06 ;
+    to:exemplifiesRule to:Rule_DE_12 ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_H_tte
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ฮือ"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_H_tte
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Hütte"@en ;
+    to:hasGoldLabel to:GL_DE_H_tte ;
+    to:evaluatesRule to:Rule_DE_06 ;
+    to:evaluatesRule to:Rule_DE_12 .
+
+to:GL_DE_H_tte
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ฮือ"@th ;
+    to:thaiScript "ฮือ"^^xsd:string .
+
+to:Entry_DE_ppig
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Üppig"@de ;
+    to:sourceForm "Üppig"^^xsd:string ;
+    to:ipa "[ʏpɪç]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_ppig ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_05 ;
+    to:exemplifiesRule to:Rule_DE_06 ;
+    to:exemplifiesRule to:Rule_DE_19 .
+
+to:Thai_DE_ppig
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "อือ"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_ppig
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Üppig"@en ;
+    to:hasGoldLabel to:GL_DE_ppig ;
+    to:evaluatesRule to:Rule_DE_05 ;
+    to:evaluatesRule to:Rule_DE_06 .
+
+to:GL_DE_ppig
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: อือ"@th ;
+    to:thaiScript "อือ"^^xsd:string .
+
+to:Entry_DE_Hypothese
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Hypothese"@de ;
+    to:sourceForm "Hypothese"^^xsd:string ;
+    to:ipa "[hypoˈteːzə]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Hypothese ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_12 ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_Hypothese
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ไฮ"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Hypothese
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Hypothese"@en ;
+    to:hasGoldLabel to:GL_DE_Hypothese ;
+    to:evaluatesRule to:Rule_DE_12 ;
+    to:evaluatesRule to:Rule_DE_18 .
+
+to:GL_DE_Hypothese
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ไฮ"@th ;
+    to:thaiScript "ไฮ"^^xsd:string .
+
+to:Entry_DE_Physik
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Physik"@de ;
+    to:sourceForm "Physik"^^xsd:string ;
+    to:ipa "[fyˈziːk]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Physik ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_05 ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_Physik
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ฟิ"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Physik
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Physik"@en ;
+    to:hasGoldLabel to:GL_DE_Physik ;
+    to:evaluatesRule to:Rule_DE_05 ;
+    to:evaluatesRule to:Rule_DE_18 .
+
+to:GL_DE_Physik
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ฟิ"@th ;
+    to:thaiScript "ฟิ"^^xsd:string .
+
+to:Entry_DE_Psychologie
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Psychologie"@de ;
+    to:sourceForm "Psychologie"^^xsd:string ;
+    to:ipa "[psyçoloˈgiː]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Psychologie ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_05 ;
+    to:exemplifiesRule to:Rule_DE_12 ;
+    to:exemplifiesRule to:Rule_DE_15 .
+
+to:Thai_DE_Psychologie
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ไซ"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Psychologie
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Psychologie"@en ;
+    to:hasGoldLabel to:GL_DE_Psychologie ;
+    to:evaluatesRule to:Rule_DE_05 ;
+    to:evaluatesRule to:Rule_DE_12 .
+
+to:GL_DE_Psychologie
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ไซ"@th ;
+    to:thaiScript "ไซ"^^xsd:string .
+
+to:Entry_DE_elegant
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "elegant"@de ;
+    to:sourceForm "elegant"^^xsd:string ;
+    to:ipa "[eleˈɡant]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_elegant ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 .
+
+to:Thai_DE_elegant
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เอ"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_elegant
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: elegant"@en ;
+    to:hasGoldLabel to:GL_DE_elegant ;
+    to:evaluatesRule to:Rule_DE_04 .
+
+to:GL_DE_elegant
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เอ"@th ;
+    to:thaiScript "เอ"^^xsd:string .
+
+to:Entry_DE_Methan
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Methan"@de ;
+    to:sourceForm "Methan"^^xsd:string ;
+    to:ipa "[meˈtaːn]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Methan ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_Methan
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เม"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Methan
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Methan"@en ;
+    to:hasGoldLabel to:GL_DE_Methan ;
+    to:evaluatesRule to:Rule_DE_18 .
+
+to:GL_DE_Methan
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เม"@th ;
+    to:thaiScript "เม"^^xsd:string .
+
+to:Entry_DE_eben
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "eben"@de ;
+    to:sourceForm "eben"^^xsd:string ;
+    to:ipa "[eːbən]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_eben ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 .
+
+to:Thai_DE_eben
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เอ"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_eben
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: eben"@en ;
+    to:hasGoldLabel to:GL_DE_eben ;
+    to:evaluatesRule to:Rule_DE_04 .
+
+to:GL_DE_eben
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เอ"@th ;
+    to:thaiScript "เอ"^^xsd:string .
+
+to:Entry_DE_beten
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "beten"@de ;
+    to:sourceForm "beten"^^xsd:string ;
+    to:ipa "[beːtən]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_beten ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 .
+
+to:Thai_DE_beten
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เบ"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_beten
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: beten"@en ;
+    to:hasGoldLabel to:GL_DE_beten ;
+    to:evaluatesRule to:Rule_DE_04 .
+
+to:GL_DE_beten
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เบ"@th ;
+    to:thaiScript "เบ"^^xsd:string .
+
+to:Entry_DE_fen
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Öfen"@de ;
+    to:sourceForm "Öfen"^^xsd:string ;
+    to:ipa "[øːfən]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_fen ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 ;
+    to:exemplifiesRule to:Rule_DE_08 .
+
+to:Thai_DE_fen
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เอิฟ"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_fen
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Öfen"@en ;
+    to:hasGoldLabel to:GL_DE_fen ;
+    to:evaluatesRule to:Rule_DE_04 ;
+    to:evaluatesRule to:Rule_DE_08 .
+
+to:GL_DE_fen
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เอิฟ"@th ;
+    to:thaiScript "เอิฟ"^^xsd:string .
+
+to:Entry_DE_B_hm
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Böhm"@de ;
+    to:sourceForm "Böhm"^^xsd:string ;
+    to:ipa "[bøːm]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_B_hm ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_08 ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_B_hm
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เบิม"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_B_hm
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Böhm"@en ;
+    to:hasGoldLabel to:GL_DE_B_hm ;
+    to:evaluatesRule to:Rule_DE_08 ;
+    to:evaluatesRule to:Rule_DE_18 .
+
+to:GL_DE_B_hm
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เบิม"@th ;
+    to:thaiScript "เบิม"^^xsd:string .
+
+to:Entry_DE_konom
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Ökonom"@de ;
+    to:sourceForm "Ökonom"^^xsd:string ;
+    to:ipa "[økoˈnoːm]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_konom ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_08 .
+
+to:Thai_DE_konom
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เอิโค"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_konom
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Ökonom"@en ;
+    to:hasGoldLabel to:GL_DE_konom ;
+    to:evaluatesRule to:Rule_DE_08 .
+
+to:GL_DE_konom
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เอิโค"@th ;
+    to:thaiScript "เอิโค"^^xsd:string .
+
+to:Entry_DE_m_blieren
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "möblieren"@de ;
+    to:sourceForm "möblieren"^^xsd:string ;
+    to:ipa "[møˈbliːrən]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_m_blieren ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_05 ;
+    to:exemplifiesRule to:Rule_DE_08 .
+
+to:Thai_DE_m_blieren
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เมิบ"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_m_blieren
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: möblieren"@en ;
+    to:hasGoldLabel to:GL_DE_m_blieren ;
+    to:evaluatesRule to:Rule_DE_05 ;
+    to:evaluatesRule to:Rule_DE_08 .
+
+to:GL_DE_m_blieren
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เมิบ"@th ;
+    to:thaiScript "เมิบ"^^xsd:string .
+
+to:Entry_DE_T_pfe
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Töpfe"@de ;
+    to:sourceForm "Töpfe"^^xsd:string ;
+    to:ipa "[tɶpfə]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_T_pfe ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_08 ;
+    to:exemplifiesRule to:Rule_DE_12 ;
+    to:exemplifiesRule to:Rule_DE_16 .
+
+to:Thai_DE_T_pfe
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เทิ"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_T_pfe
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Töpfe"@en ;
+    to:hasGoldLabel to:GL_DE_T_pfe ;
+    to:evaluatesRule to:Rule_DE_08 ;
+    to:evaluatesRule to:Rule_DE_12 .
+
+to:GL_DE_T_pfe
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เทิ"@th ;
+    to:thaiScript "เทิ"^^xsd:string .
+
+to:Entry_DE_immer
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "immer"@de ;
+    to:sourceForm "immer"^^xsd:string ;
+    to:ipa "[ɪmɐ]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_immer ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_05 ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_09 .
+
+to:Thai_DE_immer
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "อิมเมอร์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_immer
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: immer"@en ;
+    to:hasGoldLabel to:GL_DE_immer ;
+    to:evaluatesRule to:Rule_DE_05 ;
+    to:evaluatesRule to:Rule_DE_07 .
+
+to:GL_DE_immer
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: อิมเมอร์"@th ;
+    to:thaiScript "อิมเมอร์"^^xsd:string .
+
+to:Entry_DE_Mitte
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Mitte"@de ;
+    to:sourceForm "Mitte"^^xsd:string ;
+    to:ipa "[mɪtə]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Mitte ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_05 ;
+    to:exemplifiesRule to:Rule_DE_12 ;
+    to:exemplifiesRule to:Rule_DE_19 .
+
+to:Thai_DE_Mitte
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "มิทเทอ"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Mitte
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Mitte"@en ;
+    to:hasGoldLabel to:GL_DE_Mitte ;
+    to:evaluatesRule to:Rule_DE_05 ;
+    to:evaluatesRule to:Rule_DE_12 .
+
+to:GL_DE_Mitte
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: มิทเทอ"@th ;
+    to:thaiScript "มิทเทอ"^^xsd:string .
+
+to:Entry_DE_Schmidt
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Schmidt"@de ;
+    to:sourceForm "Schmidt"^^xsd:string ;
+    to:ipa "[ʃmɪt]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Schmidt ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_05 ;
+    to:exemplifiesRule to:Rule_DE_13 ;
+    to:exemplifiesRule to:Rule_DE_15 .
+
+to:Thai_DE_Schmidt
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ชมิท"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Schmidt
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Schmidt"@en ;
+    to:hasGoldLabel to:GL_DE_Schmidt ;
+    to:evaluatesRule to:Rule_DE_05 ;
+    to:evaluatesRule to:Rule_DE_13 .
+
+to:GL_DE_Schmidt
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ชมิท"@th ;
+    to:thaiScript "ชมิท"^^xsd:string .
+
+to:Entry_DE_Idee
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Idee"@de ;
+    to:sourceForm "Idee"^^xsd:string ;
+    to:ipa "[iˈdeː]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Idee ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 ;
+    to:exemplifiesRule to:Rule_DE_10 ;
+    to:exemplifiesRule to:Rule_DE_12 .
+
+to:Thai_DE_Idee
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "อีเด"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Idee
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Idee"@en ;
+    to:hasGoldLabel to:GL_DE_Idee ;
+    to:evaluatesRule to:Rule_DE_04 ;
+    to:evaluatesRule to:Rule_DE_10 .
+
+to:GL_DE_Idee
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: อีเด"@th ;
+    to:thaiScript "อีเด"^^xsd:string .
+
+to:Entry_DE_Kuli
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Kuli"@de ;
+    to:sourceForm "Kuli"^^xsd:string ;
+    to:ipa "[kuːli]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Kuli ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_06 .
+
+to:Thai_DE_Kuli
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "คูลี"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Kuli
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Kuli"@en ;
+    to:hasGoldLabel to:GL_DE_Kuli ;
+    to:evaluatesRule to:Rule_DE_06 .
+
+to:GL_DE_Kuli
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: คูลี"@th ;
+    to:thaiScript "คูลี"^^xsd:string .
+
+to:Entry_DE_ihm
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "ihm"@de ;
+    to:sourceForm "ihm"^^xsd:string ;
+    to:ipa "[iːm]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_ihm ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_05 ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_ihm
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "อีม"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_ihm
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: ihm"@en ;
+    to:hasGoldLabel to:GL_DE_ihm ;
+    to:evaluatesRule to:Rule_DE_05 ;
+    to:evaluatesRule to:Rule_DE_18 .
+
+to:GL_DE_ihm
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: อีม"@th ;
+    to:thaiScript "อีม"^^xsd:string .
+
+to:Entry_DE_affin
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "affin"@de ;
+    to:sourceForm "affin"^^xsd:string ;
+    to:ipa "[aˈfiːn]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_affin ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_05 ;
+    to:exemplifiesRule to:Rule_DE_19 .
+
+to:Thai_DE_affin
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "อาฟีน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_affin
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: affin"@en ;
+    to:hasGoldLabel to:GL_DE_affin ;
+    to:evaluatesRule to:Rule_DE_05 ;
+    to:evaluatesRule to:Rule_DE_19 .
+
+to:GL_DE_affin
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: อาฟีน"@th ;
+    to:thaiScript "อาฟีน"^^xsd:string .
+
+to:Entry_DE_unter
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "unter"@de ;
+    to:sourceForm "unter"^^xsd:string ;
+    to:ipa "[ʊntɐ]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_unter ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_06 ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_09 .
+
+to:Thai_DE_unter
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "อุนเทอร์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_unter
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: unter"@en ;
+    to:hasGoldLabel to:GL_DE_unter ;
+    to:evaluatesRule to:Rule_DE_06 ;
+    to:evaluatesRule to:Rule_DE_07 .
+
+to:GL_DE_unter
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: อุนเทอร์"@th ;
+    to:thaiScript "อุนเทอร์"^^xsd:string .
+
+to:Entry_DE_Mutter
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Mutter"@de ;
+    to:sourceForm "Mutter"^^xsd:string ;
+    to:ipa "[mʊtɐ]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Mutter ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_06 ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_09 .
+
+to:Thai_DE_Mutter
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "มุทเทอร์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Mutter
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Mutter"@en ;
+    to:hasGoldLabel to:GL_DE_Mutter ;
+    to:evaluatesRule to:Rule_DE_06 ;
+    to:evaluatesRule to:Rule_DE_07 .
+
+to:GL_DE_Mutter
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: มุทเทอร์"@th ;
+    to:thaiScript "มุทเทอร์"^^xsd:string .
+
+to:Entry_DE_Urin
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Urin"@de ;
+    to:sourceForm "Urin"^^xsd:string ;
+    to:ipa "[uˈʁiːn]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Urin ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_05 ;
+    to:exemplifiesRule to:Rule_DE_07 .
+
+to:Thai_DE_Urin
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "อูริน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Urin
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Urin"@en ;
+    to:hasGoldLabel to:GL_DE_Urin ;
+    to:evaluatesRule to:Rule_DE_05 ;
+    to:evaluatesRule to:Rule_DE_07 .
+
+to:GL_DE_Urin
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: อูริน"@th ;
+    to:thaiScript "อูริน"^^xsd:string .
+
+to:Entry_DE_Uhu
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Uhu"@de ;
+    to:sourceForm "Uhu"^^xsd:string ;
+    to:ipa "[uːhu]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Uhu ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_06 ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_Uhu
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "อูฮู"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Uhu
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Uhu"@en ;
+    to:hasGoldLabel to:GL_DE_Uhu ;
+    to:evaluatesRule to:Rule_DE_06 ;
+    to:evaluatesRule to:Rule_DE_18 .
+
+to:GL_DE_Uhu
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: อูฮู"@th ;
+    to:thaiScript "อูฮู"^^xsd:string .
+
+to:Entry_DE_Ufer
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Ufer"@de ;
+    to:sourceForm "Ufer"^^xsd:string ;
+    to:ipa "[uːfɐ]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Ufer ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 ;
+    to:exemplifiesRule to:Rule_DE_06 ;
+    to:exemplifiesRule to:Rule_DE_07 .
+
+to:Thai_DE_Ufer
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "อูเฟอร์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Ufer
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Ufer"@en ;
+    to:hasGoldLabel to:GL_DE_Ufer ;
+    to:evaluatesRule to:Rule_DE_04 ;
+    to:evaluatesRule to:Rule_DE_06 .
+
+to:GL_DE_Ufer
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: อูเฟอร์"@th ;
+    to:thaiScript "อูเฟอร์"^^xsd:string .
+
+to:Entry_DE_Mut
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Mut"@de ;
+    to:sourceForm "Mut"^^xsd:string ;
+    to:ipa "[muːt]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Mut ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_06 .
+
+to:Thai_DE_Mut
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "มูท"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Mut
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Mut"@en ;
+    to:hasGoldLabel to:GL_DE_Mut ;
+    to:evaluatesRule to:Rule_DE_06 .
+
+to:GL_DE_Mut
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: มูท"@th ;
+    to:thaiScript "มูท"^^xsd:string .
+
+to:Entry_DE_Berg
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Berg"@de ;
+    to:sourceForm "Berg"^^xsd:string ;
+    to:ipa "[bɛʁk, bɛʀk]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Berg ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:hasAmbiguity to:Ambiguity_DE_07 .
+
+to:Thai_DE_Berg
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เบิร์ก"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Berg
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Berg"@en ;
+    to:hasGoldLabel to:GL_DE_Berg ;
+    to:evaluatesRule to:Rule_DE_04 ;
+    to:evaluatesRule to:Rule_DE_07 ;
+    to:evaluatesPhenomenon to:Ambiguity_DE_07 .
+
+to:GL_DE_Berg
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เบิร์ก"@th ;
+    to:thaiScript "เบิร์ก"^^xsd:string .
+
+to:Entry_DE_F_hrt
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Fährt"@de ;
+    to:sourceForm "Fährt"^^xsd:string ;
+    to:ipa "[feːʁt, feːʀt]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_F_hrt ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_18 ;
+    to:hasAmbiguity to:Ambiguity_DE_07 .
+
+to:Thai_DE_F_hrt
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เฟิร์ท"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_F_hrt
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Fährt"@en ;
+    to:hasGoldLabel to:GL_DE_F_hrt ;
+    to:evaluatesRule to:Rule_DE_07 ;
+    to:evaluatesRule to:Rule_DE_18 ;
+    to:evaluatesPhenomenon to:Ambiguity_DE_07 .
+
+to:GL_DE_F_hrt
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เฟิร์ท"@th ;
+    to:thaiScript "เฟิร์ท"^^xsd:string .
+
+to:Entry_DE_F_hrmann
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Führmann"@de ;
+    to:sourceForm "Führmann"^^xsd:string ;
+    to:ipa "[fyːʁman, fyːʀman]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_F_hrmann ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_06 ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_F_hrmann
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ฟือร์มันน์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_F_hrmann
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Führmann"@en ;
+    to:hasGoldLabel to:GL_DE_F_hrmann ;
+    to:evaluatesRule to:Rule_DE_06 ;
+    to:evaluatesRule to:Rule_DE_07 .
+
+to:GL_DE_F_hrmann
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ฟือร์มันน์"@th ;
+    to:thaiScript "ฟือร์มันน์"^^xsd:string .
+
+to:Entry_DE_F_hrer
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Führer"@de ;
+    to:sourceForm "Führer"^^xsd:string ;
+    to:ipa "[fyːʁɐ]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_F_hrer ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_06 ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_09 .
+
+to:Thai_DE_F_hrer
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ฟือเรอร์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_F_hrer
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Führer"@en ;
+    to:hasGoldLabel to:GL_DE_F_hrer ;
+    to:evaluatesRule to:Rule_DE_06 ;
+    to:evaluatesRule to:Rule_DE_07 .
+
+to:GL_DE_F_hrer
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ฟือเรอร์"@th ;
+    to:thaiScript "ฟือเรอร์"^^xsd:string .
+
+to:Entry_DE_Mutter_1
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Mutter"@de ;
+    to:sourceForm "Mutter"^^xsd:string ;
+    to:ipa "[mʊtɐ]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Mutter_1 ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_06 ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_09 .
+
+to:Thai_DE_Mutter_1
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "มุทเทอร์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Mutter_1
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Mutter"@en ;
+    to:hasGoldLabel to:GL_DE_Mutter_1 ;
+    to:evaluatesRule to:Rule_DE_06 ;
+    to:evaluatesRule to:Rule_DE_07 .
+
+to:GL_DE_Mutter_1
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: มุทเทอร์"@th ;
+    to:thaiScript "มุทเทอร์"^^xsd:string .
+
+to:Entry_DE_Ober
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Ober"@de ;
+    to:sourceForm "Ober"^^xsd:string ;
+    to:ipa "[oːbɐ]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Ober ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_09 .
+
+to:Thai_DE_Ober
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "โอเบอร์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Ober
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Ober"@en ;
+    to:hasGoldLabel to:GL_DE_Ober ;
+    to:evaluatesRule to:Rule_DE_04 ;
+    to:evaluatesRule to:Rule_DE_07 .
+
+to:GL_DE_Ober
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: โอเบอร์"@th ;
+    to:thaiScript "โอเบอร์"^^xsd:string .
+
+to:Entry_DE_Vater
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Vater"@de ;
+    to:sourceForm "Vater"^^xsd:string ;
+    to:ipa "[faːtɐ]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Vater ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_09 .
+
+to:Thai_DE_Vater
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ฟาเทอร์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Vater
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Vater"@en ;
+    to:hasGoldLabel to:GL_DE_Vater ;
+    to:evaluatesRule to:Rule_DE_07 ;
+    to:evaluatesRule to:Rule_DE_09 .
+
+to:GL_DE_Vater
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ฟาเทอร์"@th ;
+    to:thaiScript "ฟาเทอร์"^^xsd:string .
+
+to:Entry_DE_Hase
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Hase"@de ;
+    to:sourceForm "Hase"^^xsd:string ;
+    to:ipa "[haːzə]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Hase ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 ;
+    to:exemplifiesRule to:Rule_DE_12 ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_Hase
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ฮาเซอ"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Hase
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Hase"@en ;
+    to:hasGoldLabel to:GL_DE_Hase ;
+    to:evaluatesRule to:Rule_DE_04 ;
+    to:evaluatesRule to:Rule_DE_12 .
+
+to:GL_DE_Hase
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ฮาเซอ"@th ;
+    to:thaiScript "ฮาเซอ"^^xsd:string .
+
+to:Entry_DE_Kassel
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Kassel"@de ;
+    to:sourceForm "Kassel"^^xsd:string ;
+    to:ipa "[kasəl]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Kassel ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_19 ;
+    to:exemplifiesRule to:Rule_DE_22 .
+
+to:Thai_DE_Kassel
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "คัสเซล"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Kassel
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Kassel"@en ;
+    to:hasGoldLabel to:GL_DE_Kassel ;
+    to:evaluatesRule to:Rule_DE_19 ;
+    to:evaluatesRule to:Rule_DE_22 .
+
+to:GL_DE_Kassel
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: คัสเซล"@th ;
+    to:thaiScript "คัสเซล"^^xsd:string .
+
+to:Entry_DE_leben
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "leben"@de ;
+    to:sourceForm "leben"^^xsd:string ;
+    to:ipa "[leːbən]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_leben ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 .
+
+to:Thai_DE_leben
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เลเบิน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_leben
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: leben"@en ;
+    to:hasGoldLabel to:GL_DE_leben ;
+    to:evaluatesRule to:Rule_DE_04 .
+
+to:GL_DE_leben
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เลเบิน"@th ;
+    to:thaiScript "เลเบิน"^^xsd:string .
+
+to:Entry_DE_Maier
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Maier"@de ;
+    to:sourceForm "Maier"^^xsd:string ;
+    to:ipa "[maɪɐ]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Maier ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_05 ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_09 .
+
+to:Thai_DE_Maier
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ไมเออร์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Maier
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Maier"@en ;
+    to:hasGoldLabel to:GL_DE_Maier ;
+    to:evaluatesRule to:Rule_DE_05 ;
+    to:evaluatesRule to:Rule_DE_07 .
+
+to:GL_DE_Maier
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ไมเออร์"@th ;
+    to:thaiScript "ไมเออร์"^^xsd:string .
+
+to:Entry_DE_Naumann
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Naumann"@de ;
+    to:sourceForm "Naumann"^^xsd:string ;
+    to:ipa "[naʊman]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Naumann ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_06 ;
+    to:exemplifiesRule to:Rule_DE_11 ;
+    to:exemplifiesRule to:Rule_DE_19 .
+
+to:Thai_DE_Naumann
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เนามันน์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Naumann
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Naumann"@en ;
+    to:hasGoldLabel to:GL_DE_Naumann ;
+    to:evaluatesRule to:Rule_DE_06 ;
+    to:evaluatesRule to:Rule_DE_11 .
+
+to:GL_DE_Naumann
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เนามันน์"@th ;
+    to:thaiScript "เนามันน์"^^xsd:string .
+
+to:Entry_DE_Neunert
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Neunert"@de ;
+    to:sourceForm "Neunert"^^xsd:string ;
+    to:ipa "[nɔɪnɐt]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Neunert ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_05 ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_11 .
+
+to:Thai_DE_Neunert
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "นอยเนิร์ท"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Neunert
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Neunert"@en ;
+    to:hasGoldLabel to:GL_DE_Neunert ;
+    to:evaluatesRule to:Rule_DE_05 ;
+    to:evaluatesRule to:Rule_DE_07 .
+
+to:GL_DE_Neunert
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: นอยเนิร์ท"@th ;
+    to:thaiScript "นอยเนิร์ท"^^xsd:string .
+
+to:Entry_DE_Maria
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Maria"@de ;
+    to:sourceForm "Maria"^^xsd:string ;
+    to:ipa "[maˈʁiːa]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Maria ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_05 ;
+    to:exemplifiesRule to:Rule_DE_07 .
+
+to:Thai_DE_Maria
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "มารีอา"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Maria
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Maria"@en ;
+    to:hasGoldLabel to:GL_DE_Maria ;
+    to:evaluatesRule to:Rule_DE_05 ;
+    to:evaluatesRule to:Rule_DE_07 .
+
+to:GL_DE_Maria
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: มารีอา"@th ;
+    to:thaiScript "มารีอา"^^xsd:string .
+
+to:Entry_DE_Fabian
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Fabian"@de ;
+    to:sourceForm "Fabian"^^xsd:string ;
+    to:ipa "[faːbian]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Fabian ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 .
+
+to:Thai_DE_Fabian
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ฟาเบียน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Fabian
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Fabian"@en ;
+    to:hasGoldLabel to:GL_DE_Fabian ;
+    to:evaluatesRule to:Rule_DE_04 .
+
+to:GL_DE_Fabian
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ฟาเบียน"@th ;
+    to:thaiScript "ฟาเบียน"^^xsd:string .
+
+to:Entry_DE_Tonio
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Tonio"@de ;
+    to:sourceForm "Tonio"^^xsd:string ;
+    to:ipa "[tonio]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Tonio ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 .
+
+to:Thai_DE_Tonio
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "โทนิโอ"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Tonio
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Tonio"@en ;
+    to:hasGoldLabel to:GL_DE_Tonio ;
+    to:evaluatesRule to:Rule_DE_04 .
+
+to:GL_DE_Tonio
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: โทนิโอ"@th ;
+    to:thaiScript "โทนิโอ"^^xsd:string .
+
+to:Entry_DE_Andreas
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Andreas"@de ;
+    to:sourceForm "Andreas"^^xsd:string ;
+    to:ipa "[anˈdʁeːas]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Andreas ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_07 .
+
+to:Thai_DE_Andreas
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "อันเดรอัส"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Andreas
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Andreas"@en ;
+    to:hasGoldLabel to:GL_DE_Andreas ;
+    to:evaluatesRule to:Rule_DE_07 .
+
+to:GL_DE_Andreas
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: อันเดรอัส"@th ;
+    to:thaiScript "อันเดรอัส"^^xsd:string .
+
+to:Entry_DE_Tschechien
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Tschechien"@de ;
+    to:sourceForm "Tschechien"^^xsd:string ;
+    to:ipa "[tʃɛˈçiːən]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Tschechien ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_05 ;
+    to:exemplifiesRule to:Rule_DE_12 ;
+    to:exemplifiesRule to:Rule_DE_16 .
+
+to:Thai_DE_Tschechien
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "แชเคียน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Tschechien
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Tschechien"@en ;
+    to:hasGoldLabel to:GL_DE_Tschechien ;
+    to:evaluatesRule to:Rule_DE_05 ;
+    to:evaluatesRule to:Rule_DE_12 .
+
+to:GL_DE_Tschechien
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: แชเคียน"@th ;
+    to:thaiScript "แชเคียน"^^xsd:string .
+
+to:Entry_DE_Serie
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Serie"@de ;
+    to:sourceForm "Serie"^^xsd:string ;
+    to:ipa "[zeˈʁiːə]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Serie ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_05 ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_12 .
+
+to:Thai_DE_Serie
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เซรีเย"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Serie
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Serie"@en ;
+    to:hasGoldLabel to:GL_DE_Serie ;
+    to:evaluatesRule to:Rule_DE_05 ;
+    to:evaluatesRule to:Rule_DE_07 .
+
+to:GL_DE_Serie
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เซรีเย"@th ;
+    to:thaiScript "เซรีเย"^^xsd:string .
+
+to:Entry_DE_Folien
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Folien"@de ;
+    to:sourceForm "Folien"^^xsd:string ;
+    to:ipa "[foliːən]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Folien ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_05 ;
+    to:exemplifiesRule to:Rule_DE_12 .
+
+to:Thai_DE_Folien
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "โฟลีเอน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Folien
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Folien"@en ;
+    to:hasGoldLabel to:GL_DE_Folien ;
+    to:evaluatesRule to:Rule_DE_05 ;
+    to:evaluatesRule to:Rule_DE_12 .
+
+to:GL_DE_Folien
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: โฟลีเอน"@th ;
+    to:thaiScript "โฟลีเอน"^^xsd:string .
+
+to:Entry_DE_Preis
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Preis"@de ;
+    to:sourceForm "Preis"^^xsd:string ;
+    to:ipa "[pʁaɪs]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Preis ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_05 ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_11 .
+
+to:Thai_DE_Preis
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เพรส"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Preis
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Preis"@en ;
+    to:hasGoldLabel to:GL_DE_Preis ;
+    to:evaluatesRule to:Rule_DE_05 ;
+    to:evaluatesRule to:Rule_DE_07 .
+
+to:GL_DE_Preis
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เพรส"@th ;
+    to:thaiScript "เพรส"^^xsd:string .
+
+to:Entry_DE_Lappen
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Lappen"@de ;
+    to:sourceForm "Lappen"^^xsd:string ;
+    to:ipa "[lapən]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Lappen ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_19 .
+
+to:Thai_DE_Lappen
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "แลปเปิน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Lappen
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Lappen"@en ;
+    to:hasGoldLabel to:GL_DE_Lappen ;
+    to:evaluatesRule to:Rule_DE_19 .
+
+to:GL_DE_Lappen
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: แลปเปิน"@th ;
+    to:thaiScript "แลปเปิน"^^xsd:string .
+
+to:Entry_DE_Lump
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Lump"@de ;
+    to:sourceForm "Lump"^^xsd:string ;
+    to:ipa "[lʊmp]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Lump ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_06 .
+
+to:Thai_DE_Lump
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ลุมพ์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Lump
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Lump"@en ;
+    to:hasGoldLabel to:GL_DE_Lump ;
+    to:evaluatesRule to:Rule_DE_06 .
+
+to:GL_DE_Lump
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ลุมพ์"@th ;
+    to:thaiScript "ลุมพ์"^^xsd:string .
+
+to:Entry_DE_Tanne
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Tanne"@de ;
+    to:sourceForm "Tanne"^^xsd:string ;
+    to:ipa "[tanə]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Tanne ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_12 ;
+    to:exemplifiesRule to:Rule_DE_19 .
+
+to:Thai_DE_Tanne
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ทันเนอ"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Tanne
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Tanne"@en ;
+    to:hasGoldLabel to:GL_DE_Tanne ;
+    to:evaluatesRule to:Rule_DE_12 ;
+    to:evaluatesRule to:Rule_DE_19 .
+
+to:GL_DE_Tanne
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ทันเนอ"@th ;
+    to:thaiScript "ทันเนอ"^^xsd:string .
+
+to:Entry_DE_Ratten
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Ratten"@de ;
+    to:sourceForm "Ratten"^^xsd:string ;
+    to:ipa "[ʁatən]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Ratten ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_17 ;
+    to:exemplifiesRule to:Rule_DE_19 .
+
+to:Thai_DE_Ratten
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "รัทเทิน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Ratten
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Ratten"@en ;
+    to:hasGoldLabel to:GL_DE_Ratten ;
+    to:evaluatesRule to:Rule_DE_17 ;
+    to:evaluatesRule to:Rule_DE_19 .
+
+to:GL_DE_Ratten
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: รัทเทิน"@th ;
+    to:thaiScript "รัทเทิน"^^xsd:string .
+
+to:Entry_DE_Glut
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Glut"@de ;
+    to:sourceForm "Glut"^^xsd:string ;
+    to:ipa "[ɡluːt]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Glut ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_06 .
+
+to:Thai_DE_Glut
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "กลูท"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Glut
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Glut"@en ;
+    to:hasGoldLabel to:GL_DE_Glut ;
+    to:evaluatesRule to:Rule_DE_06 .
+
+to:GL_DE_Glut
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: กลูท"@th ;
+    to:thaiScript "กลูท"^^xsd:string .
+
+to:Entry_DE_Kanne
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Kanne"@de ;
+    to:sourceForm "Kanne"^^xsd:string ;
+    to:ipa "[kanə]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Kanne ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_12 ;
+    to:exemplifiesRule to:Rule_DE_19 .
+
+to:Thai_DE_Kanne
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "คันเนอ"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Kanne
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Kanne"@en ;
+    to:hasGoldLabel to:GL_DE_Kanne ;
+    to:evaluatesRule to:Rule_DE_12 ;
+    to:evaluatesRule to:Rule_DE_19 .
+
+to:GL_DE_Kanne
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: คันเนอ"@th ;
+    to:thaiScript "คันเนอ"^^xsd:string .
+
+to:Entry_DE_danken
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "danken"@de ;
+    to:sourceForm "danken"^^xsd:string ;
+    to:ipa "[daŋkən]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_danken ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 .
+
+to:Thai_DE_danken
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ดังเคิน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_danken
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: danken"@en ;
+    to:hasGoldLabel to:GL_DE_danken ;
+    to:evaluatesRule to:Rule_DE_04 .
+
+to:GL_DE_danken
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ดังเคิน"@th ;
+    to:thaiScript "ดังเคิน"^^xsd:string .
+
+to:Entry_DE_Sieg
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Sieg"@de ;
+    to:sourceForm "Sieg"^^xsd:string ;
+    to:ipa "[ziːk]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Sieg ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 ;
+    to:exemplifiesRule to:Rule_DE_05 .
+
+to:Thai_DE_Sieg
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ซีก"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Sieg
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Sieg"@en ;
+    to:hasGoldLabel to:GL_DE_Sieg ;
+    to:evaluatesRule to:Rule_DE_04 ;
+    to:evaluatesRule to:Rule_DE_05 .
+
+to:GL_DE_Sieg
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ซีก"@th ;
+    to:thaiScript "ซีก"^^xsd:string .
+
+to:Entry_DE_spielen
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "spielen"@de ;
+    to:sourceForm "spielen"^^xsd:string ;
+    to:ipa "[ʃpiːlən]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_spielen ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_05 ;
+    to:exemplifiesRule to:Rule_DE_13 .
+
+to:Thai_DE_spielen
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ชปีเลิน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_spielen
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: spielen"@en ;
+    to:hasGoldLabel to:GL_DE_spielen ;
+    to:evaluatesRule to:Rule_DE_05 ;
+    to:evaluatesRule to:Rule_DE_13 .
+
+to:GL_DE_spielen
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ชปีเลิน"@th ;
+    to:thaiScript "ชปีเลิน"^^xsd:string .
+
+to:Entry_DE_Sport
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Sport"@de ;
+    to:sourceForm "Sport"^^xsd:string ;
+    to:ipa "[ʃpɔʁt, ʃpɔʀt]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Sport ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_13 .
+
+to:Thai_DE_Sport
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ชปอร์ท"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Sport
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Sport"@en ;
+    to:hasGoldLabel to:GL_DE_Sport ;
+    to:evaluatesRule to:Rule_DE_07 ;
+    to:evaluatesRule to:Rule_DE_13 .
+
+to:GL_DE_Sport
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ชปอร์ท"@th ;
+    to:thaiScript "ชปอร์ท"^^xsd:string .
+
+to:Entry_DE_versprechen
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "versprechen"@de ;
+    to:sourceForm "versprechen"^^xsd:string ;
+    to:ipa "[fɛʁˈʃpʁeːçən, fɛʀˈʃpʀeːçən]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_versprechen ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_15 ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_versprechen
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เฟิร์ชเพรเชิน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_versprechen
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: versprechen"@en ;
+    to:hasGoldLabel to:GL_DE_versprechen ;
+    to:evaluatesRule to:Rule_DE_07 ;
+    to:evaluatesRule to:Rule_DE_15 .
+
+to:GL_DE_versprechen
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เฟิร์ชเพรเชิน"@th ;
+    to:thaiScript "เฟิร์ชเพรเชิน"^^xsd:string .
+
+to:Entry_DE_Stadt
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Stadt"@de ;
+    to:sourceForm "Stadt"^^xsd:string ;
+    to:ipa "[ʃtat]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Stadt ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_13 .
+
+to:Thai_DE_Stadt
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ชทัท"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Stadt
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Stadt"@en ;
+    to:hasGoldLabel to:GL_DE_Stadt ;
+    to:evaluatesRule to:Rule_DE_13 .
+
+to:GL_DE_Stadt
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ชทัท"@th ;
+    to:thaiScript "ชทัท"^^xsd:string .
+
+to:Entry_DE_stehen
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "stehen"@de ;
+    to:sourceForm "stehen"^^xsd:string ;
+    to:ipa "[ʃteːən]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_stehen ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_13 ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_stehen
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ชเทเฮิน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_stehen
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: stehen"@en ;
+    to:hasGoldLabel to:GL_DE_stehen ;
+    to:evaluatesRule to:Rule_DE_13 ;
+    to:evaluatesRule to:Rule_DE_18 .
+
+to:GL_DE_stehen
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ชเทเฮิน"@th ;
+    to:thaiScript "ชเทเฮิน"^^xsd:string .
+
+to:Entry_DE_bestehen
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "bestehen"@de ;
+    to:sourceForm "bestehen"^^xsd:string ;
+    to:ipa "[bəˈʃteːən]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_bestehen ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_bestehen
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เบชเทเฮิน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_bestehen
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: bestehen"@en ;
+    to:hasGoldLabel to:GL_DE_bestehen ;
+    to:evaluatesRule to:Rule_DE_18 .
+
+to:GL_DE_bestehen
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เบชเทเฮิน"@th ;
+    to:thaiScript "เบชเทเฮิน"^^xsd:string .
+
+to:Entry_DE_Spa
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Spa"@de ;
+    to:sourceForm "Spa"^^xsd:string ;
+    to:ipa "[ʃpaː]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Spa ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 ;
+    to:exemplifiesRule to:Rule_DE_13 .
+
+to:Thai_DE_Spa
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ชปา"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Spa
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Spa"@en ;
+    to:hasGoldLabel to:GL_DE_Spa ;
+    to:evaluatesRule to:Rule_DE_04 ;
+    to:evaluatesRule to:Rule_DE_13 .
+
+to:GL_DE_Spa
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ชปา"@th ;
+    to:thaiScript "ชปา"^^xsd:string .
+
+to:Entry_DE_Inspiration
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Inspiration"@de ;
+    to:sourceForm "Inspiration"^^xsd:string ;
+    to:ipa "[ˌɪnspiˈʁaːtsijoːn]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Inspiration ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_05 ;
+    to:exemplifiesRule to:Rule_DE_07 .
+
+to:Thai_DE_Inspiration
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "อินชปีราซิโอน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Inspiration
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Inspiration"@en ;
+    to:hasGoldLabel to:GL_DE_Inspiration ;
+    to:evaluatesRule to:Rule_DE_05 ;
+    to:evaluatesRule to:Rule_DE_07 .
+
+to:GL_DE_Inspiration
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: อินชปีราซิโอน"@th ;
+    to:thaiScript "อินชปีราซิโอน"^^xsd:string .
+
+to:Entry_DE_Institut
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Institut"@de ;
+    to:sourceForm "Institut"^^xsd:string ;
+    to:ipa "[ɪnstiˈtuːt]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Institut ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_05 ;
+    to:exemplifiesRule to:Rule_DE_06 .
+
+to:Thai_DE_Institut
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "อินชติทูท"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Institut
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Institut"@en ;
+    to:hasGoldLabel to:GL_DE_Institut ;
+    to:evaluatesRule to:Rule_DE_05 ;
+    to:evaluatesRule to:Rule_DE_06 .
+
+to:GL_DE_Institut
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: อินชติทูท"@th ;
+    to:thaiScript "อินชติทูท"^^xsd:string .
+
+to:Entry_DE_Skala
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Skala"@de ;
+    to:sourceForm "Skala"^^xsd:string ;
+    to:ipa "[ʃkaːla]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Skala ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 .
+
+to:Thai_DE_Skala
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ชคาลา"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Skala
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Skala"@en ;
+    to:hasGoldLabel to:GL_DE_Skala ;
+    to:evaluatesRule to:Rule_DE_04 .
+
+to:GL_DE_Skala
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ชคาลา"@th ;
+    to:thaiScript "ชคาลา"^^xsd:string .
+
+to:Entry_DE_Kassel_1
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Kassel"@de ;
+    to:sourceForm "Kassel"^^xsd:string ;
+    to:ipa "[kasəl]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Kassel_1 ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_19 ;
+    to:exemplifiesRule to:Rule_DE_22 .
+
+to:Thai_DE_Kassel_1
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "คัสเซล"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Kassel_1
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Kassel"@en ;
+    to:hasGoldLabel to:GL_DE_Kassel_1 ;
+    to:evaluatesRule to:Rule_DE_19 ;
+    to:evaluatesRule to:Rule_DE_22 .
+
+to:GL_DE_Kassel_1
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: คัสเซล"@th ;
+    to:thaiScript "คัสเซล"^^xsd:string .
+
+to:Entry_DE_Christen
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Christen"@de ;
+    to:sourceForm "Christen"^^xsd:string ;
+    to:ipa "[kʁɪstən]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Christen ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_05 ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_15 .
+
+to:Thai_DE_Christen
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "คริสเทิน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Christen
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Christen"@en ;
+    to:hasGoldLabel to:GL_DE_Christen ;
+    to:evaluatesRule to:Rule_DE_05 ;
+    to:evaluatesRule to:Rule_DE_07 .
+
+to:GL_DE_Christen
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: คริสเทิน"@th ;
+    to:thaiScript "คริสเทิน"^^xsd:string .
+
+to:Entry_DE_Scholl
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Scholl"@de ;
+    to:sourceForm "Scholl"^^xsd:string ;
+    to:ipa "[ʃɔl]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Scholl ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_13 ;
+    to:exemplifiesRule to:Rule_DE_15 ;
+    to:exemplifiesRule to:Rule_DE_19 .
+
+to:Thai_DE_Scholl
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ชอลล์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Scholl
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Scholl"@en ;
+    to:hasGoldLabel to:GL_DE_Scholl ;
+    to:evaluatesRule to:Rule_DE_13 ;
+    to:evaluatesRule to:Rule_DE_15 .
+
+to:GL_DE_Scholl
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ชอลล์"@th ;
+    to:thaiScript "ชอลล์"^^xsd:string .
+
+to:Entry_DE_lasch
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "lasch"@de ;
+    to:sourceForm "lasch"^^xsd:string ;
+    to:ipa "[laʃ]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_lasch ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_15 .
+
+to:Thai_DE_lasch
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ลาช"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_lasch
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: lasch"@en ;
+    to:hasGoldLabel to:GL_DE_lasch ;
+    to:evaluatesRule to:Rule_DE_15 .
+
+to:GL_DE_lasch
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ลาช"@th ;
+    to:thaiScript "ลาช"^^xsd:string .
+
+to:Entry_DE_Albrecht
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Albrecht"@de ;
+    to:sourceForm "Albrecht"^^xsd:string ;
+    to:ipa "[alˈbʁɛçt]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Albrecht ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_15 ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_Albrecht
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "อัลเบรชท์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Albrecht
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Albrecht"@en ;
+    to:hasGoldLabel to:GL_DE_Albrecht ;
+    to:evaluatesRule to:Rule_DE_07 ;
+    to:evaluatesRule to:Rule_DE_15 .
+
+to:GL_DE_Albrecht
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: อัลเบรชท์"@th ;
+    to:thaiScript "อัลเบรชท์"^^xsd:string .
+
+to:Entry_DE_l_cheln
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "lächeln"@de ;
+    to:sourceForm "lächeln"^^xsd:string ;
+    to:ipa "[lɛçəln]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_l_cheln ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_15 ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_l_cheln
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เลเชิลน์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_l_cheln
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: lächeln"@en ;
+    to:hasGoldLabel to:GL_DE_l_cheln ;
+    to:evaluatesRule to:Rule_DE_15 ;
+    to:evaluatesRule to:Rule_DE_18 .
+
+to:GL_DE_l_cheln
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เลเชิลน์"@th ;
+    to:thaiScript "เลเชิลน์"^^xsd:string .
+
+to:Entry_DE_K_nig
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "König"@de ;
+    to:sourceForm "König"^^xsd:string ;
+    to:ipa "[køːnɪç]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_K_nig ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_05 ;
+    to:exemplifiesRule to:Rule_DE_08 .
+
+to:Thai_DE_K_nig
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เคอนิช"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_K_nig
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: König"@en ;
+    to:hasGoldLabel to:GL_DE_K_nig ;
+    to:evaluatesRule to:Rule_DE_05 ;
+    to:evaluatesRule to:Rule_DE_08 .
+
+to:GL_DE_K_nig
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เคอนิช"@th ;
+    to:thaiScript "เคอนิช"^^xsd:string .
+
+to:Entry_DE_suchen
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "suchen"@de ;
+    to:sourceForm "suchen"^^xsd:string ;
+    to:ipa "[zuːxən]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_suchen ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_06 ;
+    to:exemplifiesRule to:Rule_DE_15 ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_suchen
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ซูเชิน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_suchen
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: suchen"@en ;
+    to:hasGoldLabel to:GL_DE_suchen ;
+    to:evaluatesRule to:Rule_DE_06 ;
+    to:evaluatesRule to:Rule_DE_15 .
+
+to:GL_DE_suchen
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ซูเชิน"@th ;
+    to:thaiScript "ซูเชิน"^^xsd:string .
+
+to:Entry_DE_Tuch
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Tuch"@de ;
+    to:sourceForm "Tuch"^^xsd:string ;
+    to:ipa "[tuːx]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Tuch ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_06 ;
+    to:exemplifiesRule to:Rule_DE_15 ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_Tuch
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ทูค"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Tuch
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Tuch"@en ;
+    to:hasGoldLabel to:GL_DE_Tuch ;
+    to:evaluatesRule to:Rule_DE_06 ;
+    to:evaluatesRule to:Rule_DE_15 .
+
+to:GL_DE_Tuch
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ทูค"@th ;
+    to:thaiScript "ทูค"^^xsd:string .
+
+to:Entry_DE_Genie
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Genie"@de ;
+    to:sourceForm "Genie"^^xsd:string ;
+    to:ipa "[ʒeˈniː]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Genie ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_05 ;
+    to:exemplifiesRule to:Rule_DE_12 ;
+    to:exemplifiesRule to:Rule_DE_25 ;
+    to:hasAmbiguity to:Ambiguity_DE_25 .
+
+to:Thai_DE_Genie
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "จีนี"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Genie
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Genie"@en ;
+    to:hasGoldLabel to:GL_DE_Genie ;
+    to:evaluatesRule to:Rule_DE_05 ;
+    to:evaluatesRule to:Rule_DE_12 ;
+    to:evaluatesPhenomenon to:Ambiguity_DE_25 .
+
+to:GL_DE_Genie
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: จีนี"@th ;
+    to:thaiScript "จีนี"^^xsd:string .
+
+to:Entry_DE_Blammage
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Blammage"@de ;
+    to:sourceForm "Blammage"^^xsd:string ;
+    to:ipa "[blaˈmaːʒə]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Blammage ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_12 ;
+    to:exemplifiesRule to:Rule_DE_19 ;
+    to:exemplifiesRule to:Rule_DE_25 ;
+    to:hasAmbiguity to:Ambiguity_DE_25 .
+
+to:Thai_DE_Blammage
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "บลามาช"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Blammage
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Blammage"@en ;
+    to:hasGoldLabel to:GL_DE_Blammage ;
+    to:evaluatesRule to:Rule_DE_12 ;
+    to:evaluatesRule to:Rule_DE_19 ;
+    to:evaluatesPhenomenon to:Ambiguity_DE_25 .
+
+to:GL_DE_Blammage
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: บลามาช"@th ;
+    to:thaiScript "บลามาช"^^xsd:string .
+
+to:Entry_DE_Pfaff
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Pfaff"@de ;
+    to:sourceForm "Pfaff"^^xsd:string ;
+    to:ipa "[pfaf]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Pfaff ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_16 ;
+    to:exemplifiesRule to:Rule_DE_19 .
+
+to:Thai_DE_Pfaff
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "พฟัฟฟ์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Pfaff
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Pfaff"@en ;
+    to:hasGoldLabel to:GL_DE_Pfaff ;
+    to:evaluatesRule to:Rule_DE_16 ;
+    to:evaluatesRule to:Rule_DE_19 .
+
+to:GL_DE_Pfaff
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: พฟัฟฟ์"@th ;
+    to:thaiScript "พฟัฟฟ์"^^xsd:string .
+
+to:Entry_DE_Opfer
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Opfer"@de ;
+    to:sourceForm "Opfer"^^xsd:string ;
+    to:ipa "[ɔpfɐ]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Opfer ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_09 ;
+    to:exemplifiesRule to:Rule_DE_16 .
+
+to:Thai_DE_Opfer
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ออพเฟอร์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Opfer
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Opfer"@en ;
+    to:hasGoldLabel to:GL_DE_Opfer ;
+    to:evaluatesRule to:Rule_DE_07 ;
+    to:evaluatesRule to:Rule_DE_09 .
+
+to:GL_DE_Opfer
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ออพเฟอร์"@th ;
+    to:thaiScript "ออพเฟอร์"^^xsd:string .
+
+to:Entry_DE_Kopf
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Kopf"@de ;
+    to:sourceForm "Kopf"^^xsd:string ;
+    to:ipa "[kɔpf]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Kopf ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 ;
+    to:exemplifiesRule to:Rule_DE_16 .
+
+to:Thai_DE_Kopf
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "คอพฟ์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Kopf
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Kopf"@en ;
+    to:hasGoldLabel to:GL_DE_Kopf ;
+    to:evaluatesRule to:Rule_DE_04 ;
+    to:evaluatesRule to:Rule_DE_16 .
+
+to:GL_DE_Kopf
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: คอพฟ์"@th ;
+    to:thaiScript "คอพฟ์"^^xsd:string .
+
+to:Entry_DE_schrumpfst
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "schrumpfst"@de ;
+    to:sourceForm "schrumpfst"^^xsd:string ;
+    to:ipa "[ʃʁʊmpfst]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_schrumpfst ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_06 ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_15 .
+
+to:Thai_DE_schrumpfst
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ชรุมพ์ฟสท์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_schrumpfst
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: schrumpfst"@en ;
+    to:hasGoldLabel to:GL_DE_schrumpfst ;
+    to:evaluatesRule to:Rule_DE_06 ;
+    to:evaluatesRule to:Rule_DE_07 .
+
+to:GL_DE_schrumpfst
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ชรุมพ์ฟสท์"@th ;
+    to:thaiScript "ชรุมพ์ฟสท์"^^xsd:string .
+
+to:Entry_DE_Zentner
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Zentner"@de ;
+    to:sourceForm "Zentner"^^xsd:string ;
+    to:ipa "[tsɛntnɐ]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Zentner ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_09 .
+
+to:Thai_DE_Zentner
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เซนท์เนอร์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Zentner
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Zentner"@en ;
+    to:hasGoldLabel to:GL_DE_Zentner ;
+    to:evaluatesRule to:Rule_DE_07 ;
+    to:evaluatesRule to:Rule_DE_09 .
+
+to:GL_DE_Zentner
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เซนท์เนอร์"@th ;
+    to:thaiScript "เซนท์เนอร์"^^xsd:string .
+
+to:Entry_DE_T_nzer
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Tänzer"@de ;
+    to:sourceForm "Tänzer"^^xsd:string ;
+    to:ipa "[tɛntsɐ]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_T_nzer ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_09 .
+
+to:Thai_DE_T_nzer
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เทินเซอร์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_T_nzer
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Tänzer"@en ;
+    to:hasGoldLabel to:GL_DE_T_nzer ;
+    to:evaluatesRule to:Rule_DE_07 ;
+    to:evaluatesRule to:Rule_DE_09 .
+
+to:GL_DE_T_nzer
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เทินเซอร์"@th ;
+    to:thaiScript "เทินเซอร์"^^xsd:string .
+
+to:Entry_DE_Franz
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Franz"@de ;
+    to:sourceForm "Franz"^^xsd:string ;
+    to:ipa "[fʁants]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Franz ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_07 .
+
+to:Thai_DE_Franz
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ฟรันส์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Franz
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Franz"@en ;
+    to:hasGoldLabel to:GL_DE_Franz ;
+    to:evaluatesRule to:Rule_DE_07 .
+
+to:GL_DE_Franz
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ฟรันส์"@th ;
+    to:thaiScript "ฟรันส์"^^xsd:string .
+
+to:Entry_DE_letzt
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "letzt"@de ;
+    to:sourceForm "letzt"^^xsd:string ;
+    to:ipa "[lɛtst]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_letzt ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_16 .
+
+to:Thai_DE_letzt
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เลทสท์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_letzt
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: letzt"@en ;
+    to:hasGoldLabel to:GL_DE_letzt ;
+    to:evaluatesRule to:Rule_DE_16 .
+
+to:GL_DE_letzt
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เลทสท์"@th ;
+    to:thaiScript "เลทสท์"^^xsd:string .
+
+to:Entry_DE_Tschechien_1
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Tschechien"@de ;
+    to:sourceForm "Tschechien"^^xsd:string ;
+    to:ipa "[tʃɛˈçiːən]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Tschechien_1 ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_05 ;
+    to:exemplifiesRule to:Rule_DE_12 ;
+    to:exemplifiesRule to:Rule_DE_16 .
+
+to:Thai_DE_Tschechien_1
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "แชเคียน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Tschechien_1
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Tschechien"@en ;
+    to:hasGoldLabel to:GL_DE_Tschechien_1 ;
+    to:evaluatesRule to:Rule_DE_05 ;
+    to:evaluatesRule to:Rule_DE_12 .
+
+to:GL_DE_Tschechien_1
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: แชเคียน"@th ;
+    to:thaiScript "แชเคียน"^^xsd:string .
+
+to:Entry_DE_Kutsche
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Kutsche"@de ;
+    to:sourceForm "Kutsche"^^xsd:string ;
+    to:ipa "[kʊtʃə]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Kutsche ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_06 ;
+    to:exemplifiesRule to:Rule_DE_12 ;
+    to:exemplifiesRule to:Rule_DE_16 .
+
+to:Thai_DE_Kutsche
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "คุทเชอ"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Kutsche
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Kutsche"@en ;
+    to:hasGoldLabel to:GL_DE_Kutsche ;
+    to:evaluatesRule to:Rule_DE_06 ;
+    to:evaluatesRule to:Rule_DE_12 .
+
+to:GL_DE_Kutsche
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: คุทเชอ"@th ;
+    to:thaiScript "คุทเชอ"^^xsd:string .
+
+to:Entry_DE_Klatsch
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Klatsch"@de ;
+    to:sourceForm "Klatsch"^^xsd:string ;
+    to:ipa "[klatʃ]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Klatsch ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_16 .
+
+to:Thai_DE_Klatsch
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "กลัทช์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Klatsch
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Klatsch"@en ;
+    to:hasGoldLabel to:GL_DE_Klatsch ;
+    to:evaluatesRule to:Rule_DE_16 .
+
+to:GL_DE_Klatsch
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: กลัทช์"@th ;
+    to:thaiScript "กลัทช์"^^xsd:string .
+
+to:Entry_DE_klatschst
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "klatschst"@de ;
+    to:sourceForm "klatschst"^^xsd:string ;
+    to:ipa "[klatʃst]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_klatschst ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_16 .
+
+to:Thai_DE_klatschst
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "กลัทช์สท์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_klatschst
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: klatschst"@en ;
+    to:hasGoldLabel to:GL_DE_klatschst ;
+    to:evaluatesRule to:Rule_DE_16 .
+
+to:GL_DE_klatschst
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: กลัทช์สท์"@th ;
+    to:thaiScript "กลัทช์สท์"^^xsd:string .
+
+to:Entry_DE_Xaver
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Xaver"@de ;
+    to:sourceForm "Xaver"^^xsd:string ;
+    to:ipa "[ksaːvɐ]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Xaver ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_09 ;
+    to:exemplifiesRule to:Rule_DE_15 .
+
+to:Thai_DE_Xaver
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ซาเวอร์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Xaver
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Xaver"@en ;
+    to:hasGoldLabel to:GL_DE_Xaver ;
+    to:evaluatesRule to:Rule_DE_07 ;
+    to:evaluatesRule to:Rule_DE_09 .
+
+to:GL_DE_Xaver
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ซาเวอร์"@th ;
+    to:thaiScript "ซาเวอร์"^^xsd:string .
+
+to:Entry_DE_Axel
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Axel"@de ;
+    to:sourceForm "Axel"^^xsd:string ;
+    to:ipa "[aksəl]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Axel ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 ;
+    to:exemplifiesRule to:Rule_DE_15 .
+
+to:Thai_DE_Axel
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "อักเซล"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Axel
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Axel"@en ;
+    to:hasGoldLabel to:GL_DE_Axel ;
+    to:evaluatesRule to:Rule_DE_04 ;
+    to:evaluatesRule to:Rule_DE_15 .
+
+to:GL_DE_Axel
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: อักเซล"@th ;
+    to:thaiScript "อักเซล"^^xsd:string .
+
+to:Entry_DE_Max
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Max"@de ;
+    to:sourceForm "Max"^^xsd:string ;
+    to:ipa "[maks]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Max ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 ;
+    to:exemplifiesRule to:Rule_DE_15 .
+
+to:Thai_DE_Max
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "มักส์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Max
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Max"@en ;
+    to:hasGoldLabel to:GL_DE_Max ;
+    to:evaluatesRule to:Rule_DE_04 ;
+    to:evaluatesRule to:Rule_DE_15 .
+
+to:GL_DE_Max
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: มักส์"@th ;
+    to:thaiScript "มักส์"^^xsd:string .
+
+to:Entry_DE_Rad
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Rad"@de ;
+    to:sourceForm "Rad"^^xsd:string ;
+    to:ipa "[ʁaːt, raːt, ʀaːt]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Rad ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 ;
+    to:exemplifiesRule to:Rule_DE_17 ;
+    to:hasAmbiguity to:Ambiguity_DE_17 .
+
+to:Thai_DE_Rad
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "รัท"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Rad
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Rad"@en ;
+    to:hasGoldLabel to:GL_DE_Rad ;
+    to:evaluatesRule to:Rule_DE_04 ;
+    to:evaluatesRule to:Rule_DE_17 ;
+    to:evaluatesPhenomenon to:Ambiguity_DE_17 .
+
+to:GL_DE_Rad
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: รัท"@th ;
+    to:thaiScript "รัท"^^xsd:string .
+
+to:Entry_DE_sehen
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "sehen"@de ;
+    to:sourceForm "sehen"^^xsd:string ;
+    to:ipa "[zeːən]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_sehen ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_sehen
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เซเฮิน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_sehen
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: sehen"@en ;
+    to:hasGoldLabel to:GL_DE_sehen ;
+    to:evaluatesRule to:Rule_DE_18 .
+
+to:GL_DE_sehen
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เซเฮิน"@th ;
+    to:thaiScript "เซเฮิน"^^xsd:string .
+
+to:Entry_DE_gehen
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "gehen"@de ;
+    to:sourceForm "gehen"^^xsd:string ;
+    to:ipa "[ɡeːən]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_gehen ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_gehen
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เกเฮิน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_gehen
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: gehen"@en ;
+    to:hasGoldLabel to:GL_DE_gehen ;
+    to:evaluatesRule to:Rule_DE_18 .
+
+to:GL_DE_gehen
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เกเฮิน"@th ;
+    to:thaiScript "เกเฮิน"^^xsd:string .
+
+to:Entry_DE_Bahn
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Bahn"@de ;
+    to:sourceForm "Bahn"^^xsd:string ;
+    to:ipa "[baːn]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Bahn ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_Bahn
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "บาน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Bahn
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Bahn"@en ;
+    to:hasGoldLabel to:GL_DE_Bahn ;
+    to:evaluatesRule to:Rule_DE_04 ;
+    to:evaluatesRule to:Rule_DE_18 .
+
+to:GL_DE_Bahn
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: บาน"@th ;
+    to:thaiScript "บาน"^^xsd:string .
+
+to:Entry_DE_Kahn
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Kahn"@de ;
+    to:sourceForm "Kahn"^^xsd:string ;
+    to:ipa "[kaːn]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Kahn ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_Kahn
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "คาน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Kahn
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Kahn"@en ;
+    to:hasGoldLabel to:GL_DE_Kahn ;
+    to:evaluatesRule to:Rule_DE_04 ;
+    to:evaluatesRule to:Rule_DE_18 .
+
+to:GL_DE_Kahn
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: คาน"@th ;
+    to:thaiScript "คาน"^^xsd:string .
+
+to:Entry_DE_Lohn
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Lohn"@de ;
+    to:sourceForm "Lohn"^^xsd:string ;
+    to:ipa "[loːn]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Lohn ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_Lohn
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "โลน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Lohn
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Lohn"@en ;
+    to:hasGoldLabel to:GL_DE_Lohn ;
+    to:evaluatesRule to:Rule_DE_04 ;
+    to:evaluatesRule to:Rule_DE_18 .
+
+to:GL_DE_Lohn
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: โลน"@th ;
+    to:thaiScript "โลน"^^xsd:string .
+
+to:Entry_DE_R_hm
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Röhm"@de ;
+    to:sourceForm "Röhm"^^xsd:string ;
+    to:ipa "[ʁøːm]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_R_hm ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_08 ;
+    to:exemplifiesRule to:Rule_DE_17 ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_R_hm
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เริม"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_R_hm
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Röhm"@en ;
+    to:hasGoldLabel to:GL_DE_R_hm ;
+    to:evaluatesRule to:Rule_DE_08 ;
+    to:evaluatesRule to:Rule_DE_17 .
+
+to:GL_DE_R_hm
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เริม"@th ;
+    to:thaiScript "เริม"^^xsd:string .
+
+to:Entry_DE_Lehmann
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Lehmann"@de ;
+    to:sourceForm "Lehmann"^^xsd:string ;
+    to:ipa "[leːman]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Lehmann ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_18 ;
+    to:exemplifiesRule to:Rule_DE_19 .
+
+to:Thai_DE_Lehmann
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เลมันน์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Lehmann
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Lehmann"@en ;
+    to:hasGoldLabel to:GL_DE_Lehmann ;
+    to:evaluatesRule to:Rule_DE_18 ;
+    to:evaluatesRule to:Rule_DE_19 .
+
+to:GL_DE_Lehmann
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เลมันน์"@th ;
+    to:thaiScript "เลมันน์"^^xsd:string .
+
+to:Entry_DE_Mann
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Mann"@de ;
+    to:sourceForm "Mann"^^xsd:string ;
+    to:ipa "[man]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Mann ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 ;
+    to:exemplifiesRule to:Rule_DE_19 .
+
+to:Thai_DE_Mann
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "มัน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Mann
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Mann"@en ;
+    to:hasGoldLabel to:GL_DE_Mann ;
+    to:evaluatesRule to:Rule_DE_04 ;
+    to:evaluatesRule to:Rule_DE_19 .
+
+to:GL_DE_Mann
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: มัน"@th ;
+    to:thaiScript "มัน"^^xsd:string .
+
+to:Entry_DE_Riss
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Riss"@de ;
+    to:sourceForm "Riss"^^xsd:string ;
+    to:ipa "[ʁɪs]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Riss ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_05 ;
+    to:exemplifiesRule to:Rule_DE_17 ;
+    to:exemplifiesRule to:Rule_DE_19 .
+
+to:Thai_DE_Riss
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ริส"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Riss
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Riss"@en ;
+    to:hasGoldLabel to:GL_DE_Riss ;
+    to:evaluatesRule to:Rule_DE_05 ;
+    to:evaluatesRule to:Rule_DE_17 .
+
+to:GL_DE_Riss
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ริส"@th ;
+    to:thaiScript "ริส"^^xsd:string .
+
+to:Entry_DE_Grassmann
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Grassmann"@de ;
+    to:sourceForm "Grassmann"^^xsd:string ;
+    to:ipa "[ɡʁasman]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Grassmann ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_19 ;
+    to:exemplifiesRule to:Rule_DE_22 .
+
+to:Thai_DE_Grassmann
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "กราสมัน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Grassmann
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Grassmann"@en ;
+    to:hasGoldLabel to:GL_DE_Grassmann ;
+    to:evaluatesRule to:Rule_DE_07 ;
+    to:evaluatesRule to:Rule_DE_19 .
+
+to:GL_DE_Grassmann
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: กราสมัน"@th ;
+    to:thaiScript "กราสมัน"^^xsd:string .
+
+to:Entry_DE_Butter
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Butter"@de ;
+    to:sourceForm "Butter"^^xsd:string ;
+    to:ipa "[bʊtɐ]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Butter ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_06 ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_09 .
+
+to:Thai_DE_Butter
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "บุทเทอร์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Butter
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Butter"@en ;
+    to:hasGoldLabel to:GL_DE_Butter ;
+    to:evaluatesRule to:Rule_DE_06 ;
+    to:evaluatesRule to:Rule_DE_07 .
+
+to:GL_DE_Butter
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: บุทเทอร์"@th ;
+    to:thaiScript "บุทเทอร์"^^xsd:string .
+
+to:Entry_DE_Hanna
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Hanna"@de ;
+    to:sourceForm "Hanna"^^xsd:string ;
+    to:ipa "[hana]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Hanna ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_18 ;
+    to:exemplifiesRule to:Rule_DE_19 .
+
+to:Thai_DE_Hanna
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ฮันนา"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Hanna
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Hanna"@en ;
+    to:hasGoldLabel to:GL_DE_Hanna ;
+    to:evaluatesRule to:Rule_DE_18 ;
+    to:evaluatesRule to:Rule_DE_19 .
+
+to:GL_DE_Hanna
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ฮันนา"@th ;
+    to:thaiScript "ฮันนา"^^xsd:string .
+
+to:Entry_DE_Edda
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Edda"@de ;
+    to:sourceForm "Edda"^^xsd:string ;
+    to:ipa "[ɛda]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Edda ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 ;
+    to:exemplifiesRule to:Rule_DE_19 .
+
+to:Thai_DE_Edda
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เอดดา"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Edda
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Edda"@en ;
+    to:hasGoldLabel to:GL_DE_Edda ;
+    to:evaluatesRule to:Rule_DE_04 ;
+    to:evaluatesRule to:Rule_DE_19 .
+
+to:GL_DE_Edda
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เอดดา"@th ;
+    to:thaiScript "เอดดา"^^xsd:string .
+
+to:Entry_DE_Retter
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Retter"@de ;
+    to:sourceForm "Retter"^^xsd:string ;
+    to:ipa "[ʁɛtɐ]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Retter ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_09 ;
+    to:exemplifiesRule to:Rule_DE_17 ;
+    to:exemplifiesRule to:Rule_DE_19 .
+
+to:Thai_DE_Retter
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เรทเทอร์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Retter
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Retter"@en ;
+    to:hasGoldLabel to:GL_DE_Retter ;
+    to:evaluatesRule to:Rule_DE_09 ;
+    to:evaluatesRule to:Rule_DE_17 .
+
+to:GL_DE_Retter
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เรทเทอร์"@th ;
+    to:thaiScript "เรทเทอร์"^^xsd:string .
+
+to:Entry_DE_schaffen
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "schaffen"@de ;
+    to:sourceForm "schaffen"^^xsd:string ;
+    to:ipa "[ʃafən]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_schaffen ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_15 ;
+    to:exemplifiesRule to:Rule_DE_19 .
+
+to:Thai_DE_schaffen
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ชาฟเฟิน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_schaffen
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: schaffen"@en ;
+    to:hasGoldLabel to:GL_DE_schaffen ;
+    to:evaluatesRule to:Rule_DE_15 ;
+    to:evaluatesRule to:Rule_DE_19 .
+
+to:GL_DE_schaffen
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ชาฟเฟิน"@th ;
+    to:thaiScript "ชาฟเฟิน"^^xsd:string .
+
+to:Entry_DE_schrotten
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "schrotten"@de ;
+    to:sourceForm "schrotten"^^xsd:string ;
+    to:ipa "[ʃʁɔtən]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_schrotten ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_15 ;
+    to:exemplifiesRule to:Rule_DE_19 .
+
+to:Thai_DE_schrotten
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ชร็อทเทิน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_schrotten
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: schrotten"@en ;
+    to:hasGoldLabel to:GL_DE_schrotten ;
+    to:evaluatesRule to:Rule_DE_07 ;
+    to:evaluatesRule to:Rule_DE_15 .
+
+to:GL_DE_schrotten
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ชร็อทเทิน"@th ;
+    to:thaiScript "ชร็อทเทิน"^^xsd:string .
+
+to:Entry_DE_Hessen
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Hessen"@de ;
+    to:sourceForm "Hessen"^^xsd:string ;
+    to:ipa "[hɛsən]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Hessen ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_18 ;
+    to:exemplifiesRule to:Rule_DE_19 ;
+    to:exemplifiesRule to:Rule_DE_22 .
+
+to:Thai_DE_Hessen
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เฮสเซิน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Hessen
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Hessen"@en ;
+    to:hasGoldLabel to:GL_DE_Hessen ;
+    to:evaluatesRule to:Rule_DE_18 ;
+    to:evaluatesRule to:Rule_DE_19 .
+
+to:GL_DE_Hessen
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เฮสเซิน"@th ;
+    to:thaiScript "เฮสเซิน"^^xsd:string .
+
+to:Entry_DE_r_chen
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "rächen"@de ;
+    to:sourceForm "rächen"^^xsd:string ;
+    to:ipa "[ʁɛçən]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_r_chen ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_15 ;
+    to:exemplifiesRule to:Rule_DE_17 .
+
+to:Thai_DE_r_chen
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เรเชิน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_r_chen
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: rächen"@en ;
+    to:hasGoldLabel to:GL_DE_r_chen ;
+    to:evaluatesRule to:Rule_DE_07 ;
+    to:evaluatesRule to:Rule_DE_15 .
+
+to:GL_DE_r_chen
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เรเชิน"@th ;
+    to:thaiScript "เรเชิน"^^xsd:string .
+
+to:Entry_DE_machen
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "machen"@de ;
+    to:sourceForm "machen"^^xsd:string ;
+    to:ipa "[maxən]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_machen ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_15 ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_machen
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "มาเชิน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_machen
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: machen"@en ;
+    to:hasGoldLabel to:GL_DE_machen ;
+    to:evaluatesRule to:Rule_DE_15 ;
+    to:evaluatesRule to:Rule_DE_18 .
+
+to:GL_DE_machen
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: มาเชิน"@th ;
+    to:thaiScript "มาเชิน"^^xsd:string .
+
+to:Entry_DE_Fischer
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Fischer"@de ;
+    to:sourceForm "Fischer"^^xsd:string ;
+    to:ipa "[fɪʃɐ]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Fischer ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_05 ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_09 .
+
+to:Thai_DE_Fischer
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ฟิเชอร์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Fischer
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Fischer"@en ;
+    to:hasGoldLabel to:GL_DE_Fischer ;
+    to:evaluatesRule to:Rule_DE_05 ;
+    to:evaluatesRule to:Rule_DE_07 .
+
+to:GL_DE_Fischer
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ฟิเชอร์"@th ;
+    to:thaiScript "ฟิเชอร์"^^xsd:string .
+
+to:Entry_DE_singen_1
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "singen"@de ;
+    to:sourceForm "singen"^^xsd:string ;
+    to:ipa "[zɪŋən]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_singen_1 ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_05 ;
+    to:exemplifiesRule to:Rule_DE_20 .
+
+to:Thai_DE_singen_1
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ซิงเงิน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_singen_1
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: singen"@en ;
+    to:hasGoldLabel to:GL_DE_singen_1 ;
+    to:evaluatesRule to:Rule_DE_05 ;
+    to:evaluatesRule to:Rule_DE_20 .
+
+to:GL_DE_singen_1
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ซิงเงิน"@th ;
+    to:thaiScript "ซิงเงิน"^^xsd:string .
+
+to:Entry_DE_Lange
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Lange"@de ;
+    to:sourceForm "Lange"^^xsd:string ;
+    to:ipa "[laŋə]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Lange ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_12 ;
+    to:exemplifiesRule to:Rule_DE_20 .
+
+to:Thai_DE_Lange
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ลังเงอ"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Lange
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Lange"@en ;
+    to:hasGoldLabel to:GL_DE_Lange ;
+    to:evaluatesRule to:Rule_DE_12 ;
+    to:evaluatesRule to:Rule_DE_20 .
+
+to:GL_DE_Lange
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ลังเงอ"@th ;
+    to:thaiScript "ลังเงอ"^^xsd:string .
+
+to:Entry_DE_Inge
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Inge"@de ;
+    to:sourceForm "Inge"^^xsd:string ;
+    to:ipa "[ɪŋə]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Inge ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 ;
+    to:exemplifiesRule to:Rule_DE_05 ;
+    to:exemplifiesRule to:Rule_DE_12 .
+
+to:Thai_DE_Inge
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "อิงเงอ"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Inge
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Inge"@en ;
+    to:hasGoldLabel to:GL_DE_Inge ;
+    to:evaluatesRule to:Rule_DE_04 ;
+    to:evaluatesRule to:Rule_DE_05 .
+
+to:GL_DE_Inge
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: อิงเงอ"@th ;
+    to:thaiScript "อิงเงอ"^^xsd:string .
+
+to:Entry_DE_B_cker
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Bäcker"@de ;
+    to:sourceForm "Bäcker"^^xsd:string ;
+    to:ipa "[bɛkɐ]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_B_cker ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_09 ;
+    to:exemplifiesRule to:Rule_DE_20 .
+
+to:Thai_DE_B_cker
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เบคเกอร์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_B_cker
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Bäcker"@en ;
+    to:hasGoldLabel to:GL_DE_B_cker ;
+    to:evaluatesRule to:Rule_DE_07 ;
+    to:evaluatesRule to:Rule_DE_09 .
+
+to:GL_DE_B_cker
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เบคเกอร์"@th ;
+    to:thaiScript "เบคเกอร์"^^xsd:string .
+
+to:Entry_DE_Milch
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Milch"@de ;
+    to:sourceForm "Milch"^^xsd:string ;
+    to:ipa "[mɪlç]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Milch ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_05 ;
+    to:exemplifiesRule to:Rule_DE_15 ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_Milch
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "มิลช์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Milch
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Milch"@en ;
+    to:hasGoldLabel to:GL_DE_Milch ;
+    to:evaluatesRule to:Rule_DE_05 ;
+    to:evaluatesRule to:Rule_DE_15 .
+
+to:GL_DE_Milch
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: มิลช์"@th ;
+    to:thaiScript "มิลช์"^^xsd:string .
+
+to:Entry_DE_Pfalz
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Pfalz"@de ;
+    to:sourceForm "Pfalz"^^xsd:string ;
+    to:ipa "[pfalts]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Pfalz ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_16 .
+
+to:Thai_DE_Pfalz
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "พฟัลส์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Pfalz
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Pfalz"@en ;
+    to:hasGoldLabel to:GL_DE_Pfalz ;
+    to:evaluatesRule to:Rule_DE_16 .
+
+to:GL_DE_Pfalz
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: พฟัลส์"@th ;
+    to:thaiScript "พฟัลส์"^^xsd:string .
+
+to:Entry_DE_l_cheln_1
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "lächeln"@de ;
+    to:sourceForm "lächeln"^^xsd:string ;
+    to:ipa "[lɛçəln]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_l_cheln_1 ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_15 ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_l_cheln_1
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เลเชิลน์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_l_cheln_1
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: lächeln"@en ;
+    to:hasGoldLabel to:GL_DE_l_cheln_1 ;
+    to:evaluatesRule to:Rule_DE_15 ;
+    to:evaluatesRule to:Rule_DE_18 .
+
+to:GL_DE_l_cheln_1
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เลเชิลน์"@th ;
+    to:thaiScript "เลเชิลน์"^^xsd:string .
+
+to:Entry_DE_H_uptner
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Häuptner"@de ;
+    to:sourceForm "Häuptner"^^xsd:string ;
+    to:ipa "[hɔɪptnɐ]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_H_uptner ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_05 ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_09 .
+
+to:Thai_DE_H_uptner
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ฮอยพท์เนอร์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_H_uptner
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Häuptner"@en ;
+    to:hasGoldLabel to:GL_DE_H_uptner ;
+    to:evaluatesRule to:Rule_DE_05 ;
+    to:evaluatesRule to:Rule_DE_07 .
+
+to:GL_DE_H_uptner
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ฮอยพท์เนอร์"@th ;
+    to:thaiScript "ฮอยพท์เนอร์"^^xsd:string .
+
+to:Entry_DE_Heinz
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Heinz"@de ;
+    to:sourceForm "Heinz"^^xsd:string ;
+    to:ipa "[haɪnts]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Heinz ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_05 ;
+    to:exemplifiesRule to:Rule_DE_11 ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_Heinz
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ไฮนส์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Heinz
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Heinz"@en ;
+    to:hasGoldLabel to:GL_DE_Heinz ;
+    to:evaluatesRule to:Rule_DE_05 ;
+    to:evaluatesRule to:Rule_DE_11 .
+
+to:GL_DE_Heinz
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ไฮนส์"@th ;
+    to:thaiScript "ไฮนส์"^^xsd:string .
+
+to:Entry_DE_selbst
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "selbst"@de ;
+    to:sourceForm "selbst"^^xsd:string ;
+    to:ipa "[zɛlpst]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_selbst ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 .
+
+to:Thai_DE_selbst
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เซลพ์สท์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_selbst
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: selbst"@en ;
+    to:hasGoldLabel to:GL_DE_selbst ;
+    to:evaluatesRule to:Rule_DE_04 .
+
+to:GL_DE_selbst
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เซลพ์สท์"@th ;
+    to:thaiScript "เซลพ์สท์"^^xsd:string .
+
+to:Entry_DE_Wolfsburg
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Wolfsburg"@de ;
+    to:sourceForm "Wolfsburg"^^xsd:string ;
+    to:ipa "[vɔlfsbʊʁk]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Wolfsburg ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_06 ;
+    to:exemplifiesRule to:Rule_DE_07 .
+
+to:Thai_DE_Wolfsburg
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "วอลฟ์สบูร์ก"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Wolfsburg
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Wolfsburg"@en ;
+    to:hasGoldLabel to:GL_DE_Wolfsburg ;
+    to:evaluatesRule to:Rule_DE_06 ;
+    to:evaluatesRule to:Rule_DE_07 .
+
+to:GL_DE_Wolfsburg
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: วอลฟ์สบูร์ก"@th ;
+    to:thaiScript "วอลฟ์สบูร์ก"^^xsd:string .
+
+to:Entry_DE_hilfsbereit
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "hilfsbereit"@de ;
+    to:sourceForm "hilfsbereit"^^xsd:string ;
+    to:ipa "[hɪlfsbəʁaɪt]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_hilfsbereit ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_05 ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_11 .
+
+to:Thai_DE_hilfsbereit
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ฮิลฟ์สเบไรท์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_hilfsbereit
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: hilfsbereit"@en ;
+    to:hasGoldLabel to:GL_DE_hilfsbereit ;
+    to:evaluatesRule to:Rule_DE_05 ;
+    to:evaluatesRule to:Rule_DE_07 .
+
+to:GL_DE_hilfsbereit
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ฮิลฟ์สเบไรท์"@th ;
+    to:thaiScript "ฮิลฟ์สเบไรท์"^^xsd:string .
+
+to:Entry_DE_Karl
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Karl"@de ;
+    to:sourceForm "Karl"^^xsd:string ;
+    to:ipa "[kaɐl, kaːl]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Karl ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:hasAmbiguity to:Ambiguity_DE_21 .
+
+to:Thai_DE_Karl
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "คาร์ล"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Karl
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Karl"@en ;
+    to:hasGoldLabel to:GL_DE_Karl ;
+    to:evaluatesRule to:Rule_DE_04 ;
+    to:evaluatesRule to:Rule_DE_07 ;
+    to:evaluatesPhenomenon to:Ambiguity_DE_21 .
+
+to:GL_DE_Karl
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: คาร์ล"@th ;
+    to:thaiScript "คาร์ล"^^xsd:string .
+
+to:Entry_DE_Berg_1
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Berg"@de ;
+    to:sourceForm "Berg"^^xsd:string ;
+    to:ipa "[bɛʁk, bɛʀk]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Berg_1 ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:hasAmbiguity to:Ambiguity_DE_07 .
+
+to:Thai_DE_Berg_1
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เบิร์ก"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Berg_1
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Berg"@en ;
+    to:hasGoldLabel to:GL_DE_Berg_1 ;
+    to:evaluatesRule to:Rule_DE_04 ;
+    to:evaluatesRule to:Rule_DE_07 ;
+    to:evaluatesPhenomenon to:Ambiguity_DE_07 .
+
+to:GL_DE_Berg_1
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เบิร์ก"@th ;
+    to:thaiScript "เบิร์ก"^^xsd:string .
+
+to:Entry_DE_Kurs
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Kurs"@de ;
+    to:sourceForm "Kurs"^^xsd:string ;
+    to:ipa "[kʊʁs, kʊʀs]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Kurs ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_06 ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:hasAmbiguity to:Ambiguity_DE_21 .
+
+to:Thai_DE_Kurs
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "คูร์ส"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Kurs
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Kurs"@en ;
+    to:hasGoldLabel to:GL_DE_Kurs ;
+    to:evaluatesRule to:Rule_DE_06 ;
+    to:evaluatesRule to:Rule_DE_07 ;
+    to:evaluatesPhenomenon to:Ambiguity_DE_21 .
+
+to:GL_DE_Kurs
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: คูร์ส"@th ;
+    to:thaiScript "คูร์ส"^^xsd:string .
+
+to:Entry_DE_J_rg
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Jörg"@de ;
+    to:sourceForm "Jörg"^^xsd:string ;
+    to:ipa "[jɛʁk, jɛʀk]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_J_rg ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_08 .
+
+to:Thai_DE_J_rg
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เยิร์ก"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_J_rg
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Jörg"@en ;
+    to:hasGoldLabel to:GL_DE_J_rg ;
+    to:evaluatesRule to:Rule_DE_07 ;
+    to:evaluatesRule to:Rule_DE_08 .
+
+to:GL_DE_J_rg
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เยิร์ก"@th ;
+    to:thaiScript "เยิร์ก"^^xsd:string .
+
+to:Entry_DE_Pferd
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Pferd"@de ;
+    to:sourceForm "Pferd"^^xsd:string ;
+    to:ipa "[pfɛʁt, pfɛʀt]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Pferd ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_16 ;
+    to:hasAmbiguity to:Ambiguity_DE_21 .
+
+to:Thai_DE_Pferd
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "พเฟิร์ท"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Pferd
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Pferd"@en ;
+    to:hasGoldLabel to:GL_DE_Pferd ;
+    to:evaluatesRule to:Rule_DE_07 ;
+    to:evaluatesRule to:Rule_DE_16 ;
+    to:evaluatesPhenomenon to:Ambiguity_DE_21 .
+
+to:GL_DE_Pferd
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: พเฟิร์ท"@th ;
+    to:thaiScript "พเฟิร์ท"^^xsd:string .
+
+to:Entry_DE_Erhardt
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Erhardt"@de ;
+    to:sourceForm "Erhardt"^^xsd:string ;
+    to:ipa "[ɛʁhaʁt, ɛʁhaːt]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Erhardt ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_Erhardt
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เอิร์ฮาร์ท"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Erhardt
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Erhardt"@en ;
+    to:hasGoldLabel to:GL_DE_Erhardt ;
+    to:evaluatesRule to:Rule_DE_07 ;
+    to:evaluatesRule to:Rule_DE_18 .
+
+to:GL_DE_Erhardt
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เอิร์ฮาร์ท"@th ;
+    to:thaiScript "เอิร์ฮาร์ท"^^xsd:string .
+
+to:Entry_DE_Karsten__Carsten
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Karsten, Carsten"@de ;
+    to:sourceForm "Karsten, Carsten"^^xsd:string ;
+    to:ipa "[kaːstən, kaːstən]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Karsten__Carsten ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 .
+
+to:Thai_DE_Karsten__Carsten
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "คาร์สเทิน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Karsten__Carsten
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Karsten, Carsten"@en ;
+    to:hasGoldLabel to:GL_DE_Karsten__Carsten ;
+    to:evaluatesRule to:Rule_DE_04 .
+
+to:GL_DE_Karsten__Carsten
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: คาร์สเทิน"@th ;
+    to:thaiScript "คาร์สเทิน"^^xsd:string .
+
+to:Entry_DE_Horst
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Horst"@de ;
+    to:sourceForm "Horst"^^xsd:string ;
+    to:ipa "[hɔʁst, hɔʀst]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Horst ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_Horst
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ฮอร์สท์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Horst
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Horst"@en ;
+    to:hasGoldLabel to:GL_DE_Horst ;
+    to:evaluatesRule to:Rule_DE_07 ;
+    to:evaluatesRule to:Rule_DE_18 .
+
+to:GL_DE_Horst
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ฮอร์สท์"@th ;
+    to:thaiScript "ฮอร์สท์"^^xsd:string .
+
+to:Entry_DE_Herz
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Herz"@de ;
+    to:sourceForm "Herz"^^xsd:string ;
+    to:ipa "[hɛʁts, hɛʀts]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Herz ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_Herz
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เฮิร์ส"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Herz
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Herz"@en ;
+    to:hasGoldLabel to:GL_DE_Herz ;
+    to:evaluatesRule to:Rule_DE_04 ;
+    to:evaluatesRule to:Rule_DE_07 .
+
+to:GL_DE_Herz
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เฮิร์ส"@th ;
+    to:thaiScript "เฮิร์ส"^^xsd:string .
+
+to:Entry_DE_Hary
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Hary"@de ;
+    to:sourceForm "Hary"^^xsd:string ;
+    to:ipa "[haʁts, haːts]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Hary ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_Hary
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ฮารีส"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Hary
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Hary"@en ;
+    to:hasGoldLabel to:GL_DE_Hary ;
+    to:evaluatesRule to:Rule_DE_04 ;
+    to:evaluatesRule to:Rule_DE_07 .
+
+to:GL_DE_Hary
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ฮารีส"@th ;
+    to:thaiScript "ฮารีส"^^xsd:string .
+
+to:Entry_DE_Schwarz
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Schwarz"@de ;
+    to:sourceForm "Schwarz"^^xsd:string ;
+    to:ipa "[ʃvaʁts, ʃvaːts]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Schwarz ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_13 ;
+    to:exemplifiesRule to:Rule_DE_15 .
+
+to:Thai_DE_Schwarz
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ชวาร์ส"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Schwarz
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Schwarz"@en ;
+    to:hasGoldLabel to:GL_DE_Schwarz ;
+    to:evaluatesRule to:Rule_DE_07 ;
+    to:evaluatesRule to:Rule_DE_13 .
+
+to:GL_DE_Schwarz
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ชวาร์ส"@th ;
+    to:thaiScript "ชวาร์ส"^^xsd:string .
+
+to:Entry_DE_elf
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "elf"@de ;
+    to:sourceForm "elf"^^xsd:string ;
+    to:ipa "[ɛlf]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_elf ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 .
+
+to:Thai_DE_elf
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เอลฟ์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_elf
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: elf"@en ;
+    to:hasGoldLabel to:GL_DE_elf ;
+    to:evaluatesRule to:Rule_DE_04 .
+
+to:GL_DE_elf
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เอลฟ์"@th ;
+    to:thaiScript "เอลฟ์"^^xsd:string .
+
+to:Entry_DE_Ralf
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Ralf"@de ;
+    to:sourceForm "Ralf"^^xsd:string ;
+    to:ipa "[ʁalf]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Ralf ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 ;
+    to:exemplifiesRule to:Rule_DE_17 .
+
+to:Thai_DE_Ralf
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "รัลฟ์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Ralf
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Ralf"@en ;
+    to:hasGoldLabel to:GL_DE_Ralf ;
+    to:evaluatesRule to:Rule_DE_04 ;
+    to:evaluatesRule to:Rule_DE_17 .
+
+to:GL_DE_Ralf
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: รัลฟ์"@th ;
+    to:thaiScript "รัลฟ์"^^xsd:string .
+
+to:Entry_DE_Schelf
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Schelf"@de ;
+    to:sourceForm "Schelf"^^xsd:string ;
+    to:ipa "[ʃɛlf]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Schelf ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_13 ;
+    to:exemplifiesRule to:Rule_DE_15 .
+
+to:Thai_DE_Schelf
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เชลฟ์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Schelf
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Schelf"@en ;
+    to:hasGoldLabel to:GL_DE_Schelf ;
+    to:evaluatesRule to:Rule_DE_13 ;
+    to:evaluatesRule to:Rule_DE_15 .
+
+to:GL_DE_Schelf
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เชลฟ์"@th ;
+    to:thaiScript "เชลฟ์"^^xsd:string .
+
+to:Entry_DE_Ulf
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Ulf"@de ;
+    to:sourceForm "Ulf"^^xsd:string ;
+    to:ipa "[ʊlf]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Ulf ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_06 .
+
+to:Thai_DE_Ulf
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "อุลฟ์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Ulf
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Ulf"@en ;
+    to:hasGoldLabel to:GL_DE_Ulf ;
+    to:evaluatesRule to:Rule_DE_06 .
+
+to:GL_DE_Ulf
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: อุลฟ์"@th ;
+    to:thaiScript "อุลฟ์"^^xsd:string .
+
+to:Entry_DE_Wolf
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Wolf"@de ;
+    to:sourceForm "Wolf"^^xsd:string ;
+    to:ipa "[vɔlf]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Wolf ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 .
+
+to:Thai_DE_Wolf
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "โวลฟ์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Wolf
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Wolf"@en ;
+    to:hasGoldLabel to:GL_DE_Wolf ;
+    to:evaluatesRule to:Rule_DE_04 .
+
+to:GL_DE_Wolf
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: โวลฟ์"@th ;
+    to:thaiScript "โวลฟ์"^^xsd:string .
+
+to:Entry_DE_Helm
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Helm"@de ;
+    to:sourceForm "Helm"^^xsd:string ;
+    to:ipa "[hɛlf]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Helm ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_Helm
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เฮลฟ์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Helm
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Helm"@en ;
+    to:hasGoldLabel to:GL_DE_Helm ;
+    to:evaluatesRule to:Rule_DE_04 ;
+    to:evaluatesRule to:Rule_DE_18 .
+
+to:GL_DE_Helm
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เฮลฟ์"@th ;
+    to:thaiScript "เฮลฟ์"^^xsd:string .
+
+to:Entry_DE_Ulm
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Ulm"@de ;
+    to:sourceForm "Ulm"^^xsd:string ;
+    to:ipa "[ʊlm]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Ulm ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_06 .
+
+to:Thai_DE_Ulm
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "อุลม์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Ulm
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Ulm"@en ;
+    to:hasGoldLabel to:GL_DE_Ulm ;
+    to:evaluatesRule to:Rule_DE_06 .
+
+to:GL_DE_Ulm
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: อุลม์"@th ;
+    to:thaiScript "อุลม์"^^xsd:string .
+
+to:Entry_DE_essen
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "essen"@de ;
+    to:sourceForm "essen"^^xsd:string ;
+    to:ipa "[ɛsən]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_essen ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_19 ;
+    to:exemplifiesRule to:Rule_DE_22 .
+
+to:Thai_DE_essen
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เอสเซิน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_essen
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: essen"@en ;
+    to:hasGoldLabel to:GL_DE_essen ;
+    to:evaluatesRule to:Rule_DE_19 ;
+    to:evaluatesRule to:Rule_DE_22 .
+
+to:GL_DE_essen
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เอสเซิน"@th ;
+    to:thaiScript "เอสเซิน"^^xsd:string .
+
+to:Entry_DE_Betten
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Betten"@de ;
+    to:sourceForm "Betten"^^xsd:string ;
+    to:ipa "[bɛtən]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Betten ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_19 .
+
+to:Thai_DE_Betten
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เบทเทิน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Betten
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Betten"@en ;
+    to:hasGoldLabel to:GL_DE_Betten ;
+    to:evaluatesRule to:Rule_DE_19 .
+
+to:GL_DE_Betten
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เบทเทิน"@th ;
+    to:thaiScript "เบทเทิน"^^xsd:string .
+
+to:Entry_DE_selbst_1
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "selbst"@de ;
+    to:sourceForm "selbst"^^xsd:string ;
+    to:ipa "[zɛlpst]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_selbst_1 ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 .
+
+to:Thai_DE_selbst_1
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เซลพ์สท์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_selbst_1
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: selbst"@en ;
+    to:hasGoldLabel to:GL_DE_selbst_1 ;
+    to:evaluatesRule to:Rule_DE_04 .
+
+to:GL_DE_selbst_1
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เซลพ์สท์"@th ;
+    to:thaiScript "เซลพ์สท์"^^xsd:string .
+
+to:Entry_DE_offen
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "offen"@de ;
+    to:sourceForm "offen"^^xsd:string ;
+    to:ipa "[ɔfən]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_offen ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_19 .
+
+to:Thai_DE_offen
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ออฟเฟิน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_offen
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: offen"@en ;
+    to:hasGoldLabel to:GL_DE_offen ;
+    to:evaluatesRule to:Rule_DE_19 .
+
+to:GL_DE_offen
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ออฟเฟิน"@th ;
+    to:thaiScript "ออฟเฟิน"^^xsd:string .
+
+to:Entry_DE_Koch
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Koch"@de ;
+    to:sourceForm "Koch"^^xsd:string ;
+    to:ipa "[kɔx]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Koch ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 ;
+    to:exemplifiesRule to:Rule_DE_15 ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_Koch
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "โคค"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Koch
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Koch"@en ;
+    to:hasGoldLabel to:GL_DE_Koch ;
+    to:evaluatesRule to:Rule_DE_04 ;
+    to:evaluatesRule to:Rule_DE_15 .
+
+to:GL_DE_Koch
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: โคค"@th ;
+    to:thaiScript "โคค"^^xsd:string .
+
+to:Entry_DE_Ernst
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Ernst"@de ;
+    to:sourceForm "Ernst"^^xsd:string ;
+    to:ipa "[ɛʁnst, ɛʀnst]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Ernst ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_07 .
+
+to:Thai_DE_Ernst
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เอิร์นสท์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Ernst
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Ernst"@en ;
+    to:hasGoldLabel to:GL_DE_Ernst ;
+    to:evaluatesRule to:Rule_DE_07 .
+
+to:GL_DE_Ernst
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เอิร์นสท์"@th ;
+    to:thaiScript "เอิร์นสท์"^^xsd:string .
+
+to:Entry_DE_Herbst
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Herbst"@de ;
+    to:sourceForm "Herbst"^^xsd:string ;
+    to:ipa "[hɛʁpst, hɛʀpst]"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Herbst ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_07 ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_Herbst
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เฮิร์พ์สท์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Herbst
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Herbst"@en ;
+    to:hasGoldLabel to:GL_DE_Herbst ;
+    to:evaluatesRule to:Rule_DE_07 ;
+    to:evaluatesRule to:Rule_DE_18 .
+
+to:GL_DE_Herbst
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เฮิร์พ์สท์"@th ;
+    to:thaiScript "เฮิร์พ์สท์"^^xsd:string .
+
+to:Entry_DE_DAAD
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "DAAD"@de ;
+    to:sourceForm "DAAD"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_DAAD ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_10 ;
+    to:exemplifiesRule to:Rule_DE_24 .
+
+to:Thai_DE_DAAD
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ดาด"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:Entry_DE_DFB
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "DFB"@de ;
+    to:sourceForm "DFB"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_DFB ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_24 .
+
+to:Thai_DE_DFB
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ดีเอฟเบ"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:Entry_DE_DW
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "DW"@de ;
+    to:sourceForm "DW"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_DW ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_24 .
+
+to:Thai_DE_DW
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ดีเวอ"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:Entry_DE_DaF
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "DaF"@de ;
+    to:sourceForm "DaF"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_DaF ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 .
+
+to:Thai_DE_DaF
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ทาฟ"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_DaF
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: DaF"@en ;
+    to:hasGoldLabel to:GL_DE_DaF ;
+    to:evaluatesRule to:Rule_DE_04 .
+
+to:GL_DE_DaF
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ทาฟ"@th ;
+    to:thaiScript "ทาฟ"^^xsd:string .
+
+to:Entry_DE_CeBIT
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "CeBIT"@de ;
+    to:sourceForm "CeBIT"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_CeBIT ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 .
+
+to:Thai_DE_CeBIT
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เซบิท"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_CeBIT
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: CeBIT"@en ;
+    to:hasGoldLabel to:GL_DE_CeBIT ;
+    to:evaluatesRule to:Rule_DE_04 .
+
+to:GL_DE_CeBIT
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เซบิท"@th ;
+    to:thaiScript "เซบิท"^^xsd:string .
+
+to:Entry_DE_ver_di
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "ver.di"@de ;
+    to:sourceForm "ver.di"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_ver_di ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_04 .
+
+to:Thai_DE_ver_di
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เฟร์ดี"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_ver_di
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: ver.di"@en ;
+    to:hasGoldLabel to:GL_DE_ver_di ;
+    to:evaluatesRule to:Rule_DE_04 .
+
+to:GL_DE_ver_di
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เฟร์ดี"@th ;
+    to:thaiScript "เฟร์ดี"^^xsd:string .
+
+to:Entry_DE_J__Heuser
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "J. Heuser"@de ;
+    to:sourceForm "J. Heuser"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_J__Heuser ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_09 ;
+    to:exemplifiesRule to:Rule_DE_11 ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_J__Heuser
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เจ. ฮอยเซอร์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_J__Heuser
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: J. Heuser"@en ;
+    to:hasGoldLabel to:GL_DE_J__Heuser ;
+    to:evaluatesRule to:Rule_DE_09 ;
+    to:evaluatesRule to:Rule_DE_11 .
+
+to:GL_DE_J__Heuser
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เจ. ฮอยเซอร์"@th ;
+    to:thaiScript "เจ. ฮอยเซอร์"^^xsd:string .
+
+to:Entry_DE_E_T_A__Hoffmann
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "E.T.A. Hoffmann"@de ;
+    to:sourceForm "E.T.A. Hoffmann"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_E_T_A__Hoffmann ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_18 ;
+    to:exemplifiesRule to:Rule_DE_19 .
+
+to:Thai_DE_E_T_A__Hoffmann
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เอ.ที.เอ. ฮอฟมันน์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_E_T_A__Hoffmann
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: E.T.A. Hoffmann"@en ;
+    to:hasGoldLabel to:GL_DE_E_T_A__Hoffmann ;
+    to:evaluatesRule to:Rule_DE_18 ;
+    to:evaluatesRule to:Rule_DE_19 .
+
+to:GL_DE_E_T_A__Hoffmann
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เอ.ที.เอ. ฮอฟมันน์"@th ;
+    to:thaiScript "เอ.ที.เอ. ฮอฟมันน์"^^xsd:string .
+
+to:Entry_DE_F_rst_Otto_von_Bismarck
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Fürst Otto von Bismarck"@de ;
+    to:sourceForm "Fürst Otto von Bismarck"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_F_rst_Otto_von_Bismarck ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_06 ;
+    to:exemplifiesRule to:Rule_DE_19 ;
+    to:exemplifiesRule to:Rule_DE_20 ;
+    to:hasAmbiguity to:Ambiguity_DE_27 .
+
+to:Thai_DE_F_rst_Otto_von_Bismarck
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เฟือร์สท์ ออทโท ฟอน บิสมาร์ค"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_F_rst_Otto_von_Bismarck
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Fürst Otto von Bismarck"@en ;
+    to:hasGoldLabel to:GL_DE_F_rst_Otto_von_Bismarck ;
+    to:evaluatesRule to:Rule_DE_06 ;
+    to:evaluatesRule to:Rule_DE_19 ;
+    to:evaluatesPhenomenon to:Ambiguity_DE_27 .
+
+to:GL_DE_F_rst_Otto_von_Bismarck
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เฟือร์สท์ ออทโท ฟอน บิสมาร์ค"@th ;
+    to:thaiScript "เฟือร์สท์ ออทโท ฟอน บิสมาร์ค"^^xsd:string .
+
+to:Entry_DE_Graf_von_Zeppelin
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Graf von Zeppelin"@de ;
+    to:sourceForm "Graf von Zeppelin"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Graf_von_Zeppelin ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_19 ;
+    to:exemplifiesRule to:Rule_DE_27 ;
+    to:hasAmbiguity to:Ambiguity_DE_27 .
+
+to:Thai_DE_Graf_von_Zeppelin
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "กราฟ ฟอน เซปเพลิน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Graf_von_Zeppelin
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Graf von Zeppelin"@en ;
+    to:hasGoldLabel to:GL_DE_Graf_von_Zeppelin ;
+    to:evaluatesRule to:Rule_DE_19 ;
+    to:evaluatesRule to:Rule_DE_27 ;
+    to:evaluatesPhenomenon to:Ambiguity_DE_27 .
+
+to:GL_DE_Graf_von_Zeppelin
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: กราฟ ฟอน เซปเพลิน"@th ;
+    to:thaiScript "กราฟ ฟอน เซปเพลิน"^^xsd:string .
+
+to:Entry_DE_U_Bahn
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "U-Bahn"@de ;
+    to:sourceForm "U-Bahn"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_U_Bahn ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_18 ;
+    to:exemplifiesRule to:Rule_DE_28 .
+
+to:Thai_DE_U_Bahn
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "อู-บาน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_U_Bahn
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: U-Bahn"@en ;
+    to:hasGoldLabel to:GL_DE_U_Bahn ;
+    to:evaluatesRule to:Rule_DE_18 ;
+    to:evaluatesRule to:Rule_DE_28 .
+
+to:GL_DE_U_Bahn
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: อู-บาน"@th ;
+    to:thaiScript "อู-บาน"^^xsd:string .
+
+to:Entry_DE_S_Bahn
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "S-Bahn"@de ;
+    to:sourceForm "S-Bahn"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_S_Bahn ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_18 ;
+    to:exemplifiesRule to:Rule_DE_28 .
+
+to:Thai_DE_S_Bahn
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เอส-บาน"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_S_Bahn
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: S-Bahn"@en ;
+    to:hasGoldLabel to:GL_DE_S_Bahn ;
+    to:evaluatesRule to:Rule_DE_18 ;
+    to:evaluatesRule to:Rule_DE_28 .
+
+to:GL_DE_S_Bahn
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เอส-บาน"@th ;
+    to:thaiScript "เอส-บาน"^^xsd:string .
+
+to:Entry_DE_Baden_W_rttemberg
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Baden-Württemberg"@de ;
+    to:sourceForm "Baden-Württemberg"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Baden_W_rttemberg ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_06 ;
+    to:exemplifiesRule to:Rule_DE_19 ;
+    to:exemplifiesRule to:Rule_DE_28 .
+
+to:Thai_DE_Baden_W_rttemberg
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "บาเดิน-เวือร์ทเทมแบร์ก"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Baden_W_rttemberg
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Baden-Württemberg"@en ;
+    to:hasGoldLabel to:GL_DE_Baden_W_rttemberg ;
+    to:evaluatesRule to:Rule_DE_06 ;
+    to:evaluatesRule to:Rule_DE_19 .
+
+to:GL_DE_Baden_W_rttemberg
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: บาเดิน-เวือร์ทเทมแบร์ก"@th ;
+    to:thaiScript "บาเดิน-เวือร์ทเทมแบร์ก"^^xsd:string .
+
+to:Entry_DE_Karl_Heinz_Rummenigge
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Karl-Heinz Rummenigge"@de ;
+    to:sourceForm "Karl-Heinz Rummenigge"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Karl_Heinz_Rummenigge ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_11 ;
+    to:exemplifiesRule to:Rule_DE_12 ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_Karl_Heinz_Rummenigge
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "คาร์ล-ไฮนส์ รุมเมนิกเกอ"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Karl_Heinz_Rummenigge
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Karl-Heinz Rummenigge"@en ;
+    to:hasGoldLabel to:GL_DE_Karl_Heinz_Rummenigge ;
+    to:evaluatesRule to:Rule_DE_11 ;
+    to:evaluatesRule to:Rule_DE_12 .
+
+to:GL_DE_Karl_Heinz_Rummenigge
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: คาร์ล-ไฮนส์ รุมเมนิกเกอ"@th ;
+    to:thaiScript "คาร์ล-ไฮนส์ รุมเมนิกเกอ"^^xsd:string .
+
+to:Entry_DE_Karl_Theodor_zu_Guttenberg
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Karl-Theodor zu Guttenberg"@de ;
+    to:sourceForm "Karl-Theodor zu Guttenberg"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Karl_Theodor_zu_Guttenberg ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_18 ;
+    to:exemplifiesRule to:Rule_DE_19 ;
+    to:exemplifiesRule to:Rule_DE_27 .
+
+to:Thai_DE_Karl_Theodor_zu_Guttenberg
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "คาร์ล-ทีโอโดร์ ซู กุทเทนแบร์ก"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Karl_Theodor_zu_Guttenberg
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Karl-Theodor zu Guttenberg"@en ;
+    to:hasGoldLabel to:GL_DE_Karl_Theodor_zu_Guttenberg ;
+    to:evaluatesRule to:Rule_DE_18 ;
+    to:evaluatesRule to:Rule_DE_19 .
+
+to:GL_DE_Karl_Theodor_zu_Guttenberg
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: คาร์ล-ทีโอโดร์ ซู กุทเทนแบร์ก"@th ;
+    to:thaiScript "คาร์ล-ทีโอโดร์ ซู กุทเทนแบร์ก"^^xsd:string .
+
+to:Entry_DE_Gro_herzog_Carl_Friedrich_von
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Großherzog Carl-Friedrich von Sachsen-Weimar-Eisenach"@de ;
+    to:sourceForm "Großherzog Carl-Friedrich von Sachsen-Weimar-Eisenach"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Gro_herzog_Carl_Friedrich_von ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_05 ;
+    to:exemplifiesRule to:Rule_DE_11 ;
+    to:exemplifiesRule to:Rule_DE_15 .
+
+to:Thai_DE_Gro_herzog_Carl_Friedrich_von
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "โกรสแฮร์ซก คาร์ล-ฟรีดริช ฟอน ซัคเซิน-ไวมาร์-ไอเซนัค"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Gro_herzog_Carl_Friedrich_von
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Großherzog Carl-Friedrich von Sachsen-Weimar-Eisenach"@en ;
+    to:hasGoldLabel to:GL_DE_Gro_herzog_Carl_Friedrich_von ;
+    to:evaluatesRule to:Rule_DE_05 ;
+    to:evaluatesRule to:Rule_DE_11 .
+
+to:GL_DE_Gro_herzog_Carl_Friedrich_von
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: โกรสแฮร์ซก คาร์ล-ฟรีดริช ฟอน ซัคเซิน-ไวมาร์-ไอเซนัค"@th ;
+    to:thaiScript "โกรสแฮร์ซก คาร์ล-ฟรีดริช ฟอน ซัคเซิน-ไวมาร์-ไอเซนัค"^^xsd:string .
+
+to:Entry_DE_Otto_von_Guericke
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Otto von Guericke"@de ;
+    to:sourceForm "Otto von Guericke"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Otto_von_Guericke ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_12 ;
+    to:exemplifiesRule to:Rule_DE_19 ;
+    to:exemplifiesRule to:Rule_DE_20 .
+
+to:Thai_DE_Otto_von_Guericke
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ออทโท ฟอน เกอริเคอ"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Otto_von_Guericke
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Otto von Guericke"@en ;
+    to:hasGoldLabel to:GL_DE_Otto_von_Guericke ;
+    to:evaluatesRule to:Rule_DE_12 ;
+    to:evaluatesRule to:Rule_DE_19 .
+
+to:GL_DE_Otto_von_Guericke
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ออทโท ฟอน เกอริเคอ"@th ;
+    to:thaiScript "ออทโท ฟอน เกอริเคอ"^^xsd:string .
+
+to:Entry_DE_Georg_Simon_Ohm
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Georg Simon Ohm"@de ;
+    to:sourceForm "Georg Simon Ohm"^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Georg_Simon_Ohm ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_18 .
+
+to:Thai_DE_Georg_Simon_Ohm
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "เกออร์ก ซีมอน โอม"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Georg_Simon_Ohm
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Georg Simon Ohm"@en ;
+    to:hasGoldLabel to:GL_DE_Georg_Simon_Ohm ;
+    to:evaluatesRule to:Rule_DE_18 .
+
+to:GL_DE_Georg_Simon_Ohm
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: เกออร์ก ซีมอน โอม"@th ;
+    to:thaiScript "เกออร์ก ซีมอน โอม"^^xsd:string .
+
+to:Entry_DE_Frankfurt_a_M
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Frankfurt a.M."@de ;
+    to:sourceForm "Frankfurt a.M."^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Frankfurt_a_M ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_31 .
+
+to:Thai_DE_Frankfurt_a_M
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "แฟรงก์เฟิร์ต อัม ไมน์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Frankfurt_a_M
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Frankfurt a.M."@en ;
+    to:hasGoldLabel to:GL_DE_Frankfurt_a_M ;
+    to:evaluatesRule to:Rule_DE_31 .
+
+to:GL_DE_Frankfurt_a_M
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: แฟรงก์เฟิร์ต อัม ไมน์"@th ;
+    to:thaiScript "แฟรงก์เฟิร์ต อัม ไมน์"^^xsd:string .
+
+to:Entry_DE_Frankfurt_a_d_O
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Frankfurt a.d.O."@de ;
+    to:sourceForm "Frankfurt a.d.O."^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Frankfurt_a_d_O ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_31 .
+
+to:Thai_DE_Frankfurt_a_d_O
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "แฟรงก์เฟิร์ต อัน เดอร์ โอเดอร์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Frankfurt_a_d_O
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Frankfurt a.d.O."@en ;
+    to:hasGoldLabel to:GL_DE_Frankfurt_a_d_O ;
+    to:evaluatesRule to:Rule_DE_31 .
+
+to:GL_DE_Frankfurt_a_d_O
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: แฟรงก์เฟิร์ต อัน เดอร์ โอเดอร์"@th ;
+    to:thaiScript "แฟรงก์เฟิร์ต อัน เดอร์ โอเดอร์"^^xsd:string .
+
+to:Entry_DE_Rothenburg_o_d_T
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Rothenburg o.d.T."@de ;
+    to:sourceForm "Rothenburg o.d.T."^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Rothenburg_o_d_T ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_17 ;
+    to:exemplifiesRule to:Rule_DE_18 ;
+    to:exemplifiesRule to:Rule_DE_31 .
+
+to:Thai_DE_Rothenburg_o_d_T
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "โรเทินบูร์ก อ็อบ เดอร์ เทาเบอร์"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Rothenburg_o_d_T
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Rothenburg o.d.T."@en ;
+    to:hasGoldLabel to:GL_DE_Rothenburg_o_d_T ;
+    to:evaluatesRule to:Rule_DE_17 ;
+    to:evaluatesRule to:Rule_DE_18 .
+
+to:GL_DE_Rothenburg_o_d_T
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: โรเทินบูร์ก อ็อบ เดอร์ เทาเบอร์"@th ;
+    to:thaiScript "โรเทินบูร์ก อ็อบ เดอร์ เทาเบอร์"^^xsd:string .
+
+to:Entry_DE_Freiburg_i_Br
+    a owl:NamedIndividual , to:LexicalEntry ;
+    rdfs:label "Freiburg i.Br."@de ;
+    to:sourceForm "Freiburg i.Br."^^xsd:string ;
+    to:hasThaiForm to:Thai_DE_Freiburg_i_Br ;
+    to:fromSourceLanguage to:German ;
+    to:exemplifiesRule to:Rule_DE_11 ;
+    to:exemplifiesRule to:Rule_DE_31 .
+
+to:Thai_DE_Freiburg_i_Br
+    a owl:NamedIndividual , to:ThaiForm ;
+    to:thaiScript "ไฟรบูร์ก อิม ไบรส์เกา"^^xsd:string ;
+    to:isPreferred "true"^^xsd:boolean .
+
+to:BM_DE_Freiburg_i_Br
+    a owl:NamedIndividual , to:BenchmarkItem ;
+    rdfs:label "BM: Freiburg i.Br."@en ;
+    to:hasGoldLabel to:GL_DE_Freiburg_i_Br ;
+    to:evaluatesRule to:Rule_DE_11 ;
+    to:evaluatesRule to:Rule_DE_31 .
+
+to:GL_DE_Freiburg_i_Br
+    a owl:NamedIndividual , to:GoldLabel ;
+    rdfs:label "GL: ไฟรบูร์ก อิม ไบรส์เกา"@th ;
+    to:thaiScript "ไฟรบูร์ก อิม ไบรส์เกา"^^xsd:string .
+
+# ============================================================
+# Evaluation result link
+# ============================================================
+
+to:Guideline_DE
+    to:producedEvaluationResult to:EvalResult_DE_2025 ;
+    to:hasLexicalEntry to:Entry_DE_Schule ,
+        to:Entry_DE_ich ,
+        to:Entry_DE_Massage ,
+        to:Entry_DE_singen ,
+        to:Entry_DE_l .

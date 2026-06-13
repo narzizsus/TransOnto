@@ -1,0 +1,37 @@
+# ============================================================
+# UC1_ambiguity.rq — Ambiguity Chains
+# TransOnto v1.0 / RoyalSocietyTransKG
+# ============================================================
+# Which rules have ambiguities, and how are they resolved?
+#
+# Load: transonto.ttl + kg_de.ttl (or kg_all.ttl)
+# ============================================================
+
+PREFIX to:   <https://w3id.org/transonto#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT
+  ?ruleNum
+  ?ruleLabel
+  ?ambiguityDescription
+  ?decisionJustification
+  ?expertLabel
+WHERE {
+  ?rule a to:Rule ;
+        to:ruleNumber ?ruleNum ;
+        rdfs:label ?ruleLabel ;
+        to:hasAmbiguity ?amb .
+
+  ?amb to:ambiguityDescription ?ambiguityDescription .
+
+  OPTIONAL {
+    ?amb to:justifiedByDecision ?dec .
+    ?dec to:decisionJustification ?decisionJustification ;
+         to:madeByExpert ?expert .
+    ?expert rdfs:label ?expertLabel .
+    FILTER(lang(?expertLabel) = "en")
+  }
+
+  FILTER(lang(?ruleLabel) = "en")
+}
+ORDER BY ?ruleNum

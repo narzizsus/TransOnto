@@ -1,0 +1,31 @@
+# ============================================================
+# UC5_coverage.rq — Rule and Benchmark Coverage
+# TransOnto v1.0 / RoyalSocietyTransKG
+# ============================================================
+# How many benchmark items cover each rule?
+#
+# Load: transonto.ttl + kg_de.ttl
+# ============================================================
+
+PREFIX to:   <https://w3id.org/transonto#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT
+  ?ruleNum
+  ?sourceGrapheme
+  (COUNT(DISTINCT ?entry) AS ?lexicalEntries)
+  (COUNT(DISTINCT ?bm)    AS ?benchmarkItems)
+  (COUNT(DISTINCT ?amb)   AS ?ambiguities)
+WHERE {
+  ?rule  a to:Rule ;
+         to:ruleNumber ?ruleNum .
+  OPTIONAL { ?rule to:sourceGrapheme ?sourceGrapheme }
+  OPTIONAL { ?entry to:exemplifiesRule ?rule }
+  OPTIONAL {
+    ?bm a to:BenchmarkItem ;
+        to:evaluatesRule ?rule .
+  }
+  OPTIONAL { ?rule to:hasAmbiguity ?amb }
+}
+GROUP BY ?ruleNum ?sourceGrapheme
+ORDER BY ?ruleNum

@@ -1,0 +1,32 @@
+# ============================================================
+# UC8_fr_additions.rq — French Rule Additions
+# TransOnto v1.0 / RoyalSocietyTransKG
+# ============================================================
+# List all French rule additions with their benchmark items.
+#
+# Load: transonto.ttl + kg_fr.ttl (or kg_all.ttl)
+# ============================================================
+
+PREFIX to:   <https://w3id.org/transonto#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT
+  ?addNum
+  ?addLabel
+  ?ruleText
+  (COUNT(DISTINCT ?entry) AS ?lexicalEntries)
+WHERE {
+  ?add a to:RuleAddition ;
+       to:additionNumber ?addNum ;
+       rdfs:label ?addLabel ;
+       to:ruleText ?ruleText .
+
+  OPTIONAL {
+    ?entry a to:LexicalEntry ;
+           to:exemplifiesRule ?add .
+  }
+
+  FILTER(lang(?addLabel) = "en")
+}
+GROUP BY ?addNum ?addLabel ?ruleText
+ORDER BY ?addNum

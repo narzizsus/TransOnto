@@ -1,0 +1,35 @@
+# ============================================================
+# UC6_errors.rq — G2P-Sensitive Entries
+# TransOnto v1.0 / RoyalSocietyTransKG
+# ============================================================
+# Which entries are linked to ambiguity phenomena?
+# These are candidates for G2P-sensitive or convention-based errors.
+#
+# Load: transonto.ttl + kg_de.ttl (or kg_all.ttl)
+# ============================================================
+
+PREFIX to:   <https://w3id.org/transonto#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+SELECT
+  ?sourceForm
+  ?thaiScript
+  ?langLabel
+  ?ambiguityDescription
+WHERE {
+  ?entry a to:LexicalEntry ;
+         to:sourceForm ?sourceForm ;
+         to:hasThaiForm ?tf ;
+         to:hasAmbiguity ?amb ;
+         to:fromSourceLanguage ?lang .
+
+  ?tf  to:thaiScript ?thaiScript ;
+       to:isPreferred "true"^^xsd:boolean .
+
+  ?amb to:ambiguityDescription ?ambiguityDescription .
+
+  ?lang rdfs:label ?langLabel .
+  FILTER(lang(?langLabel) = "en")
+}
+ORDER BY ?langLabel ?sourceForm

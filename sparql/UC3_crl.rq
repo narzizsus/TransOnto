@@ -1,0 +1,31 @@
+# ============================================================
+# UC3_crl.rq — Computational Readiness Level Assessment
+# TransOnto v1.0 / RoyalSocietyTransKG
+# ============================================================
+# What is the CRL of each language's transliteration guideline?
+# Scale: 1=least formalizable, 5=fully rule-based
+#
+# Load: transonto.ttl
+# Returns: EN=2, DE=3, FR=3
+# ============================================================
+
+PREFIX to:   <https://w3id.org/transonto#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT
+  ?langLabel
+  ?langCode
+  ?crlScore
+  ?crlEvidence
+WHERE {
+  ?lang a to:Language ;
+        rdfs:label ?langLabel ;
+        to:languageCode ?langCode ;
+        to:hasReadinessLevel ?crl .
+
+  ?crl  to:crlScore   ?crlScore ;
+        to:crlEvidence ?crlEvidence .
+
+  FILTER(lang(?langLabel) = "en")
+}
+ORDER BY ?crlScore
