@@ -47,14 +47,14 @@ TransOnto (`https://w3id.org/transonto`) is an OWL 2 ontology organized into fou
 
 **Ontology statistics (transonto.ttl):**
 
-| Item | Count |
-|---|---|
-| Classes | 15 |
-| Object properties | 18 |
-| Data properties | 19 |
-| Named individuals | 59 |
-| Schema triples (TBox) | ~297 |
-| Total triples incl. individuals | 697 |
+| Item                            | Count |
+| ------------------------------- | ----- |
+| Classes                         | 15    |
+| Object properties               | 18    |
+| Data properties                 | 19    |
+| Named individuals               | 59    |
+| Schema triples (TBox)           | ~297  |
+| Total triples incl. individuals | 697   |
 
 > The paper reports 285 TBox triples (schema definitions only, excluding named individuals). The complete `transonto.ttl` file contains 697 triples including 59 named individuals for languages, guidelines, rules, CRL levels, error types, and evaluation results.
 
@@ -68,33 +68,33 @@ RoyalSocietyTransKG (ABox) instantiates TransOnto with benchmark and formalizati
 
 ### Triple Counts
 
-| Component | File | Triples |
-|---|---|---|
-| Ontology (schema + individuals) | `transonto.ttl` | 697 |
-| Knowledge Graph | `kg_all.ttl` | 12,899 |
-| **Combined** | | **13,591** |
+| Component                       | File            | Triples    |
+| ------------------------------- | --------------- | ---------- |
+| Ontology (schema + individuals) | `transonto.ttl` | 697        |
+| Knowledge Graph                 | `kg_all.ttl`    | 12,899     |
+| **Combined**                    |                 | **13,591** |
 
 ### Knowledge Graph Statistics
 
-| Item | Count |
-|---|---|
-| Languages | 3 (German, French, English) |
-| Rules (DE + EN) | 43 |
-| Rule Additions (FR) | 14 |
-| Rule Ambiguities | 12 |
-| Expert Decisions | 12 |
-| Lexical Entries | 572 |
-| Benchmark Items | 564 |
-| Gold Labels | 564 |
-| Evaluation Results | 2 |
+| Item                | Count                       |
+| ------------------- | --------------------------- |
+| Languages           | 3 (German, French, English) |
+| Rules (DE + EN)     | 43                          |
+| Rule Additions (FR) | 14                          |
+| Rule Ambiguities    | 7                           |
+| Expert Decisions    | 11                          |
+| Lexical Entries     | 569                         |
+| Benchmark Items     | 564                         |
+| Gold Labels         | 564                         |
+| Evaluation Results  | 1                           |
 
 ### Language Coverage
 
-| Language | Lexical Entries | Benchmark Items | Rules / Additions | System Accuracy |
-|---|---|---|---|---|
-| German | 183 | 175 | Rule_DE_01–31 | 92.68% word |
-| French | 92 | 92 | Add_FR_01–14 | — |
-| English | 297 | 297 | Rule_EN_01–12 | 67.48% word |
+| Language | Lexical Entries | Benchmark Items | Rules / Additions | System Accuracy                                                                                    |
+| -------- | --------------- | --------------- | ----------------- | -------------------------------------------------------------------------------------------------- |
+| German   | 180             | 175             | Rule\_DE\_01–31   | 92.68% word documented in ontology named individual `EvalResult_DE_2025`; not instantiated as ABox `EvaluationResult` |
+| French   | 92              | 92              | Add\_FR\_01–14    | —                                                                                                  |
+| English  | 297             | 297             | Rule\_EN\_01–12   | 67.48% word                                                                                        |
 
 ---
 
@@ -119,9 +119,10 @@ print(f"Languages:        {count('Language')}")
 ```
 
 Expected:
+
 ```
 Total triples:    13591
-Lexical Entries:  572
+Lexical Entries:  569
 Benchmark Items:  564
 Languages:        3
 ```
@@ -139,14 +140,14 @@ sparql --data ontology/transonto.ttl --data kg/kg_all.ttl \
 
 TransOnto is designed around ten competency questions (CQ1–CQ10). The table below shows selected CQs with corresponding SPARQL files. The complete CQ catalogue is in `docs/competency_questions.md`.
 
-| CQ | Question | SPARQL file |
-|---|---|---|
-| CQ4 | Which rules have documented ambiguities? | UC1_ambiguity.rq |
-| CQ5 | How many expert additions does language L require? | UC8_fr_additions.rq |
-| CQ7 | What is the error type distribution? | UC6_errors.rq |
-| CQ8 | What is the CRL of language L? | UC3_crl.rq |
-| CQ9 | Why is word W transliterated as T? | UC4_explainability.rq |
-| CQ10 | How many benchmark items cover rule R? | UC5_coverage.rq |
+| CQ   | Question                                           | SPARQL file            |
+| ---- | -------------------------------------------------- | ---------------------- |
+| CQ4  | Which rules have documented ambiguities?           | UC1\_ambiguity.rq      |
+| CQ5  | How many expert additions does language L require? | UC8\_fr\_additions.rq  |
+| CQ7  | What is the error type distribution?               | UC6\_errors.rq         |
+| CQ8  | What is the CRL of language L?                     | UC3\_crl.rq            |
+| CQ9  | Why is word W transliterated as T?                 | UC4\_explainability.rq |
+| CQ10 | How many benchmark items cover rule R?             | UC5\_coverage.rq       |
 
 ---
 
@@ -222,21 +223,21 @@ CRL is a 1–5 scale measuring how directly implementable a transliteration guid
 
 **Scoring formula:** `ReadinessScore = |Additions| + 2 × |Ambiguities| + |Decisions|`
 
-| CRL | Score Range | Interpretation |
-|---|---|---|
-| CRL-1 | 0 | Directly executable; no additions or ambiguities required |
-| CRL-2 | 1–15 | Minor supplementation; edge cases only |
-| CRL-3 | 16–40 | Moderate intervention; systematic but manageable gaps |
-| CRL-4 | 41–70 | Substantial intervention; multiple ambiguous rules |
-| CRL-5 | >70 | Extensive intervention; pervasive underspecification |
+| CRL   | Score Range | Interpretation                                            |
+| ----- | ----------- | --------------------------------------------------------- |
+| CRL-1 | 0           | Directly executable; no additions or ambiguities required |
+| CRL-2 | 1–15        | Minor supplementation; edge cases only                    |
+| CRL-3 | 16–40       | Moderate intervention; systematic but manageable gaps     |
+| CRL-4 | 41–70       | Substantial intervention; multiple ambiguous rules        |
+| CRL-5 | >70         | Extensive intervention; pervasive underspecification      |
 
 **Assignments for this release:**
 
-| Language | ReadinessScore | CRL | Rationale |
-|---|---|---|---|
-| English | 35 | CRL-3 | Irregular orthography; G2P dependency; decisions are localized |
-| German | 35 | CRL-4 | Two ambiguous rules with broad cross-item impact (expert upward adjustment) |
-| French | 104 | CRL-5 | 44 expert additions required |
+| Language | ReadinessScore | CRL   | Rationale                                                                   |
+| -------- | -------------- | ----- | --------------------------------------------------------------------------- |
+| English  | 35             | CRL-3 | Irregular orthography; G2P dependency; decisions are localized              |
+| German   | 35             | CRL-4 | Two ambiguous rules with broad cross-item impact (expert upward adjustment) |
+| French   | 104            | CRL-5 | 44 expert additions required                                                |
 
 English and German share score 35 but differ in CRL because German's two ambiguities each affect broad vocabulary categories, generating systematic cross-item failures. See `docs/crl_framework.md`.
 
@@ -244,11 +245,11 @@ English and German share score 35 but differ in CRL because German's two ambigui
 
 ## Source Data
 
-| Language | Source | Benchmark Size |
-|---|---|---|
-| German | Royal Society DE Guideline (2025); Duden Band 6 IPA | 175 items |
-| French | Royal Society FR Guideline (2025); Le Petit Robert 2006 | 92 items |
-| English | NECTEC report งานงวด 3 (2026); Cambridge Dictionary IPA | 297 items (326 test cases) |
+| Language | Source                                                  | Benchmark Size             |
+| -------- | ------------------------------------------------------- | -------------------------- |
+| German   | Royal Society DE Guideline (2025); Duden Band 6 IPA     | 175 items                  |
+| French   | Royal Society FR Guideline (2025); Le Petit Robert 2006 | 92 items                   |
+| English  | Royal Society EN Guideline (1989); ประมวลคำทับศัพท์ภาษาอังกฤษเป็นภาษาไทย ฉบับสำนักงานราชบัณฑิตยสภา (2024); Cambridge Dictionary IPA | 297 items (326 test cases) |
 
 ---
 
@@ -275,4 +276,4 @@ CC BY 4.0 — see `LICENSE`.
 
 ## Contact
 
-NLP and Semantics Technology Team, NECTEC, NSTDA, Thailand.
+Artificial Intelligence Research Team, NECTEC, NSTDA, Thailand.
