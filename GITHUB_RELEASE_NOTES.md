@@ -24,18 +24,18 @@ An OWL 2 ontology for representing prescriptive transliteration standards and th
 
 | Item | Count |
 |---|---|
-| Lexical Entries | 572 (DE 183 · FR 92 · EN 297) |
+| Lexical Entries | 569 (DE 180 · FR 92 · EN 297) |
 | Benchmark Items | 564 |
 | Rules + Additions | 57 (DE 31 · EN 12 · FR 14) |
-| Rule Ambiguities | 12 |
-| Expert Decisions | 12 |
-| Evaluation Results | 2 (DE 92.68% · EN 67.48%) |
+| Rule Ambiguities | 7 |
+| Expert Decisions | 11 |
+| Evaluation Results | 1 (EN 67.48%); DE accuracy (92.68%) in ontology named individual `EvalResult_DE_2025` |
 
 ### Files
 
 ```
-ontology/transonto.ttl   — OWL ontology (Turtle)
-ontology/transonto.owl   — OWL ontology (RDF/XML)
+ontology/transonto.ttl — OWL ontology (Turtle)
+ontology/transonto.owl — OWL ontology (RDF/XML)
 kg/kg_de.ttl, kg_fr.ttl, kg_en.ttl, kg_all.ttl
 sparql/ (UC1, UC3–UC8)
 docs/competency_questions.md, crl_framework.md, kg_statistics.md
