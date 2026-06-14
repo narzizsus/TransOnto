@@ -90,7 +90,7 @@ to:evaluatesRule a owl:ObjectProperty ;
     rdfs:label "evaluates rule"@en, "ประเมินกฎ"@th ;
     rdfs:domain to:BenchmarkItem ; rdfs:range to:Rule .
 
-to:exemptifiesRule a owl:ObjectProperty ;
+to:exemplifiesRule a owl:ObjectProperty ;
     rdfs:label "exemplifies rule"@en, "แสดงตัวอย่างกฎ"@th ;
     rdfs:domain to:LexicalEntry ; rdfs:range to:Rule .
 
@@ -146,7 +146,7 @@ to:justifiedByDecision a owl:ObjectProperty ;
     rdfs:label "justified by decision"@en, "มีเหตุผลจากการตัดสินใจ"@th ;
     rdfs:domain to:RuleAmbiguity ; rdfs:range to:ExpertDecision .
 
-to:madByExpert a owl:ObjectProperty ;
+to:madeByExpert a owl:ObjectProperty ;
     rdfs:label "made by expert"@en, "จัดทำโดยผู้เชี่ยวชาญ"@th ;
     rdfs:domain to:ExpertDecision ; rdfs:range to:Expert .
 
@@ -257,7 +257,6 @@ to:French a owl:NamedIndividual, to:Language ;
     to:hasReadinessLevel to:CRL_FR .
 
 # === Guidelines ===
-# FIXED: Guideline_EN year = 2532, was 2535
 to:Guideline_EN a owl:NamedIndividual, to:Guideline ;
     rdfs:label "Royal Society Thai Transliteration Guideline - English"@en, "คู่มือการถ่ายอักษรภาษาอังกฤษ ราชบัณฑิตยสภา"@th ;
     to:guidelineVersion "2532" ;
@@ -269,13 +268,12 @@ to:Guideline_DE a owl:NamedIndividual, to:Guideline ;
     to:guidelineVersion "2025" ;
     dcterms:description "31 rules covering vowels, consonants, umlauts, special clusters, proper nouns, abbreviations, and compound words for German-to-Thai transliteration."@en .
 
-# FIXED: description now says 14 additions (was 44)
 to:Guideline_FR a owl:NamedIndividual, to:Guideline ;
     rdfs:label "Royal Society Thai Transliteration Guideline - French"@en, "คู่มือการถ่ายอักษรภาษาฝรั่งเศส ราชบัณฑิตยสภา"@th ;
     to:guidelineVersion "2025" ;
     dcterms:description "Guideline with 14 documented rule additions for French-to-Thai transliteration."@en .
 
-# === CRL Levels - FIXED: EN=3, DE=4, FR=5 (new scale: 1=executable, 5=needs most intervention) ===
+# === CRL Levels (EN=3, DE=4, FR=5; scale: 1=executable, 5=most intervention) ===
 to:CRL_EN a owl:NamedIndividual, to:ComputationalReadinessLevel ;
     rdfs:label "CRL - English"@en, "CRL ภาษาอังกฤษ"@th ;
     to:crlScore 3 ;
@@ -288,7 +286,6 @@ to:CRL_DE a owl:NamedIndividual, to:ComputationalReadinessLevel ;
     to:readinessScore 35 ;
     to:crlEvidence "German requires G2P pre-processing (IPA conversion) before rule application. Phoneme rules are mostly formal; 31 rules documented with examples. Main challenge: French loanwords and r-vocalization."@en .
 
-# FIXED: crlScore=5, readinessScore=104, crlEvidence says 14 (was 44)
 to:CRL_FR a owl:NamedIndividual, to:ComputationalReadinessLevel ;
     rdfs:label "CRL - French"@en, "CRL ภาษาฝรั่งเศส"@th ;
     to:crlScore 5 ;
@@ -314,7 +311,6 @@ to:EvalResult_EN_2025 a owl:NamedIndividual, to:EvaluationResult ;
     rdfs:comment "Accuracy on NECTEC internal benchmark; word-level 67.48% (220/326 items)."@en ;
     to:accuracyScore "0.6748"^^xsd:decimal .
 
-# German eval result is in ontology only (not ABox EvaluationResult in kg_all.ttl)
 to:EvalResult_DE_2025 a owl:NamedIndividual, to:EvaluationResult ;
     rdfs:label "DE System Evaluation 2025"@en ;
     rdfs:comment "Accuracy on NECTEC internal benchmark; word-level 92.68%, syllable-level 97.35%, character-level 97.34%. Note: this individual is in the ontology file (transonto.ttl), not instantiated as ABox EvaluationResult in kg_all.ttl."@en ;
@@ -322,7 +318,7 @@ to:EvalResult_DE_2025 a owl:NamedIndividual, to:EvaluationResult ;
     to:syllableAccuracy "0.9735"^^xsd:decimal ;
     to:characterAccuracy "0.9734"^^xsd:decimal .
 
-# === Ambiguities (7 total) ===
+# === DE Ambiguities (7 — ontology TBox/reference individuals; ABox DE ambiguities also in kg_all) ===
 to:Ambiguity_DE_07 a owl:NamedIndividual, to:RuleAmbiguity ;
     rdfs:label "DE Ambiguity 7: r-coloring variants"@en ;
     to:ambiguityDescription "When r follows a vowel, multiple Thai renderings are possible depending on syllable position and stress. berg: เบิร์กกี or บริ?"@en ;
@@ -352,7 +348,7 @@ to:Ambiguity_DE_30 a owl:NamedIndividual, to:RuleAmbiguity ;
     rdfs:label "DE Ambiguity 30: Foreign word identification"@en ;
     to:ambiguityDescription "How to identify italicized foreign words programmatically without typographic information."@en .
 
-# === Expert Decisions (11 total) ===
+# === Expert Decisions (11 DE decisions — reference individuals; EN/FR decisions in kg_all) ===
 to:Decision_DE_07 a owl:NamedIndividual, to:ExpertDecision ;
     rdfs:label "Decision: r-coloring resolved by syllable position"@en ;
     to:decisionJustification "Expert committee resolved r-coloring by Duden Band 6 IPA; default to เบิร์กกี for berg-type patterns."@en .
@@ -630,7 +626,7 @@ to:Rule_EN_12 a owl:NamedIndividual, to:Rule ;
     to:ruleNumber 12 ; to:appliedToLanguage to:English ;
     to:ruleText "Short vowel glyph requires context not available from IPA alone."@en .
 
-# === French Additions (RuleAddition_FR_01-14) - 14 total ===
+# === French Additions (RuleAddition_FR_01-14) ===
 to:RuleAddition_FR_01 a owl:NamedIndividual, to:RuleAddition ;
     rdfs:label "FR Addition 1: Nasal vowel"@en, "การเพิ่ม FR 1: สระนาสิก"@th ;
     to:additionNumber 1 ; to:appliedToLanguage to:French .
@@ -687,14 +683,14 @@ to:RuleAddition_FR_14 a owl:NamedIndividual, to:RuleAddition ;
     rdfs:label "FR Addition 14: Abbreviations"@en, "การเพิ่ม FR 14: ตัวย่อ"@th ;
     to:additionNumber 14 ; to:appliedToLanguage to:French .
 
-# === Sample Lexical Entries ===
+# === Sample Lexical Entries (exemplifiesRule - correct spelling) ===
 to:Entry_DE_Mueller a owl:NamedIndividual, to:LexicalEntry ;
     rdfs:label "Mueller"@en ;
     to:sourceForm "Mueller" ;
     to:ipa "[mYlA, mYlAr]" ;
     to:fromSourceLanguage to:German ;
     to:hasThaiForm to:Thai_Mueller_1, to:Thai_Mueller_2 ;
-    to:exemptifiesRule to:Rule_DE_08, to:Rule_DE_09 .
+    to:exemplifiesRule to:Rule_DE_08, to:Rule_DE_09 .
 
 to:Thai_Mueller_1 a owl:NamedIndividual, to:ThaiForm ;
     to:thaiScript "มุลเลอร์" ;
@@ -709,7 +705,7 @@ to:Entry_DE_Frankfurt a owl:NamedIndividual, to:LexicalEntry ;
     to:sourceForm "Frankfurt am Main" ;
     to:fromSourceLanguage to:German ;
     to:hasThaiForm to:Thai_Frankfurt ;
-    to:exemptifiesRule to:Rule_DE_31 .
+    to:exemplifiesRule to:Rule_DE_31 .
 
 to:Thai_Frankfurt a owl:NamedIndividual, to:ThaiForm ;
     to:thaiScript "แฟรงก์ฟูร์ท อัม ไมน์" ;
@@ -721,7 +717,7 @@ to:Entry_DE_Schmidt a owl:NamedIndividual, to:LexicalEntry ;
     to:ipa "[Smit]" ;
     to:fromSourceLanguage to:German ;
     to:hasThaiForm to:Thai_Schmidt ;
-    to:exemptifiesRule to:Rule_DE_05, to:Rule_DE_15 .
+    to:exemplifiesRule to:Rule_DE_05, to:Rule_DE_15 .
 
 to:Thai_Schmidt a owl:NamedIndividual, to:ThaiForm ;
     to:thaiScript "ชมิดท์" ;
@@ -732,7 +728,7 @@ to:Entry_DE_Schulze a owl:NamedIndividual, to:LexicalEntry ;
     to:sourceForm "Schulze" ;
     to:fromSourceLanguage to:German ;
     to:hasThaiForm to:Thai_Schulze ;
-    to:exemptifiesRule to:Rule_DE_15 .
+    to:exemplifiesRule to:Rule_DE_15 .
 
 to:Thai_Schulze a owl:NamedIndividual, to:ThaiForm ;
     to:thaiScript "ชุลเซ" ;
