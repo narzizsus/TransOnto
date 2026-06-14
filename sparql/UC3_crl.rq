@@ -1,13 +1,23 @@
-# ============================================================
-# UC3_crl.rq — Computational Readiness Level Assessment
+# =====================================================================
+# UC3_crl.rq  CRL Assessment (CQ8)
 # TransOnto v1.0 / RoyalSocietyTransKG
-# ============================================================
+# =====================================================================
 # What is the CRL of each language's transliteration guideline?
-# Scale: 1=least formalizable, 5=fully rule-based
 #
-# Load: transonto.ttl
-# Returns: EN=2, DE=3, FR=3
-# ============================================================
+# CRL Scale (new, paper-standard):
+#   CRL-1 = directly executable (score 0)
+#   CRL-2 = minor supplementation needed (score 1-15)
+#   CRL-3 = moderate intervention (score 16-40)
+#   CRL-4 = substantial intervention (score 41-70)
+#   CRL-5 = extensive expert intervention needed (score >70)
+#
+# crlScore in ontology: 1=CRL-1 (least intervention), 5=CRL-5 (most intervention)
+#
+# Load: ontology/transonto.ttl
+# Returns: EN=3 (CRL-3), DE=4 (CRL-4), FR=5 (CRL-5)
+# ReadinessScores: EN=35, DE=35, FR=104
+# Formula: ReadinessScore = |Additions| + 2*|Ambiguities| + |Decisions|
+# =====================================================================
 
 PREFIX to:   <https://w3id.org/transonto#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -16,6 +26,7 @@ SELECT
   ?langLabel
   ?langCode
   ?crlScore
+  ?readinessScore
   ?crlEvidence
 WHERE {
   ?lang a to:Language ;
@@ -23,7 +34,8 @@ WHERE {
         to:languageCode ?langCode ;
         to:hasReadinessLevel ?crl .
 
-  ?crl  to:crlScore   ?crlScore ;
+  ?crl  to:crlScore    ?crlScore ;
+        to:readinessScore ?readinessScore ;
         to:crlEvidence ?crlEvidence .
 
   FILTER(lang(?langLabel) = "en")
