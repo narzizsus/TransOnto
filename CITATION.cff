@@ -1,47 +1,43 @@
 cff-version: 1.2.0
 message: "If you use TransOnto or RoyalSocietyTransKG, please cite as below."
-
 type: dataset
 title: "TransOnto v1.0 + RoyalSocietyTransKG v1.0"
 version: "1.0.0"
 date-released: "2026-06-13"
 
 abstract: >
-TransOnto is an OWL 2 ontology for representing prescriptive
-transliteration standards and their computational formalization.
-RoyalSocietyTransKG is its instantiation as a multilingual knowledge
-graph containing 13,677 merged RDF triples derived from an ontology
-release of 887 triples and a knowledge graph release of 12,899 ABox
-triples. The current release covers German, French, and English
-transliteration guidelines from the Royal Society of Thailand and
-includes 569 lexical entries, 564 benchmark items, 43 rules,
-14 rule additions, 7 rule ambiguities, and 11 expert decisions.
-The release also includes competency-question-driven evaluation
-resources, SPARQL query suites, Computational Readiness Level (CRL)
-assessments, and benchmark-linked evaluation metadata.
+  TransOnto is an OWL 2 ontology for representing prescriptive
+  transliteration standards and their computational formalization.
+  RoyalSocietyTransKG is its instantiation as a multilingual knowledge
+  graph containing 13,677 merged RDF triples derived from an ontology
+  release of 887 triples and a knowledge graph release of 12,899 ABox
+  triples. The current release covers German, French, and English
+  transliteration guidelines from the Royal Society of Thailand and
+  includes 569 lexical entries, 564 benchmark items, 43 rules,
+  14 rule additions, 7 rule ambiguities, and 11 expert decisions.
+  The release also includes competency-question-driven evaluation
+  resources, SPARQL query suites, Computational Readiness Level (CRL)
+  assessments, and benchmark-linked evaluation metadata.
 
 license: "CC-BY-4.0"
-
 repository-code: "https://github.com/narzizsus/TransOnto"
 url: "https://w3id.org/transonto"
 
 authors:
-
-- family-names: "LEENOI"
-  given-names: "DHANON"
-  affiliation: "Artificial Intelligence Research Team, NECTEC, NSTDA, Thailand"
+  - family-names: "LEENOI"
+    given-names: "DHANON"
+    affiliation: "Artificial Intelligence Research Team, NECTEC, NSTDA, Thailand"
 
 keywords:
-
-- "transliteration"
-- "ontology"
-- "knowledge graph"
-- "Thai NLP"
-- "computational linguistics"
-- "semantic web"
-- "RDF"
-- "OWL"
-- "Royal Society of Thailand"
-- "linguistic standards"
-- "computational readiness"
-- "SPARQL"
+  - "transliteration"
+  - "ontology"
+  - "knowledge graph"
+  - "Thai NLP"
+  - "computational linguistics"
+  - "semantic web"
+  - "RDF"
+  - "OWL"
+  - "Royal Society of Thailand"
+  - "linguistic standards"
+  - "computational readiness"
+  - "SPARQL"
