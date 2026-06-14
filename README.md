@@ -17,18 +17,19 @@ transonto/
 │   ├── kg_de.ttl            # German KG (4,109 triples)
 │   ├── kg_fr.ttl            # French KG (2,073 triples)
 │   ├── kg_en.ttl            # English KG (6,709 triples)
-│   └── kg_all.ttl           # Merged KG — all languages (12,899 triples)
+│   └── kg_all.ttl           # Merged KG  all languages (12,899 triples)
 ├── sparql/
 │   ├── UC1_ambiguity.rq     # Ambiguity chains (CQ4)
 │   ├── UC3_crl.rq           # CRL assessment (CQ8)
-│   ├── UC4_explainability.rq # Provenance traversal (CQ9)
+│   ├── UC4_explainability.rq# Provenance traversal (CQ9)
 │   ├── UC5_coverage.rq      # Benchmark coverage (CQ10)
 │   ├── UC6_errors.rq        # G2P-sensitive entries (CQ7)
 │   ├── UC7_en_coverage.rq   # English rule distribution
 │   └── UC8_fr_additions.rq  # French rule additions (CQ5)
 ├── docs/
 │   ├── competency_questions.md
-│   └── crl_framework.md
+│   ├── crl_framework.md
+│   └── kg_statistics.md
 ├── LICENSE                  # CC BY 4.0
 ├── README.md
 └── CITATION.cff
@@ -40,25 +41,25 @@ transonto/
 
 TransOnto (`https://w3id.org/transonto`) is an OWL 2 ontology organized into four interconnected layers:
 
-- **Layer 1 — Language Standards:** official guideline rules and source-to-target unit mappings (`to:Language`, `to:Guideline`, `to:Rule`)
-- **Layer 2 — Formalization** *(novel contribution)*: expert knowledge absent from official documents — ambiguities, additions, and decisions made queryable (`to:RuleAmbiguity`, `to:RuleAddition`, `to:ExpertDecision`)
-- **Layer 3 — Lexicon:** validated transliteration entries with variant management (`to:LexicalEntry`, `to:ThaiForm`)
-- **Layer 4 — Evaluation:** benchmark items with gold labels and error attribution (`to:BenchmarkItem`, `to:GoldLabel`, `to:EvaluationResult`)
+- **Layer 1  Language Standards:** official guideline rules and source-to-target unit mappings (`to:Language`, `to:Guideline`, `to:Rule`)
+- **Layer 2  Formalization** *(novel contribution)*: expert knowledge absent from official documents  ambiguities, additions, and decisions made queryable (`to:RuleAmbiguity`, `to:RuleAddition`, `to:ExpertDecision`)
+- **Layer 3  Lexicon:** validated transliteration entries with variant management (`to:LexicalEntry`, `to:ThaiForm`)
+- **Layer 4  Evaluation:** benchmark items with gold labels and error attribution (`to:BenchmarkItem`, `to:GoldLabel`, `to:EvaluationResult`)
 
 **Ontology statistics (transonto.ttl):**
 
-| Item                            | Count |
-| ------------------------------- | ----- |
-| Classes                         | 15    |
-| Object properties               | 18    |
-| Data properties                 | 19    |
-| Named individuals               | 59    |
-| Schema triples (TBox)           | ~297  |
-| Total triples incl. individuals | 697   |
+| Item | Count |
+| --- | --- |
+| Classes | 15 |
+| Object properties | 18 |
+| Data properties | 19 |
+| Named individuals | 59 |
+| Schema triples (TBox, schema-only) | 285 |
+| Total triples incl. individuals | 697 |
 
 > The paper reports 285 TBox triples (schema definitions only, excluding named individuals). The complete `transonto.ttl` file contains 697 triples including 59 named individuals for languages, guidelines, rules, CRL levels, error types, and evaluation results.
 
-Alignment: `to:LexicalEntry` ⊆ `ontolex:LexicalEntry` · `to:ThaiForm` ⊆ `ontolex:Form` · `to:Expert` ⊆ `prov:Agent`
+Alignment: `to:LexicalEntry` ⊑ `ontolexLexicalEntry` · `to:ThaiForm` ⊑ `ontolexForm` · `to:Expert` ⊑ `provAgent`
 
 ---
 
@@ -68,33 +69,33 @@ RoyalSocietyTransKG (ABox) instantiates TransOnto with benchmark and formalizati
 
 ### Triple Counts
 
-| Component                       | File            | Triples    |
-| ------------------------------- | --------------- | ---------- |
-| Ontology (schema + individuals) | `transonto.ttl` | 697        |
-| Knowledge Graph                 | `kg_all.ttl`    | 12,899     |
-| **Combined**                    |                 | **13,591** |
+| Component | File | Triples |
+| --- | --- | --- |
+| Ontology (schema + individuals) | `transonto.ttl` | 697 |
+| Knowledge Graph | `kg_all.ttl` | 12,899 |
+| **Combined** | | **13,591** |
 
-### Knowledge Graph Statistics
+### Knowledge Graph Statistics (ABox  kg_all.ttl)
 
-| Item                | Count                       |
-| ------------------- | --------------------------- |
-| Languages           | 3 (German, French, English) |
-| Rules (DE + EN)     | 43                          |
-| Rule Additions (FR) | 14                          |
-| Rule Ambiguities    | 7                           |
-| Expert Decisions    | 11                          |
-| Lexical Entries     | 569                         |
-| Benchmark Items     | 564                         |
-| Gold Labels         | 564                         |
-| Evaluation Results  | 1                           |
+| Item | Count |
+| --- | --- |
+| Languages | 3 (German, French, English) |
+| Rules (DE + EN) | 43 |
+| Rule Additions (FR) | 14 |
+| Rule Ambiguities | 7 |
+| Expert Decisions | 11 |
+| Lexical Entries | 569 |
+| Benchmark Items | 564 |
+| Gold Labels | 564 |
+| Evaluation Results | 1 (EN: 67.48% word accuracy) |
 
 ### Language Coverage
 
-| Language | Lexical Entries | Benchmark Items | Rules / Additions | System Accuracy                                                                                    |
-| -------- | --------------- | --------------- | ----------------- | -------------------------------------------------------------------------------------------------- |
-| German   | 180             | 175             | Rule\_DE\_01–31   | 92.68% word documented in ontology named individual `EvalResult_DE_2025`; not instantiated as ABox `EvaluationResult` |
-| French   | 92              | 92              | Add\_FR\_01–14    | —                                                                                                  |
-| English  | 297             | 297             | Rule\_EN\_01–12   | 67.48% word                                                                                        |
+| Language | Lexical Entries | Benchmark Items | Rules / Additions | System Accuracy |
+| --- | --- | --- | --- | --- |
+| German | 180 | 175 | Rule\_DE\_01-31 | 92.68% word documented in ontology named individual `EvalResult_DE_2025`; not instantiated as ABox `EvaluationResult` |
+| French | 92 | 92 | Add\_FR\_01-14 |  |
+| English | 297 | 297 | Rule\_EN\_01-12 | 67.48% word |
 
 ---
 
@@ -138,41 +139,44 @@ sparql --data ontology/transonto.ttl --data kg/kg_all.ttl \
 
 ## Selected Competency Questions
 
-TransOnto is designed around ten competency questions (CQ1–CQ10). The table below shows selected CQs with corresponding SPARQL files. The complete CQ catalogue is in `docs/competency_questions.md`.
+TransOnto is designed around ten competency questions (CQ1-CQ10). The table below shows selected CQs with corresponding SPARQL files. The complete CQ catalogue is in `docs/competency_questions.md`.
 
-| CQ   | Question                                           | SPARQL file            |
-| ---- | -------------------------------------------------- | ---------------------- |
-| CQ4  | Which rules have documented ambiguities?           | UC1\_ambiguity.rq      |
-| CQ5  | How many expert additions does language L require? | UC8\_fr\_additions.rq  |
-| CQ7  | What is the error type distribution?               | UC6\_errors.rq         |
-| CQ8  | What is the CRL of language L?                     | UC3\_crl.rq            |
-| CQ9  | Why is word W transliterated as T?                 | UC4\_explainability.rq |
-| CQ10 | How many benchmark items cover rule R?             | UC5\_coverage.rq       |
+| CQ | Question | SPARQL file |
+| --- | --- | --- |
+| CQ4 | Which rules have documented ambiguities? | UC1\_ambiguity.rq |
+| CQ5 | How many expert additions does language L require? | UC8\_fr\_additions.rq |
+| CQ7 | What is the error type distribution? | UC6\_errors.rq |
+| CQ8 | What is the CRL of language L? | UC3\_crl.rq |
+| CQ9 | Why is word W transliterated as T? | UC4\_explainability.rq |
+| CQ10 | How many benchmark items cover rule R? | UC5\_coverage.rq |
 
 ---
 
 ## Sample SPARQL Queries
 
-### CRL Assessment — UC3 (CQ8)
+### CRL Assessment  UC3 (CQ8)
 
 ```sparql
 PREFIX to:   <https://w3id.org/transonto#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?langLabel ?crlScore ?crlEvidence WHERE {
+SELECT ?langLabel ?crlScore ?readinessScore ?crlEvidence WHERE {
   ?lang a to:Language ;
         rdfs:label ?langLabel ;
         to:hasReadinessLevel ?crl .
-  ?crl  to:crlScore   ?crlScore ;
+  ?crl  to:crlScore    ?crlScore ;
+        to:readinessScore ?readinessScore ;
         to:crlEvidence ?crlEvidence .
   FILTER(lang(?langLabel) = "en")
 }
 ORDER BY ?crlScore
 ```
 
-Expected result: EN=2, DE=3, FR=3 (evidence-based scores; see final CRL assignments below).
+Expected result: EN=3 (CRL-3), DE=4 (CRL-4), FR=5 (CRL-5) with readiness scores 35/35/104.
 
-### Explainability Path — UC4 (CQ9)
+CRL scale: **1=CRL-1 (directly executable), 5=CRL-5 (requires most expert intervention).**
+
+### Explainability Path  UC4 (CQ9)
 
 ```sparql
 PREFIX to: <https://w3id.org/transonto#>
@@ -183,7 +187,7 @@ WHERE {
   ?entry a to:LexicalEntry ;
          to:sourceForm "Berg" ;
          to:hasThaiForm ?tf ;
-         to:exemplifiesRule ?rule .
+         to:exemptifiesRule ?rule .
   ?tf   to:thaiScript ?thaiScript ;
         to:isPreferred ?isPreferred .
   ?rule to:ruleNumber ?ruleNum .
@@ -199,7 +203,7 @@ WHERE {
 ORDER BY DESC(?isPreferred)
 ```
 
-### Benchmark Coverage — UC5 (CQ10)
+### Benchmark Coverage  UC5 (CQ10)
 
 ```sparql
 PREFIX to:   <https://w3id.org/transonto#>
@@ -219,25 +223,25 @@ ORDER BY ?ruleNum
 
 ## Computational Readiness Level (CRL)
 
-CRL is a 1–5 scale measuring how directly implementable a transliteration guideline is without expert supplementation. Each level is a named individual in TransOnto linked via `to:hasReadinessLevel`.
+CRL is a 1-5 scale measuring how directly implementable a transliteration guideline is without expert supplementation. Each level is a named individual in TransOnto linked via `to:hasReadinessLevel`.
 
 **Scoring formula:** `ReadinessScore = |Additions| + 2 × |Ambiguities| + |Decisions|`
 
-| CRL   | Score Range | Interpretation                                            |
-| ----- | ----------- | --------------------------------------------------------- |
-| CRL-1 | 0           | Directly executable; no additions or ambiguities required |
-| CRL-2 | 1–15        | Minor supplementation; edge cases only                    |
-| CRL-3 | 16–40       | Moderate intervention; systematic but manageable gaps     |
-| CRL-4 | 41–70       | Substantial intervention; multiple ambiguous rules        |
-| CRL-5 | >70         | Extensive intervention; pervasive underspecification      |
+| CRL | Score Range | Interpretation |
+| --- | --- | --- |
+| CRL-1 | 0 | Directly executable; no additions or ambiguities required |
+| CRL-2 | 1-15 | Minor supplementation; edge cases only |
+| CRL-3 | 16-40 | Moderate intervention; systematic but manageable gaps |
+| CRL-4 | 41-70 | Substantial intervention; multiple ambiguous rules |
+| CRL-5 | >70 | Extensive intervention; pervasive underspecification |
 
 **Assignments for this release:**
 
-| Language | ReadinessScore | CRL   | Rationale                                                                   |
-| -------- | -------------- | ----- | --------------------------------------------------------------------------- |
-| English  | 35             | CRL-3 | Irregular orthography; G2P dependency; decisions are localized              |
-| German   | 35             | CRL-4 | Two ambiguous rules with broad cross-item impact (expert upward adjustment) |
-| French   | 104            | CRL-5 | 44 expert additions required                                                |
+| Language | ReadinessScore | CRL | Rationale |
+| --- | --- | --- | --- |
+| English | 35 | CRL-3 | Irregular orthography; G2P dependency; decisions are localized |
+| German | 35 | CRL-4 | Two ambiguous rules with broad cross-item impact (expert upward adjustment) |
+| French | 104 | CRL-5 | 14 expert additions required |
 
 English and German share score 35 but differ in CRL because German's two ambiguities each affect broad vocabulary categories, generating systematic cross-item failures. See `docs/crl_framework.md`.
 
@@ -245,17 +249,17 @@ English and German share score 35 but differ in CRL because German's two ambigui
 
 ## Source Data
 
-| Language | Source                                                  | Benchmark Size             |
-| -------- | ------------------------------------------------------- | -------------------------- |
-| German   | Royal Society DE Guideline (2025); Duden Band 6 IPA     | 175 items                  |
-| French   | Royal Society FR Guideline (2025); Le Petit Robert 2006 | 92 items                   |
-| English  | Royal Society EN Guideline (1989); ประมวลคำทับศัพท์ภาษาอังกฤษเป็นภาษาไทย ฉบับสำนักงานราชบัณฑิตยสภา (2024); Cambridge Dictionary IPA | 297 items (326 test cases) |
+| Language | Source | Benchmark Size |
+| --- | --- | --- |
+| German | Royal Society DE Guideline (2025); Duden Band 6 IPA | 175 items |
+| French | Royal Society FR Guideline (2025); Le Petit Robert 2006 | 92 items |
+| English | Royal Society EN Guideline (1989/BE 2532); Cambridge Dictionary IPA | 297 items (326 test cases) |
 
 ---
 
 ## License
 
-CC BY 4.0 — see `LICENSE`.
+CC BY 4.0  see `LICENSE`.
 
 ---
 
