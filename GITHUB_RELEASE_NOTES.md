@@ -9,7 +9,8 @@
 An OWL 2 ontology for representing prescriptive transliteration standards and their computational formalization.
 
 * **IRI:** `https://w3id.org/transonto`
-* **15 classes** · **18 object properties** · **19 data properties** · **59 named individuals**
+* **15 classes** · **18 object properties** · **20 data properties** · **98 named individuals**
+* **887 ontology triples**
 * Four-layer architecture:
 
   * Language Standards
@@ -26,24 +27,31 @@ An OWL 2 ontology for representing prescriptive transliteration standards and th
 
 ## RoyalSocietyTransKG v1.0
 
+### Triple Counts
+
 | Component                      |    Triples |
 | ------------------------------ | ---------: |
-| Ontology (`transonto.ttl`)     |        697 |
+| Ontology (`transonto.ttl`)     |        887 |
 | Knowledge Graph (`kg_all.ttl`) |     12,899 |
-| **Combined**                   | **13,591** |
+| **Combined Graph**             | **13,677** |
 
-| Item               |                         Count |
-| ------------------ | ----------------------------: |
-| Lexical Entries    | 569 (DE 180 · FR 92 · EN 297) |
-| Benchmark Items    |                           564 |
-| Rules + Additions  |    57 (DE 31 · EN 12 · FR 14) |
-| Rule Ambiguities   |                7 (ABox count) |
-| Expert Decisions   |               11 (ABox count) |
-| Evaluation Results |   1 (EN 67.48% word accuracy) |
+> Combined graph size is computed after RDF graph merging and duplicate triple elimination.
 
-> German evaluation results are documented in ontology individual `EvalResult_DE_2025` with **92.68% word-level accuracy** and **97.35% syllable-level accuracy**. These results are represented in the ontology and are not instantiated as ABox `EvaluationResult` instances.
+### ABox Statistics (Authoritative Counts)
 
-> Statistics reported above use the authoritative ABox counts from `kg_all.ttl`. Combined ontology + KG counts differ because `transonto.ttl` contributes additional schema-level reference individuals.
+| Item                |                         Count |
+| ------------------- | ----------------------------: |
+| Languages           |                             3 |
+| Lexical Entries     | 569 (DE 180 · FR 92 · EN 297) |
+| Benchmark Items     |                           564 |
+| Gold Labels         |                           564 |
+| Rules (DE + EN)     |                            43 |
+| Rule Additions (FR) |                            14 |
+| Rule Ambiguities    |                             7 |
+| Expert Decisions    |                            11 |
+| Evaluation Results  |                             1 |
+
+> Statistics above use the authoritative ABox counts derived from `kg_all.ttl`.
 
 ---
 
@@ -55,6 +63,19 @@ An OWL 2 ontology for representing prescriptive transliteration standards and th
 | French   |              92 |              92 | Add_FR_01–14      | Not yet benchmarked                      |
 | English  |             297 |             297 | Rule_EN_01–12     | 67.48% word-level                        |
 
+### Evaluation Results
+
+**ABox EvaluationResult instances**
+
+* English: 67.48% word-level accuracy
+
+**Ontology-documented evaluation results**
+
+* German: 92.68% word-level accuracy
+* German: 97.35% syllable-level accuracy
+
+German evaluation is represented by ontology individual `EvalResult_DE_2025` and is not instantiated as an ABox `EvaluationResult`.
+
 ---
 
 ## Computational Readiness Levels (CRL)
@@ -65,17 +86,17 @@ An OWL 2 ontology for representing prescriptive transliteration standards and th
 | German   |             35 | CRL-4     |
 | French   |            104 | CRL-5     |
 
-**Formula**
+Formula:
 
 ```text
 ReadinessScore = |Additions| + 2×|Ambiguities| + |Decisions|
 ```
 
-German and English share the same numerical readiness score, but German is assigned CRL-4 because its documented ambiguities affect broader vocabulary categories and create systematic cross-item implementation challenges.
+German and English share the same readiness score, but German is assigned CRL-4 because its ambiguities affect broader vocabulary categories and require greater expert intervention.
 
 ---
 
-## Files
+## Repository Contents
 
 ```text
 ontology/
@@ -115,7 +136,7 @@ g.parse("ontology/transonto.ttl", format="turtle")
 g.parse("kg/kg_all.ttl", format="turtle")
 
 print(len(g))
-# 13591
+# 13677
 ```
 
 ---
@@ -123,10 +144,12 @@ print(len(g))
 ## Highlights
 
 * First ontology dedicated to computational formalization of Royal Society transliteration standards.
-* Introduces the Formalization Layer for modelling ambiguities, expert additions, and expert decisions.
-* Provides benchmark-aligned multilingual transliteration knowledge graphs for German, French, and English.
-* Implements the Computational Readiness Level (CRL) framework for assessing deployability of language standards.
-* Includes validated SPARQL competency-question queries and explainability paths.
+* Explicit modelling of ambiguities, additions, and expert decisions.
+* Multilingual transliteration knowledge graph covering German, French, and English.
+* Computational Readiness Level (CRL) framework for measuring implementation readiness.
+* Benchmark-aligned evaluation resources.
+* Validated competency-question SPARQL query suite.
+* RDF, OWL, and SPARQL resources released under CC BY 4.0.
 
 ---
 
