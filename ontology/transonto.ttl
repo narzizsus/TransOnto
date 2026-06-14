@@ -8,13 +8,14 @@
     dcterms:created "2025-09-01"^^xsd:date ;
     dcterms:creator "NLP & Semantics Technology Team, NECTEC, NSTDA"@en ;
     dcterms:description "An OWL ontology capturing transliteration guidelines, rules, lexical entries, evaluation results, and computational readiness levels for the Royal Society of Thailand transliteration system covering German, French, and English."@en ;
-    dcterms:modified "2026-06-13"^^xsd:date ;
+    dcterms:modified "2026-06-14"^^xsd:date ;
     dcterms:title "TransOnto: Transliteration Knowledge Ontology"@en,
         "TransOnto: ออนโทโลยีความรู้การถ่ายอักษร"@th ;
     rdfs:seeAlso <https://github.com/narzizsus/TransOnto> ;
     owl:versionIRI <https://w3id.org/transonto/1.0> ;
     owl:versionInfo "1.0" .
 
+# === Classes ===
 to:BenchmarkItem a owl:Class ;
     rdfs:label "Benchmark Item"@en, "รายการประเมิน"@th ;
     rdfs:comment "A source-language word included in the evaluation benchmark dataset."@en .
@@ -76,201 +77,165 @@ to:TransliterationVariant a owl:Class ;
     rdfs:label "Transliteration Variant"@en, "รูปแบบการถ่ายอักษรทางเลือก"@th ;
     rdfs:comment "An alternative Thai rendering of the same source-language form, arising from ambiguity or rule variation."@en .
 
-to:accuracyScore a owl:DatatypeProperty ;
-    rdfs:label "accuracy score"@en, "คะแนนความแม่นยำ"@th ;
-    rdfs:domain to:EvaluationResult ;
-    rdfs:range xsd:decimal .
-
-to:additionNumber a owl:DatatypeProperty ;
-    rdfs:label "addition number"@en, "หมายเลขการเพิ่มเติม"@th ;
-    rdfs:domain to:RuleAddition ;
-    rdfs:range xsd:integer .
-
-to:ambiguityDescription a owl:DatatypeProperty ;
-    rdfs:label "ambiguity description"@en, "คำอธิบายความคลุมเครือ"@th ;
-    rdfs:domain to:RuleAmbiguity ;
-    rdfs:range xsd:string .
-
+# === Object Properties ===
 to:appliedToLanguage a owl:ObjectProperty ;
     rdfs:label "applied to language"@en, "ใช้กับภาษา"@th ;
-    rdfs:domain to:Rule ;
-    rdfs:range to:Language .
-
-to:characterAccuracy a owl:DatatypeProperty ;
-    rdfs:label "character accuracy"@en, "ความแม่นยำระดับอักขระ"@th ;
-    rdfs:domain to:EvaluationResult ;
-    rdfs:range xsd:decimal .
-
-to:crlEvidence a owl:DatatypeProperty ;
-    rdfs:label "CRL evidence"@en, "หลักฐาน CRL"@th ;
-    rdfs:domain to:ComputationalReadinessLevel ;
-    rdfs:range xsd:string .
-
-to:crlScore a owl:DatatypeProperty ;
-    rdfs:label "CRL score"@en, "คะแนน CRL"@th ;
-    rdfs:comment "Integer 1-5: 1=directly executable (CRL-1, no expert intervention needed), 5=requires most extensive expert intervention (CRL-5, least ready for automation). Higher score = less computationally ready."@en ;
-    rdfs:domain to:ComputationalReadinessLevel ;
-    rdfs:range xsd:integer .
-
-to:decisionJustification a owl:DatatypeProperty ;
-    rdfs:label "decision justification"@en, "เหตุผลการตัดสินใจ"@th ;
-    rdfs:domain to:ExpertDecision ;
-    rdfs:range xsd:string .
+    rdfs:domain to:Rule ; rdfs:range to:Language .
 
 to:evaluatesPhenomenon a owl:ObjectProperty ;
     rdfs:label "evaluates phenomenon"@en, "ประเมินปรากฏการณ์"@th ;
-    rdfs:domain to:BenchmarkItem ;
-    rdfs:range to:RuleAmbiguity .
+    rdfs:domain to:BenchmarkItem ; rdfs:range to:RuleAmbiguity .
 
 to:evaluatesRule a owl:ObjectProperty ;
     rdfs:label "evaluates rule"@en, "ประเมินกฎ"@th ;
-    rdfs:domain to:BenchmarkItem ;
-    rdfs:range to:Rule .
+    rdfs:domain to:BenchmarkItem ; rdfs:range to:Rule .
 
 to:exemptifiesRule a owl:ObjectProperty ;
     rdfs:label "exemplifies rule"@en, "แสดงตัวอย่างกฎ"@th ;
-    rdfs:domain to:LexicalEntry ;
-    rdfs:range to:Rule .
+    rdfs:domain to:LexicalEntry ; rdfs:range to:Rule .
 
 to:fromSourceLanguage a owl:ObjectProperty ;
     rdfs:label "from source language"@en ;
-    rdfs:domain to:LexicalEntry ;
-    rdfs:range to:Language .
-
-to:guidelineVersion a owl:DatatypeProperty ;
-    rdfs:label "guideline version"@en, "เวอร์ชันแนวทาง"@th ;
-    rdfs:domain to:Guideline ;
-    rdfs:range xsd:string .
-
-to:guidelineYear a owl:DatatypeProperty ;
-    rdfs:label "guideline year"@en, "ปีแนวทาง"@th ;
-    rdfs:domain to:Guideline ;
-    rdfs:range xsd:gYear .
+    rdfs:domain to:LexicalEntry ; rdfs:range to:Language .
 
 to:hasAddition a owl:ObjectProperty ;
     rdfs:label "has addition"@en, "มีการเพิ่มเติม"@th ;
-    rdfs:domain to:Guideline ;
-    rdfs:range to:RuleAddition ;
+    rdfs:domain to:Guideline ; rdfs:range to:RuleAddition ;
     rdfs:subPropertyOf to:hasRule .
 
 to:hasAmbiguity a owl:ObjectProperty ;
     rdfs:label "has ambiguity"@en, "มีความคลุมเครือ"@th ;
     rdfs:comment "Attaches a documented ambiguity to a rule."@en ;
-    rdfs:domain to:Rule ;
-    rdfs:range to:RuleAmbiguity .
+    rdfs:domain to:Rule ; rdfs:range to:RuleAmbiguity .
 
 to:hasErrorType a owl:ObjectProperty ;
     rdfs:label "has error type"@en, "มีประเภทข้อผิดพลาด"@th ;
-    rdfs:domain to:EvaluationResult ;
-    rdfs:range to:ErrorType .
+    rdfs:domain to:EvaluationResult ; rdfs:range to:ErrorType .
 
 to:hasGoldLabel a owl:ObjectProperty ;
     rdfs:label "has gold label"@en, "มีป้ายกำกับมาตรฐาน"@th ;
-    rdfs:domain to:BenchmarkItem ;
-    rdfs:range to:GoldLabel .
+    rdfs:domain to:BenchmarkItem ; rdfs:range to:GoldLabel .
 
 to:hasGuideline a owl:ObjectProperty ;
     rdfs:label "has guideline"@en, "มีแนวทาง"@th ;
     rdfs:comment "Links a language to its Royal Society transliteration guideline."@en ;
-    rdfs:domain to:Language ;
-    rdfs:range to:Guideline .
+    rdfs:domain to:Language ; rdfs:range to:Guideline .
 
 to:hasLexicalEntry a owl:ObjectProperty ;
     rdfs:label "has lexical entry"@en, "มีรายการศัพท์"@th ;
-    rdfs:domain to:Guideline ;
-    rdfs:range to:LexicalEntry .
+    rdfs:domain to:Guideline ; rdfs:range to:LexicalEntry .
 
 to:hasReadinessLevel a owl:ObjectProperty ;
     rdfs:label "has readiness level"@en, "มีระดับความพร้อมด้านการคำนวณ"@th ;
-    rdfs:domain to:Language ;
-    rdfs:range to:ComputationalReadinessLevel .
+    rdfs:domain to:Language ; rdfs:range to:ComputationalReadinessLevel .
 
 to:hasRule a owl:ObjectProperty ;
     rdfs:label "has rule"@en, "มีกฎ"@th ;
     rdfs:comment "Associates a guideline with a constituent transliteration rule."@en ;
-    rdfs:domain to:Guideline ;
-    rdfs:range to:Rule .
+    rdfs:domain to:Guideline ; rdfs:range to:Rule .
 
 to:hasThaiForm a owl:ObjectProperty ;
     rdfs:label "has Thai form"@en, "มีรูปแบบภาษาไทย"@th ;
-    rdfs:domain to:LexicalEntry ;
-    rdfs:range to:ThaiForm .
+    rdfs:domain to:LexicalEntry ; rdfs:range to:ThaiForm .
 
 to:hasVariant a owl:ObjectProperty ;
     rdfs:label "has variant"@en, "มีรูปแบบทางเลือก"@th ;
-    rdfs:domain to:ThaiForm ;
-    rdfs:range to:TransliterationVariant .
-
-to:ipa a owl:DatatypeProperty ;
-    rdfs:label "IPA transcription"@en, "การถอดเสียง IPA"@th ;
-    rdfs:domain to:LexicalEntry ;
-    rdfs:range xsd:string .
-
-to:isPreferred a owl:DatatypeProperty ;
-    rdfs:label "is preferred"@en, "เป็นที่นิยม"@th ;
-    rdfs:domain to:ThaiForm ;
-    rdfs:range xsd:boolean .
+    rdfs:domain to:ThaiForm ; rdfs:range to:TransliterationVariant .
 
 to:justifiedByDecision a owl:ObjectProperty ;
     rdfs:label "justified by decision"@en, "มีเหตุผลจากการตัดสินใจ"@th ;
-    rdfs:domain to:RuleAmbiguity ;
-    rdfs:range to:ExpertDecision .
-
-to:languageCode a owl:DatatypeProperty ;
-    rdfs:label "ISO 639-1 code"@en, "รหัสภาษา ISO 639-1"@th ;
-    rdfs:domain to:Language ;
-    rdfs:range xsd:string .
+    rdfs:domain to:RuleAmbiguity ; rdfs:range to:ExpertDecision .
 
 to:madByExpert a owl:ObjectProperty ;
     rdfs:label "made by expert"@en, "จัดทำโดยผู้เชี่ยวชาญ"@th ;
-    rdfs:domain to:ExpertDecision ;
-    rdfs:range to:Expert .
+    rdfs:domain to:ExpertDecision ; rdfs:range to:Expert .
 
 to:producedEvaluationResult a owl:ObjectProperty ;
     rdfs:label "produced evaluation result"@en ;
-    rdfs:domain to:Guideline ;
-    rdfs:range to:EvaluationResult .
+    rdfs:domain to:Guideline ; rdfs:range to:EvaluationResult .
+
+# === Datatype Properties ===
+to:accuracyScore a owl:DatatypeProperty ;
+    rdfs:label "accuracy score"@en, "คะแนนความแม่นยำ"@th ;
+    rdfs:domain to:EvaluationResult ; rdfs:range xsd:decimal .
+
+to:additionNumber a owl:DatatypeProperty ;
+    rdfs:label "addition number"@en, "หมายเลขการเพิ่มเติม"@th ;
+    rdfs:domain to:RuleAddition ; rdfs:range xsd:integer .
+
+to:ambiguityDescription a owl:DatatypeProperty ;
+    rdfs:label "ambiguity description"@en, "คำอธิบายความคลุมเครือ"@th ;
+    rdfs:domain to:RuleAmbiguity ; rdfs:range xsd:string .
+
+to:characterAccuracy a owl:DatatypeProperty ;
+    rdfs:label "character accuracy"@en, "ความแม่นยำระดับอักขระ"@th ;
+    rdfs:domain to:EvaluationResult ; rdfs:range xsd:decimal .
+
+to:crlEvidence a owl:DatatypeProperty ;
+    rdfs:label "CRL evidence"@en, "หลักฐาน CRL"@th ;
+    rdfs:domain to:ComputationalReadinessLevel ; rdfs:range xsd:string .
+
+to:crlScore a owl:DatatypeProperty ;
+    rdfs:label "CRL score"@en, "คะแนน CRL"@th ;
+    rdfs:comment "Integer 1-5: 1=directly executable (CRL-1, no expert intervention needed), 5=requires most extensive expert intervention (CRL-5, least ready for automation). Higher score = less computationally ready."@en ;
+    rdfs:domain to:ComputationalReadinessLevel ; rdfs:range xsd:integer .
+
+to:decisionJustification a owl:DatatypeProperty ;
+    rdfs:label "decision justification"@en, "เหตุผลการตัดสินใจ"@th ;
+    rdfs:domain to:ExpertDecision ; rdfs:range xsd:string .
+
+to:guidelineVersion a owl:DatatypeProperty ;
+    rdfs:label "guideline version"@en, "เวอร์ชันแนวทาง"@th ;
+    rdfs:domain to:Guideline ; rdfs:range xsd:string .
+
+to:guidelineYear a owl:DatatypeProperty ;
+    rdfs:label "guideline year"@en, "ปีแนวทาง"@th ;
+    rdfs:domain to:Guideline ; rdfs:range xsd:gYear .
+
+to:ipa a owl:DatatypeProperty ;
+    rdfs:label "IPA transcription"@en, "การถอดเสียง IPA"@th ;
+    rdfs:domain to:LexicalEntry ; rdfs:range xsd:string .
+
+to:isPreferred a owl:DatatypeProperty ;
+    rdfs:label "is preferred"@en, "เป็นที่นิยม"@th ;
+    rdfs:domain to:ThaiForm ; rdfs:range xsd:boolean .
+
+to:languageCode a owl:DatatypeProperty ;
+    rdfs:label "ISO 639-1 code"@en, "รหัสภาษา ISO 639-1"@th ;
+    rdfs:domain to:Language ; rdfs:range xsd:string .
 
 to:readinessScore a owl:DatatypeProperty ;
     rdfs:label "readiness score"@en, "คะแนนความพร้อม"@th ;
     rdfs:comment "Formula-based readiness score: |Additions| + 2x|Ambiguities| + |Decisions|. Used to determine CRL assignment: 0=CRL-1, 1-15=CRL-2, 16-40=CRL-3, 41-70=CRL-4, >70=CRL-5."@en ;
-    rdfs:domain to:ComputationalReadinessLevel ;
-    rdfs:range xsd:integer .
+    rdfs:domain to:ComputationalReadinessLevel ; rdfs:range xsd:integer .
 
 to:ruleNumber a owl:DatatypeProperty ;
     rdfs:label "rule number"@en, "หมายเลขกฎ"@th ;
-    rdfs:domain to:Rule ;
-    rdfs:range xsd:integer .
+    rdfs:domain to:Rule ; rdfs:range xsd:integer .
 
 to:ruleText a owl:DatatypeProperty ;
     rdfs:label "rule text"@en, "เนื้อหากฎ"@th ;
-    rdfs:domain to:Rule ;
-    rdfs:range xsd:string .
+    rdfs:domain to:Rule ; rdfs:range xsd:string .
 
 to:sourceForm a owl:DatatypeProperty ;
     rdfs:label "source form"@en, "รูปแบบต้นทาง"@th ;
-    rdfs:domain to:LexicalEntry ;
-    rdfs:range xsd:string .
+    rdfs:domain to:LexicalEntry ; rdfs:range xsd:string .
 
 to:sourceGrapheme a owl:DatatypeProperty ;
     rdfs:label "source grapheme"@en, "กราฟีมต้นทาง"@th ;
-    rdfs:domain to:Rule ;
-    rdfs:range xsd:string .
+    rdfs:domain to:Rule ; rdfs:range xsd:string .
 
 to:syllableAccuracy a owl:DatatypeProperty ;
     rdfs:label "syllable accuracy"@en, "ความแม่นยำระดับพยางค์"@th ;
-    rdfs:domain to:EvaluationResult ;
-    rdfs:range xsd:decimal .
+    rdfs:domain to:EvaluationResult ; rdfs:range xsd:decimal .
 
 to:targetGrapheme a owl:DatatypeProperty ;
     rdfs:label "target grapheme"@en, "กราฟีมเป้าหมาย"@th ;
-    rdfs:domain to:Rule ;
-    rdfs:range xsd:string .
+    rdfs:domain to:Rule ; rdfs:range xsd:string .
 
 to:thaiScript a owl:DatatypeProperty ;
     rdfs:label "Thai script"@en, "อักษรไทย"@th ;
-    rdfs:domain to:ThaiForm ;
-    rdfs:range xsd:string .
+    rdfs:domain to:ThaiForm ; rdfs:range xsd:string .
 
 # === Languages ===
 to:English a owl:NamedIndividual, to:Language ;
@@ -292,7 +257,7 @@ to:French a owl:NamedIndividual, to:Language ;
     to:hasReadinessLevel to:CRL_FR .
 
 # === Guidelines ===
-# FIXED: Guideline_EN year = 2532 (1989 CE in Buddhist Era), was 2535
+# FIXED: Guideline_EN year = 2532, was 2535
 to:Guideline_EN a owl:NamedIndividual, to:Guideline ;
     rdfs:label "Royal Society Thai Transliteration Guideline - English"@en, "คู่มือการถ่ายอักษรภาษาอังกฤษ ราชบัณฑิตยสภา"@th ;
     to:guidelineVersion "2532" ;
@@ -344,7 +309,6 @@ to:ErrorType_ProperNoun a owl:NamedIndividual, to:ErrorType ;
     rdfs:comment "Errors specific to proper nouns (personal names, place names) not covered by general rules."@en .
 
 # === Evaluation Results ===
-# EvalResult_EN_2025 is the single ABox EvaluationResult in kg_all.ttl (also here)
 to:EvalResult_EN_2025 a owl:NamedIndividual, to:EvaluationResult ;
     rdfs:label "EN System Evaluation 2025"@en ;
     rdfs:comment "Accuracy on NECTEC internal benchmark; word-level 67.48% (220/326 items)."@en ;
@@ -411,7 +375,7 @@ to:Decision_DE_21b a owl:NamedIndividual, to:ExpertDecision ;
 
 to:Decision_DE_25a a owl:NamedIndividual, to:ExpertDecision ;
     rdfs:label "Decision: French loanword list from Duden"@en ;
-    to:decisionJustification "Use Duden Fremdworterbuch as reference for French loanword identification."@en .
+    to:decisionJustification "Use Duden Fremdwoerterbuch as reference for French loanword identification."@en .
 
 to:Decision_DE_25b a owl:NamedIndividual, to:ExpertDecision ;
     rdfs:label "Decision: Genie as French loanword"@en ;
@@ -437,7 +401,7 @@ to:Decision_DE_30 a owl:NamedIndividual, to:ExpertDecision ;
 to:Rule_DE_01 a owl:NamedIndividual, to:Rule ;
     rdfs:label "DE Rule 1: Pronunciation basis"@en, "กฎ DE 1: พื้นฐานการออกเสียง"@th ;
     to:ruleNumber 1 ; to:appliedToLanguage to:German ;
-    to:ruleText "Transliteration follows Standard German (Hochdeutsch/Standarddeutsch) pronunciation as referenced by Duden Band 6: Ausspracheworterbuch (2006)."@en .
+    to:ruleText "Transliteration follows Standard German (Hochdeutsch/Standarddeutsch) pronunciation as referenced by Duden Band 6."@en .
 
 to:Rule_DE_02 a owl:NamedIndividual, to:Rule ;
     rdfs:label "DE Rule 2: Vowel length distinction"@en, "กฎ DE 2: การแยกความยาวสระ"@th ;
@@ -528,7 +492,7 @@ to:Rule_DE_17 a owl:NamedIndividual, to:Rule ;
     to:ruleNumber 17 ; to:appliedToLanguage to:German ;
     to:hasAmbiguity to:Ambiguity_DE_17 ;
     to:sourceGrapheme "r, rr" ; to:targetGrapheme "ร, เออ" ;
-    to:ruleText "r in onset->ร; r vocalized in coda->เออ. Rad (variants: ร/รา/เรา)."@en .
+    to:ruleText "r in onset->ร; r vocalized in coda->เออ. Rad (variants)."@en .
 
 to:Rule_DE_18 a owl:NamedIndividual, to:Rule ;
     rdfs:label "DE Rule 18: Consonant h"@en, "กฎ DE 18: พยัญชนะ h"@th ;
@@ -588,7 +552,7 @@ to:Rule_DE_27 a owl:NamedIndividual, to:Rule ;
 to:Rule_DE_28 a owl:NamedIndividual, to:Rule ;
     rdfs:label "DE Rule 28: Hyphenated compounds"@en, "กฎ DE 28: คำประสมที่มีเครื่องหมายยัติภังค์"@th ;
     to:ruleNumber 28 ; to:appliedToLanguage to:German ;
-    to:ruleText "Hyphenated compound transliterations preserve the hyphen between parts. Baden-Wurttemberg."@en .
+    to:ruleText "Hyphenated compound transliterations preserve the hyphen between parts. Baden-Wurtemberg."@en .
 
 to:Rule_DE_29 a owl:NamedIndividual, to:Rule ;
     rdfs:label "DE Rule 29: Long compound names"@en, "กฎ DE 29: ชื่อประสมยาว"@th ;
@@ -598,12 +562,12 @@ to:Rule_DE_29 a owl:NamedIndividual, to:Rule ;
 to:Rule_DE_30 a owl:NamedIndividual, to:Rule ;
     rdfs:label "DE Rule 30: Italicized foreign words"@en, "กฎ DE 30: คำต่างประเทศที่พิมพ์เอียง"@th ;
     to:ruleNumber 30 ; to:appliedToLanguage to:German ;
-    to:ruleText "Foreign words in italic are transliterated according to their source language phonology. Otto von Guericke."@en .
+    to:ruleText "Foreign words in italic are transliterated according to their source language phonology."@en .
 
 to:Rule_DE_31 a owl:NamedIndividual, to:Rule ;
     rdfs:label "DE Rule 31: Geographic abbreviations"@en, "กฎ DE 31: ตัวย่อทางภูมิศาสตร์"@th ;
     to:ruleNumber 31 ; to:appliedToLanguage to:German ;
-    to:ruleText "Geographic abbreviations (a.M., o.d.T., etc.) expand to full form in transliteration. Frankfurt a.M.->แฟรงก์ฟูร์ท อัม ไมน์."@en .
+    to:ruleText "Geographic abbreviations (a.M., o.d.T., etc.) expand to full form in transliteration."@en .
 
 # === English Rules (Rule_EN_01-12) ===
 to:Rule_EN_01 a owl:NamedIndividual, to:Rule ;
@@ -666,60 +630,60 @@ to:Rule_EN_12 a owl:NamedIndividual, to:Rule ;
     to:ruleNumber 12 ; to:appliedToLanguage to:English ;
     to:ruleText "Short vowel glyph requires context not available from IPA alone."@en .
 
-# === French Additions (Add_FR_01-14) - 14 total ===
-to:Add_FR_01 a owl:NamedIndividual, to:RuleAddition ;
+# === French Additions (RuleAddition_FR_01-14) - 14 total ===
+to:RuleAddition_FR_01 a owl:NamedIndividual, to:RuleAddition ;
     rdfs:label "FR Addition 1: Nasal vowel"@en, "การเพิ่ม FR 1: สระนาสิก"@th ;
     to:additionNumber 1 ; to:appliedToLanguage to:French .
 
-to:Add_FR_02 a owl:NamedIndividual, to:RuleAddition ;
+to:RuleAddition_FR_02 a owl:NamedIndividual, to:RuleAddition ;
     rdfs:label "FR Addition 2: Nasal vowel 2"@en, "การเพิ่ม FR 2: สระนาสิก 2"@th ;
     to:additionNumber 2 ; to:appliedToLanguage to:French .
 
-to:Add_FR_03 a owl:NamedIndividual, to:RuleAddition ;
+to:RuleAddition_FR_03 a owl:NamedIndividual, to:RuleAddition ;
     rdfs:label "FR Addition 3: Nasal vowel 3 (UNRESOLVED)"@en, "การเพิ่ม FR 3: สระนาสิก 3 (ยังไม่แก้ไข)"@th ;
     to:additionNumber 3 ; to:appliedToLanguage to:French .
 
-to:Add_FR_04 a owl:NamedIndividual, to:RuleAddition ;
+to:RuleAddition_FR_04 a owl:NamedIndividual, to:RuleAddition ;
     rdfs:label "FR Addition 4: Liaison rule (UNRESOLVED)"@en, "การเพิ่ม FR 4: กฎ liaison (ยังไม่แก้ไข)"@th ;
     to:additionNumber 4 ; to:appliedToLanguage to:French .
 
-to:Add_FR_05 a owl:NamedIndividual, to:RuleAddition ;
+to:RuleAddition_FR_05 a owl:NamedIndividual, to:RuleAddition ;
     rdfs:label "FR Addition 5: h aspire vs h muet"@en, "การเพิ่ม FR 5: h aspire กับ h muet"@th ;
     to:additionNumber 5 ; to:appliedToLanguage to:French .
 
-to:Add_FR_06 a owl:NamedIndividual, to:RuleAddition ;
+to:RuleAddition_FR_06 a owl:NamedIndividual, to:RuleAddition ;
     rdfs:label "FR Addition 6: Final silent consonants"@en, "การเพิ่ม FR 6: พยัญชนะท้ายคำที่ไม่ออกเสียง"@th ;
     to:additionNumber 6 ; to:appliedToLanguage to:French .
 
-to:Add_FR_07 a owl:NamedIndividual, to:RuleAddition ;
+to:RuleAddition_FR_07 a owl:NamedIndividual, to:RuleAddition ;
     rdfs:label "FR Addition 7: Vowel y"@en, "การเพิ่ม FR 7: สระ y"@th ;
     to:additionNumber 7 ; to:appliedToLanguage to:French .
 
-to:Add_FR_08 a owl:NamedIndividual, to:RuleAddition ;
+to:RuleAddition_FR_08 a owl:NamedIndividual, to:RuleAddition ;
     rdfs:label "FR Addition 8: Vowel oe"@en, "การเพิ่ม FR 8: สระ oe"@th ;
     to:additionNumber 8 ; to:appliedToLanguage to:French .
 
-to:Add_FR_09 a owl:NamedIndividual, to:RuleAddition ;
+to:RuleAddition_FR_09 a owl:NamedIndividual, to:RuleAddition ;
     rdfs:label "FR Addition 9: Consonant zh"@en, "การเพิ่ม FR 9: พยัญชนะ zh"@th ;
     to:additionNumber 9 ; to:appliedToLanguage to:French .
 
-to:Add_FR_10 a owl:NamedIndividual, to:RuleAddition ;
+to:RuleAddition_FR_10 a owl:NamedIndividual, to:RuleAddition ;
     rdfs:label "FR Addition 10: Consonant sh"@en, "การเพิ่ม FR 10: พยัญชนะ sh"@th ;
     to:additionNumber 10 ; to:appliedToLanguage to:French .
 
-to:Add_FR_11 a owl:NamedIndividual, to:RuleAddition ;
+to:RuleAddition_FR_11 a owl:NamedIndividual, to:RuleAddition ;
     rdfs:label "FR Addition 11: Consonant ny"@en, "การเพิ่ม FR 11: พยัญชนะ ny"@th ;
     to:additionNumber 11 ; to:appliedToLanguage to:French .
 
-to:Add_FR_12 a owl:NamedIndividual, to:RuleAddition ;
+to:RuleAddition_FR_12 a owl:NamedIndividual, to:RuleAddition ;
     rdfs:label "FR Addition 12: Elision"@en, "การเพิ่ม FR 12: การตัดเสียง"@th ;
     to:additionNumber 12 ; to:appliedToLanguage to:French .
 
-to:Add_FR_13 a owl:NamedIndividual, to:RuleAddition ;
+to:RuleAddition_FR_13 a owl:NamedIndividual, to:RuleAddition ;
     rdfs:label "FR Addition 13: Proper nouns"@en, "การเพิ่ม FR 13: ชื่อเฉพาะ"@th ;
     to:additionNumber 13 ; to:appliedToLanguage to:French .
 
-to:Add_FR_14 a owl:NamedIndividual, to:RuleAddition ;
+to:RuleAddition_FR_14 a owl:NamedIndividual, to:RuleAddition ;
     rdfs:label "FR Addition 14: Abbreviations"@en, "การเพิ่ม FR 14: ตัวย่อ"@th ;
     to:additionNumber 14 ; to:appliedToLanguage to:French .
 
