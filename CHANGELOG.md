@@ -183,6 +183,16 @@ Phase 3 validation completed successfully.
 | UC5_coverage.rq       | PASS   |
 | UC6_errors.rq         | PASS   |
 
+Phase 4 validation completed successfully.
+
+| Query               | Status |
+| ------------------- | ------ |
+| UC1_ambiguity.rq    | PASS   |
+| UC7_en_coverage.rq  | PASS   |
+| UC8_fr_additions.rq | PASS   |
+
+All seven competency-question SPARQL queries included in the v1.0 release package (UC1--UC8, excluding UC2) executed successfully against the merged release graph.
+
 ---
 
 ## Added - Documentation
