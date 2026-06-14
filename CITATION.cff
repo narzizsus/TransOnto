@@ -1,5 +1,6 @@
 cff-version: 1.2.0
 message: "If you use TransOnto or RoyalSocietyTransKG, please cite as below."
+
 type: dataset
 title: "TransOnto v1.0 + RoyalSocietyTransKG v1.0"
 version: "1.0.0"
