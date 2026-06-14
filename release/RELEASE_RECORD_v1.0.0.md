@@ -19,34 +19,61 @@
 
 ---
 
-## Canonical Metrics (ABox Authoritative Counts)
+## Canonical Metrics
 
-Authoritative reference for all downstream citations, including the paper, README, GitHub Release, and Zenodo metadata.
+Authoritative reference for all downstream citations, including:
 
-Derived from `kg_all.ttl` and validated against `transonto.ttl` using rdflib (2026-06-13).
+* Paper
+* README
+* GitHub Release
+* Zenodo metadata
+* Future ontology documentation
 
-> All benchmark statistics below use the authoritative ABox counts derived from `kg_all.ttl`.
->
-> Combined graph counts (ontology + KG) are documented separately in `docs/kg_statistics.md` and are not used for paper reporting.
+Derived from:
 
-| Metric                             | Value      |
-| ---------------------------------- | ---------- |
-| Ontology triples (`transonto.ttl`) | 697        |
-| KG triples (`kg_all.ttl`)          | 12,899     |
-| **Combined triples**               | **13,591** |
-| Classes                            | 15         |
-| Object properties                  | 18         |
-| Data properties                    | 19         |
-| Named individuals (ontology)       | 59         |
-| Languages                          | 3          |
-| Lexical Entries                    | 569        |
-| Benchmark Items                    | 564        |
-| Gold Labels                        | 564        |
-| Rules (DE + EN)                    | 43         |
-| Rule Additions (FR)                | 14         |
-| Rule Ambiguities                   | 7          |
-| Expert Decisions                   | 11         |
-| Evaluation Results                 | 1          |
+```text
+ontology/transonto.ttl
+kg/kg_all.ttl
+```
+
+Validated using rdflib on 2026-06-13.
+
+### Ontology Metrics
+
+| Metric                             | Value |
+| ---------------------------------- | ----: |
+| Ontology triples (`transonto.ttl`) |   887 |
+| Classes                            |    15 |
+| Object properties                  |    18 |
+| Data properties                    |    20 |
+| Named individuals                  |    98 |
+
+### Knowledge Graph Metrics (ABox Authoritative Counts)
+
+| Metric                    |  Value |
+| ------------------------- | -----: |
+| KG triples (`kg_all.ttl`) | 12,899 |
+| Languages                 |      3 |
+| Lexical Entries           |    569 |
+| Benchmark Items           |    564 |
+| Gold Labels               |    564 |
+| Rules (DE + EN)           |     43 |
+| Rule Additions (FR)       |     14 |
+| Rule Ambiguities          |      7 |
+| Expert Decisions          |     11 |
+| Evaluation Results        |      1 |
+
+### Combined Graph Metrics
+
+| Metric                    |      Value |
+| ------------------------- | ---------: |
+| Ontology triples          |        887 |
+| KG triples                |     12,899 |
+| Raw sum                   |     13,786 |
+| Duplicate triples removed |        109 |
+| **Merged graph triples**  | **13,677** |
+
+The merged graph count is computed after RDF graph union and duplicate-triple elimination.
 
 ---
 
@@ -76,17 +103,17 @@ Total ABox EvaluationResult instances: **1**
 | -------- | ---------------------------------------- |
 | German   | 92.68% word-level; 97.35% syllable-level |
 
-German evaluation is represented in ontology individual `EvalResult_DE_2025` and is not instantiated as an ABox `EvaluationResult`.
+German evaluation is represented by ontology individual `EvalResult_DE_2025` and is not instantiated as an ABox `EvaluationResult`.
 
 ---
 
 ## CRL Final Assignments
 
-| Language | ReadinessScore | crlScore (ontology) | Final CRL (paper) |
-| -------- | -------------: | ------------------: | ----------------- |
-| English  |             35 |                   3 | CRL-3             |
-| German   |             35 |                   4 | CRL-4             |
-| French   |            104 |                   5 | CRL-5             |
+| Language | ReadinessScore | crlScore (ontology) | Final CRL |
+| -------- | -------------: | ------------------: | --------- |
+| English  |             35 |                   3 | CRL-3     |
+| German   |             35 |                   4 | CRL-4     |
+| French   |            104 |                   5 | CRL-5     |
 
 Formula:
 
@@ -104,39 +131,56 @@ CRL scale:
 | CRL-4 | Substantial intervention |
 | CRL-5 | Extensive intervention   |
 
-German and English share the same readiness score but differ in final CRL assignment because German ambiguities have broader cross-item impact and require greater expert intervention.
+---
+
+## Repository Components (Frozen at v1.0.0)
+
+### Ontology
+
+```text
+ontology/transonto.ttl
+ontology/transonto.owl
+```
+
+### Knowledge Graph
+
+```text
+kg/kg_de.ttl
+kg/kg_fr.ttl
+kg/kg_en.ttl
+kg/kg_all.ttl
+```
+
+### SPARQL
+
+```text
+sparql/UC1_ambiguity.rq
+sparql/UC3_crl.rq
+sparql/UC4_explainability.rq
+sparql/UC5_coverage.rq
+sparql/UC6_errors.rq
+sparql/UC7_en_coverage.rq
+sparql/UC8_fr_additions.rq
+```
+
+### Documentation
+
+```text
+README.md
+CHANGELOG.md
+docs/competency_questions.md
+docs/crl_framework.md
+docs/kg_statistics.md
+CITATION.cff
+LICENSE
+VERSION
+```
 
 ---
 
-## File Manifest (Frozen at v1.0.0)
+## SPARQL Validation (Phase 3)
 
-| File                         |  Lines | Notes                    |
-| ---------------------------- | -----: | ------------------------ |
-| ontology/transonto.ttl       |    828 | 697 triples              |
-| ontology/transonto.owl       |    968 | RDF/XML                  |
-| kg/kg_de.ttl                 |  4,869 | 4,109 triples            |
-| kg/kg_fr.ttl                 |  2,505 | 2,073 triples            |
-| kg/kg_en.ttl                 |  7,963 | 6,709 triples            |
-| kg/kg_all.ttl                | 15,228 | 12,899 triples           |
-| sparql/UC1_ambiguity.rq      |     25 | CQ4                      |
-| sparql/UC3_crl.rq            |     53 | CQ8                      |
-| sparql/UC4_explainability.rq |     65 | CQ9                      |
-| sparql/UC5_coverage.rq       |     79 | CQ10                     |
-| sparql/UC6_errors.rq         |     80 | CQ7                      |
-| sparql/UC7_en_coverage.rq    |     21 | EN rule distribution     |
-| sparql/UC8_fr_additions.rq   |     21 | CQ5                      |
-| docs/competency_questions.md |     71 | CQ1–CQ10                 |
-| docs/crl_framework.md        |     62 | CRL scoring              |
-| docs/kg_statistics.md        |    100 | Graph-derived statistics |
-| README.md                    |    280 | Repository documentation |
-| CHANGELOG.md                 |     57 | Release history          |
-| CITATION.cff                 |     50 | Citation metadata        |
-| LICENSE                      |     13 | CC BY 4.0                |
-| VERSION                      |      1 | 1.0.0                    |
-
----
-
-## SPARQL Validation (Phase 3 — 2026-06-13)
+Validation date: 2026-06-13
 
 | Query                 | Status | Rows |
 | --------------------- | ------ | ---: |
@@ -145,33 +189,37 @@ German and English share the same readiness score but differ in final CRL assign
 | UC5_coverage.rq       | PASS   |   31 |
 | UC6_errors.rq         | PASS   |   30 |
 
+All demonstration competency-question queries successfully executed against the merged graph.
+
 ---
 
 ## Provenance
 
-Statistics derived using rdflib over:
+Statistics generated using rdflib over:
 
 ```text
 ontology/transonto.ttl
 kg/kg_all.ttl
 ```
 
-Validation status:
+Validation summary:
 
 * Phase 3 SPARQL validation completed
-* All demonstration competency-question queries passed
-* Counts verified against `docs/kg_statistics.md`
-* Release metrics synchronized with README, CHANGELOG, GitHub Release Notes, and paper submission package
+* All demonstration queries passed
+* Metrics synchronized with README
+* Metrics synchronized with CHANGELOG
+* Metrics synchronized with GitHub Release Notes
+* Metrics synchronized with project paper submission package
 
 ---
 
 ## Post-Release Checklist
 
 * [ ] Run `bash POST_DOI_UPDATE.sh 10.5281/zenodo.XXXXXXX`
-* [ ] Register W3ID redirect at https://w3id.org/transonto
-* [ ] Update paper camera-ready version with DOI
-* [ ] Confirm CC BY 4.0 compatibility for benchmark data with NECTEC legal review
+* [ ] Register W3ID redirect at `https://w3id.org/transonto`
+* [ ] Update camera-ready paper with DOI
+* [ ] Confirm CC BY 4.0 compatibility for benchmark data
 
 ---
 
-*This file must not be modified after the Zenodo DOI is assigned and the release metadata are finalized.*
+*This file must not be modified after the Zenodo DOI is assigned and release metadata are finalized.*
