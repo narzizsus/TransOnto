@@ -21,13 +21,13 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added — RoyalSocietyTransKG v1.0
 
-- German KG (`kg_de.ttl`): 183 lexical entries, 175 benchmark items, Rule_DE_01–31
+- German KG (`kg_de.ttl`): 180 lexical entries, 175 benchmark items, Rule_DE_01–31
 - French KG (`kg_fr.ttl`): 92 lexical entries, 92 benchmark items, Add_FR_01–14
 - English KG (`kg_en.ttl`): 297 lexical entries, 297 benchmark items, Rule_EN_01–12
 - Merged KG (`kg_all.ttl`): 12,899 triples (combined with ontology: 13,591)
-- 12 RuleAmbiguity instances across all languages
-- 12 ExpertDecision instances with full `decisionJustification` literals
-- 2 EvaluationResult instances (DE: 92.68%; EN: 67.48% word accuracy)
+- 7 RuleAmbiguity instances across all languages
+- 11 ExpertDecision instances with full `decisionJustification` literals
+- 1 EvaluationResult instance (EN: 67.48% word accuracy); German system accuracy (92.68%) is documented in ontology named individual `EvalResult_DE_2025` and is not instantiated as an ABox `EvaluationResult`
 
 ### Added — SPARQL Query Layer
 
