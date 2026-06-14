@@ -1,75 +1,153 @@
-# TransOnto v1.0.0 + RoyalSocietyTransKG v1.0.0
+# Changelog
 
-**First public release** — 2026-06-13
+All notable changes to TransOnto and RoyalSocietyTransKG are documented in this file.
+
+The format follows Keep a Changelog and Semantic Versioning.
 
 ---
 
-## TransOnto v1.0
+# [1.0.0] - 2026-06-13
 
-An OWL 2 ontology for representing prescriptive transliteration standards and their computational formalization.
+First public release.
 
-* **IRI:** `https://w3id.org/transonto`
-* **15 classes** · **18 object properties** · **20 data properties** · **98 named individuals**
-* **887 ontology triples**
+---
+
+## Added - TransOnto v1.0
+
+### Ontology
+
+* OWL 2 ontology published under IRI `https://w3id.org/transonto`
+* Available in Turtle (`transonto.ttl`) and RDF/XML (`transonto.owl`)
 * Four-layer architecture:
 
   * Language Standards
   * Formalization
   * Lexicon
   * Evaluation
-* Computational Readiness Level (CRL) framework
 
-  * CRL-1 = directly executable
-  * CRL-5 = requires the greatest expert intervention
-* Alignment with OntoLex-Lemon and PROV-O
+### Ontology Statistics
+
+* 15 classes
+* 18 object properties
+* 20 data properties
+* 98 named individuals
+* 887 ontology triples
+
+### Formalization Layer
+
+Introduced explicit modelling of expert knowledge absent from guideline documents:
+
+* `to:RuleAmbiguity`
+* `to:RuleAddition`
+* `to:ExpertDecision`
+
+This layer enables computational representation of ambiguity resolution and expert intervention.
+
+### Computational Readiness Level (CRL)
+
+Added Computational Readiness Level framework:
+
+* CRL-1 = directly executable
+* CRL-2 = minor supplementation
+* CRL-3 = moderate intervention
+* CRL-4 = substantial intervention
+* CRL-5 = extensive intervention
+
+Added ontology support for:
+
+* `to:ComputationalReadinessLevel`
+* `to:readinessScore`
+* `to:crlScore`
+* `to:crlEvidence`
+
+### Ontology Alignment
+
+Added interoperability mappings with:
+
+* OntoLex-Lemon
+* PROV-O
+
+Including:
+
+```text
+to:LexicalEntry ⊑ ontolex:LexicalEntry
+to:ThaiForm ⊑ ontolex:Form
+to:Expert ⊑ prov:Agent
+```
 
 ---
 
-## RoyalSocietyTransKG v1.0
+## Added - RoyalSocietyTransKG v1.0
+
+### Knowledge Graph
+
+Released multilingual transliteration knowledge graph derived from Royal Society transliteration standards.
+
+Files:
+
+* `kg_de.ttl`
+* `kg_fr.ttl`
+* `kg_en.ttl`
+* `kg_all.ttl`
 
 ### Triple Counts
 
-| Component                      |    Triples |
-| ------------------------------ | ---------: |
-| Ontology (`transonto.ttl`)     |        887 |
-| Knowledge Graph (`kg_all.ttl`) |     12,899 |
-| **Combined Graph**             | **13,677** |
+| Resource                       | Triples |
+| ------------------------------ | ------: |
+| Ontology (`transonto.ttl`)     |     887 |
+| Knowledge Graph (`kg_all.ttl`) |  12,899 |
+| Combined Graph                 |  13,677 |
 
-> Combined graph size is computed after RDF graph merging and duplicate triple elimination.
+Combined graph count is computed after RDF graph merging and duplicate triple elimination.
 
-### ABox Statistics (Authoritative Counts)
+### ABox Statistics
 
-| Item                |                         Count |
-| ------------------- | ----------------------------: |
-| Languages           |                             3 |
-| Lexical Entries     | 569 (DE 180 · FR 92 · EN 297) |
-| Benchmark Items     |                           564 |
-| Gold Labels         |                           564 |
-| Rules (DE + EN)     |                            43 |
-| Rule Additions (FR) |                            14 |
-| Rule Ambiguities    |                             7 |
-| Expert Decisions    |                            11 |
-| Evaluation Results  |                             1 |
+Authoritative benchmark statistics derived from `kg_all.ttl`.
 
-> Statistics above use the authoritative ABox counts derived from `kg_all.ttl`.
+| Item                | Count |
+| ------------------- | ----: |
+| Languages           |     3 |
+| Lexical Entries     |   569 |
+| Benchmark Items     |   564 |
+| Gold Labels         |   564 |
+| Rules (DE + EN)     |    43 |
+| Rule Additions (FR) |    14 |
+| Rule Ambiguities    |     7 |
+| Expert Decisions    |    11 |
+| Evaluation Results  |     1 |
 
----
+### Language Coverage
 
-## Language Coverage
+#### German
 
-| Language | Lexical Entries | Benchmark Items | Rules / Additions | Accuracy                                 |
-| -------- | --------------: | --------------: | ----------------- | ---------------------------------------- |
-| German   |             180 |             175 | Rule_DE_01–31     | 92.68% word-level; 97.35% syllable-level |
-| French   |              92 |              92 | Add_FR_01–14      | Not yet benchmarked                      |
-| English  |             297 |             297 | Rule_EN_01–12     | 67.48% word-level                        |
+* 180 lexical entries
+* 175 benchmark items
+* Rule_DE_01–31
+* 92.68% word-level accuracy
+* 97.35% syllable-level accuracy
+
+#### French
+
+* 92 lexical entries
+* 92 benchmark items
+* Add_FR_01–14
+* Benchmark available
+* System evaluation pending
+
+#### English
+
+* 297 lexical entries
+* 297 benchmark items
+* Rule_EN_01–12
+* 67.48% word-level accuracy
 
 ### Evaluation Results
 
-**ABox EvaluationResult instances**
+ABox evaluation results:
 
 * English: 67.48% word-level accuracy
 
-**Ontology-documented evaluation results**
+Ontology-documented evaluation results:
 
 * German: 92.68% word-level accuracy
 * German: 97.35% syllable-level accuracy
@@ -78,81 +156,76 @@ German evaluation is represented by ontology individual `EvalResult_DE_2025` and
 
 ---
 
-## Computational Readiness Levels (CRL)
+## Added - SPARQL Query Layer
 
-| Language | ReadinessScore | Final CRL |
-| -------- | -------------: | --------- |
-| English  |             35 | CRL-3     |
-| German   |             35 | CRL-4     |
-| French   |            104 | CRL-5     |
+Released competency-question-driven SPARQL query package.
 
-Formula:
+### Included Queries
 
-```text
-ReadinessScore = |Additions| + 2×|Ambiguities| + |Decisions|
-```
+| Query                 | Purpose               |
+| --------------------- | --------------------- |
+| UC1_ambiguity.rq      | Ambiguity analysis    |
+| UC3_crl.rq            | CRL assessment        |
+| UC4_explainability.rq | Explainability path   |
+| UC5_coverage.rq       | Benchmark coverage    |
+| UC6_errors.rq         | Error analysis        |
+| UC7_en_coverage.rq    | English rule coverage |
+| UC8_fr_additions.rq   | French additions      |
 
-German and English share the same readiness score, but German is assigned CRL-4 because its ambiguities affect broader vocabulary categories and require greater expert intervention.
+### Validation
 
----
+Phase 3 validation completed successfully.
 
-## Repository Contents
-
-```text
-ontology/
-├── transonto.ttl
-└── transonto.owl
-
-kg/
-├── kg_de.ttl
-├── kg_fr.ttl
-├── kg_en.ttl
-└── kg_all.ttl
-
-sparql/
-├── UC1_ambiguity.rq
-├── UC3_crl.rq
-├── UC4_explainability.rq
-├── UC5_coverage.rq
-├── UC6_errors.rq
-├── UC7_en_coverage.rq
-└── UC8_fr_additions.rq
-
-docs/
-├── competency_questions.md
-├── crl_framework.md
-└── kg_statistics.md
-```
+| Query                 | Status |
+| --------------------- | ------ |
+| UC4_explainability.rq | PASS   |
+| UC3_crl.rq            | PASS   |
+| UC5_coverage.rq       | PASS   |
+| UC6_errors.rq         | PASS   |
 
 ---
 
-## Quick Load
+## Added - Documentation
 
-```python
-from rdflib import Graph
+Released accompanying documentation:
 
-g = Graph()
-g.parse("ontology/transonto.ttl", format="turtle")
-g.parse("kg/kg_all.ttl", format="turtle")
+* `README.md`
+* `docs/competency_questions.md`
+* `docs/crl_framework.md`
+* `docs/kg_statistics.md`
+* `CITATION.cff`
+* `LICENSE`
 
-print(len(g))
-# 13677
-```
+### Competency Questions
 
----
+Ten competency questions (CQ1–CQ10) documented and mapped to ontology constructs and SPARQL implementations.
 
-## Highlights
+### Statistics Documentation
 
-* First ontology dedicated to computational formalization of Royal Society transliteration standards.
-* Explicit modelling of ambiguities, additions, and expert decisions.
-* Multilingual transliteration knowledge graph covering German, French, and English.
-* Computational Readiness Level (CRL) framework for measuring implementation readiness.
-* Benchmark-aligned evaluation resources.
-* Validated competency-question SPARQL query suite.
-* RDF, OWL, and SPARQL resources released under CC BY 4.0.
+Added graph-derived statistical reporting with explicit distinction between:
+
+* Ontology statistics
+* ABox statistics
+* Combined graph statistics
 
 ---
 
-**License:** CC BY 4.0
+## License
 
-**Zenodo DOI:** To be assigned
+Released under CC BY 4.0.
+
+---
+
+# Future Releases
+
+Planned for v1.1 and later:
+
+* Indonesian transliteration module
+* Malay transliteration module
+* Japanese transliteration module
+* Chinese transliteration module
+* SHACL validation shapes
+* Compliance checking toolkit
+* Widoco-generated ontology documentation
+* Additional benchmark datasets
+* Expanded evaluation framework
