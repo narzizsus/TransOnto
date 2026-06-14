@@ -7,37 +7,38 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
-## [1.0.0] — 2026-06-13
+## [1.0.0]  2026-06-13
 
 **First public release.**
 
-### Added — TransOnto v1.0
+### Added  TransOnto v1.0
 
 - OWL 2 ontology (`transonto.ttl`, `transonto.owl`) with IRI `https://w3id.org/transonto`
 - Four-layer architecture: Language Standards, Formalization, Lexicon, Evaluation
 - 15 classes, 18 object properties, 19 data properties, 59 named individuals
-- Computational Readiness Level (CRL) framework (CRL-1 to CRL-5)
-- Alignment declarations: `ontolex:LexicalEntry`, `ontolex:Form`, `prov:Agent`
+- Computational Readiness Level (CRL) framework (CRL-1 to CRL-5, paper-standard scale: 1=CRL-1 executable, 5=CRL-5 most expert intervention)
+- Alignment declarations: `ontolexLexicalEntry`, `ontolexForm`, `provAgent`
+- `to:readinessScore` datatype property for formula-derived scores
 
-### Added — RoyalSocietyTransKG v1.0
+### Added  RoyalSocietyTransKG v1.0
 
-- German KG (`kg_de.ttl`): 180 lexical entries, 175 benchmark items, Rule_DE_01–31
-- French KG (`kg_fr.ttl`): 92 lexical entries, 92 benchmark items, Add_FR_01–14
-- English KG (`kg_en.ttl`): 297 lexical entries, 297 benchmark items, Rule_EN_01–12
+- German KG (`kg_de.ttl`): 180 lexical entries, 175 benchmark items, Rule_DE_01-31
+- French KG (`kg_fr.ttl`): 92 lexical entries, 92 benchmark items, Add_FR_01-14
+- English KG (`kg_en.ttl`): 297 lexical entries, 297 benchmark items, Rule_EN_01-12
 - Merged KG (`kg_all.ttl`): 12,899 triples (combined with ontology: 13,591)
-- 7 RuleAmbiguity instances across all languages
-- 11 ExpertDecision instances with full `decisionJustification` literals
-- 1 EvaluationResult instance (EN: 67.48% word accuracy); German system accuracy (92.68%) is documented in ontology named individual `EvalResult_DE_2025` and is not instantiated as an ABox `EvaluationResult`
+- 7 RuleAmbiguity instances across all languages (ABox count)
+- 11 ExpertDecision instances with full `decisionJustification` literals (ABox count)
+- 1 EvaluationResult instance in ABox (EN: 67.48% word accuracy); German system accuracy (92.68%) is documented in ontology named individual `EvalResult_DE_2025` and is not instantiated as an ABox `EvaluationResult`
 
-### Added — SPARQL Query Layer
+### Added  SPARQL Query Layer
 
-- 7 use-case queries (UC1, UC3–UC8) validated against merged graph
+- 7 use-case queries (UC1, UC3-UC8) validated against merged graph
 - Phase 3 validation report: all four demo queries PASS (2026-06-13)
 
-### Added — Documentation
+### Added  Documentation
 
-- `README.md`, `docs/competency_questions.md`, `docs/crl_framework.md`
-- `docs/kg_statistics.md` — authoritative statistics derived from graph
+- `README.md`, `docs/competency_questions.md` (CQ1-CQ10), `docs/crl_framework.md`
+- `docs/kg_statistics.md`  statistics derived from graph; ABox-authoritative counts use kg_all.ttl only
 - `CITATION.cff`, `LICENSE` (CC BY 4.0)
 
 ---
