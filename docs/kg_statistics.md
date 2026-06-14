@@ -1,117 +1,248 @@
-# kg_statistics.md  RoyalSocietyTransKG v1.0 Statistics
+# kg_statistics.md
+
+# RoyalSocietyTransKG v1.0 Statistics
 
 Generated: 2026-06-13
-Source: derived from `transonto.ttl` + `kg_all.ttl` using rdflib
+
+Source: derived from `transonto.ttl` and `kg_all.ttl` using rdflib
 
 ---
 
-## Ontology File (transonto.ttl)
+# Ontology File (`transonto.ttl`)
 
-| Item | Count |
-|---|---|
-| Schema axioms (TBox, schema-only) | 285 |
-| Reference individuals (ABox) | ~412 |
-| Total triples | 697 |
-| Classes | 15 |
-| Object properties | 18 |
-| Data properties | 19 |
+Statistics derived directly from the released ontology.
 
-> **TBox note:** The paper reports 285 schema-only TBox triples (class definitions, property declarations, domain/range axioms, excluding named individuals). The complete `transonto.ttl` contains 697 triples including all named individuals (languages, guidelines, rules, CRL levels, error types, evaluation results). These are schema-plus-reference-individuals counts, not ABox benchmark data.
+| Item              | Count |
+| ----------------- | ----: |
+| Total triples     |   887 |
+| Classes           |    15 |
+| Object properties |    18 |
+| Data properties   |    20 |
+| Named individuals |    98 |
 
----
+## Ontology Content Summary
 
-## Knowledge Graph File (kg_all.ttl)  ABox Authoritative Counts
+The ontology contains:
 
-The following counts use `kg_all.ttl` as the sole source (ABox only). These are the numbers reported in the paper.
+* Languages
+* Guidelines
+* Rules
+* Rule additions
+* Rule ambiguities
+* Expert decisions
+* CRL assessments
+* Error types
+* Evaluation results
 
-| Item | ABox Count (kg_all.ttl) |
-|---|---|
-| Standalone triples | 12,899 |
-| Combined with transonto.ttl | 13,591 |
-
-| Class | Count |
-|---|---|
-| Language | 3 |
-| Lexical Entries | 569 |
-| Benchmark Items | 564 |
-| Rule Ambiguities | 7 |
-| Expert Decisions | 11 |
-| Evaluation Results | 1 (EN only) |
-
-> **Note on Evaluation Results:** German system accuracy (92.68%) is documented in the ontology named individual `EvalResult_DE_2025` (in `transonto.ttl`). It is not instantiated as an ABox `EvaluationResult` in `kg_all.ttl`. Only the English result (67.48%) is an ABox instance.
+The ontology therefore includes both schema definitions and ontology-level reference individuals.
 
 ---
 
-## Combined Graph Summary
+# Knowledge Graph File (`kg_all.ttl`)
 
-| Item | Count |
-|---|---|
-| Total triples (combined) | 13,591 |
-| Languages | 3 |
-| Lexical Entries | 572 (569 ABox + 3 in ontology) |
-| Thai Forms | 574 |
-| Benchmark Items | 564 |
-| Gold Labels | 564 |
-| Rules (DE + EN) | 43 |
-| Rule Additions (FR) | 14 |
-| Rule Ambiguities | 12 (combined graph) |
-| Expert Decisions | 12 (combined graph) |
-| Experts | 3 |
-| Evaluation Results | 2 (combined graph) |
+## ABox Authoritative Counts
 
-> **Combined vs ABox distinction:** The combined graph (ontology + kg_all) shows 12 ambiguities and 12 decisions because the ontology contributes additional schema-level individuals beyond the ABox benchmark data. For paper reporting, use the ABox-only figures: 7 ambiguities, 11 decisions, 1 evaluation result.
+The following statistics use `kg_all.ttl` as the sole authoritative benchmark source.
 
----
+| Item                |  Count |
+| ------------------- | -----: |
+| Standalone triples  | 12,899 |
+| Languages           |      3 |
+| Lexical Entries     |    569 |
+| Benchmark Items     |    564 |
+| Gold Labels         |    564 |
+| Rules (DE + EN)     |     43 |
+| Rule Additions (FR) |     14 |
+| Rule Ambiguities    |      7 |
+| Expert Decisions    |     11 |
+| Evaluation Results  |      1 |
 
-## Per-Language Breakdown (ABox, kg_all.ttl)
+These are the figures used in:
 
-| Language | Lexical Entries | Benchmark Items | Rules/Additions |
-|---|---|---|---|
-| German | 180 | 175 | Rule_DE_01-31 (31 rules) |
-| French | 92 | 92 | Add_FR_01-14 (14 additions) |
-| English | 297 | 297 | Rule_EN_01-12 (12 rules) |
-| **Total** | **569** | **564** | **57 rules/additions** |
-
-> **Per-language triple note:** Individual files kg_de.ttl (4,109), kg_fr.ttl (2,073), kg_en.ttl (6,709) sum to 12,891, which is 8 fewer than kg_all.ttl (12,899). The 8-triple difference arises from cross-language triple deduplication and 8 shared reference triples (language node cross-links) that appear in kg_all.ttl but are not counted in any single per-language file.
+* README
+* GitHub Release
+* RELEASE_RECORD
+* Paper reporting
 
 ---
 
-## CRL Scores vs Final Assignments
+## Evaluation Result Note
 
-| Language | ReadinessScore | crlScore (ontology) | Final CRL (paper) |
-|---|---|---|---|
-| English | 35 | 3 | CRL-3 |
-| German | 35 | 4 | CRL-4 |
-| French | 104 | 5 | CRL-5 |
+### ABox EvaluationResult Instances
 
-> **Formula:** `ReadinessScore = |Additions| + 2×|Ambiguities| + |Decisions|`
->
-> `to:crlScore` in the ontology uses the paper-standard scale: **1=CRL-1 (directly executable), 5=CRL-5 (requires most expert intervention)**. German crlScore=4 maps to paper CRL-4 because its two ambiguities affect broad vocabulary categories. French ReadinessScore=104 exceeds the CRL-5 threshold (>70). See `docs/crl_framework.md`.
+| Language | Accuracy          |
+| -------- | ----------------- |
+| English  | 67.48% word-level |
+
+Total ABox EvaluationResult instances:
+
+```text id="90h7ya"
+1
+```
+
+### Ontology-Documented Evaluation Results
+
+| Language | Accuracy                                 |
+| -------- | ---------------------------------------- |
+| German   | 92.68% word-level; 97.35% syllable-level |
+
+German evaluation is represented in ontology individual:
+
+```text id="2f2x79"
+EvalResult_DE_2025
+```
+
+and is not instantiated as an ABox `EvaluationResult`.
 
 ---
 
-## Individual Language KG Files
+# Combined Graph Statistics
 
-| File | Standalone Triples |
-|---|---|
-| kg_de.ttl | 4,109 |
-| kg_fr.ttl | 2,073 |
-| kg_en.ttl | 6,709 |
-| kg_all.ttl | 12,899 |
+Combined graph generated by loading:
+
+```text id="xq9lyh"
+ontology/transonto.ttl
+kg/kg_all.ttl
+```
+
+and performing RDF graph union.
+
+## Triple Counts
+
+| Item                      |  Count |
+| ------------------------- | -----: |
+| Ontology triples          |    887 |
+| KG triples                | 12,899 |
+| Raw sum                   | 13,786 |
+| Duplicate triples removed |    109 |
+| Total merged triples      | 13,677 |
+
+The merged graph count is smaller than the arithmetic sum because RDF graph union removes duplicate triples.
 
 ---
 
-## Validation
+# Combined Graph Summary
 
-All ABox statistics derived by running:
+| Item                | Count |
+| ------------------- | ----: |
+| Languages           |     3 |
+| Lexical Entries     |   572 |
+| Thai Forms          |   574 |
+| Benchmark Items     |   564 |
+| Gold Labels         |   564 |
+| Rules (DE + EN)     |    43 |
+| Rule Additions (FR) |    14 |
+| Rule Ambiguities    |    12 |
+| Expert Decisions    |    12 |
+| Experts             |     3 |
+| Evaluation Results  |     2 |
+
+## Combined vs ABox Distinction
+
+The ontology contributes additional individuals beyond the benchmark ABox.
+
+Therefore:
+
+| Item               | ABox | Combined |
+| ------------------ | ---: | -------: |
+| Lexical Entries    |  569 |      572 |
+| Rule Ambiguities   |    7 |       12 |
+| Expert Decisions   |   11 |       12 |
+| Evaluation Results |    1 |        2 |
+
+For all benchmark reporting and publication statistics, use the ABox counts.
+
+---
+
+# Per-Language Breakdown (ABox)
+
+| Language  | Lexical Entries | Benchmark Items | Rules/Additions             |
+| --------- | --------------: | --------------: | --------------------------- |
+| German    |             180 |             175 | Rule_DE_01–31 (31 rules)    |
+| French    |              92 |              92 | Add_FR_01–14 (14 additions) |
+| English   |             297 |             297 | Rule_EN_01–12 (12 rules)    |
+| **Total** |         **569** |         **564** | **57**                      |
+
+---
+
+# Individual KG Files
+
+| File       | Standalone Triples |
+| ---------- | -----------------: |
+| kg_de.ttl  |              4,109 |
+| kg_fr.ttl  |              2,073 |
+| kg_en.ttl  |              6,709 |
+| kg_all.ttl |             12,899 |
+
+## Triple Distribution Note
+
+The sum of individual language files is:
+
+```text id="v36xie"
+4109 + 2073 + 6709 = 12891
+```
+
+which is eight triples fewer than `kg_all.ttl`.
+
+The difference arises from shared language-level reference triples and graph-merging effects.
+
+---
+
+# CRL Scores and Final Assignments
+
+| Language | ReadinessScore | crlScore | Final CRL |
+| -------- | -------------: | -------: | --------- |
+| English  |             35 |        3 | CRL-3     |
+| German   |             35 |        4 | CRL-4     |
+| French   |            104 |        5 | CRL-5     |
+
+Formula:
+
+```text id="xjlwmu"
+ReadinessScore = |Additions| + 2×|Ambiguities| + |Decisions|
+```
+
+Ontology scale:
+
+| Score | Interpretation |
+| ----- | -------------- |
+| 1     | CRL-1          |
+| 2     | CRL-2          |
+| 3     | CRL-3          |
+| 4     | CRL-4          |
+| 5     | CRL-5          |
+
+German and English share the same readiness score but differ in final CRL assignment because German ambiguities have broader cross-item impact.
+
+---
+
+# Validation
+
+Statistics generated using rdflib.
 
 ```python
-from rdflib import Graph, Namespace, RDF
+from rdflib import Graph
+
 g = Graph()
 g.parse("ontology/transonto.ttl", format="turtle")
 g.parse("kg/kg_all.ttl", format="turtle")
-TO = Namespace("https://w3id.org/transonto#")
-count = lambda cls: sum(1 for _ in g.subjects(RDF.type, TO[cls]))
+
+print(len(g))
 ```
 
-SPARQL validation: all four demo queries pass against merged graph (Phase 3 validation report, 2026-06-13).
+Expected output:
+
+```text id="ih5o5j"
+13677
+```
+
+SPARQL validation status (Phase 3):
+
+| Query                 | Status | Rows |
+| --------------------- | ------ | ---: |
+| UC4_explainability.rq | PASS   |    2 |
+| UC3_crl.rq            | PASS   |    3 |
+| UC5_coverage.rq       | PASS   |   31 |
+| UC6_errors.rq         | PASS   |   30 |
+
+All demonstration competency-question queries successfully execute against the merged graph.
