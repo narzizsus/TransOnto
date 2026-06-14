@@ -19,7 +19,7 @@ The release also includes competency-question-driven evaluation
 resources, SPARQL query suites, Computational Readiness Level (CRL)
 assessments, and benchmark-linked evaluation metadata.
 
-license: CC-BY-4.0
+license: "CC-BY-4.0"
 
 repository-code: "https://github.com/narzizsus/TransOnto"
 url: "https://w3id.org/transonto"
@@ -32,30 +32,15 @@ authors:
 
 keywords:
 
-* transliteration
-* ontology
-* knowledge graph
-* Thai NLP
-* computational linguistics
-* semantic web
-* RDF
-* OWL
-* Royal Society of Thailand
-* linguistic standards
-* computational readiness
-* SPARQL
-
-references:
-
-* type: conference-paper
-  title: >
-  TransOnto: An Ontology and Knowledge Graph for Formalizing
-  Prescriptive Multilingual Transliteration Standards
-  conference:
-  name: "International Joint Conference on Knowledge Graphs (IJCKG 2026)"
-  year: 2026
-  authors:
-
-* family-names: "LEENOI"
-  given-names: "DHANON"
-  affiliation: "Artificial Intelligence Research Team, NECTEC, NSTDA, Thailand"
+* "transliteration"
+* "ontology"
+* "knowledge graph"
+* "Thai NLP"
+* "computational linguistics"
+* "semantic web"
+* "RDF"
+* "OWL"
+* "Royal Society of Thailand"
+* "linguistic standards"
+* "computational readiness"
+* "SPARQL"
