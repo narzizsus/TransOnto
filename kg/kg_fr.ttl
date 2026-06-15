@@ -201,7 +201,7 @@ to:Entry_FR_cher
 
 to:Thai_FR_cher
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "เชอร์"^^xsd:string ;
+    to:thaiScript "แชร์"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_cher
@@ -212,8 +212,8 @@ to:BM_FR_cher
 
 to:GL_FR_cher
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: เชอร์"@th ;
-    to:thaiScript "เชอร์"^^xsd:string .
+    rdfs:label "GL: แชร์"@th ;
+    to:thaiScript "แชร์"^^xsd:string .
 
 to:Entry_FR_rouge
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -226,7 +226,7 @@ to:Entry_FR_rouge
 
 to:Thai_FR_rouge
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "รูช"^^xsd:string ;
+    to:thaiScript "รูฌ"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_rouge
@@ -237,8 +237,8 @@ to:BM_FR_rouge
 
 to:GL_FR_rouge
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: รูช"@th ;
-    to:thaiScript "รูช"^^xsd:string .
+    rdfs:label "GL: รูฌ"@th ;
+    to:thaiScript "รูฌ"^^xsd:string .
 
 to:Entry_FR_signe
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -319,7 +319,7 @@ to:Entry_FR_heure
     a owl:NamedIndividual , to:LexicalEntry ;
     rdfs:label "heure"@fr ;
     to:sourceForm "heure"^^xsd:string ;
-    to:ipa "[ɶʀ]"^^xsd:string ;
+    to:ipa "[œʀ]"^^xsd:string ;
     to:hasThaiForm to:Thai_FR_heure ;
     to:fromSourceLanguage to:French ;
     to:exemplifiesRule to:RuleAddition_FR_01 .
@@ -451,7 +451,7 @@ to:Entry_FR_patte
 
 to:Thai_FR_patte
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "ปัท"^^xsd:string ;
+    to:thaiScript "ปัต"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_patte
@@ -462,8 +462,8 @@ to:BM_FR_patte
 
 to:GL_FR_patte
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: ปัท"@th ;
-    to:thaiScript "ปัท"^^xsd:string .
+    rdfs:label "GL: ปัต"@th ;
+    to:thaiScript "ปัต"^^xsd:string .
 
 to:Entry_FR_slip
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -501,7 +501,7 @@ to:Entry_FR_tre
 
 to:Thai_FR_tre
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "เอทร์"^^xsd:string ;
+    to:thaiScript "แอ็ทร์"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_tre
@@ -512,8 +512,8 @@ to:BM_FR_tre
 
 to:GL_FR_tre
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: เอทร์"@th ;
-    to:thaiScript "เอทร์"^^xsd:string .
+    rdfs:label "GL: แอ็ทร์"@th ;
+    to:thaiScript "แอ็ทร์"^^xsd:string .
 
 to:Entry_FR_botte
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -526,7 +526,7 @@ to:Entry_FR_botte
 
 to:Thai_FR_botte
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "บ็อท"^^xsd:string ;
+    to:thaiScript "บ็อต"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_botte
@@ -537,8 +537,8 @@ to:BM_FR_botte
 
 to:GL_FR_botte
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: บ็อท"@th ;
-    to:thaiScript "บ็อท"^^xsd:string .
+    rdfs:label "GL: บ็อต"@th ;
+    to:thaiScript "บ็อต"^^xsd:string .
 
 to:Entry_FR_route
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -551,7 +551,7 @@ to:Entry_FR_route
 
 to:Thai_FR_route
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "รุท"^^xsd:string ;
+    to:thaiScript "รุต"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_route
@@ -562,8 +562,8 @@ to:BM_FR_route
 
 to:GL_FR_route
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: รุท"@th ;
-    to:thaiScript "รุท"^^xsd:string .
+    rdfs:label "GL: รุต"@th ;
+    to:thaiScript "รุต"^^xsd:string .
 
 to:Entry_FR_chat
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -676,7 +676,7 @@ to:Entry_FR_rouge_1
 
 to:Thai_FR_rouge_1
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "รูช"^^xsd:string ;
+    to:thaiScript "รูฌ"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_rouge_1
@@ -687,8 +687,8 @@ to:BM_FR_rouge_1
 
 to:GL_FR_rouge_1
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: รูช"@th ;
-    to:thaiScript "รูช"^^xsd:string .
+    rdfs:label "GL: รูฌ"@th ;
+    to:thaiScript "รูฌ"^^xsd:string .
 
 to:Entry_FR_beau
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -726,7 +726,7 @@ to:Entry_FR_Beauce
 
 to:Thai_FR_Beauce
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "โบซ"^^xsd:string ;
+    to:thaiScript "โบส"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_Beauce
@@ -737,8 +737,8 @@ to:BM_FR_Beauce
 
 to:GL_FR_Beauce
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: โบซ"@th ;
-    to:thaiScript "โบซ"^^xsd:string .
+    rdfs:label "GL: โบส"@th ;
+    to:thaiScript "โบส"^^xsd:string .
 
 to:Entry_FR_rose
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -751,7 +751,7 @@ to:Entry_FR_rose
 
 to:Thai_FR_rose
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "โรส"^^xsd:string ;
+    to:thaiScript "โรซ"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_rose
@@ -762,8 +762,8 @@ to:BM_FR_rose
 
 to:GL_FR_rose
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: โรส"@th ;
-    to:thaiScript "โรส"^^xsd:string .
+    rdfs:label "GL: โรซ"@th ;
+    to:thaiScript "โรซ"^^xsd:string .
 
 to:Entry_FR_chopper
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -776,7 +776,7 @@ to:Entry_FR_chopper
 
 to:Thai_FR_chopper
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "ชอปเป"^^xsd:string ;
+    to:thaiScript "ชอเป"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_chopper
@@ -787,14 +787,14 @@ to:BM_FR_chopper
 
 to:GL_FR_chopper
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: ชอปเป"@th ;
-    to:thaiScript "ชอปเป"^^xsd:string .
+    rdfs:label "GL: ชอเป"@th ;
+    to:thaiScript "ชอเป"^^xsd:string .
 
 to:Entry_FR_accueil
     a owl:NamedIndividual , to:LexicalEntry ;
     rdfs:label "accueil"@fr ;
     to:sourceForm "accueil"^^xsd:string ;
-    to:ipa "[akɶj]"^^xsd:string ;
+    to:ipa "[akœj]"^^xsd:string ;
     to:hasThaiForm to:Thai_FR_accueil ;
     to:fromSourceLanguage to:French ;
     to:exemplifiesRule to:RuleAddition_FR_07 .
@@ -826,7 +826,7 @@ to:Entry_FR_pr_nom
 
 to:Thai_FR_pr_nom
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "เพรอนอม"^^xsd:string ;
+    to:thaiScript "เพรนง"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_pr_nom
@@ -837,8 +837,8 @@ to:BM_FR_pr_nom
 
 to:GL_FR_pr_nom
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: เพรอนอม"@th ;
-    to:thaiScript "เพรอนอม"^^xsd:string .
+    rdfs:label "GL: เพรนง"@th ;
+    to:thaiScript "เพรนง"^^xsd:string .
 
 to:Entry_FR_prune
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -876,7 +876,7 @@ to:Entry_FR_train
 
 to:Thai_FR_train
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "แตรง"^^xsd:string ;
+    to:thaiScript "แทร็ง"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_train
@@ -887,8 +887,8 @@ to:BM_FR_train
 
 to:GL_FR_train
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: แตรง"@th ;
-    to:thaiScript "แตรง"^^xsd:string .
+    rdfs:label "GL: แทร็ง"@th ;
+    to:thaiScript "แทร็ง"^^xsd:string .
 
 to:Entry_FR_entr_e
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -901,7 +901,7 @@ to:Entry_FR_entr_e
 
 to:Thai_FR_entr_e
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "อองเทร"^^xsd:string ;
+    to:thaiScript "อ็องเทร"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_entr_e
@@ -912,8 +912,8 @@ to:BM_FR_entr_e
 
 to:GL_FR_entr_e
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: อองเทร"@th ;
-    to:thaiScript "อองเทร"^^xsd:string .
+    rdfs:label "GL: อ็องเทร"@th ;
+    to:thaiScript "อ็องเทร"^^xsd:string .
 
 to:Entry_FR_cri
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -969,7 +969,7 @@ to:Entry_FR_fouine
     a owl:NamedIndividual , to:LexicalEntry ;
     rdfs:label "fouine"@fr ;
     to:sourceForm "fouine"^^xsd:string ;
-    to:ipa "[fwinɛ, fwin]"^^xsd:string ;
+    to:ipa "[fwinə, fwin]"^^xsd:string ;
     to:hasThaiForm to:Thai_FR_fouine ;
     to:fromSourceLanguage to:French ;
     to:exemplifiesRule to:RuleAddition_FR_09 ;
@@ -977,7 +977,7 @@ to:Entry_FR_fouine
 
 to:Thai_FR_fouine
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "ฟวีน"^^xsd:string ;
+    to:thaiScript "ฟูยน์"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_fouine
@@ -989,14 +989,14 @@ to:BM_FR_fouine
 
 to:GL_FR_fouine
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: ฟวีน"@th ;
-    to:thaiScript "ฟวีน"^^xsd:string .
+    rdfs:label "GL: ฟูยน์"@th ;
+    to:thaiScript "ฟูยน์"^^xsd:string .
 
 to:Entry_FR_ombre
     a owl:NamedIndividual , to:LexicalEntry ;
-    rdfs:label "ombre"@fr ;
-    to:sourceForm "ombre"^^xsd:string ;
-    to:ipa "[ɔ̃bʀ, ɔ̃bʀ]"^^xsd:string ;
+    rdfs:label "nombre"@fr ;
+    to:sourceForm "nombre"^^xsd:string ;
+    to:ipa "[ɔ̃bʀə, ɔ̃bʀ]"^^xsd:string ;
     to:hasThaiForm to:Thai_FR_ombre ;
     to:fromSourceLanguage to:French ;
     to:exemplifiesRule to:RuleAddition_FR_09 ;
@@ -1004,7 +1004,7 @@ to:Entry_FR_ombre
 
 to:Thai_FR_ombre
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "ออมบร์"^^xsd:string ;
+    to:thaiScript "องบร์"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_ombre
@@ -1016,8 +1016,8 @@ to:BM_FR_ombre
 
 to:GL_FR_ombre
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: ออมบร์"@th ;
-    to:thaiScript "ออมบร์"^^xsd:string .
+    rdfs:label "GL: องบร์"@th ;
+    to:thaiScript "องบร์"^^xsd:string .
 
 to:Entry_FR_bille
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -1030,7 +1030,7 @@ to:Entry_FR_bille
 
 to:Thai_FR_bille
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "บิย"^^xsd:string ;
+    to:thaiScript "บีย์"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_bille
@@ -1041,8 +1041,8 @@ to:BM_FR_bille
 
 to:GL_FR_bille
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: บิย"@th ;
-    to:thaiScript "บิย"^^xsd:string .
+    rdfs:label "GL: บีย์"@th ;
+    to:thaiScript "บีย์"^^xsd:string .
 
 to:Entry_FR_fille
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -1055,7 +1055,7 @@ to:Entry_FR_fille
 
 to:Thai_FR_fille
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "ฟิย"^^xsd:string ;
+    to:thaiScript "ฟีย์"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_fille
@@ -1066,8 +1066,8 @@ to:BM_FR_fille
 
 to:GL_FR_fille
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: ฟิย"@th ;
-    to:thaiScript "ฟิย"^^xsd:string .
+    rdfs:label "GL: ฟีย์"@th ;
+    to:thaiScript "ฟีย์"^^xsd:string .
 
 to:Entry_FR_feutre
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -1130,7 +1130,7 @@ to:Entry_FR_cycle
 
 to:Thai_FR_cycle
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "ซีกล"^^xsd:string ;
+    to:thaiScript "ซิกล์"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_cycle
@@ -1141,8 +1141,8 @@ to:BM_FR_cycle
 
 to:GL_FR_cycle
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: ซีกล"@th ;
-    to:thaiScript "ซีกล"^^xsd:string .
+    rdfs:label "GL: ซิกล์"@th ;
+    to:thaiScript "ซิกล์"^^xsd:string .
 
 to:Entry_FR_registre
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -1155,7 +1155,7 @@ to:Entry_FR_registre
 
 to:Thai_FR_registre
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "เรจิสทร์"^^xsd:string ;
+    to:thaiScript "เรอฌิสทร์"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_registre
@@ -1166,8 +1166,8 @@ to:BM_FR_registre
 
 to:GL_FR_registre
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: เรจิสทร์"@th ;
-    to:thaiScript "เรจิสทร์"^^xsd:string .
+    rdfs:label "GL: เรอฌิสทร์"@th ;
+    to:thaiScript "เรอฌิสทร์"^^xsd:string .
 
 to:Entry_FR_vivre
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -1180,7 +1180,7 @@ to:Entry_FR_vivre
 
 to:Thai_FR_vivre
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "วีวร์"^^xsd:string ;
+    to:thaiScript "วีฟวร์"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_vivre
@@ -1191,8 +1191,8 @@ to:BM_FR_vivre
 
 to:GL_FR_vivre
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: วีวร์"@th ;
-    to:thaiScript "วีวร์"^^xsd:string .
+    rdfs:label "GL: วีฟวร์"@th ;
+    to:thaiScript "วีฟวร์"^^xsd:string .
 
 to:Entry_FR_reprendre
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -1205,7 +1205,7 @@ to:Entry_FR_reprendre
 
 to:Thai_FR_reprendre
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "เรอปรองดร์"^^xsd:string ;
+    to:thaiScript "เรอพร็องดร์"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_reprendre
@@ -1216,8 +1216,8 @@ to:BM_FR_reprendre
 
 to:GL_FR_reprendre
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: เรอปรองดร์"@th ;
-    to:thaiScript "เรอปรองดร์"^^xsd:string .
+    rdfs:label "GL: เรอพร็องดร์"@th ;
+    to:thaiScript "เรอพร็องดร์"^^xsd:string .
 
 to:Entry_FR_cher_1
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -1230,7 +1230,7 @@ to:Entry_FR_cher_1
 
 to:Thai_FR_cher_1
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "เชอร์"^^xsd:string ;
+    to:thaiScript "แชร์"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_cher_1
@@ -1241,14 +1241,14 @@ to:BM_FR_cher_1
 
 to:GL_FR_cher_1
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: เชอร์"@th ;
-    to:thaiScript "เชอร์"^^xsd:string .
+    rdfs:label "GL: แชร์"@th ;
+    to:thaiScript "แชร์"^^xsd:string .
 
 to:Entry_FR_voiture
     a owl:NamedIndividual , to:LexicalEntry ;
     rdfs:label "voiture"@fr ;
     to:sourceForm "voiture"^^xsd:string ;
-    to:ipa "[vwatyr]"^^xsd:string ;
+    to:ipa "[vwatyʀ]"^^xsd:string ;
     to:hasThaiForm to:Thai_FR_voiture ;
     to:fromSourceLanguage to:French ;
     to:exemplifiesRule to:RuleAddition_FR_09 .
@@ -1280,7 +1280,7 @@ to:Entry_FR_parlement
 
 to:Thai_FR_parlement
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "ปาร์เลอมอง"^^xsd:string ;
+    to:thaiScript "ปาร์เลอม็อง"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_parlement
@@ -1291,8 +1291,8 @@ to:BM_FR_parlement
 
 to:GL_FR_parlement
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: ปาร์เลอมอง"@th ;
-    to:thaiScript "ปาร์เลอมอง"^^xsd:string .
+    rdfs:label "GL: ปาร์เลอม็อง"@th ;
+    to:thaiScript "ปาร์เลอม็อง"^^xsd:string .
 
 to:Entry_FR_cercle
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -1305,7 +1305,7 @@ to:Entry_FR_cercle
 
 to:Thai_FR_cercle
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "เซิร์กล"^^xsd:string ;
+    to:thaiScript "แซ็กล์"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_cercle
@@ -1316,8 +1316,8 @@ to:BM_FR_cercle
 
 to:GL_FR_cercle
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: เซิร์กล"@th ;
-    to:thaiScript "เซิร์กล"^^xsd:string .
+    rdfs:label "GL: แซ็กล์"@th ;
+    to:thaiScript "แซ็กล์"^^xsd:string .
 
 to:Entry_FR_Sartre
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -1330,7 +1330,7 @@ to:Entry_FR_Sartre
 
 to:Thai_FR_Sartre
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "ซาร์ตร์"^^xsd:string ;
+    to:thaiScript "ซาทร์"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_Sartre
@@ -1341,8 +1341,8 @@ to:BM_FR_Sartre
 
 to:GL_FR_Sartre
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: ซาร์ตร์"@th ;
-    to:thaiScript "ซาร์ตร์"^^xsd:string .
+    rdfs:label "GL: ซาทร์"@th ;
+    to:thaiScript "ซาทร์"^^xsd:string .
 
 to:Entry_FR_tertre
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -1355,7 +1355,7 @@ to:Entry_FR_tertre
 
 to:Thai_FR_tertre
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "แทร์ทร์"^^xsd:string ;
+    to:thaiScript "แต็ทร์"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_tertre
@@ -1366,8 +1366,8 @@ to:BM_FR_tertre
 
 to:GL_FR_tertre
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: แทร์ทร์"@th ;
-    to:thaiScript "แทร์ทร์"^^xsd:string .
+    rdfs:label "GL: แต็ทร์"@th ;
+    to:thaiScript "แต็ทร์"^^xsd:string .
 
 to:Entry_FR_mettre
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -1380,7 +1380,7 @@ to:Entry_FR_mettre
 
 to:Thai_FR_mettre
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "เมทร์"^^xsd:string ;
+    to:thaiScript "แม็ทร์"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_mettre
@@ -1391,8 +1391,8 @@ to:BM_FR_mettre
 
 to:GL_FR_mettre
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: เมทร์"@th ;
-    to:thaiScript "เมทร์"^^xsd:string .
+    rdfs:label "GL: แม็ทร์"@th ;
+    to:thaiScript "แม็ทร์"^^xsd:string .
 
 to:Entry_FR_messe
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -1405,7 +1405,7 @@ to:Entry_FR_messe
 
 to:Thai_FR_messe
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "เมส"^^xsd:string ;
+    to:thaiScript "แม็ส"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_messe
@@ -1416,8 +1416,8 @@ to:BM_FR_messe
 
 to:GL_FR_messe
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: เมส"@th ;
-    to:thaiScript "เมส"^^xsd:string .
+    rdfs:label "GL: แม็ส"@th ;
+    to:thaiScript "แม็ส"^^xsd:string .
 
 to:Entry_FR_botte_1
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -1430,7 +1430,7 @@ to:Entry_FR_botte_1
 
 to:Thai_FR_botte_1
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "บ็อท"^^xsd:string ;
+    to:thaiScript "บ็อต"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_botte_1
@@ -1441,8 +1441,8 @@ to:BM_FR_botte_1
 
 to:GL_FR_botte_1
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: บ็อท"@th ;
-    to:thaiScript "บ็อท"^^xsd:string .
+    rdfs:label "GL: บ็อต"@th ;
+    to:thaiScript "บ็อต"^^xsd:string .
 
 to:Entry_FR_socque
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -1480,7 +1480,7 @@ to:Entry_FR_vin
 
 to:Thai_FR_vin
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "แวง"^^xsd:string ;
+    to:thaiScript "แว็ง"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_vin
@@ -1491,8 +1491,8 @@ to:BM_FR_vin
 
 to:GL_FR_vin
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: แวง"@th ;
-    to:thaiScript "แวง"^^xsd:string .
+    rdfs:label "GL: แว็ง"@th ;
+    to:thaiScript "แว็ง"^^xsd:string .
 
 to:Entry_FR_vent
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -1505,7 +1505,7 @@ to:Entry_FR_vent
 
 to:Thai_FR_vent
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "วอง"^^xsd:string ;
+    to:thaiScript "ว็อง"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_vent
@@ -1516,8 +1516,8 @@ to:BM_FR_vent
 
 to:GL_FR_vent
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: วอง"@th ;
-    to:thaiScript "วอง"^^xsd:string .
+    rdfs:label "GL: ว็อง"@th ;
+    to:thaiScript "ว็อง"^^xsd:string .
 
 to:Entry_FR_brun
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -1530,7 +1530,7 @@ to:Entry_FR_brun
 
 to:Thai_FR_brun
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "บรูง"^^xsd:string ;
+    to:thaiScript "เบริง"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_brun
@@ -1541,8 +1541,8 @@ to:BM_FR_brun
 
 to:GL_FR_brun
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: บรูง"@th ;
-    to:thaiScript "บรูง"^^xsd:string .
+    rdfs:label "GL: เบริง"@th ;
+    to:thaiScript "เบริง"^^xsd:string .
 
 to:Entry_FR_mon_1
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -1581,7 +1581,7 @@ to:Entry_FR_Napol_on
 
 to:Thai_FR_Napol_on
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "นาโปเลยง"^^xsd:string ;
+    to:thaiScript "นโปเลียน"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_Napol_on
@@ -1593,8 +1593,8 @@ to:BM_FR_Napol_on
 
 to:GL_FR_Napol_on
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: นาโปเลยง"@th ;
-    to:thaiScript "นาโปเลยง"^^xsd:string .
+    rdfs:label "GL: นโปเลียน"@th ;
+    to:thaiScript "นโปเลียน"^^xsd:string .
 
 to:Entry_FR_champagne
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -1608,7 +1608,7 @@ to:Entry_FR_champagne
 
 to:Thai_FR_champagne
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "ชองปาน"^^xsd:string ;
+    to:thaiScript "แชมเปญ"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_champagne
@@ -1620,14 +1620,14 @@ to:BM_FR_champagne
 
 to:GL_FR_champagne
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: ชองปาน"@th ;
-    to:thaiScript "ชองปาน"^^xsd:string .
+    rdfs:label "GL: แชมเปญ"@th ;
+    to:thaiScript "แชมเปญ"^^xsd:string .
 
 to:Entry_FR_h_tel
     a owl:NamedIndividual , to:LexicalEntry ;
     rdfs:label "hôtel"@fr ;
     to:sourceForm "hôtel"^^xsd:string ;
-    to:ipa "[ɛtɛl]"^^xsd:string ;
+    to:ipa "[ɔtɛl]"^^xsd:string ;
     to:hasThaiForm to:Thai_FR_h_tel ;
     to:fromSourceLanguage to:French ;
     to:exemplifiesRule to:RuleAddition_FR_13 ;
@@ -1635,7 +1635,7 @@ to:Entry_FR_h_tel
 
 to:Thai_FR_h_tel
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "โอเทล"^^xsd:string ;
+    to:thaiScript "ออแตล"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_h_tel
@@ -1647,8 +1647,8 @@ to:BM_FR_h_tel
 
 to:GL_FR_h_tel
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: โอเทล"@th ;
-    to:thaiScript "โอเทล"^^xsd:string .
+    rdfs:label "GL: ออแตล"@th ;
+    to:thaiScript "ออแตล"^^xsd:string .
 
 to:Entry_FR_le_haricot
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -1688,7 +1688,7 @@ to:Entry_FR_une__cole
 
 to:Thai_FR_une__cole
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "อูเนกอล"^^xsd:string ;
+    to:thaiScript "อูว์เนกอล"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_une__cole
@@ -1699,8 +1699,8 @@ to:BM_FR_une__cole
 
 to:GL_FR_une__cole
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: อูเนกอล"@th ;
-    to:thaiScript "อูเนกอล"^^xsd:string .
+    rdfs:label "GL: อูว์เนกอล"@th ;
+    to:thaiScript "อูว์เนกอล"^^xsd:string .
 
 to:Entry_FR_les_hommes
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -1738,7 +1738,7 @@ to:Entry_FR_Jacques_Chirac
 
 to:Thai_FR_Jacques_Chirac
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "จาก ชีรัก"^^xsd:string ;
+    to:thaiScript "ฌัก ชีรัก"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_Jacques_Chirac
@@ -1749,8 +1749,8 @@ to:BM_FR_Jacques_Chirac
 
 to:GL_FR_Jacques_Chirac
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: จาก ชีรัก"@th ;
-    to:thaiScript "จาก ชีรัก"^^xsd:string .
+    rdfs:label "GL: ฌัก ชีรัก"@th ;
+    to:thaiScript "ฌัก ชีรัก"^^xsd:string .
 
 to:Entry_FR_Nicolas_Sarkozy
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -1781,14 +1781,14 @@ to:Entry_FR_Antoine_de_Lavoisier
     a owl:NamedIndividual , to:LexicalEntry ;
     rdfs:label "Antoine de Lavoisier"@fr ;
     to:sourceForm "Antoine de Lavoisier"^^xsd:string ;
-    to:ipa "[ɑ̃twɑ̃ d ə lavwazjɛ]"^^xsd:string ;
+    to:ipa "[ɑ̃twan də lavwasje]"^^xsd:string ;
     to:hasThaiForm to:Thai_FR_Antoine_de_Lavoisier ;
     to:fromSourceLanguage to:French ;
     to:exemplifiesRule to:RuleAddition_FR_11 .
 
 to:Thai_FR_Antoine_de_Lavoisier
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "อองตวน เดอ ลาวัวซีเย"^^xsd:string ;
+    to:thaiScript "อ็องตวน เดอ ลาวัวซีเย"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_Antoine_de_Lavoisier
@@ -1799,21 +1799,21 @@ to:BM_FR_Antoine_de_Lavoisier
 
 to:GL_FR_Antoine_de_Lavoisier
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: อองตวน เดอ ลาวัวซีเย"@th ;
-    to:thaiScript "อองตวน เดอ ลาวัวซีเย"^^xsd:string .
+    rdfs:label "GL: อ็องตวน เดอ ลาวัวซีเย"@th ;
+    to:thaiScript "อ็องตวน เดอ ลาวัวซีเย"^^xsd:string .
 
 to:Entry_FR_Guy_de_Maupassant
     a owl:NamedIndividual , to:LexicalEntry ;
     rdfs:label "Guy de Maupassant"@fr ;
     to:sourceForm "Guy de Maupassant"^^xsd:string ;
-    to:ipa "[ki dɛ mɔpasɑ̃]"^^xsd:string ;
+    to:ipa "[ki də mopasɑ̃]"^^xsd:string ;
     to:hasThaiForm to:Thai_FR_Guy_de_Maupassant ;
     to:fromSourceLanguage to:French ;
     to:exemplifiesRule to:RuleAddition_FR_11 .
 
 to:Thai_FR_Guy_de_Maupassant
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "กี เดอ โมปาซอง"^^xsd:string ;
+    to:thaiScript "กี เดอ โมปาซ็อง"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_Guy_de_Maupassant
@@ -1824,21 +1824,21 @@ to:BM_FR_Guy_de_Maupassant
 
 to:GL_FR_Guy_de_Maupassant
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: กี เดอ โมปาซอง"@th ;
-    to:thaiScript "กี เดอ โมปาซอง"^^xsd:string .
+    rdfs:label "GL: กี เดอ โมปาซ็อง"@th ;
+    to:thaiScript "กี เดอ โมปาซ็อง"^^xsd:string .
 
 to:Entry_FR_Jean_de_la_Fontaine
     a owl:NamedIndividual , to:LexicalEntry ;
     rdfs:label "Jean de la Fontaine"@fr ;
     to:sourceForm "Jean de la Fontaine"^^xsd:string ;
-    to:ipa "[ʒɑ̃ d ə la fɔ̃tɛn]"^^xsd:string ;
+    to:ipa "[ʒɑ̃ də la fɔ̃tɛn]"^^xsd:string ;
     to:hasThaiForm to:Thai_FR_Jean_de_la_Fontaine ;
     to:fromSourceLanguage to:French ;
     to:exemplifiesRule to:RuleAddition_FR_11 .
 
 to:Thai_FR_Jean_de_la_Fontaine
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "ฌง เดอ ลา ฟองแตน"^^xsd:string ;
+    to:thaiScript "ฌ็อง เดอ ลา ฟงแตน"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_Jean_de_la_Fontaine
@@ -1849,8 +1849,8 @@ to:BM_FR_Jean_de_la_Fontaine
 
 to:GL_FR_Jean_de_la_Fontaine
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: ฌง เดอ ลา ฟองแตน"@th ;
-    to:thaiScript "ฌง เดอ ลา ฟองแตน"^^xsd:string .
+    rdfs:label "GL: ฌ็อง เดอ ลา ฟงแตน"@th ;
+    to:thaiScript "ฌ็อง เดอ ลา ฟงแตน"^^xsd:string .
 
 to:Entry_FR_Jean_Paul_Sartre
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -1863,7 +1863,7 @@ to:Entry_FR_Jean_Paul_Sartre
 
 to:Thai_FR_Jean_Paul_Sartre
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "ฌง-ปอล ซาร์ตร์"^^xsd:string ;
+    to:thaiScript "ฌ็อง-ปอล ซาทร์"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_Jean_Paul_Sartre
@@ -1874,21 +1874,21 @@ to:BM_FR_Jean_Paul_Sartre
 
 to:GL_FR_Jean_Paul_Sartre
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: ฌง-ปอล ซาร์ตร์"@th ;
-    to:thaiScript "ฌง-ปอล ซาร์ตร์"^^xsd:string .
+    rdfs:label "GL: ฌ็อง-ปอล ซาทร์"@th ;
+    to:thaiScript "ฌ็อง-ปอล ซาทร์"^^xsd:string .
 
 to:Entry_FR_Jean_Pierre_Raffarin
     a owl:NamedIndividual , to:LexicalEntry ;
     rdfs:label "Jean-Pierre Raffarin"@fr ;
     to:sourceForm "Jean-Pierre Raffarin"^^xsd:string ;
-    to:ipa "[ʒɑ̃ pjɛʀ ʀafarɛ̃]"^^xsd:string ;
+    to:ipa "[ʒɑ̃ pjɛʀ ʀafaʀɛ̃]"^^xsd:string ;
     to:hasThaiForm to:Thai_FR_Jean_Pierre_Raffarin ;
     to:fromSourceLanguage to:French ;
     to:exemplifiesRule to:RuleAddition_FR_11 .
 
 to:Thai_FR_Jean_Pierre_Raffarin
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "ฌง-ปีแยร์ ราฟารัง"^^xsd:string ;
+    to:thaiScript "ฌ็อง-ปีแยร์ ราฟาแร็ง"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_Jean_Pierre_Raffarin
@@ -1899,14 +1899,14 @@ to:BM_FR_Jean_Pierre_Raffarin
 
 to:GL_FR_Jean_Pierre_Raffarin
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: ฌง-ปีแยร์ ราฟารัง"@th ;
-    to:thaiScript "ฌง-ปีแยร์ ราฟารัง"^^xsd:string .
+    rdfs:label "GL: ฌ็อง-ปีแยร์ ราฟาแร็ง"@th ;
+    to:thaiScript "ฌ็อง-ปีแยร์ ราฟาแร็ง"^^xsd:string .
 
 to:Entry_FR_Comte_de_Paris
     a owl:NamedIndividual , to:LexicalEntry ;
     rdfs:label "Comte de Paris"@fr ;
     to:sourceForm "Comte de Paris"^^xsd:string ;
-    to:ipa "[kɔ̃ d ə paʀi]"^^xsd:string ;
+    to:ipa "[kɔ̃ də paʀi]"^^xsd:string ;
     to:hasThaiForm to:Thai_FR_Comte_de_Paris ;
     to:fromSourceLanguage to:French ;
     to:exemplifiesRule to:RuleAddition_FR_11 .
@@ -1931,14 +1931,14 @@ to:Entry_FR_Baron_de_Coubertin
     a owl:NamedIndividual , to:LexicalEntry ;
     rdfs:label "Baron de Coubertin"@fr ;
     to:sourceForm "Baron de Coubertin"^^xsd:string ;
-    to:ipa "[baʀɔ̃ d ə kubɛʀtɛ̃]"^^xsd:string ;
+    to:ipa "[baʀɔ̃ də kubɛʀtɛ̃]"^^xsd:string ;
     to:hasThaiForm to:Thai_FR_Baron_de_Coubertin ;
     to:fromSourceLanguage to:French ;
     to:exemplifiesRule to:RuleAddition_FR_11 .
 
 to:Thai_FR_Baron_de_Coubertin
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "บาร็อง เดอ กูแบร์แตง"^^xsd:string ;
+    to:thaiScript "บารง เดอ กูแบร์แต็ง"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_Baron_de_Coubertin
@@ -1949,8 +1949,8 @@ to:BM_FR_Baron_de_Coubertin
 
 to:GL_FR_Baron_de_Coubertin
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: บาร็อง เดอ กูแบร์แตง"@th ;
-    to:thaiScript "บาร็อง เดอ กูแบร์แตง"^^xsd:string .
+    rdfs:label "GL: บารง เดอ กูแบร์แต็ง"@th ;
+    to:thaiScript "บารง เดอ กูแบร์แต็ง"^^xsd:string .
 
 to:Entry_FR_La_vache_qui_rit
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -1963,7 +1963,7 @@ to:Entry_FR_La_vache_qui_rit
 
 to:Thai_FR_La_vache_qui_rit
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "ลาวาชกีรี"^^xsd:string ;
+    to:thaiScript "ลาวัชกีรี"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_La_vache_qui_rit
@@ -1974,8 +1974,8 @@ to:BM_FR_La_vache_qui_rit
 
 to:GL_FR_La_vache_qui_rit
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: ลาวาชกีรี"@th ;
-    to:thaiScript "ลาวาชกีรี"^^xsd:string .
+    rdfs:label "GL: ลาวัชกีรี"@th ;
+    to:thaiScript "ลาวัชกีรี"^^xsd:string .
 
 to:Entry_FR_Le_Havre
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -1988,7 +1988,7 @@ to:Entry_FR_Le_Havre
 
 to:Thai_FR_Le_Havre
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "เลออาวร์"^^xsd:string ;
+    to:thaiScript "เลออาฟวร์"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_Le_Havre
@@ -1999,8 +1999,8 @@ to:BM_FR_Le_Havre
 
 to:GL_FR_Le_Havre
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: เลออาวร์"@th ;
-    to:thaiScript "เลออาวร์"^^xsd:string .
+    rdfs:label "GL: เลออาฟวร์"@th ;
+    to:thaiScript "เลออาฟวร์"^^xsd:string .
 
 to:Entry_FR_la_Croix_Rouge
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -2013,7 +2013,7 @@ to:Entry_FR_la_Croix_Rouge
 
 to:Thai_FR_la_Croix_Rouge
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "ลา กรัวซ์-รูช"^^xsd:string ;
+    to:thaiScript "ลา ครัว-รูฌ"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_la_Croix_Rouge
@@ -2024,21 +2024,21 @@ to:BM_FR_la_Croix_Rouge
 
 to:GL_FR_la_Croix_Rouge
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: ลา กรัวซ์-รูช"@th ;
-    to:thaiScript "ลา กรัวซ์-รูช"^^xsd:string .
+    rdfs:label "GL: ลา ครัว-รูฌ"@th ;
+    to:thaiScript "ลา ครัว-รูฌ"^^xsd:string .
 
 to:Entry_FR_Saint_Julien_Chapteui
     a owl:NamedIndividual , to:LexicalEntry ;
-    rdfs:label "Saint-Julien-Chapteui"@fr ;
-    to:sourceForm "Saint-Julien-Chapteui"^^xsd:string ;
-    to:ipa "[sɛ̃ ʒyljɛ̃ ʃaptɶj]"^^xsd:string ;
+    rdfs:label "Saint-Julien-Chapteuil"@fr ;
+    to:sourceForm "Saint-Julien-Chapteuil"^^xsd:string ;
+    to:ipa "[sɛ̃ ʒyljɛ̃ ʃaptœj]"^^xsd:string ;
     to:hasThaiForm to:Thai_FR_Saint_Julien_Chapteui ;
     to:fromSourceLanguage to:French ;
     to:exemplifiesRule to:RuleAddition_FR_11 .
 
 to:Thai_FR_Saint_Julien_Chapteui
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "แซง-ฌุลีแยง-ชาปเตย"^^xsd:string ;
+    to:thaiScript "แซ็ง-ฌูว์ลีแย็ง-ชัปเตย"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_Saint_Julien_Chapteui
@@ -2049,8 +2049,8 @@ to:BM_FR_Saint_Julien_Chapteui
 
 to:GL_FR_Saint_Julien_Chapteui
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: แซง-ฌุลีแยง-ชาปเตย"@th ;
-    to:thaiScript "แซง-ฌุลีแยง-ชาปเตย"^^xsd:string .
+    rdfs:label "GL: แซ็ง-ฌูว์ลีแย็ง-ชัปเตย"@th ;
+    to:thaiScript "แซ็ง-ฌูว์ลีแย็ง-ชัปเตย"^^xsd:string .
 
 to:Entry_FR_Pont_Saint_Martin
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -2063,7 +2063,7 @@ to:Entry_FR_Pont_Saint_Martin
 
 to:Thai_FR_Pont_Saint_Martin
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "ปง-แซง-มาร์แตง"^^xsd:string ;
+    to:thaiScript "ปง-แซ็ง-มาร์แต็ง"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_Pont_Saint_Martin
@@ -2074,8 +2074,8 @@ to:BM_FR_Pont_Saint_Martin
 
 to:GL_FR_Pont_Saint_Martin
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: ปง-แซง-มาร์แตง"@th ;
-    to:thaiScript "ปง-แซง-มาร์แตง"^^xsd:string .
+    rdfs:label "GL: ปง-แซ็ง-มาร์แต็ง"@th ;
+    to:thaiScript "ปง-แซ็ง-มาร์แต็ง"^^xsd:string .
 
 to:Entry_FR_va_et_vient
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -2088,7 +2088,7 @@ to:Entry_FR_va_et_vient
 
 to:Thai_FR_va_et_vient
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "วา-เอ-วียง"^^xsd:string ;
+    to:thaiScript "วา-เอ-วีแย็ง"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_va_et_vient
@@ -2099,21 +2099,21 @@ to:BM_FR_va_et_vient
 
 to:GL_FR_va_et_vient
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: วา-เอ-วียง"@th ;
-    to:thaiScript "วา-เอ-วียง"^^xsd:string .
+    rdfs:label "GL: วา-เอ-วีแย็ง"@th ;
+    to:thaiScript "วา-เอ-วีแย็ง"^^xsd:string .
 
 to:Entry_FR_L_Acad_mie_des_Beaux_Arts
     a owl:NamedIndividual , to:LexicalEntry ;
     rdfs:label "L'Académie des Beaux-Arts"@fr ;
     to:sourceForm "L'Académie des Beaux-Arts"^^xsd:string ;
-    to:ipa "[lakadem i deboza]"^^xsd:string ;
+    to:ipa "[lakademi de bozaʀ]"^^xsd:string ;
     to:hasThaiForm to:Thai_FR_L_Acad_mie_des_Beaux_Arts ;
     to:fromSourceLanguage to:French ;
     to:exemplifiesRule to:RuleAddition_FR_11 .
 
 to:Thai_FR_L_Acad_mie_des_Beaux_Arts
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "ลาคาเดมี เดอ โบซาร์"^^xsd:string ;
+    to:thaiScript "ลากาเดมี เด โบซาร์"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_L_Acad_mie_des_Beaux_Arts
@@ -2124,21 +2124,21 @@ to:BM_FR_L_Acad_mie_des_Beaux_Arts
 
 to:GL_FR_L_Acad_mie_des_Beaux_Arts
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: ลาคาเดมี เดอ โบซาร์"@th ;
-    to:thaiScript "ลาคาเดมี เดอ โบซาร์"^^xsd:string .
+    rdfs:label "GL: ลากาเดมี เด โบซาร์"@th ;
+    to:thaiScript "ลากาเดมี เด โบซาร์"^^xsd:string .
 
 to:Entry_FR_Champs__lys_es
     a owl:NamedIndividual , to:LexicalEntry ;
     rdfs:label "Champs-Élysées"@fr ;
     to:sourceForm "Champs-Élysées"^^xsd:string ;
-    to:ipa "[ʃɑ̃zelizze]"^^xsd:string ;
+    to:ipa "[ʃɑ̃zelize]"^^xsd:string ;
     to:hasThaiForm to:Thai_FR_Champs__lys_es ;
     to:fromSourceLanguage to:French ;
     to:exemplifiesRule to:RuleAddition_FR_11 .
 
 to:Thai_FR_Champs__lys_es
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "ชองเซลีเซ"^^xsd:string ;
+    to:thaiScript "ช็องเซลีเซ"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_Champs__lys_es
@@ -2149,8 +2149,8 @@ to:BM_FR_Champs__lys_es
 
 to:GL_FR_Champs__lys_es
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: ชองเซลีเซ"@th ;
-    to:thaiScript "ชองเซลีเซ"^^xsd:string .
+    rdfs:label "GL: ช็องเซลีเซ"@th ;
+    to:thaiScript "ช็องเซลีเซ"^^xsd:string .
 
 to:Entry_FR_Saint_Honor
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -2163,7 +2163,7 @@ to:Entry_FR_Saint_Honor
 
 to:Thai_FR_Saint_Honor
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "แซงต์ออนอเร"^^xsd:string ;
+    to:thaiScript "แซ็งตอนอเร"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_Saint_Honor
@@ -2174,21 +2174,21 @@ to:BM_FR_Saint_Honor
 
 to:GL_FR_Saint_Honor
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: แซงต์ออนอเร"@th ;
-    to:thaiScript "แซงต์ออนอเร"^^xsd:string .
+    rdfs:label "GL: แซ็งตอนอเร"@th ;
+    to:thaiScript "แซ็งตอนอเร"^^xsd:string .
 
 to:Entry_FR_des__l_ves
     a owl:NamedIndividual , to:LexicalEntry ;
     rdfs:label "des élèves"@fr ;
     to:sourceForm "des élèves"^^xsd:string ;
-    to:ipa "[dezɛlɛv]"^^xsd:string ;
+    to:ipa "[dezelɛv]"^^xsd:string ;
     to:hasThaiForm to:Thai_FR_des__l_ves ;
     to:fromSourceLanguage to:French ;
     to:exemplifiesRule to:RuleAddition_FR_14 .
 
 to:Thai_FR_des__l_ves
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "เดเซเลฟ"^^xsd:string ;
+    to:thaiScript "เดเซแลฟว์"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_des__l_ves
@@ -2199,8 +2199,8 @@ to:BM_FR_des__l_ves
 
 to:GL_FR_des__l_ves
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: เดเซเลฟ"@th ;
-    to:thaiScript "เดเซเลฟ"^^xsd:string .
+    rdfs:label "GL: เดเซแลฟว์"@th ;
+    to:thaiScript "เดเซแลฟว์"^^xsd:string .
 
 to:Entry_FR_mes_amis
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -2231,7 +2231,7 @@ to:Entry_FR_les_beaux_arts
     a owl:NamedIndividual , to:LexicalEntry ;
     rdfs:label "les beaux-arts"@fr ;
     to:sourceForm "les beaux-arts"^^xsd:string ;
-    to:ipa "[leboza]"^^xsd:string ;
+    to:ipa "[lebozaʀ]"^^xsd:string ;
     to:hasThaiForm to:Thai_FR_les_beaux_arts ;
     to:fromSourceLanguage to:French ;
     to:exemplifiesRule to:RuleAddition_FR_14 .
@@ -2256,14 +2256,14 @@ to:Entry_FR_Je_vous_aime
     a owl:NamedIndividual , to:LexicalEntry ;
     rdfs:label "Je vous aime"@fr ;
     to:sourceForm "Je vous aime"^^xsd:string ;
-    to:ipa "[ʒɛvuzɛm]"^^xsd:string ;
+    to:ipa "[ʒəvuzɛm]"^^xsd:string ;
     to:hasThaiForm to:Thai_FR_Je_vous_aime ;
     to:fromSourceLanguage to:French ;
     to:exemplifiesRule to:RuleAddition_FR_14 .
 
 to:Thai_FR_Je_vous_aime
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "ฌเวซแอม"^^xsd:string ;
+    to:thaiScript "เฌอวูแซม"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_Je_vous_aime
@@ -2274,8 +2274,8 @@ to:BM_FR_Je_vous_aime
 
 to:GL_FR_Je_vous_aime
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: ฌเวซแอม"@th ;
-    to:thaiScript "ฌเวซแอม"^^xsd:string .
+    rdfs:label "GL: เฌอวูแซม"@th ;
+    to:thaiScript "เฌอวูแซม"^^xsd:string .
 
 to:Entry_FR_Vous_avez
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -2306,14 +2306,14 @@ to:Entry_FR_Il_habite
     a owl:NamedIndividual , to:LexicalEntry ;
     rdfs:label "Il habite"@fr ;
     to:sourceForm "Il habite"^^xsd:string ;
-    to:ipa "[ilabite]"^^xsd:string ;
+    to:ipa "[ilabit]"^^xsd:string ;
     to:hasThaiForm to:Thai_FR_Il_habite ;
     to:fromSourceLanguage to:French ;
     to:exemplifiesRule to:RuleAddition_FR_14 .
 
 to:Thai_FR_Il_habite
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "อีลาบีต"^^xsd:string ;
+    to:thaiScript "อีลาบิต"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_Il_habite
@@ -2324,21 +2324,21 @@ to:BM_FR_Il_habite
 
 to:GL_FR_Il_habite
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: อีลาบีต"@th ;
-    to:thaiScript "อีลาบีต"^^xsd:string .
+    rdfs:label "GL: อีลาบิต"@th ;
+    to:thaiScript "อีลาบิต"^^xsd:string .
 
 to:Entry_FR_de_temps_en_temps
     a owl:NamedIndividual , to:LexicalEntry ;
     rdfs:label "de temps en temps"@fr ;
     to:sourceForm "de temps en temps"^^xsd:string ;
-    to:ipa "[dɛtɑ̃sɑ̃tɑ̃]"^^xsd:string ;
+    to:ipa "[dətɑ̃zɑ̃tɑ̃]"^^xsd:string ;
     to:hasThaiForm to:Thai_FR_de_temps_en_temps ;
     to:fromSourceLanguage to:French ;
     to:exemplifiesRule to:RuleAddition_FR_14 .
 
 to:Thai_FR_de_temps_en_temps
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "เดอตองซองตอง"^^xsd:string ;
+    to:thaiScript "เดอต็องซ็องต็อง"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_de_temps_en_temps
@@ -2349,8 +2349,8 @@ to:BM_FR_de_temps_en_temps
 
 to:GL_FR_de_temps_en_temps
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: เดอตองซองตอง"@th ;
-    to:thaiScript "เดอตองซองตอง"^^xsd:string .
+    rdfs:label "GL: เดอต็องซ็องต็อง"@th ;
+    to:thaiScript "เดอต็องซ็องต็อง"^^xsd:string .
 
 to:Entry_FR_mot___mot
     a owl:NamedIndividual , to:LexicalEntry ;
@@ -2406,14 +2406,14 @@ to:Entry_FR_deux_heures
     a owl:NamedIndividual , to:LexicalEntry ;
     rdfs:label "deux heures"@fr ;
     to:sourceForm "deux heures"^^xsd:string ;
-    to:ipa "[dɶzɶʀ]"^^xsd:string ;
+    to:ipa "[dœzœʀ]"^^xsd:string ;
     to:hasThaiForm to:Thai_FR_deux_heures ;
     to:fromSourceLanguage to:French ;
     to:exemplifiesRule to:RuleAddition_FR_14 .
 
 to:Thai_FR_deux_heures
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "เดอซเออร์"^^xsd:string ;
+    to:thaiScript "เดอเซอร์"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_deux_heures
@@ -2424,21 +2424,21 @@ to:BM_FR_deux_heures
 
 to:GL_FR_deux_heures
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: เดอซเออร์"@th ;
-    to:thaiScript "เดอซเออร์"^^xsd:string .
+    rdfs:label "GL: เดอเซอร์"@th ;
+    to:thaiScript "เดอเซอร์"^^xsd:string .
 
 to:Entry_FR_mon_fr_re_et_une_amie
     a owl:NamedIndividual , to:LexicalEntry ;
     rdfs:label "mon frère et une amie"@fr ;
     to:sourceForm "mon frère et une amie"^^xsd:string ;
-    to:ipa "[mɔ̃ fʀɛʀe ynami]"^^xsd:string ;
+    to:ipa "[mɔ̃ fʀɛʀ e ynami]"^^xsd:string ;
     to:hasThaiForm to:Thai_FR_mon_fr_re_et_une_amie ;
     to:fromSourceLanguage to:French ;
     to:exemplifiesRule to:RuleAddition_FR_14 .
 
 to:Thai_FR_mon_fr_re_et_une_amie
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "มอง เฟรร์ เอ อูนามี"^^xsd:string ;
+    to:thaiScript "มง แฟรร์ เอ อูว์นามี"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_FR_mon_fr_re_et_une_amie
@@ -2449,8 +2449,8 @@ to:BM_FR_mon_fr_re_et_une_amie
 
 to:GL_FR_mon_fr_re_et_une_amie
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: มอง เฟรร์ เอ อูนามี"@th ;
-    to:thaiScript "มอง เฟรร์ เอ อูนามี"^^xsd:string .
+    rdfs:label "GL: มง แฟรร์ เอ อูว์นามี"@th ;
+    to:thaiScript "มง แฟรร์ เอ อูว์นามี"^^xsd:string .
 
 to:Entry_FR_les_h_ros
     a owl:NamedIndividual , to:LexicalEntry ;
