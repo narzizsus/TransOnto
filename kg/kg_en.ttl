@@ -7761,7 +7761,7 @@ to:Entry_EN_message
 
 to:Thai_EN_message
     a owl:NamedIndividual , to:ThaiForm ;
-    to:thaiScript "เมสเซส"^^xsd:string ;
+    to:thaiScript "เมสเซจ"^^xsd:string ;
     to:isPreferred "true"^^xsd:boolean .
 
 to:BM_EN_message
@@ -7773,8 +7773,8 @@ to:BM_EN_message
 
 to:GL_EN_message
     a owl:NamedIndividual , to:GoldLabel ;
-    rdfs:label "GL: เมสเซส"@th ;
-    to:thaiScript "เมสเซส"^^xsd:string .
+    rdfs:label "GL: เมสเซจ"@th ;
+    to:thaiScript "เมสเซจ"^^xsd:string .
 
 to:Entry_EN_server
     a owl:NamedIndividual , to:LexicalEntry ;
