@@ -6,35 +6,346 @@
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
    xmlns:to="https://w3id.org/transonto#"
 >
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_EN_10">
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_EN_08">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">EN Rule 10: Abbreviations</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ EN 10: ตัวย่อ</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</to:ruleNumber>
+    <rdfs:label xml:lang="th">กฎ EN 8: การเน้นเสียงและพยางค์</rdfs:label>
+    <rdfs:label xml:lang="en">EN Rule 08</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</to:ruleNumber>
     <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#English"/>
-    <to:ruleText xml:lang="en">English abbreviations: expand or transliterate by letter.</to:ruleText>
+    <to:ruleText xml:lang="en">Syllable boundary and stress affect vowel rendering.</to:ruleText>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#fromSourceLanguage">
+  <rdf:Description rdf:about="https://w3id.org/transonto#EvalResult_DE_2025">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#EvaluationResult"/>
+    <rdfs:label xml:lang="en">DE System Evaluation 2025</rdfs:label>
+    <rdfs:comment xml:lang="en">Accuracy on NECTEC internal benchmark; word-level 92.68%, syllable-level 97.35%, character-level 97.34%. Note: this individual is in the ontology file (transonto.ttl), not instantiated as ABox EvaluationResult in kg_all.ttl.</rdfs:comment>
+    <to:accuracyScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.9268</to:accuracyScore>
+    <to:syllableAccuracy rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.9735</to:syllableAccuracy>
+    <to:characterAccuracy rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.9734</to:characterAccuracy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Ambiguity_DE_25">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#RuleAmbiguity"/>
+    <rdfs:label xml:lang="en">DE Ambiguity 25: French loanword boundary</rdfs:label>
+    <to:ambiguityDescription xml:lang="en">Which German words count as French loanwords requiring French phonology vs standard German rules? No exhaustive list provided.</to:ambiguityDescription>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Decision_DE_30">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#ExpertDecision"/>
+    <rdfs:label xml:lang="en">Decision: italic identification requires metadata</rdfs:label>
+    <to:decisionJustification xml:lang="en">Italic foreign words require text metadata; apply German rules when italic info unavailable.</to:decisionJustification>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_EN_05">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:label xml:lang="th">กฎ EN 5: สระชวา</rdfs:label>
+    <rdfs:label xml:lang="en">EN Rule 05</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</to:ruleNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#English"/>
+    <to:ruleText xml:lang="en">Schwa context-dependent rendering.</to:ruleText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#RuleAddition_FR_07">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#RuleAddition"/>
+    <rdfs:label xml:lang="th">การเพิ่ม FR 7: สระ y</rdfs:label>
+    <rdfs:label xml:lang="en">FR Addition 7</rdfs:label>
+    <to:additionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</to:additionNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#French"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_07">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:label xml:lang="en">DE Rule 7: Vowel r-coloring</rdfs:label>
+    <rdfs:label xml:lang="th">กฎ DE 7: r ทำให้สระเปลี่ยน</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</to:ruleNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
+    <to:hasAmbiguity rdf:resource="https://w3id.org/transonto#Ambiguity_DE_07"/>
+    <to:ruleText xml:lang="en">Final r after vowel colors the vowel. berg (two variants possible).</to:ruleText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Decision_DE_25a">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#ExpertDecision"/>
+    <rdfs:label xml:lang="en">Decision: French loanword list from Duden</rdfs:label>
+    <to:decisionJustification xml:lang="en">Use Duden Fremdwoerterbuch as reference for French loanword identification.</to:decisionJustification>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Decision_DE_17b">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#ExpertDecision"/>
+    <rdfs:label xml:lang="en">Decision: regional r-variants accepted</rdfs:label>
+    <to:decisionJustification xml:lang="en">Both ร and รา accepted as variants for initial r; prefer ร in formal text.</to:decisionJustification>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#exemptifiesRule">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">from source language</rdfs:label>
+    <rdfs:label xml:lang="en">exemplifies rule</rdfs:label>
+    <rdfs:label xml:lang="th">แสดงตัวอย่างกฎ</rdfs:label>
     <rdfs:domain rdf:resource="https://w3id.org/transonto#LexicalEntry"/>
-    <rdfs:range rdf:resource="https://w3id.org/transonto#Language"/>
+    <rdfs:range rdf:resource="https://w3id.org/transonto#Rule"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#hasGuideline">
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_03">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:label xml:lang="en">DE Rule 3: Written-to-sound gap</rdfs:label>
+    <rdfs:label xml:lang="th">กฎ DE 3: ช่องว่างระหว่างตัวเขียนกับเสียง</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</to:ruleNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
+    <to:ruleText xml:lang="en">Letters that are not pronounced (e.g. silent h in certain positions) are not represented in the Thai transliteration.</to:ruleText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#madByExpert">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">has guideline</rdfs:label>
-    <rdfs:label xml:lang="th">มีแนวทาง</rdfs:label>
-    <rdfs:comment xml:lang="en">Links a language to its Royal Society transliteration guideline.</rdfs:comment>
-    <rdfs:domain rdf:resource="https://w3id.org/transonto#Language"/>
-    <rdfs:range rdf:resource="https://w3id.org/transonto#Guideline"/>
+    <rdfs:label xml:lang="en">made by expert</rdfs:label>
+    <rdfs:label xml:lang="th">จัดทำโดยผู้เชี่ยวชาญ</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/transonto#ExpertDecision"/>
+    <rdfs:range rdf:resource="https://w3id.org/transonto#Expert"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#characterAccuracy">
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_25">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:label xml:lang="en">DE Rule 25: French loanwords in German</rdfs:label>
+    <rdfs:label xml:lang="th">กฎ DE 25: คำยืมภาษาฝรั่งเศสในภาษาเยอรมัน</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</to:ruleNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
+    <to:hasAmbiguity rdf:resource="https://w3id.org/transonto#Ambiguity_DE_25"/>
+    <to:ruleText xml:lang="en">French loanwords in German retain French phonology for transliteration. Genie-&gt;จีนี, Blammage-&gt;บลามาจ.</to:ruleText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#German">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Language"/>
+    <rdfs:label xml:lang="en">German</rdfs:label>
+    <rdfs:label xml:lang="th">ภาษาเยอรมัน</rdfs:label>
+    <to:languageCode>de</to:languageCode>
+    <to:hasGuideline rdf:resource="https://w3id.org/transonto#Guideline_DE"/>
+    <to:hasReadinessLevel rdf:resource="https://w3id.org/transonto#CRL_DE"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#EvaluationResult">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Evaluation Result</rdfs:label>
+    <rdfs:label xml:lang="th">ผลการประเมิน</rdfs:label>
+    <rdfs:comment xml:lang="en">The outcome of evaluating a transliteration system on the benchmark, including accuracy metrics.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_29">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:label xml:lang="en">DE Rule 29: Long compound names</rdfs:label>
+    <rdfs:label xml:lang="th">กฎ DE 29: ชื่อประสมยาว</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">29</to:ruleNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
+    <to:ruleText xml:lang="en">Hyphens permitted within long compound proper nouns. Karl-Theodor zu Guttenberg.</to:ruleText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_EN_02">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:label xml:lang="th">กฎ EN 2: สระสั้น</rdfs:label>
+    <rdfs:label xml:lang="en">EN Rule 02</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</to:ruleNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#English"/>
+    <to:ruleText xml:lang="en">Short vowel mapping.</to:ruleText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_08">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:label xml:lang="en">DE Rule 8: Vowel o-umlaut</rdfs:label>
+    <rdfs:label xml:lang="th">กฎ DE 8: สระ o-umlaut</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</to:ruleNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
+    <to:sourceGrapheme>o-umlaut</to:sourceGrapheme>
+    <to:ruleText xml:lang="en">Short -&gt; เออ; long -&gt; เออ. Examples: ol, offen.</to:ruleText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#RuleAddition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Rule Addition</rdfs:label>
+    <rdfs:label xml:lang="th">การเพิ่มเติมกฎ</rdfs:label>
+    <rdfs:comment xml:lang="en">A supplementary rule or addition beyond the main rule set (e.g. French additions documented separately).</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/transonto#Rule"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_EN_03">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:label xml:lang="th">กฎ EN 3: สระยาว</rdfs:label>
+    <rdfs:label xml:lang="en">EN Rule 03</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</to:ruleNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#English"/>
+    <to:ruleText xml:lang="en">Long vowel mapping.</to:ruleText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Thai_Schmidt">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#ThaiForm"/>
+    <to:thaiScript>ชมิดท์</to:thaiScript>
+    <to:isPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</to:isPreferred>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#crlEvidence">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">character accuracy</rdfs:label>
-    <rdfs:label xml:lang="th">ความแม่นยำระดับอักขระ</rdfs:label>
-    <rdfs:domain rdf:resource="https://w3id.org/transonto#EvaluationResult"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:label xml:lang="en">CRL evidence</rdfs:label>
+    <rdfs:label xml:lang="th">หลักฐาน CRL</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/transonto#ComputationalReadinessLevel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#ExpertDecision">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Expert Decision</rdfs:label>
+    <rdfs:label xml:lang="th">การตัดสินใจของผู้เชี่ยวชาญ</rdfs:label>
+    <rdfs:comment xml:lang="en">A resolution or decision made by a domain expert to resolve a rule ambiguity or edge case.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#RuleAddition_FR_03">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#RuleAddition"/>
+    <rdfs:label xml:lang="th">การเพิ่ม FR 3: สระนาสิก 3 (ยังไม่แก้ไข)</rdfs:label>
+    <rdfs:label xml:lang="en">FR Addition 3</rdfs:label>
+    <to:additionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</to:additionNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#French"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_27">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:label xml:lang="en">DE Rule 27: Titles and nobility particles</rdfs:label>
+    <rdfs:label xml:lang="th">กฎ DE 27: ยศและอนุภาค von/zu</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">27</to:ruleNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
+    <to:hasAmbiguity rdf:resource="https://w3id.org/transonto#Ambiguity_DE_27"/>
+    <to:ruleText xml:lang="en">Noble particles: von, zu, von und zu. Furst Otto von Bismarck -&gt; เฟิร์สท์ ออทโท ฟอน บิสมาร์ก.</to:ruleText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#CRL_FR">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#ComputationalReadinessLevel"/>
+    <rdfs:label xml:lang="en">CRL - French</rdfs:label>
+    <rdfs:label xml:lang="th">CRL ภาษาฝรั่งเศส</rdfs:label>
+    <to:crlScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</to:crlScore>
+    <to:readinessScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">104</to:readinessScore>
+    <to:crlEvidence xml:lang="en">French requires G2P. 14 additions documented. Nasal vowels and liaison rules add complexity.</to:crlEvidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#RuleAddition_FR_10">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#RuleAddition"/>
+    <rdfs:label xml:lang="th">การเพิ่ม FR 10: พยัญชนะ sh</rdfs:label>
+    <rdfs:label xml:lang="en">FR Addition 10</rdfs:label>
+    <to:additionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</to:additionNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#French"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_23">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:label xml:lang="en">DE Rule 23: German alphabet letters</rdfs:label>
+    <rdfs:label xml:lang="th">กฎ DE 23: ชื่อตัวอักษรเยอรมัน</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">23</to:ruleNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
+    <to:ruleText xml:lang="en">German alphabet letter names as Thai: A-&gt;เอ, B-&gt;เบ, C-&gt;เซ, D-&gt;เด, E-&gt;เอ, F-&gt;เอฟ, G-&gt;เก, H-&gt;ฮา, I-&gt;อี, J-&gt;โย, K-&gt;คา, L-&gt;เอล, M-&gt;เอม, N-&gt;เอน, O-&gt;โอ, P-&gt;เพ, Q-&gt;คู, R-&gt;เอร์, S-&gt;เอส, T-&gt;เท, U-&gt;อู, V-&gt;เฟา, W-&gt;เว, X-&gt;อิกส์, Y-&gt;อิปซีลอน, Z-&gt;เซ็ท.</to:ruleText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#hasAddition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has addition</rdfs:label>
+    <rdfs:label xml:lang="th">มีการเพิ่มเติม</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/transonto#Guideline"/>
+    <rdfs:range rdf:resource="https://w3id.org/transonto#RuleAddition"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/transonto#hasRule"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_EN_09">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:label xml:lang="th">กฎ EN 9: ชื่อเฉพาะ</rdfs:label>
+    <rdfs:label xml:lang="en">EN Rule 09</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</to:ruleNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#English"/>
+    <to:ruleText xml:lang="en">Conventional forms for established loanwords diverge from rule-derived forms.</to:ruleText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#TransliterationVariant">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Transliteration Variant</rdfs:label>
+    <rdfs:label xml:lang="th">รูปแบบการถ่ายอักษรทางเลือก</rdfs:label>
+    <rdfs:comment xml:lang="en">An alternative Thai rendering of the same source-language form, arising from ambiguity or rule variation.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_19">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:label xml:lang="en">DE Rule 19: Double consonants</rdfs:label>
+    <rdfs:label xml:lang="th">กฎ DE 19: พยัญชนะซ้ำ</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">19</to:ruleNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
+    <to:ruleText xml:lang="en">Double consonants signal preceding short vowel; render as single consonant. Mann, Riss.</to:ruleText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#RuleAddition_FR_06">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#RuleAddition"/>
+    <rdfs:label xml:lang="th">การเพิ่ม FR 6: พยัญชนะท้ายคำที่ไม่ออกเสียง</rdfs:label>
+    <rdfs:label xml:lang="en">FR Addition 6</rdfs:label>
+    <to:additionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</to:additionNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#French"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#RuleAddition_FR_14">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#RuleAddition"/>
+    <rdfs:label xml:lang="th">การเพิ่ม FR 14: ตัวย่อ</rdfs:label>
+    <rdfs:label xml:lang="en">FR Addition 14</rdfs:label>
+    <to:additionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</to:additionNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#French"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#languageCode">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">ISO 639-1 code</rdfs:label>
+    <rdfs:label xml:lang="th">รหัสภาษา ISO 639-1</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/transonto#Language"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_EN_01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:label xml:lang="th">กฎ EN 1: พยัญชนะ</rdfs:label>
+    <rdfs:label xml:lang="en">EN Rule 01</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</to:ruleNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#English"/>
+    <to:ruleText xml:lang="en">Consonant mapping following Cambridge Dictionary IPA.</to:ruleText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_04">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:label xml:lang="en">DE Rule 4: Vowel mapping (core)</rdfs:label>
+    <rdfs:label xml:lang="th">กฎ DE 4: การแมปสระหลัก</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</to:ruleNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
+    <to:sourceGrapheme>a, e, i, o, u, y, a-umlaut, o-umlaut, u-umlaut</to:sourceGrapheme>
+    <to:ruleText xml:lang="en">Core vowel mapping covering all German vowels and umlauts.</to:ruleText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#hasThaiForm">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has Thai form</rdfs:label>
+    <rdfs:label xml:lang="th">มีรูปแบบภาษาไทย</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/transonto#LexicalEntry"/>
+    <rdfs:range rdf:resource="https://w3id.org/transonto#ThaiForm"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_13">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:label xml:lang="en">DE Rule 13: Plosives p, t, k</rdfs:label>
+    <rdfs:label xml:lang="th">กฎ DE 13: เสียงระเบิด p, t, k</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13</to:ruleNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
+    <to:sourceGrapheme>p, t, k, sp, st</to:sourceGrapheme>
+    <to:targetGrapheme>พ/บ, ท/ด, ค/ก, คว, คท</to:targetGrapheme>
+    <to:ruleText xml:lang="en">p-&gt;พ(initial)/บ; t-&gt;ท(initial)/ด; k-&gt;ค(initial)/ก; word-final: บ, ด, ก. Special sp/st clusters.</to:ruleText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#crlScore">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">CRL score</rdfs:label>
+    <rdfs:label xml:lang="th">คะแนน CRL</rdfs:label>
+    <rdfs:comment xml:lang="en">Integer 1-5: 1=directly executable (CRL-1, no expert intervention needed), 5=requires most extensive expert intervention (CRL-5, least ready for automation). Higher score = less computationally ready.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/transonto#ComputationalReadinessLevel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_02">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:label xml:lang="en">DE Rule 2: Vowel length distinction</rdfs:label>
+    <rdfs:label xml:lang="th">กฎ DE 2: การแยกความยาวสระ</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</to:ruleNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
+    <to:ruleText xml:lang="en">Short and long vowels are distinguished. Short -&gt; อ, long -&gt; อู. Checked by Duden IPA.</to:ruleText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#RuleAddition_FR_12">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#RuleAddition"/>
+    <rdfs:label xml:lang="th">การเพิ่ม FR 12: การตัดเสียง</rdfs:label>
+    <rdfs:label xml:lang="en">FR Addition 12</rdfs:label>
+    <to:additionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</to:additionNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#French"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_05">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -47,170 +358,82 @@
     <to:targetGrapheme>อิ, อี</to:targetGrapheme>
     <to:ruleText xml:lang="en">Long -&gt; อี, short -&gt; อิ. Examples: immer, Idee.</to:ruleText>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#ErrorType_Ambiguity">
+  <rdf:Description rdf:about="https://w3id.org/transonto#sourceGrapheme">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">source grapheme</rdfs:label>
+    <rdfs:label xml:lang="th">กราฟีมต้นทาง</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Decision_DE_25b">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#ErrorType"/>
-    <rdfs:label xml:lang="en">Ambiguity Error</rdfs:label>
-    <rdfs:label xml:lang="th">ข้อผิดพลาดจากความคลุมเครือ</rdfs:label>
-    <rdfs:comment xml:lang="en">Errors due to underspecified rules where multiple valid Thai forms exist.</rdfs:comment>
+    <rdf:type rdf:resource="https://w3id.org/transonto#ExpertDecision"/>
+    <rdfs:label xml:lang="en">Decision: Genie as French loanword</rdfs:label>
+    <to:decisionJustification xml:lang="en">Genie confirmed as French loanword; apply French phonology: จีนี.</to:decisionJustification>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#hasVariant">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">has variant</rdfs:label>
-    <rdfs:label xml:lang="th">มีรูปแบบทางเลือก</rdfs:label>
-    <rdfs:domain rdf:resource="https://w3id.org/transonto#ThaiForm"/>
-    <rdfs:range rdf:resource="https://w3id.org/transonto#TransliterationVariant"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Thai_Schmidt">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#ThaiForm"/>
-    <to:thaiScript>ชมิดท์</to:thaiScript>
-    <to:isPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</to:isPreferred>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_15">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">DE Rule 15: Fricatives sch, ch, x</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ DE 15: เสียงเสียดแทรก sch, ch, x</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</to:ruleNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
-    <to:sourceGrapheme>sch, ch, x</to:sourceGrapheme>
-    <to:targetGrapheme>ช, ค, งค</to:targetGrapheme>
-    <to:ruleText xml:lang="en">sch-&gt;ช; ch (post-front vowel)-&gt;ช; ch (post-back vowel)-&gt;ค/ก; x-&gt;ง/กซ. suchen, Tuch.</to:ruleText>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#RuleAddition_FR_07">
+  <rdf:Description rdf:about="https://w3id.org/transonto#RuleAddition_FR_05">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="https://w3id.org/transonto#RuleAddition"/>
-    <rdfs:label xml:lang="en">FR Addition 7: Vowel y</rdfs:label>
-    <rdfs:label xml:lang="th">การเพิ่ม FR 7: สระ y</rdfs:label>
-    <to:additionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</to:additionNumber>
+    <rdfs:label xml:lang="th">การเพิ่ม FR 5: h aspire กับ h muet</rdfs:label>
+    <rdfs:label xml:lang="en">FR Addition 5</rdfs:label>
+    <to:additionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</to:additionNumber>
     <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#French"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#hasReadinessLevel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has readiness level</rdfs:label>
+    <rdfs:label xml:lang="th">มีระดับความพร้อมด้านการคำนวณ</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/transonto#Language"/>
+    <rdfs:range rdf:resource="https://w3id.org/transonto#ComputationalReadinessLevel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Decision_DE_21b">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#ExpertDecision"/>
+    <rdfs:label xml:lang="en">Decision: Karl coda r</rdfs:label>
+    <to:decisionJustification xml:lang="en">Karl: retain as คาร์ล (not คาล) per common convention.</to:decisionJustification>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/transonto#RuleAddition_FR_04">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="https://w3id.org/transonto#RuleAddition"/>
-    <rdfs:label xml:lang="en">FR Addition 4: Liaison rule (UNRESOLVED)</rdfs:label>
     <rdfs:label xml:lang="th">การเพิ่ม FR 4: กฎ liaison (ยังไม่แก้ไข)</rdfs:label>
+    <rdfs:label xml:lang="en">FR Addition 4</rdfs:label>
     <to:additionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</to:additionNumber>
     <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#French"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_EN_07">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">EN Rule 7: Silent letters</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ EN 7: อักษรที่ไม่ออกเสียง</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</to:ruleNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#English"/>
-    <to:ruleText xml:lang="en">Silent consonant retention is convention-based, not derivable from IPA alone.</to:ruleText>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#sourceForm">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">source form</rdfs:label>
-    <rdfs:label xml:lang="th">รูปแบบต้นทาง</rdfs:label>
-    <rdfs:domain rdf:resource="https://w3id.org/transonto#LexicalEntry"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#CRL_EN">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#ComputationalReadinessLevel"/>
-    <rdfs:label xml:lang="en">CRL - English</rdfs:label>
-    <rdfs:label xml:lang="th">CRL ภาษาอังกฤษ</rdfs:label>
-    <to:crlScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</to:crlScore>
-    <to:readinessScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</to:readinessScore>
-    <to:crlEvidence xml:lang="en">English orthography is highly irregular; strong G2P dependency. Benchmark-only at present; rules not yet formalized in KG.</to:crlEvidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#BenchmarkItem">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Benchmark Item</rdfs:label>
-    <rdfs:label xml:lang="th">รายการประเมิน</rdfs:label>
-    <rdfs:comment xml:lang="en">A source-language word included in the evaluation benchmark dataset.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_07">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">DE Rule 7: Vowel r-coloring</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ DE 7: r ทำให้สระเปลี่ยน</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</to:ruleNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
-    <to:hasAmbiguity rdf:resource="https://w3id.org/transonto#Ambiguity_DE_07"/>
-    <to:ruleText xml:lang="en">Final r after vowel colors the vowel. berg (two variants possible).</to:ruleText>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_30">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">DE Rule 30: Italicized foreign words</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ DE 30: คำต่างประเทศที่พิมพ์เอียง</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</to:ruleNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
-    <to:ruleText xml:lang="en">Foreign words in italic are transliterated according to their source language phonology.</to:ruleText>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_17">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">DE Rule 17: Consonant r</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ DE 17: พยัญชนะ r</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">17</to:ruleNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
-    <to:hasAmbiguity rdf:resource="https://w3id.org/transonto#Ambiguity_DE_17"/>
-    <to:sourceGrapheme>r, rr</to:sourceGrapheme>
-    <to:targetGrapheme>ร, เออ</to:targetGrapheme>
-    <to:ruleText xml:lang="en">r in onset-&gt;ร; r vocalized in coda-&gt;เออ. Rad (variants).</to:ruleText>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Ambiguity_DE_17">
+  <rdf:Description rdf:about="https://w3id.org/transonto#Ambiguity_DE_30">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="https://w3id.org/transonto#RuleAmbiguity"/>
-    <rdfs:label xml:lang="en">DE Ambiguity 17: Rad variants</rdfs:label>
-    <to:ambiguityDescription xml:lang="en">Rad allows ร/รา/เรา depending on regional pronunciation accepted.</to:ambiguityDescription>
+    <rdfs:label xml:lang="en">DE Ambiguity 30: Foreign word identification</rdfs:label>
+    <to:ambiguityDescription xml:lang="en">How to identify italicized foreign words programmatically without typographic information.</to:ambiguityDescription>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_16">
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_24">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">DE Rule 16: Consonant clusters pf, ts, tsch</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ DE 16: กลุ่มพยัญชนะ pf, ts, tsch</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</to:ruleNumber>
+    <rdfs:label xml:lang="en">DE Rule 24: Abbreviations</rdfs:label>
+    <rdfs:label xml:lang="th">กฎ DE 24: ตัวย่อ</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24</to:ruleNumber>
     <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
-    <to:sourceGrapheme>pf, ts, tsch, tz</to:sourceGrapheme>
-    <to:ruleText xml:lang="en">pf-&gt;พฟ; ts-&gt;ซ; tsch-&gt;ช. Pfaff, schrumpfst.</to:ruleText>
+    <to:ruleText xml:lang="en">German abbreviations expand and transliterate the full form. DAAD-&gt;ดาด, DFB-&gt;ดีเอฟบี.</to:ruleText>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Decision_DE_21a">
+  <rdf:Description rdf:about="https://w3id.org/transonto#hasGoldLabel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has gold label</rdfs:label>
+    <rdfs:label xml:lang="th">มีป้ายกำกับมาตรฐาน</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/transonto#BenchmarkItem"/>
+    <rdfs:range rdf:resource="https://w3id.org/transonto#GoldLabel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Thai_Mueller_2">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#ExpertDecision"/>
-    <rdfs:label xml:lang="en">Decision: final r retained in monosyllables</rdfs:label>
-    <to:decisionJustification xml:lang="en">Monosyllabic words with final r: retain as เออ in Thai.</to:decisionJustification>
+    <rdf:type rdf:resource="https://w3id.org/transonto#ThaiForm"/>
+    <to:thaiScript>มุลเลอร์</to:thaiScript>
+    <to:isPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</to:isPreferred>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_19">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">DE Rule 19: Double consonants</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ DE 19: พยัญชนะซ้ำ</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">19</to:ruleNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
-    <to:ruleText xml:lang="en">Double consonants signal preceding short vowel; render as single consonant. Mann, Riss.</to:ruleText>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_18">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">DE Rule 18: Consonant h</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ DE 18: พยัญชนะ h</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</to:ruleNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
-    <to:sourceGrapheme>h</to:sourceGrapheme>
-    <to:targetGrapheme>ห, (silent)</to:targetGrapheme>
-    <to:ruleText xml:lang="en">Initial h-&gt;ห; intervocalic h-&gt;silent (lengthening). sehen, gehen.</to:ruleText>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#TransliterationVariant">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Transliteration Variant</rdfs:label>
-    <rdfs:label xml:lang="th">รูปแบบการถ่ายอักษรทางเลือก</rdfs:label>
-    <rdfs:comment xml:lang="en">An alternative Thai rendering of the same source-language form, arising from ambiguity or rule variation.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#RuleAddition_FR_14">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#RuleAddition"/>
-    <rdfs:label xml:lang="en">FR Addition 14: Abbreviations</rdfs:label>
-    <rdfs:label xml:lang="th">การเพิ่ม FR 14: ตัวย่อ</rdfs:label>
-    <to:additionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</to:additionNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#French"/>
+  <rdf:Description rdf:about="https://w3id.org/transonto#evaluatesRule">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">evaluates rule</rdfs:label>
+    <rdfs:label xml:lang="th">ประเมินกฎ</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/transonto#BenchmarkItem"/>
+    <rdfs:range rdf:resource="https://w3id.org/transonto#Rule"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/transonto">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
@@ -224,20 +447,187 @@
     <owl:versionIRI rdf:resource="https://w3id.org/transonto/1.0"/>
     <owl:versionInfo>1.0</owl:versionInfo>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#thaiScript">
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_EN_04">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:label xml:lang="th">กฎ EN 4: สระประสม</rdfs:label>
+    <rdfs:label xml:lang="en">EN Rule 04</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</to:ruleNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#English"/>
+    <to:ruleText xml:lang="en">Diphthong mapping.</to:ruleText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#producedEvaluationResult">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">produced evaluation result</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/transonto#Guideline"/>
+    <rdfs:range rdf:resource="https://w3id.org/transonto#EvaluationResult"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#ErrorType_ProperNoun">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#ErrorType"/>
+    <rdfs:label xml:lang="en">Proper Noun Error</rdfs:label>
+    <rdfs:label xml:lang="th">ข้อผิดพลาดจากชื่อเฉพาะ</rdfs:label>
+    <rdfs:comment xml:lang="en">Errors specific to proper nouns (personal names, place names) not covered by general rules.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_09">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:label xml:lang="en">DE Rule 9: Consonant er</rdfs:label>
+    <rdfs:label xml:lang="th">กฎ DE 9: er พยัญชนะ</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</to:ruleNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
+    <to:ruleText xml:lang="en">Word-final er -&gt; เออ. Examples: Mutter, Ober.</to:ruleText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#ThaiForm">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Thai Form</rdfs:label>
+    <rdfs:label xml:lang="th">รูปแบบภาษาไทย</rdfs:label>
+    <rdfs:comment xml:lang="en">The Thai-script rendering of a source-language lexical entry.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Guideline_EN">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Guideline"/>
+    <rdfs:label xml:lang="en">Royal Society Thai Transliteration Guideline - English</rdfs:label>
+    <rdfs:label xml:lang="th">คู่มือการถ่ายอักษรภาษาอังกฤษ ราชบัณฑิตยสภา</rdfs:label>
+    <to:guidelineVersion>2532</to:guidelineVersion>
+    <to:guidelineYear rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2532</to:guidelineYear>
+    <dcterms:description xml:lang="en">Standard English-to-Thai transliteration guideline.</dcterms:description>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_EN_11">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:label xml:lang="th">กฎ EN 11: การพึ่งพา G2P</rdfs:label>
+    <rdfs:label xml:lang="en">EN Rule 11</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11</to:ruleNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#English"/>
+    <to:ruleText xml:lang="en">Strong G2P dependency - Cambridge Dictionary IPA used as reference.</to:ruleText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_11">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:label xml:lang="en">DE Rule 11: Diphthongs</rdfs:label>
+    <rdfs:label xml:lang="th">กฎ DE 11: สระประสม</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11</to:ruleNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
+    <to:sourceGrapheme>ae, ai, eu, au-umlaut, au, ei</to:sourceGrapheme>
+    <to:ruleText xml:lang="en">Diphthong mapping. Maier, Naumann.</to:ruleText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#hasRule">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has rule</rdfs:label>
+    <rdfs:label xml:lang="th">มีกฎ</rdfs:label>
+    <rdfs:comment xml:lang="en">Associates a guideline with a constituent transliteration rule.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/transonto#Guideline"/>
+    <rdfs:range rdf:resource="https://w3id.org/transonto#Rule"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#guidelineYear">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">Thai script</rdfs:label>
-    <rdfs:label xml:lang="th">อักษรไทย</rdfs:label>
+    <rdfs:label xml:lang="en">guideline year</rdfs:label>
+    <rdfs:label xml:lang="th">ปีแนวทาง</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/transonto#Guideline"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Ambiguity_DE_28">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#RuleAmbiguity"/>
+    <rdfs:label xml:lang="en">DE Ambiguity 28: Hyphen retention</rdfs:label>
+    <to:ambiguityDescription xml:lang="en">When to retain vs omit hyphen in Thai output for compound names.</to:ambiguityDescription>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#hasLexicalEntry">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has lexical entry</rdfs:label>
+    <rdfs:label xml:lang="th">มีรายการศัพท์</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/transonto#Guideline"/>
+    <rdfs:range rdf:resource="https://w3id.org/transonto#LexicalEntry"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Decision_DE_21a">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#ExpertDecision"/>
+    <rdfs:label xml:lang="en">Decision: final r retained in monosyllables</rdfs:label>
+    <to:decisionJustification xml:lang="en">Monosyllabic words with final r: retain as เออ in Thai.</to:decisionJustification>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#CRL_EN">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#ComputationalReadinessLevel"/>
+    <rdfs:label xml:lang="en">CRL - English</rdfs:label>
+    <rdfs:label xml:lang="th">CRL ภาษาอังกฤษ</rdfs:label>
+    <to:crlScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</to:crlScore>
+    <to:readinessScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</to:readinessScore>
+    <to:crlEvidence xml:lang="en">English orthography is highly irregular; strong G2P dependency. Benchmark-only at present; rules not yet formalized in KG.</to:crlEvidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Decision_DE_27a">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#ExpertDecision"/>
+    <rdfs:label xml:lang="en">Decision: von -&gt; ฟอน</rdfs:label>
+    <to:decisionJustification xml:lang="en">von -&gt; ฟอน in standard contexts; ฟ็อน only in careful pronunciation.</to:decisionJustification>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_EN_12">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:label xml:lang="th">กฎ EN 12: อักษรสระสั้น</rdfs:label>
+    <rdfs:label xml:lang="en">EN Rule 12</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</to:ruleNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#English"/>
+    <to:ruleText xml:lang="en">Short vowel glyph requires context not available from IPA alone.</to:ruleText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_10">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:label xml:lang="en">DE Rule 10: Vowel doubling</rdfs:label>
+    <rdfs:label xml:lang="th">กฎ DE 10: สระซ้ำ</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</to:ruleNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
+    <to:ruleText xml:lang="en">Double vowels (aa, ee, oo) treated as long vowels: Hase, Kassel.</to:ruleText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#English">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Language"/>
+    <rdfs:label xml:lang="en">English</rdfs:label>
+    <rdfs:label xml:lang="th">ภาษาอังกฤษ</rdfs:label>
+    <to:languageCode>en</to:languageCode>
+    <to:hasGuideline rdf:resource="https://w3id.org/transonto#Guideline_EN"/>
+    <to:hasReadinessLevel rdf:resource="https://w3id.org/transonto#CRL_EN"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#appliedToLanguage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">applied to language</rdfs:label>
+    <rdfs:label xml:lang="th">ใช้กับภาษา</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:range rdf:resource="https://w3id.org/transonto#Language"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#isPreferred">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">is preferred</rdfs:label>
+    <rdfs:label xml:lang="th">เป็นที่นิยม</rdfs:label>
     <rdfs:domain rdf:resource="https://w3id.org/transonto#ThaiForm"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/transonto#RuleAddition_FR_01">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="https://w3id.org/transonto#RuleAddition"/>
-    <rdfs:label xml:lang="en">FR Addition 1: Nasal vowel</rdfs:label>
     <rdfs:label xml:lang="th">การเพิ่ม FR 1: สระนาสิก</rdfs:label>
+    <rdfs:label xml:lang="en">FR Addition 1</rdfs:label>
     <to:additionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</to:additionNumber>
     <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#French"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#French">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Language"/>
+    <rdfs:label xml:lang="en">French</rdfs:label>
+    <rdfs:label xml:lang="th">ภาษาฝรั่งเศส</rdfs:label>
+    <to:languageCode>fr</to:languageCode>
+    <to:hasGuideline rdf:resource="https://w3id.org/transonto#Guideline_FR"/>
+    <to:hasReadinessLevel rdf:resource="https://w3id.org/transonto#CRL_FR"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_16">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:label xml:lang="en">DE Rule 16: Consonant clusters pf, ts, tsch</rdfs:label>
+    <rdfs:label xml:lang="th">กฎ DE 16: กลุ่มพยัญชนะ pf, ts, tsch</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</to:ruleNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
+    <to:sourceGrapheme>pf, ts, tsch, tz</to:sourceGrapheme>
+    <to:ruleText xml:lang="en">pf-&gt;พฟ; ts-&gt;ซ; tsch-&gt;ช. Pfaff, schrumpfst.</to:ruleText>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_06">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -250,52 +640,153 @@
     <to:targetGrapheme>อ, อู</to:targetGrapheme>
     <to:ruleText xml:lang="en">Short -&gt; อ; long -&gt; อู. Examples: unter, Urin.</to:ruleText>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#RuleAddition_FR_06">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#RuleAddition"/>
-    <rdfs:label xml:lang="en">FR Addition 6: Final silent consonants</rdfs:label>
-    <rdfs:label xml:lang="th">การเพิ่ม FR 6: พยัญชนะท้ายคำที่ไม่ออกเสียง</rdfs:label>
-    <to:additionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</to:additionNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#French"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#sourceGrapheme">
+  <rdf:Description rdf:about="https://w3id.org/transonto#characterAccuracy">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">source grapheme</rdfs:label>
-    <rdfs:label xml:lang="th">กราฟีมต้นทาง</rdfs:label>
-    <rdfs:domain rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">character accuracy</rdfs:label>
+    <rdfs:label xml:lang="th">ความแม่นยำระดับอักขระ</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/transonto#EvaluationResult"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#EvalResult_EN_2025">
+  <rdf:Description rdf:about="https://w3id.org/transonto#Guideline_DE">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#EvaluationResult"/>
-    <rdfs:label xml:lang="en">EN System Evaluation 2025</rdfs:label>
-    <rdfs:comment xml:lang="en">Accuracy on NECTEC internal benchmark; word-level 67.48% (220/326 items).</rdfs:comment>
-    <to:accuracyScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.6748</to:accuracyScore>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Guideline"/>
+    <rdfs:label xml:lang="en">Royal Society Thai Transliteration Guideline - German</rdfs:label>
+    <rdfs:label xml:lang="th">คู่มือการถ่ายอักษรภาษาเยอรมัน ราชบัณฑิตยสภา</rdfs:label>
+    <to:guidelineVersion>2025</to:guidelineVersion>
+    <dcterms:description xml:lang="en">31 rules covering vowels, consonants, umlauts, special clusters, proper nouns, abbreviations, and compound words for German-to-Thai transliteration.</dcterms:description>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_24">
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Rule</rdfs:label>
+    <rdfs:label xml:lang="th">กฎการถ่ายอักษร</rdfs:label>
+    <rdfs:comment xml:lang="en">A single transliteration rule within a guideline, specifying how a grapheme or phoneme maps to Thai script.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#GoldLabel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Gold Label</rdfs:label>
+    <rdfs:label xml:lang="th">ป้ายกำกับมาตรฐาน</rdfs:label>
+    <rdfs:comment xml:lang="en">The authoritative Thai transliteration assigned to a benchmark item.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Guideline">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Guideline</rdfs:label>
+    <rdfs:label xml:lang="th">คำแนะนำ</rdfs:label>
+    <rdfs:comment xml:lang="en">A transliteration guideline document issued by the Royal Society of Thailand for a specific source language.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#BenchmarkItem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Benchmark Item</rdfs:label>
+    <rdfs:label xml:lang="th">รายการประเมิน</rdfs:label>
+    <rdfs:comment xml:lang="en">A source-language word included in the evaluation benchmark dataset.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_18">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">DE Rule 24: Abbreviations</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ DE 24: ตัวย่อ</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24</to:ruleNumber>
+    <rdfs:label xml:lang="en">DE Rule 18: Consonant h</rdfs:label>
+    <rdfs:label xml:lang="th">กฎ DE 18: พยัญชนะ h</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</to:ruleNumber>
     <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
-    <to:ruleText xml:lang="en">German abbreviations expand and transliterate the full form. DAAD-&gt;ดาด, DFB-&gt;ดีเอฟบี.</to:ruleText>
+    <to:sourceGrapheme>h</to:sourceGrapheme>
+    <to:targetGrapheme>ห, (silent)</to:targetGrapheme>
+    <to:ruleText xml:lang="en">Initial h-&gt;ห; intervocalic h-&gt;silent (lengthening). sehen, gehen.</to:ruleText>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_EN_03">
+  <rdf:Description rdf:about="https://w3id.org/transonto#fromSourceLanguage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">from source language</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/transonto#LexicalEntry"/>
+    <rdfs:range rdf:resource="https://w3id.org/transonto#Language"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Ambiguity_DE_27">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#RuleAmbiguity"/>
+    <rdfs:label xml:lang="en">DE Ambiguity 27: von/zu transliteration consistency</rdfs:label>
+    <to:ambiguityDescription xml:lang="en">Whether von-&gt;ฟอน or ฟ็อน, and context-dependency of zu-&gt;ลู or คุ.</to:ambiguityDescription>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_12">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">EN Rule 3: Long vowels</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ EN 3: สระยาว</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</to:ruleNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#English"/>
-    <to:ruleText xml:lang="en">Long vowel mapping.</to:ruleText>
+    <rdfs:label xml:lang="en">DE Rule 12: Final -ie and silent -e</rdfs:label>
+    <rdfs:label xml:lang="th">กฎ DE 12: -ie และ e เงียบ</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</to:ruleNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
+    <to:ruleText xml:lang="en">Final -ie -&gt; อี; silent final -e: stem vowel governs. Tschechien, Serie.</to:ruleText>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#RuleAddition_FR_02">
+  <rdf:Description rdf:about="https://w3id.org/transonto#hasAmbiguity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has ambiguity</rdfs:label>
+    <rdfs:label xml:lang="th">มีความคลุมเครือ</rdfs:label>
+    <rdfs:comment xml:lang="en">Attaches a documented ambiguity to a rule.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:range rdf:resource="https://w3id.org/transonto#RuleAmbiguity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#ComputationalReadinessLevel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Computational Readiness Level</rdfs:label>
+    <rdfs:label xml:lang="th">ระดับความพร้อมด้านการคำนวณ</rdfs:label>
+    <rdfs:comment xml:lang="en">A level (CRL-1 to CRL-5) indicating how amenable a language's transliteration guideline is to computational implementation.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_EN_10">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:label xml:lang="th">กฎ EN 10: ตัวย่อ</rdfs:label>
+    <rdfs:label xml:lang="en">EN Rule 10</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</to:ruleNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#English"/>
+    <to:ruleText xml:lang="en">English abbreviations: expand or transliterate by letter.</to:ruleText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Ambiguity_DE_07">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#RuleAmbiguity"/>
+    <rdfs:label xml:lang="en">DE Ambiguity 7: r-coloring variants</rdfs:label>
+    <to:ambiguityDescription xml:lang="en">When r follows a vowel, multiple Thai renderings are possible depending on syllable position and stress. berg: เบิร์กกี or บริ?</to:ambiguityDescription>
+    <to:justifiedByDecision rdf:resource="https://w3id.org/transonto#Decision_DE_07"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#hasVariant">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has variant</rdfs:label>
+    <rdfs:label xml:lang="th">มีรูปแบบทางเลือก</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/transonto#ThaiForm"/>
+    <rdfs:range rdf:resource="https://w3id.org/transonto#TransliterationVariant"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Ambiguity_DE_21">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#RuleAmbiguity"/>
+    <rdfs:label xml:lang="en">DE Ambiguity 21: Final devoicing optional r</rdfs:label>
+    <to:ambiguityDescription xml:lang="en">Final coda r after short vowel: drop or retain in Thai? Karl-&gt;คาร์ล or คาล?</to:ambiguityDescription>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#ErrorType_Ambiguity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#ErrorType"/>
+    <rdfs:label xml:lang="en">Ambiguity Error</rdfs:label>
+    <rdfs:label xml:lang="th">ข้อผิดพลาดจากความคลุมเครือ</rdfs:label>
+    <rdfs:comment xml:lang="en">Errors due to underspecified rules where multiple valid Thai forms exist.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_15">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:label xml:lang="en">DE Rule 15: Fricatives sch, ch, x</rdfs:label>
+    <rdfs:label xml:lang="th">กฎ DE 15: เสียงเสียดแทรก sch, ch, x</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</to:ruleNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
+    <to:sourceGrapheme>sch, ch, x</to:sourceGrapheme>
+    <to:targetGrapheme>ช, ค, งค</to:targetGrapheme>
+    <to:ruleText xml:lang="en">sch-&gt;ช; ch (post-front vowel)-&gt;ช; ch (post-back vowel)-&gt;ค/ก; x-&gt;ง/กซ. suchen, Tuch.</to:ruleText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_EN_07">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:label xml:lang="th">กฎ EN 7: อักษรที่ไม่ออกเสียง</rdfs:label>
+    <rdfs:label xml:lang="en">EN Rule 07</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</to:ruleNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#English"/>
+    <to:ruleText xml:lang="en">Silent consonant retention is convention-based, not derivable from IPA alone.</to:ruleText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#RuleAddition_FR_08">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="https://w3id.org/transonto#RuleAddition"/>
-    <rdfs:label xml:lang="en">FR Addition 2: Nasal vowel 2</rdfs:label>
-    <rdfs:label xml:lang="th">การเพิ่ม FR 2: สระนาสิก 2</rdfs:label>
-    <to:additionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</to:additionNumber>
+    <rdfs:label xml:lang="th">การเพิ่ม FR 8: สระ oe</rdfs:label>
+    <rdfs:label xml:lang="en">FR Addition 8</rdfs:label>
+    <to:additionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</to:additionNumber>
     <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#French"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/transonto#Entry_DE_Schulze">
@@ -307,19 +798,177 @@
     <to:hasThaiForm rdf:resource="https://w3id.org/transonto#Thai_Schulze"/>
     <to:exemptifiesRule rdf:resource="https://w3id.org/transonto#Rule_DE_15"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#guidelineYear">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">guideline year</rdfs:label>
-    <rdfs:label xml:lang="th">ปีแนวทาง</rdfs:label>
-    <rdfs:domain rdf:resource="https://w3id.org/transonto#Guideline"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_21">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:label xml:lang="en">DE Rule 21: Final consonant devoicing and clusters</rdfs:label>
+    <rdfs:label xml:lang="th">กฎ DE 21: เสียงพยัญชนะท้ายคำ</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">21</to:ruleNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
+    <to:hasAmbiguity rdf:resource="https://w3id.org/transonto#Ambiguity_DE_21"/>
+    <to:ruleText xml:lang="en">Final obstruents devoiced: d-&gt;ท/ด, b-&gt;พ/บ, g-&gt;ค/ก, v-&gt;ฟ. Karl (variants). Berg (variants).</to:ruleText>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#syllableAccuracy">
+  <rdf:Description rdf:about="https://w3id.org/transonto#additionNumber">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">syllable accuracy</rdfs:label>
-    <rdfs:label xml:lang="th">ความแม่นยำระดับพยางค์</rdfs:label>
-    <rdfs:domain rdf:resource="https://w3id.org/transonto#EvaluationResult"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:label xml:lang="en">addition number</rdfs:label>
+    <rdfs:label xml:lang="th">หมายเลขการเพิ่มเติม</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/transonto#RuleAddition"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#RuleAddition_FR_13">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#RuleAddition"/>
+    <rdfs:label xml:lang="th">การเพิ่ม FR 13: ชื่อเฉพาะ</rdfs:label>
+    <rdfs:label xml:lang="en">FR Addition 13</rdfs:label>
+    <to:additionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13</to:additionNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#French"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Entry_DE_Schmidt">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#LexicalEntry"/>
+    <rdfs:label xml:lang="en">Schmidt</rdfs:label>
+    <to:sourceForm>Schmidt</to:sourceForm>
+    <to:ipa>[Smit]</to:ipa>
+    <to:fromSourceLanguage rdf:resource="https://w3id.org/transonto#German"/>
+    <to:hasThaiForm rdf:resource="https://w3id.org/transonto#Thai_Schmidt"/>
+    <to:exemptifiesRule rdf:resource="https://w3id.org/transonto#Rule_DE_05"/>
+    <to:exemptifiesRule rdf:resource="https://w3id.org/transonto#Rule_DE_15"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_31">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:label xml:lang="en">DE Rule 31: Geographic abbreviations</rdfs:label>
+    <rdfs:label xml:lang="th">กฎ DE 31: ตัวย่อทางภูมิศาสตร์</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">31</to:ruleNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
+    <to:ruleText xml:lang="en">Geographic abbreviations (a.M., o.d.T., etc.) expand to full form in transliteration.</to:ruleText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Language">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Language</rdfs:label>
+    <rdfs:label xml:lang="th">ภาษา</rdfs:label>
+    <rdfs:comment xml:lang="en">A natural language that is a source language for transliteration into Thai.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#ErrorType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Error Type</rdfs:label>
+    <rdfs:label xml:lang="th">ประเภทข้อผิดพลาด</rdfs:label>
+    <rdfs:comment xml:lang="en">A category of transliteration error, e.g. G2P error, ambiguity error, proper noun error.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_17">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:label xml:lang="en">DE Rule 17: Consonant r</rdfs:label>
+    <rdfs:label xml:lang="th">กฎ DE 17: พยัญชนะ r</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">17</to:ruleNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
+    <to:hasAmbiguity rdf:resource="https://w3id.org/transonto#Ambiguity_DE_17"/>
+    <to:sourceGrapheme>r, rr</to:sourceGrapheme>
+    <to:targetGrapheme>ร, เออ</to:targetGrapheme>
+    <to:ruleText xml:lang="en">r in onset-&gt;ร; r vocalized in coda-&gt;เออ. Rad (variants).</to:ruleText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#readinessScore">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">readiness score</rdfs:label>
+    <rdfs:label xml:lang="th">คะแนนความพร้อม</rdfs:label>
+    <rdfs:comment xml:lang="en">Formula-based readiness score: |Additions| + 2x|Ambiguities| + |Decisions|. Used to determine CRL assignment: 0=CRL-1, 1-15=CRL-2, 16-40=CRL-3, 41-70=CRL-4, &gt;70=CRL-5.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/transonto#ComputationalReadinessLevel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#sourceForm">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">source form</rdfs:label>
+    <rdfs:label xml:lang="th">รูปแบบต้นทาง</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/transonto#LexicalEntry"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#RuleAddition_FR_02">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#RuleAddition"/>
+    <rdfs:label xml:lang="th">การเพิ่ม FR 2: สระนาสิก 2</rdfs:label>
+    <rdfs:label xml:lang="en">FR Addition 2</rdfs:label>
+    <to:additionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</to:additionNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#French"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Thai_Mueller_1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#ThaiForm"/>
+    <to:thaiScript>มุลเลอร์</to:thaiScript>
+    <to:isPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</to:isPreferred>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_26">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:label xml:lang="en">DE Rule 26: Name initials</rdfs:label>
+    <rdfs:label xml:lang="th">กฎ DE 26: อักษรย่อชื่อ</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">26</to:ruleNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
+    <to:ruleText xml:lang="en">Personal name initials: J. Heuser -&gt; เจ. ฮอยเซอร์.</to:ruleText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Decision_DE_28">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#ExpertDecision"/>
+    <rdfs:label xml:lang="en">Decision: hyphen retained</rdfs:label>
+    <to:decisionJustification xml:lang="en">Hyphen retained in compound names following German source form.</to:decisionJustification>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#ErrorType_G2P">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#ErrorType"/>
+    <rdfs:label xml:lang="en">G2P Error</rdfs:label>
+    <rdfs:label xml:lang="th">ข้อผิดพลาด G2P</rdfs:label>
+    <rdfs:comment xml:lang="en">Errors arising from incorrect grapheme-to-phoneme conversion before the transliteration rule is applied.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#CRL_DE">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#ComputationalReadinessLevel"/>
+    <rdfs:label xml:lang="en">CRL - German</rdfs:label>
+    <rdfs:label xml:lang="th">CRL ภาษาเยอรมัน</rdfs:label>
+    <to:crlScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</to:crlScore>
+    <to:readinessScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</to:readinessScore>
+    <to:crlEvidence xml:lang="en">German requires G2P pre-processing (IPA conversion) before rule application. Phoneme rules are mostly formal; 31 rules documented with examples. Main challenge: French loanwords and r-vocalization.</to:crlEvidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#ambiguityDescription">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">ambiguity description</rdfs:label>
+    <rdfs:label xml:lang="th">คำอธิบายความคลุมเครือ</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/transonto#RuleAmbiguity"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_01">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:label xml:lang="en">DE Rule 1: Pronunciation basis</rdfs:label>
+    <rdfs:label xml:lang="th">กฎ DE 1: พื้นฐานการออกเสียง</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</to:ruleNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
+    <to:ruleText xml:lang="en">Transliteration follows Standard German (Hochdeutsch/Standarddeutsch) pronunciation as referenced by Duden Band 6.</to:ruleText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Entry_DE_Frankfurt">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#LexicalEntry"/>
+    <rdfs:label xml:lang="en">Frankfurt am Main</rdfs:label>
+    <to:sourceForm>Frankfurt am Main</to:sourceForm>
+    <to:fromSourceLanguage rdf:resource="https://w3id.org/transonto#German"/>
+    <to:hasThaiForm rdf:resource="https://w3id.org/transonto#Thai_Frankfurt"/>
+    <to:exemptifiesRule rdf:resource="https://w3id.org/transonto#Rule_DE_31"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_30">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:label xml:lang="en">DE Rule 30: Italicized foreign words</rdfs:label>
+    <rdfs:label xml:lang="th">กฎ DE 30: คำต่างประเทศที่พิมพ์เอียง</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</to:ruleNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
+    <to:ruleText xml:lang="en">Foreign words in italic are transliterated according to their source language phonology.</to:ruleText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_20">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:label xml:lang="en">DE Rule 20: Consonant ng/ck</rdfs:label>
+    <rdfs:label xml:lang="th">กฎ DE 20: ng, ck</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</to:ruleNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
+    <to:ruleText xml:lang="en">ng-&gt;ง; ck-&gt;ก; sch+vowel combinations. Fischer, singen, Backer.</to:ruleText>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/transonto#Entry_DE_Mueller">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -333,94 +982,129 @@
     <to:exemptifiesRule rdf:resource="https://w3id.org/transonto#Rule_DE_08"/>
     <to:exemptifiesRule rdf:resource="https://w3id.org/transonto#Rule_DE_09"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Ambiguity_DE_30">
+  <rdf:Description rdf:about="https://w3id.org/transonto#RuleAmbiguity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Rule Ambiguity</rdfs:label>
+    <rdfs:label xml:lang="th">ความคลุมเครือของกฎ</rdfs:label>
+    <rdfs:comment xml:lang="en">A documented ambiguity, gap, or underspecification in a transliteration rule.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#decisionJustification">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">decision justification</rdfs:label>
+    <rdfs:label xml:lang="th">เหตุผลการตัดสินใจ</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/transonto#ExpertDecision"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Ambiguity_DE_17">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="https://w3id.org/transonto#RuleAmbiguity"/>
-    <rdfs:label xml:lang="en">DE Ambiguity 30: Foreign word identification</rdfs:label>
-    <to:ambiguityDescription xml:lang="en">How to identify italicized foreign words programmatically without typographic information.</to:ambiguityDescription>
+    <rdfs:label xml:lang="en">DE Ambiguity 17: Rad variants</rdfs:label>
+    <to:ambiguityDescription xml:lang="en">Rad allows ร/รา/เรา depending on regional pronunciation accepted.</to:ambiguityDescription>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Guideline_DE">
+  <rdf:Description rdf:about="https://w3id.org/transonto#Guideline_FR">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="https://w3id.org/transonto#Guideline"/>
-    <rdfs:label xml:lang="en">Royal Society Thai Transliteration Guideline - German</rdfs:label>
-    <rdfs:label xml:lang="th">คู่มือการถ่ายอักษรภาษาเยอรมัน ราชบัณฑิตยสภา</rdfs:label>
+    <rdfs:label xml:lang="en">Royal Society Thai Transliteration Guideline - French</rdfs:label>
+    <rdfs:label xml:lang="th">คู่มือการถ่ายอักษรภาษาฝรั่งเศส ราชบัณฑิตยสภา</rdfs:label>
     <to:guidelineVersion>2025</to:guidelineVersion>
-    <dcterms:description xml:lang="en">31 rules covering vowels, consonants, umlauts, special clusters, proper nouns, abbreviations, and compound words for German-to-Thai transliteration.</dcterms:description>
+    <dcterms:description xml:lang="en">Guideline with 14 documented rule additions for French-to-Thai transliteration.</dcterms:description>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_12">
+  <rdf:Description rdf:about="https://w3id.org/transonto#EvalResult_EN_2025">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#EvaluationResult"/>
+    <rdfs:label xml:lang="en">EN System Evaluation 2025</rdfs:label>
+    <rdfs:comment xml:lang="en">Accuracy on NECTEC internal benchmark; word-level 67.48% (220/326 items).</rdfs:comment>
+    <to:accuracyScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.6748</to:accuracyScore>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#RuleAddition_FR_09">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#RuleAddition"/>
+    <rdfs:label xml:lang="th">การเพิ่ม FR 9: พยัญชนะ zh</rdfs:label>
+    <rdfs:label xml:lang="en">FR Addition 9</rdfs:label>
+    <to:additionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</to:additionNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#French"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Expert">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Expert</rdfs:label>
+    <rdfs:label xml:lang="th">ผู้เชี่ยวชาญ</rdfs:label>
+    <rdfs:comment xml:lang="en">A human domain expert who reviews, adjudicates, or justifies transliteration decisions.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#ruleText">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">rule text</rdfs:label>
+    <rdfs:label xml:lang="th">เนื้อหากฎ</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_14">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">DE Rule 12: Final -ie and silent -e</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ DE 12: -ie และ e เงียบ</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</to:ruleNumber>
+    <rdfs:label xml:lang="en">DE Rule 14: Lateral l and nasal n</rdfs:label>
+    <rdfs:label xml:lang="th">กฎ DE 14: l และ n</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</to:ruleNumber>
     <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
-    <to:ruleText xml:lang="en">Final -ie -&gt; อี; silent final -e: stem vowel governs. Tschechien, Serie.</to:ruleText>
+    <to:ruleText xml:lang="en">l (pre-consonant) -&gt; ล; n before k -&gt; นก. Kassel, Christen.</to:ruleText>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Ambiguity_DE_28">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#RuleAmbiguity"/>
-    <rdfs:label xml:lang="en">DE Ambiguity 28: Hyphen retention</rdfs:label>
-    <to:ambiguityDescription xml:lang="en">When to retain vs omit hyphen in Thai output for compound names.</to:ambiguityDescription>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#readinessScore">
+  <rdf:Description rdf:about="https://w3id.org/transonto#ruleNumber">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">readiness score</rdfs:label>
-    <rdfs:label xml:lang="th">คะแนนความพร้อม</rdfs:label>
-    <rdfs:comment xml:lang="en">Formula-based readiness score: |Additions| + 2x|Ambiguities| + |Decisions|. Used to determine CRL assignment: 0=CRL-1, 1-15=CRL-2, 16-40=CRL-3, 41-70=CRL-4, &gt;70=CRL-5.</rdfs:comment>
-    <rdfs:domain rdf:resource="https://w3id.org/transonto#ComputationalReadinessLevel"/>
+    <rdfs:label xml:lang="en">rule number</rdfs:label>
+    <rdfs:label xml:lang="th">หมายเลขกฎ</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/transonto#Rule"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_11">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">DE Rule 11: Diphthongs</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ DE 11: สระประสม</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11</to:ruleNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
-    <to:sourceGrapheme>ae, ai, eu, au-umlaut, au, ei</to:sourceGrapheme>
-    <to:ruleText xml:lang="en">Diphthong mapping. Maier, Naumann.</to:ruleText>
+  <rdf:Description rdf:about="https://w3id.org/transonto#guidelineVersion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">guideline version</rdfs:label>
+    <rdfs:label xml:lang="th">เวอร์ชันแนวทาง</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/transonto#Guideline"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_EN_01">
+  <rdf:Description rdf:about="https://w3id.org/transonto#RuleAddition_FR_11">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#RuleAddition"/>
+    <rdfs:label xml:lang="th">การเพิ่ม FR 11: พยัญชนะ ny</rdfs:label>
+    <rdfs:label xml:lang="en">FR Addition 11</rdfs:label>
+    <to:additionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11</to:additionNumber>
+    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#French"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_EN_06">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">EN Rule 1: Consonants</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ EN 1: พยัญชนะ</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</to:ruleNumber>
+    <rdfs:label xml:lang="th">กฎ EN 6: กลุ่มพยัญชนะ</rdfs:label>
+    <rdfs:label xml:lang="en">EN Rule 06</rdfs:label>
+    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</to:ruleNumber>
     <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#English"/>
-    <to:ruleText xml:lang="en">Consonant mapping following Cambridge Dictionary IPA.</to:ruleText>
+    <to:ruleText xml:lang="en">Initial and final consonant clusters.</to:ruleText>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_EN_09">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">EN Rule 9: Proper nouns</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ EN 9: ชื่อเฉพาะ</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</to:ruleNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#English"/>
-    <to:ruleText xml:lang="en">Conventional forms for established loanwords diverge from rule-derived forms.</to:ruleText>
+  <rdf:Description rdf:about="https://w3id.org/transonto#evaluatesPhenomenon">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">evaluates phenomenon</rdfs:label>
+    <rdfs:label xml:lang="th">ประเมินปรากฏการณ์</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/transonto#BenchmarkItem"/>
+    <rdfs:range rdf:resource="https://w3id.org/transonto#RuleAmbiguity"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#ErrorType">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Error Type</rdfs:label>
-    <rdfs:label xml:lang="th">ประเภทข้อผิดพลาด</rdfs:label>
-    <rdfs:comment xml:lang="en">A category of transliteration error, e.g. G2P error, ambiguity error, proper noun error.</rdfs:comment>
+  <rdf:Description rdf:about="https://w3id.org/transonto#thaiScript">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">Thai script</rdfs:label>
+    <rdfs:label xml:lang="th">อักษรไทย</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/transonto#ThaiForm"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_10">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">DE Rule 10: Vowel doubling</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ DE 10: สระซ้ำ</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</to:ruleNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
-    <to:ruleText xml:lang="en">Double vowels (aa, ee, oo) treated as long vowels: Hase, Kassel.</to:ruleText>
+  <rdf:Description rdf:about="https://w3id.org/transonto#justifiedByDecision">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">justified by decision</rdfs:label>
+    <rdfs:label xml:lang="th">มีเหตุผลจากการตัดสินใจ</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/transonto#RuleAmbiguity"/>
+    <rdfs:range rdf:resource="https://w3id.org/transonto#ExpertDecision"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_EN_05">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">EN Rule 5: Schwa</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ EN 5: สระชวา</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</to:ruleNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#English"/>
-    <to:ruleText xml:lang="en">Schwa context-dependent rendering.</to:ruleText>
+  <rdf:Description rdf:about="https://w3id.org/transonto#hasGuideline">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has guideline</rdfs:label>
+    <rdfs:label xml:lang="th">มีแนวทาง</rdfs:label>
+    <rdfs:comment xml:lang="en">Links a language to its Royal Society transliteration guideline.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/transonto#Language"/>
+    <rdfs:range rdf:resource="https://w3id.org/transonto#Guideline"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_22">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -433,403 +1117,25 @@
     <to:targetGrapheme>ซ</to:targetGrapheme>
     <to:ruleText xml:lang="en">scharfes-s -&gt; ซ in all positions. ss (inter-syllabic) governs preceding short vowel. essen, Erntst.</to:ruleText>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#evaluatesRule">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">evaluates rule</rdfs:label>
-    <rdfs:label xml:lang="th">ประเมินกฎ</rdfs:label>
-    <rdfs:domain rdf:resource="https://w3id.org/transonto#BenchmarkItem"/>
-    <rdfs:range rdf:resource="https://w3id.org/transonto#Rule"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#additionNumber">
+  <rdf:Description rdf:about="https://w3id.org/transonto#ipa">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">addition number</rdfs:label>
-    <rdfs:label xml:lang="th">หมายเลขการเพิ่มเติม</rdfs:label>
-    <rdfs:domain rdf:resource="https://w3id.org/transonto#RuleAddition"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_EN_02">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">EN Rule 2: Short vowels</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ EN 2: สระสั้น</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</to:ruleNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#English"/>
-    <to:ruleText xml:lang="en">Short vowel mapping.</to:ruleText>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#RuleAddition_FR_13">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#RuleAddition"/>
-    <rdfs:label xml:lang="en">FR Addition 13: Proper nouns</rdfs:label>
-    <rdfs:label xml:lang="th">การเพิ่ม FR 13: ชื่อเฉพาะ</rdfs:label>
-    <to:additionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13</to:additionNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#French"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_26">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">DE Rule 26: Name initials</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ DE 26: อักษรย่อชื่อ</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">26</to:ruleNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
-    <to:ruleText xml:lang="en">Personal name initials: J. Heuser -&gt; เจ. ฮอยเซอร์.</to:ruleText>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#GoldLabel">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Gold Label</rdfs:label>
-    <rdfs:label xml:lang="th">ป้ายกำกับมาตรฐาน</rdfs:label>
-    <rdfs:comment xml:lang="en">The authoritative Thai transliteration assigned to a benchmark item.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#French">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Language"/>
-    <rdfs:label xml:lang="en">French</rdfs:label>
-    <rdfs:label xml:lang="th">ภาษาฝรั่งเศส</rdfs:label>
-    <to:languageCode>fr</to:languageCode>
-    <to:hasGuideline rdf:resource="https://w3id.org/transonto#Guideline_FR"/>
-    <to:hasReadinessLevel rdf:resource="https://w3id.org/transonto#CRL_FR"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_01">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">DE Rule 1: Pronunciation basis</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ DE 1: พื้นฐานการออกเสียง</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</to:ruleNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
-    <to:ruleText xml:lang="en">Transliteration follows Standard German (Hochdeutsch/Standarddeutsch) pronunciation as referenced by Duden Band 6.</to:ruleText>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_13">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">DE Rule 13: Plosives p, t, k</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ DE 13: เสียงระเบิด p, t, k</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13</to:ruleNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
-    <to:sourceGrapheme>p, t, k, sp, st</to:sourceGrapheme>
-    <to:targetGrapheme>พ/บ, ท/ด, ค/ก, คว, คท</to:targetGrapheme>
-    <to:ruleText xml:lang="en">p-&gt;พ(initial)/บ; t-&gt;ท(initial)/ด; k-&gt;ค(initial)/ก; word-final: บ, ด, ก. Special sp/st clusters.</to:ruleText>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_27">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">DE Rule 27: Titles and nobility particles</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ DE 27: ยศและอนุภาค von/zu</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">27</to:ruleNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
-    <to:hasAmbiguity rdf:resource="https://w3id.org/transonto#Ambiguity_DE_27"/>
-    <to:ruleText xml:lang="en">Noble particles: von, zu, von und zu. Furst Otto von Bismarck -&gt; เฟิร์สท์ ออทโท ฟอน บิสมาร์ก.</to:ruleText>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#decisionJustification">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">decision justification</rdfs:label>
-    <rdfs:label xml:lang="th">เหตุผลการตัดสินใจ</rdfs:label>
-    <rdfs:domain rdf:resource="https://w3id.org/transonto#ExpertDecision"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_31">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">DE Rule 31: Geographic abbreviations</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ DE 31: ตัวย่อทางภูมิศาสตร์</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">31</to:ruleNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
-    <to:ruleText xml:lang="en">Geographic abbreviations (a.M., o.d.T., etc.) expand to full form in transliteration.</to:ruleText>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#RuleAddition_FR_08">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#RuleAddition"/>
-    <rdfs:label xml:lang="en">FR Addition 8: Vowel oe</rdfs:label>
-    <rdfs:label xml:lang="th">การเพิ่ม FR 8: สระ oe</rdfs:label>
-    <to:additionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</to:additionNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#French"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#guidelineVersion">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">guideline version</rdfs:label>
-    <rdfs:label xml:lang="th">เวอร์ชันแนวทาง</rdfs:label>
-    <rdfs:domain rdf:resource="https://w3id.org/transonto#Guideline"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_EN_08">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">EN Rule 8: Stress and syllable</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ EN 8: การเน้นเสียงและพยางค์</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</to:ruleNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#English"/>
-    <to:ruleText xml:lang="en">Syllable boundary and stress affect vowel rendering.</to:ruleText>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_04">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">DE Rule 4: Vowel mapping (core)</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ DE 4: การแมปสระหลัก</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</to:ruleNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
-    <to:sourceGrapheme>a, e, i, o, u, y, a-umlaut, o-umlaut, u-umlaut</to:sourceGrapheme>
-    <to:ruleText xml:lang="en">Core vowel mapping covering all German vowels and umlauts.</to:ruleText>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#ruleNumber">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">rule number</rdfs:label>
-    <rdfs:label xml:lang="th">หมายเลขกฎ</rdfs:label>
-    <rdfs:domain rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Rule</rdfs:label>
-    <rdfs:label xml:lang="th">กฎการถ่ายอักษร</rdfs:label>
-    <rdfs:comment xml:lang="en">A single transliteration rule within a guideline, specifying how a grapheme or phoneme maps to Thai script.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#ruleText">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">rule text</rdfs:label>
-    <rdfs:label xml:lang="th">เนื้อหากฎ</rdfs:label>
-    <rdfs:domain rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#CRL_DE">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#ComputationalReadinessLevel"/>
-    <rdfs:label xml:lang="en">CRL - German</rdfs:label>
-    <rdfs:label xml:lang="th">CRL ภาษาเยอรมัน</rdfs:label>
-    <to:crlScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</to:crlScore>
-    <to:readinessScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</to:readinessScore>
-    <to:crlEvidence xml:lang="en">German requires G2P pre-processing (IPA conversion) before rule application. Phoneme rules are mostly formal; 31 rules documented with examples. Main challenge: French loanwords and r-vocalization.</to:crlEvidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Ambiguity_DE_07">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#RuleAmbiguity"/>
-    <rdfs:label xml:lang="en">DE Ambiguity 7: r-coloring variants</rdfs:label>
-    <to:ambiguityDescription xml:lang="en">When r follows a vowel, multiple Thai renderings are possible depending on syllable position and stress. berg: เบิร์กกี or บริ?</to:ambiguityDescription>
-    <to:justifiedByDecision rdf:resource="https://w3id.org/transonto#Decision_DE_07"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#madByExpert">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">made by expert</rdfs:label>
-    <rdfs:label xml:lang="th">จัดทำโดยผู้เชี่ยวชาญ</rdfs:label>
-    <rdfs:domain rdf:resource="https://w3id.org/transonto#ExpertDecision"/>
-    <rdfs:range rdf:resource="https://w3id.org/transonto#Expert"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#crlScore">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">CRL score</rdfs:label>
-    <rdfs:label xml:lang="th">คะแนน CRL</rdfs:label>
-    <rdfs:comment xml:lang="en">Integer 1-5: 1=directly executable (CRL-1, no expert intervention needed), 5=requires most extensive expert intervention (CRL-5, least ready for automation). Higher score = less computationally ready.</rdfs:comment>
-    <rdfs:domain rdf:resource="https://w3id.org/transonto#ComputationalReadinessLevel"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#RuleAddition_FR_05">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#RuleAddition"/>
-    <rdfs:label xml:lang="en">FR Addition 5: h aspire vs h muet</rdfs:label>
-    <rdfs:label xml:lang="th">การเพิ่ม FR 5: h aspire กับ h muet</rdfs:label>
-    <to:additionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</to:additionNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#French"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_02">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">DE Rule 2: Vowel length distinction</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ DE 2: การแยกความยาวสระ</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</to:ruleNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
-    <to:ruleText xml:lang="en">Short and long vowels are distinguished. Short -&gt; อ, long -&gt; อู. Checked by Duden IPA.</to:ruleText>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_09">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">DE Rule 9: Consonant er</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ DE 9: er พยัญชนะ</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</to:ruleNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
-    <to:ruleText xml:lang="en">Word-final er -&gt; เออ. Examples: Mutter, Ober.</to:ruleText>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#RuleAddition_FR_03">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#RuleAddition"/>
-    <rdfs:label xml:lang="en">FR Addition 3: Nasal vowel 3 (UNRESOLVED)</rdfs:label>
-    <rdfs:label xml:lang="th">การเพิ่ม FR 3: สระนาสิก 3 (ยังไม่แก้ไข)</rdfs:label>
-    <to:additionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</to:additionNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#French"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#isPreferred">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">is preferred</rdfs:label>
-    <rdfs:label xml:lang="th">เป็นที่นิยม</rdfs:label>
-    <rdfs:domain rdf:resource="https://w3id.org/transonto#ThaiForm"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Thai_Mueller_2">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#ThaiForm"/>
-    <to:thaiScript>มุลเลอร์</to:thaiScript>
-    <to:isPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</to:isPreferred>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#languageCode">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">ISO 639-1 code</rdfs:label>
-    <rdfs:label xml:lang="th">รหัสภาษา ISO 639-1</rdfs:label>
-    <rdfs:domain rdf:resource="https://w3id.org/transonto#Language"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#hasReadinessLevel">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">has readiness level</rdfs:label>
-    <rdfs:label xml:lang="th">มีระดับความพร้อมด้านการคำนวณ</rdfs:label>
-    <rdfs:domain rdf:resource="https://w3id.org/transonto#Language"/>
-    <rdfs:range rdf:resource="https://w3id.org/transonto#ComputationalReadinessLevel"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#CRL_FR">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#ComputationalReadinessLevel"/>
-    <rdfs:label xml:lang="en">CRL - French</rdfs:label>
-    <rdfs:label xml:lang="th">CRL ภาษาฝรั่งเศส</rdfs:label>
-    <to:crlScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</to:crlScore>
-    <to:readinessScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">104</to:readinessScore>
-    <to:crlEvidence xml:lang="en">French requires G2P. 14 additions documented. Nasal vowels and liaison rules add complexity.</to:crlEvidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_EN_04">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">EN Rule 4: Diphthongs</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ EN 4: สระประสม</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</to:ruleNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#English"/>
-    <to:ruleText xml:lang="en">Diphthong mapping.</to:ruleText>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_20">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">DE Rule 20: Consonant ng/ck</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ DE 20: ng, ck</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</to:ruleNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
-    <to:ruleText xml:lang="en">ng-&gt;ง; ck-&gt;ก; sch+vowel combinations. Fischer, singen, Backer.</to:ruleText>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#ambiguityDescription">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">ambiguity description</rdfs:label>
-    <rdfs:label xml:lang="th">คำอธิบายความคลุมเครือ</rdfs:label>
-    <rdfs:domain rdf:resource="https://w3id.org/transonto#RuleAmbiguity"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#ErrorType_G2P">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#ErrorType"/>
-    <rdfs:label xml:lang="en">G2P Error</rdfs:label>
-    <rdfs:label xml:lang="th">ข้อผิดพลาด G2P</rdfs:label>
-    <rdfs:comment xml:lang="en">Errors arising from incorrect grapheme-to-phoneme conversion before the transliteration rule is applied.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_08">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">DE Rule 8: Vowel o-umlaut</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ DE 8: สระ o-umlaut</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</to:ruleNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
-    <to:sourceGrapheme>o-umlaut</to:sourceGrapheme>
-    <to:ruleText xml:lang="en">Short -&gt; เออ; long -&gt; เออ. Examples: ol, offen.</to:ruleText>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_29">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">DE Rule 29: Long compound names</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ DE 29: ชื่อประสมยาว</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">29</to:ruleNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
-    <to:ruleText xml:lang="en">Hyphens permitted within long compound proper nouns. Karl-Theodor zu Guttenberg.</to:ruleText>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Entry_DE_Frankfurt">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#LexicalEntry"/>
-    <rdfs:label xml:lang="en">Frankfurt am Main</rdfs:label>
-    <to:sourceForm>Frankfurt am Main</to:sourceForm>
-    <to:fromSourceLanguage rdf:resource="https://w3id.org/transonto#German"/>
-    <to:hasThaiForm rdf:resource="https://w3id.org/transonto#Thai_Frankfurt"/>
-    <to:exemptifiesRule rdf:resource="https://w3id.org/transonto#Rule_DE_31"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#accuracyScore">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">accuracy score</rdfs:label>
-    <rdfs:label xml:lang="th">คะแนนความแม่นยำ</rdfs:label>
-    <rdfs:domain rdf:resource="https://w3id.org/transonto#EvaluationResult"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#exemptifiesRule">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">exemplifies rule</rdfs:label>
-    <rdfs:label xml:lang="th">แสดงตัวอย่างกฎ</rdfs:label>
+    <rdfs:label xml:lang="en">IPA transcription</rdfs:label>
+    <rdfs:label xml:lang="th">การถอดเสียง IPA</rdfs:label>
     <rdfs:domain rdf:resource="https://w3id.org/transonto#LexicalEntry"/>
-    <rdfs:range rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#RuleAddition_FR_10">
+  <rdf:Description rdf:about="https://w3id.org/transonto#Decision_DE_27b">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#RuleAddition"/>
-    <rdfs:label xml:lang="en">FR Addition 10: Consonant sh</rdfs:label>
-    <rdfs:label xml:lang="th">การเพิ่ม FR 10: พยัญชนะ sh</rdfs:label>
-    <to:additionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</to:additionNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#French"/>
+    <rdf:type rdf:resource="https://w3id.org/transonto#ExpertDecision"/>
+    <rdfs:label xml:lang="en">Decision: zu -&gt; ซู</rdfs:label>
+    <to:decisionJustification xml:lang="en">zu -&gt; ซู as particle; คู only in name-initial position.</to:decisionJustification>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_23">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">DE Rule 23: German alphabet letters</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ DE 23: ชื่อตัวอักษรเยอรมัน</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">23</to:ruleNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
-    <to:ruleText xml:lang="en">German alphabet letter names as Thai: A-&gt;เอ, B-&gt;เบ, C-&gt;เซ, D-&gt;เด, E-&gt;เอ, F-&gt;เอฟ, G-&gt;เก, H-&gt;ฮา, I-&gt;อี, J-&gt;โย, K-&gt;คา, L-&gt;เอล, M-&gt;เอม, N-&gt;เอน, O-&gt;โอ, P-&gt;เพ, Q-&gt;คู, R-&gt;เอร์, S-&gt;เอส, T-&gt;เท, U-&gt;อู, V-&gt;เฟา, W-&gt;เว, X-&gt;อิกส์, Y-&gt;อิปซีลอน, Z-&gt;เซ็ท.</to:ruleText>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_03">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">DE Rule 3: Written-to-sound gap</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ DE 3: ช่องว่างระหว่างตัวเขียนกับเสียง</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</to:ruleNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
-    <to:ruleText xml:lang="en">Letters that are not pronounced (e.g. silent h in certain positions) are not represented in the Thai transliteration.</to:ruleText>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#ThaiForm">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Thai Form</rdfs:label>
-    <rdfs:label xml:lang="th">รูปแบบภาษาไทย</rdfs:label>
-    <rdfs:comment xml:lang="en">The Thai-script rendering of a source-language lexical entry.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#RuleAddition_FR_09">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#RuleAddition"/>
-    <rdfs:label xml:lang="en">FR Addition 9: Consonant zh</rdfs:label>
-    <rdfs:label xml:lang="th">การเพิ่ม FR 9: พยัญชนะ zh</rdfs:label>
-    <to:additionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</to:additionNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#French"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_14">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">DE Rule 14: Lateral l and nasal n</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ DE 14: l และ n</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</to:ruleNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
-    <to:ruleText xml:lang="en">l (pre-consonant) -&gt; ล; n before k -&gt; นก. Kassel, Christen.</to:ruleText>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Ambiguity_DE_21">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#RuleAmbiguity"/>
-    <rdfs:label xml:lang="en">DE Ambiguity 21: Final devoicing optional r</rdfs:label>
-    <to:ambiguityDescription xml:lang="en">Final coda r after short vowel: drop or retain in Thai? Karl-&gt;คาร์ล or คาล?</to:ambiguityDescription>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Thai_Mueller_1">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#ThaiForm"/>
-    <to:thaiScript>มุลเลอร์</to:thaiScript>
-    <to:isPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</to:isPreferred>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#ErrorType_ProperNoun">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#ErrorType"/>
-    <rdfs:label xml:lang="en">Proper Noun Error</rdfs:label>
-    <rdfs:label xml:lang="th">ข้อผิดพลาดจากชื่อเฉพาะ</rdfs:label>
-    <rdfs:comment xml:lang="en">Errors specific to proper nouns (personal names, place names) not covered by general rules.</rdfs:comment>
+  <rdf:Description rdf:about="https://w3id.org/transonto#targetGrapheme">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">target grapheme</rdfs:label>
+    <rdfs:label xml:lang="th">กราฟีมเป้าหมาย</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/transonto#Rule"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_28">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -840,26 +1146,18 @@
     <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
     <to:ruleText xml:lang="en">Hyphenated compound transliterations preserve the hyphen between parts. Baden-Wurtemberg.</to:ruleText>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_EN_11">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">EN Rule 11: G2P dependency</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ EN 11: การพึ่งพา G2P</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11</to:ruleNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#English"/>
-    <to:ruleText xml:lang="en">Strong G2P dependency - Cambridge Dictionary IPA used as reference.</to:ruleText>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Guideline">
+  <rdf:Description rdf:about="https://w3id.org/transonto#LexicalEntry">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Guideline</rdfs:label>
-    <rdfs:label xml:lang="th">คำแนะนำ</rdfs:label>
-    <rdfs:comment xml:lang="en">A transliteration guideline document issued by the Royal Society of Thailand for a specific source language.</rdfs:comment>
+    <rdfs:label xml:lang="en">Lexical Entry</rdfs:label>
+    <rdfs:label xml:lang="th">รายการศัพท์</rdfs:label>
+    <rdfs:comment xml:lang="en">A word or lexical item in the source language that has a documented Thai transliteration.</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Expert">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Expert</rdfs:label>
-    <rdfs:label xml:lang="th">ผู้เชี่ยวชาญ</rdfs:label>
-    <rdfs:comment xml:lang="en">A human domain expert who reviews, adjudicates, or justifies transliteration decisions.</rdfs:comment>
+  <rdf:Description rdf:about="https://w3id.org/transonto#accuracyScore">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">accuracy score</rdfs:label>
+    <rdfs:label xml:lang="th">คะแนนความแม่นยำ</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/transonto#EvaluationResult"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/transonto#hasErrorType">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -868,99 +1166,18 @@
     <rdfs:domain rdf:resource="https://w3id.org/transonto#EvaluationResult"/>
     <rdfs:range rdf:resource="https://w3id.org/transonto#ErrorType"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_EN_06">
+  <rdf:Description rdf:about="https://w3id.org/transonto#Decision_DE_17a">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">EN Rule 6: Consonant clusters</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ EN 6: กลุ่มพยัญชนะ</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</to:ruleNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#English"/>
-    <to:ruleText xml:lang="en">Initial and final consonant clusters.</to:ruleText>
+    <rdf:type rdf:resource="https://w3id.org/transonto#ExpertDecision"/>
+    <rdfs:label xml:lang="en">Decision: Rad final t devoiced</rdfs:label>
+    <to:decisionJustification xml:lang="en">Committee: word-final d in Rad is devoiced to t; render as รัด.</to:decisionJustification>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#crlEvidence">
+  <rdf:Description rdf:about="https://w3id.org/transonto#syllableAccuracy">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">CRL evidence</rdfs:label>
-    <rdfs:label xml:lang="th">หลักฐาน CRL</rdfs:label>
-    <rdfs:domain rdf:resource="https://w3id.org/transonto#ComputationalReadinessLevel"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#English">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Language"/>
-    <rdfs:label xml:lang="en">English</rdfs:label>
-    <rdfs:label xml:lang="th">ภาษาอังกฤษ</rdfs:label>
-    <to:languageCode>en</to:languageCode>
-    <to:hasGuideline rdf:resource="https://w3id.org/transonto#Guideline_EN"/>
-    <to:hasReadinessLevel rdf:resource="https://w3id.org/transonto#CRL_EN"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#hasThaiForm">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">has Thai form</rdfs:label>
-    <rdfs:label xml:lang="th">มีรูปแบบภาษาไทย</rdfs:label>
-    <rdfs:domain rdf:resource="https://w3id.org/transonto#LexicalEntry"/>
-    <rdfs:range rdf:resource="https://w3id.org/transonto#ThaiForm"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#appliedToLanguage">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">applied to language</rdfs:label>
-    <rdfs:label xml:lang="th">ใช้กับภาษา</rdfs:label>
-    <rdfs:domain rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:range rdf:resource="https://w3id.org/transonto#Language"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#RuleAmbiguity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Rule Ambiguity</rdfs:label>
-    <rdfs:label xml:lang="th">ความคลุมเครือของกฎ</rdfs:label>
-    <rdfs:comment xml:lang="en">A documented ambiguity, gap, or underspecification in a transliteration rule.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_25">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">DE Rule 25: French loanwords in German</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ DE 25: คำยืมภาษาฝรั่งเศสในภาษาเยอรมัน</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</to:ruleNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
-    <to:hasAmbiguity rdf:resource="https://w3id.org/transonto#Ambiguity_DE_25"/>
-    <to:ruleText xml:lang="en">French loanwords in German retain French phonology for transliteration. Genie-&gt;จีนี, Blammage-&gt;บลามาจ.</to:ruleText>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#ExpertDecision">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Expert Decision</rdfs:label>
-    <rdfs:label xml:lang="th">การตัดสินใจของผู้เชี่ยวชาญ</rdfs:label>
-    <rdfs:comment xml:lang="en">A resolution or decision made by a domain expert to resolve a rule ambiguity or edge case.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#German">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Language"/>
-    <rdfs:label xml:lang="en">German</rdfs:label>
-    <rdfs:label xml:lang="th">ภาษาเยอรมัน</rdfs:label>
-    <to:languageCode>de</to:languageCode>
-    <to:hasGuideline rdf:resource="https://w3id.org/transonto#Guideline_DE"/>
-    <to:hasReadinessLevel rdf:resource="https://w3id.org/transonto#CRL_DE"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#hasGoldLabel">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">has gold label</rdfs:label>
-    <rdfs:label xml:lang="th">มีป้ายกำกับมาตรฐาน</rdfs:label>
-    <rdfs:domain rdf:resource="https://w3id.org/transonto#BenchmarkItem"/>
-    <rdfs:range rdf:resource="https://w3id.org/transonto#GoldLabel"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Guideline_FR">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Guideline"/>
-    <rdfs:label xml:lang="en">Royal Society Thai Transliteration Guideline - French</rdfs:label>
-    <rdfs:label xml:lang="th">คู่มือการถ่ายอักษรภาษาฝรั่งเศส ราชบัณฑิตยสภา</rdfs:label>
-    <to:guidelineVersion>2025</to:guidelineVersion>
-    <dcterms:description xml:lang="en">Guideline with 14 documented rule additions for French-to-Thai transliteration.</dcterms:description>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_EN_12">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">EN Rule 12: Short vowel glyph</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ EN 12: อักษรสระสั้น</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</to:ruleNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#English"/>
-    <to:ruleText xml:lang="en">Short vowel glyph requires context not available from IPA alone.</to:ruleText>
+    <rdfs:label xml:lang="en">syllable accuracy</rdfs:label>
+    <rdfs:label xml:lang="th">ความแม่นยำระดับพยางค์</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/transonto#EvaluationResult"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/transonto#Thai_Schulze">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -968,233 +1185,16 @@
     <to:thaiScript>ชุลเซ</to:thaiScript>
     <to:isPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</to:isPreferred>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#producedEvaluationResult">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">produced evaluation result</rdfs:label>
-    <rdfs:domain rdf:resource="https://w3id.org/transonto#Guideline"/>
-    <rdfs:range rdf:resource="https://w3id.org/transonto#EvaluationResult"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#ipa">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">IPA transcription</rdfs:label>
-    <rdfs:label xml:lang="th">การถอดเสียง IPA</rdfs:label>
-    <rdfs:domain rdf:resource="https://w3id.org/transonto#LexicalEntry"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#justifiedByDecision">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">justified by decision</rdfs:label>
-    <rdfs:label xml:lang="th">มีเหตุผลจากการตัดสินใจ</rdfs:label>
-    <rdfs:domain rdf:resource="https://w3id.org/transonto#RuleAmbiguity"/>
-    <rdfs:range rdf:resource="https://w3id.org/transonto#ExpertDecision"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Guideline_EN">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Guideline"/>
-    <rdfs:label xml:lang="en">Royal Society Thai Transliteration Guideline - English</rdfs:label>
-    <rdfs:label xml:lang="th">คู่มือการถ่ายอักษรภาษาอังกฤษ ราชบัณฑิตยสภา</rdfs:label>
-    <to:guidelineVersion>2532</to:guidelineVersion>
-    <to:guidelineYear rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2532</to:guidelineYear>
-    <dcterms:description xml:lang="en">Standard English-to-Thai transliteration guideline.</dcterms:description>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Rule_DE_21">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:label xml:lang="en">DE Rule 21: Final consonant devoicing and clusters</rdfs:label>
-    <rdfs:label xml:lang="th">กฎ DE 21: เสียงพยัญชนะท้ายคำ</rdfs:label>
-    <to:ruleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">21</to:ruleNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#German"/>
-    <to:hasAmbiguity rdf:resource="https://w3id.org/transonto#Ambiguity_DE_21"/>
-    <to:ruleText xml:lang="en">Final obstruents devoiced: d-&gt;ท/ด, b-&gt;พ/บ, g-&gt;ค/ก, v-&gt;ฟ. Karl (variants). Berg (variants).</to:ruleText>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Decision_DE_17b">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#ExpertDecision"/>
-    <rdfs:label xml:lang="en">Decision: regional r-variants accepted</rdfs:label>
-    <to:decisionJustification xml:lang="en">Both ร and รา accepted as variants for initial r; prefer ร in formal text.</to:decisionJustification>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#targetGrapheme">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">target grapheme</rdfs:label>
-    <rdfs:label xml:lang="th">กราฟีมเป้าหมาย</rdfs:label>
-    <rdfs:domain rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#hasAddition">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">has addition</rdfs:label>
-    <rdfs:label xml:lang="th">มีการเพิ่มเติม</rdfs:label>
-    <rdfs:domain rdf:resource="https://w3id.org/transonto#Guideline"/>
-    <rdfs:range rdf:resource="https://w3id.org/transonto#RuleAddition"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/transonto#hasRule"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#EvalResult_DE_2025">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#EvaluationResult"/>
-    <rdfs:label xml:lang="en">DE System Evaluation 2025</rdfs:label>
-    <rdfs:comment xml:lang="en">Accuracy on NECTEC internal benchmark; word-level 92.68%, syllable-level 97.35%, character-level 97.34%. Note: this individual is in the ontology file (transonto.ttl), not instantiated as ABox EvaluationResult in kg_all.ttl.</rdfs:comment>
-    <to:accuracyScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.9268</to:accuracyScore>
-    <to:syllableAccuracy rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.9735</to:syllableAccuracy>
-    <to:characterAccuracy rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.9734</to:characterAccuracy>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#ComputationalReadinessLevel">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Computational Readiness Level</rdfs:label>
-    <rdfs:label xml:lang="th">ระดับความพร้อมด้านการคำนวณ</rdfs:label>
-    <rdfs:comment xml:lang="en">A level (CRL-1 to CRL-5) indicating how amenable a language's transliteration guideline is to computational implementation.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Entry_DE_Schmidt">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#LexicalEntry"/>
-    <rdfs:label xml:lang="en">Schmidt</rdfs:label>
-    <to:sourceForm>Schmidt</to:sourceForm>
-    <to:ipa>[Smit]</to:ipa>
-    <to:fromSourceLanguage rdf:resource="https://w3id.org/transonto#German"/>
-    <to:hasThaiForm rdf:resource="https://w3id.org/transonto#Thai_Schmidt"/>
-    <to:exemptifiesRule rdf:resource="https://w3id.org/transonto#Rule_DE_05"/>
-    <to:exemptifiesRule rdf:resource="https://w3id.org/transonto#Rule_DE_15"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Decision_DE_17a">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#ExpertDecision"/>
-    <rdfs:label xml:lang="en">Decision: Rad final t devoiced</rdfs:label>
-    <to:decisionJustification xml:lang="en">Committee: word-final d in Rad is devoiced to t; render as รัด.</to:decisionJustification>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Decision_DE_07">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#ExpertDecision"/>
-    <rdfs:label xml:lang="en">Decision: r-coloring resolved by syllable position</rdfs:label>
-    <to:decisionJustification xml:lang="en">Expert committee resolved r-coloring by Duden Band 6 IPA; default to เบิร์กกี for berg-type patterns.</to:decisionJustification>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#hasRule">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">has rule</rdfs:label>
-    <rdfs:label xml:lang="th">มีกฎ</rdfs:label>
-    <rdfs:comment xml:lang="en">Associates a guideline with a constituent transliteration rule.</rdfs:comment>
-    <rdfs:domain rdf:resource="https://w3id.org/transonto#Guideline"/>
-    <rdfs:range rdf:resource="https://w3id.org/transonto#Rule"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#EvaluationResult">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Evaluation Result</rdfs:label>
-    <rdfs:label xml:lang="th">ผลการประเมิน</rdfs:label>
-    <rdfs:comment xml:lang="en">The outcome of evaluating a transliteration system on the benchmark, including accuracy metrics.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#hasAmbiguity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">has ambiguity</rdfs:label>
-    <rdfs:label xml:lang="th">มีความคลุมเครือ</rdfs:label>
-    <rdfs:comment xml:lang="en">Attaches a documented ambiguity to a rule.</rdfs:comment>
-    <rdfs:domain rdf:resource="https://w3id.org/transonto#Rule"/>
-    <rdfs:range rdf:resource="https://w3id.org/transonto#RuleAmbiguity"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Ambiguity_DE_27">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#RuleAmbiguity"/>
-    <rdfs:label xml:lang="en">DE Ambiguity 27: von/zu transliteration consistency</rdfs:label>
-    <to:ambiguityDescription xml:lang="en">Whether von-&gt;ฟอน or ฟ็อน, and context-dependency of zu-&gt;ลู or คุ.</to:ambiguityDescription>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#RuleAddition">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Rule Addition</rdfs:label>
-    <rdfs:label xml:lang="th">การเพิ่มเติมกฎ</rdfs:label>
-    <rdfs:comment xml:lang="en">A supplementary rule or addition beyond the main rule set (e.g. French additions documented separately).</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/transonto#Rule"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Decision_DE_25b">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#ExpertDecision"/>
-    <rdfs:label xml:lang="en">Decision: Genie as French loanword</rdfs:label>
-    <to:decisionJustification xml:lang="en">Genie confirmed as French loanword; apply French phonology: จีนี.</to:decisionJustification>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Decision_DE_27a">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#ExpertDecision"/>
-    <rdfs:label xml:lang="en">Decision: von -&gt; ฟอน</rdfs:label>
-    <to:decisionJustification xml:lang="en">von -&gt; ฟอน in standard contexts; ฟ็อน only in careful pronunciation.</to:decisionJustification>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#hasLexicalEntry">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">has lexical entry</rdfs:label>
-    <rdfs:label xml:lang="th">มีรายการศัพท์</rdfs:label>
-    <rdfs:domain rdf:resource="https://w3id.org/transonto#Guideline"/>
-    <rdfs:range rdf:resource="https://w3id.org/transonto#LexicalEntry"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Decision_DE_21b">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#ExpertDecision"/>
-    <rdfs:label xml:lang="en">Decision: Karl coda r</rdfs:label>
-    <to:decisionJustification xml:lang="en">Karl: retain as คาร์ล (not คาล) per common convention.</to:decisionJustification>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#RuleAddition_FR_12">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#RuleAddition"/>
-    <rdfs:label xml:lang="en">FR Addition 12: Elision</rdfs:label>
-    <rdfs:label xml:lang="th">การเพิ่ม FR 12: การตัดเสียง</rdfs:label>
-    <to:additionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</to:additionNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#French"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/transonto#Thai_Frankfurt">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="https://w3id.org/transonto#ThaiForm"/>
     <to:thaiScript>แฟรงก์ฟูร์ท อัม ไมน์</to:thaiScript>
     <to:isPreferred rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</to:isPreferred>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#LexicalEntry">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Lexical Entry</rdfs:label>
-    <rdfs:label xml:lang="th">รายการศัพท์</rdfs:label>
-    <rdfs:comment xml:lang="en">A word or lexical item in the source language that has a documented Thai transliteration.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Decision_DE_28">
+  <rdf:Description rdf:about="https://w3id.org/transonto#Decision_DE_07">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="https://w3id.org/transonto#ExpertDecision"/>
-    <rdfs:label xml:lang="en">Decision: hyphen retained</rdfs:label>
-    <to:decisionJustification xml:lang="en">Hyphen retained in compound names following German source form.</to:decisionJustification>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Decision_DE_30">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#ExpertDecision"/>
-    <rdfs:label xml:lang="en">Decision: italic identification requires metadata</rdfs:label>
-    <to:decisionJustification xml:lang="en">Italic foreign words require text metadata; apply German rules when italic info unavailable.</to:decisionJustification>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#RuleAddition_FR_11">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#RuleAddition"/>
-    <rdfs:label xml:lang="en">FR Addition 11: Consonant ny</rdfs:label>
-    <rdfs:label xml:lang="th">การเพิ่ม FR 11: พยัญชนะ ny</rdfs:label>
-    <to:additionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11</to:additionNumber>
-    <to:appliedToLanguage rdf:resource="https://w3id.org/transonto#French"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#evaluatesPhenomenon">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">evaluates phenomenon</rdfs:label>
-    <rdfs:label xml:lang="th">ประเมินปรากฏการณ์</rdfs:label>
-    <rdfs:domain rdf:resource="https://w3id.org/transonto#BenchmarkItem"/>
-    <rdfs:range rdf:resource="https://w3id.org/transonto#RuleAmbiguity"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Decision_DE_25a">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#ExpertDecision"/>
-    <rdfs:label xml:lang="en">Decision: French loanword list from Duden</rdfs:label>
-    <to:decisionJustification xml:lang="en">Use Duden Fremdwoerterbuch as reference for French loanword identification.</to:decisionJustification>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Ambiguity_DE_25">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#RuleAmbiguity"/>
-    <rdfs:label xml:lang="en">DE Ambiguity 25: French loanword boundary</rdfs:label>
-    <to:ambiguityDescription xml:lang="en">Which German words count as French loanwords requiring French phonology vs standard German rules? No exhaustive list provided.</to:ambiguityDescription>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Decision_DE_27b">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="https://w3id.org/transonto#ExpertDecision"/>
-    <rdfs:label xml:lang="en">Decision: zu -&gt; ซู</rdfs:label>
-    <to:decisionJustification xml:lang="en">zu -&gt; ซู as particle; คู only in name-initial position.</to:decisionJustification>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/transonto#Language">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Language</rdfs:label>
-    <rdfs:label xml:lang="th">ภาษา</rdfs:label>
-    <rdfs:comment xml:lang="en">A natural language that is a source language for transliteration into Thai.</rdfs:comment>
+    <rdfs:label xml:lang="en">Decision: r-coloring resolved by syllable position</rdfs:label>
+    <to:decisionJustification xml:lang="en">Expert committee resolved r-coloring by Duden Band 6 IPA; default to เบิร์กกี for berg-type patterns.</to:decisionJustification>
   </rdf:Description>
 </rdf:RDF>
