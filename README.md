@@ -1,4 +1,4 @@
-# TransOnto v1.0 + RoyalSocietyTransKG v1.0
+# TransOnto v1.0 and RoyalSocietyTransKG v1.0
 
 **TransOnto** is an OWL 2 ontology for representing prescriptive transliteration standards and their computational formalization.
 
