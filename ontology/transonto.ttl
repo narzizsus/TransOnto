@@ -15,721 +15,1031 @@
     owl:versionIRI <https://w3id.org/transonto/1.0> ;
     owl:versionInfo "1.0" .
 
-# === Classes ===
-to:BenchmarkItem a owl:Class ;
-    rdfs:label "Benchmark Item"@en, "รายการประเมิน"@th ;
-    rdfs:comment "A source-language word included in the evaluation benchmark dataset."@en .
+to:Ambiguity_DE_28 a owl:NamedIndividual,
+        to:RuleAmbiguity ;
+    rdfs:label "DE Ambiguity 28: Hyphen retention"@en ;
+    to:ambiguityDescription "When to retain vs omit hyphen in Thai output for compound names."@en .
 
-to:ComputationalReadinessLevel a owl:Class ;
-    rdfs:label "Computational Readiness Level"@en, "ระดับความพร้อมด้านการคำนวณ"@th ;
-    rdfs:comment "A level (CRL-1 to CRL-5) indicating how amenable a language's transliteration guideline is to computational implementation."@en .
+to:Ambiguity_DE_30 a owl:NamedIndividual,
+        to:RuleAmbiguity ;
+    rdfs:label "DE Ambiguity 30: Foreign word identification"@en ;
+    to:ambiguityDescription "How to identify italicized foreign words programmatically without typographic information."@en .
 
-to:ErrorType a owl:Class ;
-    rdfs:label "Error Type"@en, "ประเภทข้อผิดพลาด"@th ;
-    rdfs:comment "A category of transliteration error, e.g. G2P error, ambiguity error, proper noun error."@en .
+to:Decision_DE_17a a owl:NamedIndividual,
+        to:ExpertDecision ;
+    rdfs:label "Decision: Rad final t devoiced"@en ;
+    to:decisionJustification "Committee: word-final d in Rad is devoiced to t; render as รัด."@en .
 
-to:EvaluationResult a owl:Class ;
-    rdfs:label "Evaluation Result"@en, "ผลการประเมิน"@th ;
-    rdfs:comment "The outcome of evaluating a transliteration system on the benchmark, including accuracy metrics."@en .
+to:Decision_DE_17b a owl:NamedIndividual,
+        to:ExpertDecision ;
+    rdfs:label "Decision: regional r-variants accepted"@en ;
+    to:decisionJustification "Both ร and รา accepted as variants for initial r; prefer ร in formal text."@en .
 
-to:Expert a owl:Class ;
-    rdfs:label "Expert"@en, "ผู้เชี่ยวชาญ"@th ;
-    rdfs:comment "A human domain expert who reviews, adjudicates, or justifies transliteration decisions."@en .
+to:Decision_DE_21a a owl:NamedIndividual,
+        to:ExpertDecision ;
+    rdfs:label "Decision: final r retained in monosyllables"@en ;
+    to:decisionJustification "Monosyllabic words with final r: retain as เออ in Thai."@en .
 
-to:ExpertDecision a owl:Class ;
-    rdfs:label "Expert Decision"@en, "การตัดสินใจของผู้เชี่ยวชาญ"@th ;
-    rdfs:comment "A resolution or decision made by a domain expert to resolve a rule ambiguity or edge case."@en .
+to:Decision_DE_21b a owl:NamedIndividual,
+        to:ExpertDecision ;
+    rdfs:label "Decision: Karl coda r"@en ;
+    to:decisionJustification "Karl: retain as คาร์ล (not คาล) per common convention."@en .
 
-to:GoldLabel a owl:Class ;
-    rdfs:label "Gold Label"@en, "ป้ายกำกับมาตรฐาน"@th ;
-    rdfs:comment "The authoritative Thai transliteration assigned to a benchmark item."@en .
+to:Decision_DE_25a a owl:NamedIndividual,
+        to:ExpertDecision ;
+    rdfs:label "Decision: French loanword list from Duden"@en ;
+    to:decisionJustification "Use Duden Fremdwoerterbuch as reference for French loanword identification."@en .
 
-to:Guideline a owl:Class ;
-    rdfs:label "Guideline"@en, "คำแนะนำ"@th ;
-    rdfs:comment "A transliteration guideline document issued by the Royal Society of Thailand for a specific source language."@en .
+to:Decision_DE_25b a owl:NamedIndividual,
+        to:ExpertDecision ;
+    rdfs:label "Decision: Genie as French loanword"@en ;
+    to:decisionJustification "Genie confirmed as French loanword; apply French phonology: จีนี."@en .
 
-to:Language a owl:Class ;
-    rdfs:label "Language"@en, "ภาษา"@th ;
-    rdfs:comment "A natural language that is a source language for transliteration into Thai."@en .
+to:Decision_DE_27a a owl:NamedIndividual,
+        to:ExpertDecision ;
+    rdfs:label "Decision: von -> ฟอน"@en ;
+    to:decisionJustification "von -> ฟอน in standard contexts; ฟ็อน only in careful pronunciation."@en .
 
-to:LexicalEntry a owl:Class ;
-    rdfs:label "Lexical Entry"@en, "รายการศัพท์"@th ;
-    rdfs:comment "A word or lexical item in the source language that has a documented Thai transliteration."@en .
+to:Decision_DE_27b a owl:NamedIndividual,
+        to:ExpertDecision ;
+    rdfs:label "Decision: zu -> ซู"@en ;
+    to:decisionJustification "zu -> ซู as particle; คู only in name-initial position."@en .
 
-to:Rule a owl:Class ;
-    rdfs:label "Rule"@en, "กฎการถ่ายอักษร"@th ;
-    rdfs:comment "A single transliteration rule within a guideline, specifying how a grapheme or phoneme maps to Thai script."@en .
+to:Decision_DE_28 a owl:NamedIndividual,
+        to:ExpertDecision ;
+    rdfs:label "Decision: hyphen retained"@en ;
+    to:decisionJustification "Hyphen retained in compound names following German source form."@en .
 
-to:RuleAddition a owl:Class ;
-    rdfs:label "Rule Addition"@en, "การเพิ่มเติมกฎ"@th ;
-    rdfs:comment "A supplementary rule or addition beyond the main rule set (e.g. French additions documented separately)."@en ;
-    rdfs:subClassOf to:Rule .
+to:Decision_DE_30 a owl:NamedIndividual,
+        to:ExpertDecision ;
+    rdfs:label "Decision: italic identification requires metadata"@en ;
+    to:decisionJustification "Italic foreign words require text metadata; apply German rules when italic info unavailable."@en .
 
-to:RuleAmbiguity a owl:Class ;
-    rdfs:label "Rule Ambiguity"@en, "ความคลุมเครือของกฎ"@th ;
-    rdfs:comment "A documented ambiguity, gap, or underspecification in a transliteration rule."@en .
+to:Entry_DE_Frankfurt a owl:NamedIndividual,
+        to:LexicalEntry ;
+    rdfs:label "Frankfurt am Main"@en ;
+    to:exemplifiesRule to:Rule_DE_31 ;
+    to:fromSourceLanguage to:German ;
+    to:hasThaiForm to:Thai_Frankfurt ;
+    to:sourceForm "Frankfurt am Main" .
 
-to:ThaiForm a owl:Class ;
-    rdfs:label "Thai Form"@en, "รูปแบบภาษาไทย"@th ;
-    rdfs:comment "The Thai-script rendering of a source-language lexical entry."@en .
+to:Entry_DE_Mueller a owl:NamedIndividual,
+        to:LexicalEntry ;
+    rdfs:label "Mueller"@en ;
+    to:exemplifiesRule to:Rule_DE_08,
+        to:Rule_DE_09 ;
+    to:fromSourceLanguage to:German ;
+    to:hasThaiForm to:Thai_Mueller_1,
+        to:Thai_Mueller_2 ;
+    to:ipa "[mYlA, mYlAr]" ;
+    to:sourceForm "Mueller" .
 
-to:TransliterationVariant a owl:Class ;
-    rdfs:label "Transliteration Variant"@en, "รูปแบบการถ่ายอักษรทางเลือก"@th ;
-    rdfs:comment "An alternative Thai rendering of the same source-language form, arising from ambiguity or rule variation."@en .
+to:Entry_DE_Schmidt a owl:NamedIndividual,
+        to:LexicalEntry ;
+    rdfs:label "Schmidt"@en ;
+    to:exemplifiesRule to:Rule_DE_05,
+        to:Rule_DE_15 ;
+    to:fromSourceLanguage to:German ;
+    to:hasThaiForm to:Thai_Schmidt ;
+    to:ipa "[Smit]" ;
+    to:sourceForm "Schmidt" .
 
-# === Object Properties ===
+to:Entry_DE_Schulze a owl:NamedIndividual,
+        to:LexicalEntry ;
+    rdfs:label "Schulze"@en ;
+    to:exemplifiesRule to:Rule_DE_15 ;
+    to:fromSourceLanguage to:German ;
+    to:hasThaiForm to:Thai_Schulze ;
+    to:sourceForm "Schulze" .
+
+to:ErrorType_Ambiguity a owl:NamedIndividual,
+        to:ErrorType ;
+    rdfs:label "Ambiguity Error"@en,
+        "ข้อผิดพลาดจากความคลุมเครือ"@th ;
+    rdfs:comment "Errors due to underspecified rules where multiple valid Thai forms exist."@en .
+
+to:ErrorType_G2P a owl:NamedIndividual,
+        to:ErrorType ;
+    rdfs:label "G2P Error"@en,
+        "ข้อผิดพลาด G2P"@th ;
+    rdfs:comment "Errors arising from incorrect grapheme-to-phoneme conversion before the transliteration rule is applied."@en .
+
+to:ErrorType_ProperNoun a owl:NamedIndividual,
+        to:ErrorType ;
+    rdfs:label "Proper Noun Error"@en,
+        "ข้อผิดพลาดจากชื่อเฉพาะ"@th ;
+    rdfs:comment "Errors specific to proper nouns (personal names, place names) not covered by general rules."@en .
+
+to:EvalResult_DE_2025 a owl:NamedIndividual,
+        to:EvaluationResult ;
+    rdfs:label "DE System Evaluation 2025"@en ;
+    rdfs:comment "Accuracy on NECTEC internal benchmark; word-level 92.68%, syllable-level 97.35%, character-level 97.34%. Note: this individual is in the ontology file (transonto.ttl), not instantiated as ABox EvaluationResult in kg_all.ttl."@en ;
+    to:accuracyScore 0.9268 ;
+    to:characterAccuracy 0.9734 ;
+    to:syllableAccuracy 0.9735 .
+
+to:EvalResult_EN_2025 a owl:NamedIndividual,
+        to:EvaluationResult ;
+    rdfs:label "EN System Evaluation 2025"@en ;
+    rdfs:comment "Accuracy on NECTEC internal benchmark; word-level 67.48% (220/326 items)."@en ;
+    to:accuracyScore 0.6748 .
+
+to:RuleAddition_FR_01 a owl:NamedIndividual,
+        to:RuleAddition ;
+    rdfs:label "FR Addition 1"@en,
+        "การเพิ่ม FR 1: สระนาสิก"@th ;
+    to:additionNumber 1 ;
+    to:appliedToLanguage to:French .
+
+to:RuleAddition_FR_02 a owl:NamedIndividual,
+        to:RuleAddition ;
+    rdfs:label "FR Addition 2"@en,
+        "การเพิ่ม FR 2: สระนาสิก 2"@th ;
+    to:additionNumber 2 ;
+    to:appliedToLanguage to:French .
+
+to:RuleAddition_FR_03 a owl:NamedIndividual,
+        to:RuleAddition ;
+    rdfs:label "FR Addition 3"@en,
+        "การเพิ่ม FR 3: สระนาสิก 3 (ยังไม่แก้ไข)"@th ;
+    to:additionNumber 3 ;
+    to:appliedToLanguage to:French .
+
+to:RuleAddition_FR_04 a owl:NamedIndividual,
+        to:RuleAddition ;
+    rdfs:label "FR Addition 4"@en,
+        "การเพิ่ม FR 4: กฎ liaison (ยังไม่แก้ไข)"@th ;
+    to:additionNumber 4 ;
+    to:appliedToLanguage to:French .
+
+to:RuleAddition_FR_05 a owl:NamedIndividual,
+        to:RuleAddition ;
+    rdfs:label "FR Addition 5"@en,
+        "การเพิ่ม FR 5: h aspire กับ h muet"@th ;
+    to:additionNumber 5 ;
+    to:appliedToLanguage to:French .
+
+to:RuleAddition_FR_06 a owl:NamedIndividual,
+        to:RuleAddition ;
+    rdfs:label "FR Addition 6"@en,
+        "การเพิ่ม FR 6: พยัญชนะท้ายคำที่ไม่ออกเสียง"@th ;
+    to:additionNumber 6 ;
+    to:appliedToLanguage to:French .
+
+to:RuleAddition_FR_07 a owl:NamedIndividual,
+        to:RuleAddition ;
+    rdfs:label "FR Addition 7"@en,
+        "การเพิ่ม FR 7: สระ y"@th ;
+    to:additionNumber 7 ;
+    to:appliedToLanguage to:French .
+
+to:RuleAddition_FR_08 a owl:NamedIndividual,
+        to:RuleAddition ;
+    rdfs:label "FR Addition 8"@en,
+        "การเพิ่ม FR 8: สระ oe"@th ;
+    to:additionNumber 8 ;
+    to:appliedToLanguage to:French .
+
+to:RuleAddition_FR_09 a owl:NamedIndividual,
+        to:RuleAddition ;
+    rdfs:label "FR Addition 9"@en,
+        "การเพิ่ม FR 9: พยัญชนะ zh"@th ;
+    to:additionNumber 9 ;
+    to:appliedToLanguage to:French .
+
+to:RuleAddition_FR_10 a owl:NamedIndividual,
+        to:RuleAddition ;
+    rdfs:label "FR Addition 10"@en,
+        "การเพิ่ม FR 10: พยัญชนะ sh"@th ;
+    to:additionNumber 10 ;
+    to:appliedToLanguage to:French .
+
+to:RuleAddition_FR_11 a owl:NamedIndividual,
+        to:RuleAddition ;
+    rdfs:label "FR Addition 11"@en,
+        "การเพิ่ม FR 11: พยัญชนะ ny"@th ;
+    to:additionNumber 11 ;
+    to:appliedToLanguage to:French .
+
+to:RuleAddition_FR_12 a owl:NamedIndividual,
+        to:RuleAddition ;
+    rdfs:label "FR Addition 12"@en,
+        "การเพิ่ม FR 12: การตัดเสียง"@th ;
+    to:additionNumber 12 ;
+    to:appliedToLanguage to:French .
+
+to:RuleAddition_FR_13 a owl:NamedIndividual,
+        to:RuleAddition ;
+    rdfs:label "FR Addition 13"@en,
+        "การเพิ่ม FR 13: ชื่อเฉพาะ"@th ;
+    to:additionNumber 13 ;
+    to:appliedToLanguage to:French .
+
+to:RuleAddition_FR_14 a owl:NamedIndividual,
+        to:RuleAddition ;
+    rdfs:label "FR Addition 14"@en,
+        "การเพิ่ม FR 14: ตัวย่อ"@th ;
+    to:additionNumber 14 ;
+    to:appliedToLanguage to:French .
+
+to:Rule_DE_01 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "DE Rule 1: Pronunciation basis"@en,
+        "กฎ DE 1: พื้นฐานการออกเสียง"@th ;
+    to:appliedToLanguage to:German ;
+    to:ruleNumber 1 ;
+    to:ruleText "Transliteration follows Standard German (Hochdeutsch/Standarddeutsch) pronunciation as referenced by Duden Band 6."@en .
+
+to:Rule_DE_02 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "DE Rule 2: Vowel length distinction"@en,
+        "กฎ DE 2: การแยกความยาวสระ"@th ;
+    to:appliedToLanguage to:German ;
+    to:ruleNumber 2 ;
+    to:ruleText "Short and long vowels are distinguished. Short -> อ, long -> อู. Checked by Duden IPA."@en .
+
+to:Rule_DE_03 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "DE Rule 3: Written-to-sound gap"@en,
+        "กฎ DE 3: ช่องว่างระหว่างตัวเขียนกับเสียง"@th ;
+    to:appliedToLanguage to:German ;
+    to:ruleNumber 3 ;
+    to:ruleText "Letters that are not pronounced (e.g. silent h in certain positions) are not represented in the Thai transliteration."@en .
+
+to:Rule_DE_04 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "DE Rule 4: Vowel mapping (core)"@en,
+        "กฎ DE 4: การแมปสระหลัก"@th ;
+    to:appliedToLanguage to:German ;
+    to:ruleNumber 4 ;
+    to:ruleText "Core vowel mapping covering all German vowels and umlauts."@en ;
+    to:sourceGrapheme "a, e, i, o, u, y, a-umlaut, o-umlaut, u-umlaut" .
+
+to:Rule_DE_06 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "DE Rule 6: Vowel u"@en,
+        "กฎ DE 6: สระ u"@th ;
+    to:appliedToLanguage to:German ;
+    to:ruleNumber 6 ;
+    to:ruleText "Short -> อ; long -> อู. Examples: unter, Urin."@en ;
+    to:sourceGrapheme "u, u-umlaut" ;
+    to:targetGrapheme "อ, อู" .
+
+to:Rule_DE_07 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "DE Rule 7: Vowel r-coloring"@en,
+        "กฎ DE 7: r ทำให้สระเปลี่ยน"@th ;
+    to:appliedToLanguage to:German ;
+    to:hasAmbiguity to:Ambiguity_DE_07 ;
+    to:ruleNumber 7 ;
+    to:ruleText "Final r after vowel colors the vowel. berg (two variants possible)."@en .
+
+to:Rule_DE_10 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "DE Rule 10: Vowel doubling"@en,
+        "กฎ DE 10: สระซ้ำ"@th ;
+    to:appliedToLanguage to:German ;
+    to:ruleNumber 10 ;
+    to:ruleText "Double vowels (aa, ee, oo) treated as long vowels: Hase, Kassel."@en .
+
+to:Rule_DE_11 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "DE Rule 11: Diphthongs"@en,
+        "กฎ DE 11: สระประสม"@th ;
+    to:appliedToLanguage to:German ;
+    to:ruleNumber 11 ;
+    to:ruleText "Diphthong mapping. Maier, Naumann."@en ;
+    to:sourceGrapheme "ae, ai, eu, au-umlaut, au, ei" .
+
+to:Rule_DE_12 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "DE Rule 12: Final -ie and silent -e"@en,
+        "กฎ DE 12: -ie และ e เงียบ"@th ;
+    to:appliedToLanguage to:German ;
+    to:ruleNumber 12 ;
+    to:ruleText "Final -ie -> อี; silent final -e: stem vowel governs. Tschechien, Serie."@en .
+
+to:Rule_DE_13 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "DE Rule 13: Plosives p, t, k"@en,
+        "กฎ DE 13: เสียงระเบิด p, t, k"@th ;
+    to:appliedToLanguage to:German ;
+    to:ruleNumber 13 ;
+    to:ruleText "p->พ(initial)/บ; t->ท(initial)/ด; k->ค(initial)/ก; word-final: บ, ด, ก. Special sp/st clusters."@en ;
+    to:sourceGrapheme "p, t, k, sp, st" ;
+    to:targetGrapheme "พ/บ, ท/ด, ค/ก, คว, คท" .
+
+to:Rule_DE_14 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "DE Rule 14: Lateral l and nasal n"@en,
+        "กฎ DE 14: l และ n"@th ;
+    to:appliedToLanguage to:German ;
+    to:ruleNumber 14 ;
+    to:ruleText "l (pre-consonant) -> ล; n before k -> นก. Kassel, Christen."@en .
+
+to:Rule_DE_16 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "DE Rule 16: Consonant clusters pf, ts, tsch"@en,
+        "กฎ DE 16: กลุ่มพยัญชนะ pf, ts, tsch"@th ;
+    to:appliedToLanguage to:German ;
+    to:ruleNumber 16 ;
+    to:ruleText "pf->พฟ; ts->ซ; tsch->ช. Pfaff, schrumpfst."@en ;
+    to:sourceGrapheme "pf, ts, tsch, tz" .
+
+to:Rule_DE_17 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "DE Rule 17: Consonant r"@en,
+        "กฎ DE 17: พยัญชนะ r"@th ;
+    to:appliedToLanguage to:German ;
+    to:hasAmbiguity to:Ambiguity_DE_17 ;
+    to:ruleNumber 17 ;
+    to:ruleText "r in onset->ร; r vocalized in coda->เออ. Rad (variants)."@en ;
+    to:sourceGrapheme "r, rr" ;
+    to:targetGrapheme "ร, เออ" .
+
+to:Rule_DE_18 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "DE Rule 18: Consonant h"@en,
+        "กฎ DE 18: พยัญชนะ h"@th ;
+    to:appliedToLanguage to:German ;
+    to:ruleNumber 18 ;
+    to:ruleText "Initial h->ห; intervocalic h->silent (lengthening). sehen, gehen."@en ;
+    to:sourceGrapheme "h" ;
+    to:targetGrapheme "ห, (silent)" .
+
+to:Rule_DE_19 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "DE Rule 19: Double consonants"@en,
+        "กฎ DE 19: พยัญชนะซ้ำ"@th ;
+    to:appliedToLanguage to:German ;
+    to:ruleNumber 19 ;
+    to:ruleText "Double consonants signal preceding short vowel; render as single consonant. Mann, Riss."@en .
+
+to:Rule_DE_20 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "DE Rule 20: Consonant ng/ck"@en,
+        "กฎ DE 20: ng, ck"@th ;
+    to:appliedToLanguage to:German ;
+    to:ruleNumber 20 ;
+    to:ruleText "ng->ง; ck->ก; sch+vowel combinations. Fischer, singen, Backer."@en .
+
+to:Rule_DE_21 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "DE Rule 21: Final consonant devoicing and clusters"@en,
+        "กฎ DE 21: เสียงพยัญชนะท้ายคำ"@th ;
+    to:appliedToLanguage to:German ;
+    to:hasAmbiguity to:Ambiguity_DE_21 ;
+    to:ruleNumber 21 ;
+    to:ruleText "Final obstruents devoiced: d->ท/ด, b->พ/บ, g->ค/ก, v->ฟ. Karl (variants). Berg (variants)."@en .
+
+to:Rule_DE_22 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "DE Rule 22: Syllable boundary ss/scharfes-s"@en,
+        "กฎ DE 22: ss และ scharfes-s"@th ;
+    to:appliedToLanguage to:German ;
+    to:ruleNumber 22 ;
+    to:ruleText "scharfes-s -> ซ in all positions. ss (inter-syllabic) governs preceding short vowel. essen, Erntst."@en ;
+    to:sourceGrapheme "scharfes-s, ss" ;
+    to:targetGrapheme "ซ" .
+
+to:Rule_DE_23 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "DE Rule 23: German alphabet letters"@en,
+        "กฎ DE 23: ชื่อตัวอักษรเยอรมัน"@th ;
+    to:appliedToLanguage to:German ;
+    to:ruleNumber 23 ;
+    to:ruleText "German alphabet letter names as Thai: A->เอ, B->เบ, C->เซ, D->เด, E->เอ, F->เอฟ, G->เก, H->ฮา, I->อี, J->โย, K->คา, L->เอล, M->เอม, N->เอน, O->โอ, P->เพ, Q->คู, R->เอร์, S->เอส, T->เท, U->อู, V->เฟา, W->เว, X->อิกส์, Y->อิปซีลอน, Z->เซ็ท."@en .
+
+to:Rule_DE_24 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "DE Rule 24: Abbreviations"@en,
+        "กฎ DE 24: ตัวย่อ"@th ;
+    to:appliedToLanguage to:German ;
+    to:ruleNumber 24 ;
+    to:ruleText "German abbreviations expand and transliterate the full form. DAAD->ดาด, DFB->ดีเอฟบี."@en .
+
+to:Rule_DE_25 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "DE Rule 25: French loanwords in German"@en,
+        "กฎ DE 25: คำยืมภาษาฝรั่งเศสในภาษาเยอรมัน"@th ;
+    to:appliedToLanguage to:German ;
+    to:hasAmbiguity to:Ambiguity_DE_25 ;
+    to:ruleNumber 25 ;
+    to:ruleText "French loanwords in German retain French phonology for transliteration. Genie->จีนี, Blammage->บลามาจ."@en .
+
+to:Rule_DE_26 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "DE Rule 26: Name initials"@en,
+        "กฎ DE 26: อักษรย่อชื่อ"@th ;
+    to:appliedToLanguage to:German ;
+    to:ruleNumber 26 ;
+    to:ruleText "Personal name initials: J. Heuser -> เจ. ฮอยเซอร์."@en .
+
+to:Rule_DE_27 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "DE Rule 27: Titles and nobility particles"@en,
+        "กฎ DE 27: ยศและอนุภาค von/zu"@th ;
+    to:appliedToLanguage to:German ;
+    to:hasAmbiguity to:Ambiguity_DE_27 ;
+    to:ruleNumber 27 ;
+    to:ruleText "Noble particles: von, zu, von und zu. Furst Otto von Bismarck -> เฟิร์สท์ ออทโท ฟอน บิสมาร์ก."@en .
+
+to:Rule_DE_28 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "DE Rule 28: Hyphenated compounds"@en,
+        "กฎ DE 28: คำประสมที่มีเครื่องหมายยัติภังค์"@th ;
+    to:appliedToLanguage to:German ;
+    to:ruleNumber 28 ;
+    to:ruleText "Hyphenated compound transliterations preserve the hyphen between parts. Baden-Wurtemberg."@en .
+
+to:Rule_DE_29 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "DE Rule 29: Long compound names"@en,
+        "กฎ DE 29: ชื่อประสมยาว"@th ;
+    to:appliedToLanguage to:German ;
+    to:ruleNumber 29 ;
+    to:ruleText "Hyphens permitted within long compound proper nouns. Karl-Theodor zu Guttenberg."@en .
+
+to:Rule_DE_30 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "DE Rule 30: Italicized foreign words"@en,
+        "กฎ DE 30: คำต่างประเทศที่พิมพ์เอียง"@th ;
+    to:appliedToLanguage to:German ;
+    to:ruleNumber 30 ;
+    to:ruleText "Foreign words in italic are transliterated according to their source language phonology."@en .
+
+to:Rule_EN_01 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "EN Rule 01"@en,
+        "กฎ EN 1: พยัญชนะ"@th ;
+    to:appliedToLanguage to:English ;
+    to:ruleNumber 1 ;
+    to:ruleText "Consonant mapping following Cambridge Dictionary IPA."@en .
+
+to:Rule_EN_02 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "EN Rule 02"@en,
+        "กฎ EN 2: สระสั้น"@th ;
+    to:appliedToLanguage to:English ;
+    to:ruleNumber 2 ;
+    to:ruleText "Short vowel mapping."@en .
+
+to:Rule_EN_03 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "EN Rule 03"@en,
+        "กฎ EN 3: สระยาว"@th ;
+    to:appliedToLanguage to:English ;
+    to:ruleNumber 3 ;
+    to:ruleText "Long vowel mapping."@en .
+
+to:Rule_EN_04 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "EN Rule 04"@en,
+        "กฎ EN 4: สระประสม"@th ;
+    to:appliedToLanguage to:English ;
+    to:ruleNumber 4 ;
+    to:ruleText "Diphthong mapping."@en .
+
+to:Rule_EN_05 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "EN Rule 05"@en,
+        "กฎ EN 5: สระชวา"@th ;
+    to:appliedToLanguage to:English ;
+    to:ruleNumber 5 ;
+    to:ruleText "Schwa context-dependent rendering."@en .
+
+to:Rule_EN_06 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "EN Rule 06"@en,
+        "กฎ EN 6: กลุ่มพยัญชนะ"@th ;
+    to:appliedToLanguage to:English ;
+    to:ruleNumber 6 ;
+    to:ruleText "Initial and final consonant clusters."@en .
+
+to:Rule_EN_07 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "EN Rule 07"@en,
+        "กฎ EN 7: อักษรที่ไม่ออกเสียง"@th ;
+    to:appliedToLanguage to:English ;
+    to:ruleNumber 7 ;
+    to:ruleText "Silent consonant retention is convention-based, not derivable from IPA alone."@en .
+
+to:Rule_EN_08 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "EN Rule 08"@en,
+        "กฎ EN 8: การเน้นเสียงและพยางค์"@th ;
+    to:appliedToLanguage to:English ;
+    to:ruleNumber 8 ;
+    to:ruleText "Syllable boundary and stress affect vowel rendering."@en .
+
+to:Rule_EN_09 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "EN Rule 09"@en,
+        "กฎ EN 9: ชื่อเฉพาะ"@th ;
+    to:appliedToLanguage to:English ;
+    to:ruleNumber 9 ;
+    to:ruleText "Conventional forms for established loanwords diverge from rule-derived forms."@en .
+
+to:Rule_EN_10 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "EN Rule 10"@en,
+        "กฎ EN 10: ตัวย่อ"@th ;
+    to:appliedToLanguage to:English ;
+    to:ruleNumber 10 ;
+    to:ruleText "English abbreviations: expand or transliterate by letter."@en .
+
+to:Rule_EN_11 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "EN Rule 11"@en,
+        "กฎ EN 11: การพึ่งพา G2P"@th ;
+    to:appliedToLanguage to:English ;
+    to:ruleNumber 11 ;
+    to:ruleText "Strong G2P dependency - Cambridge Dictionary IPA used as reference."@en .
+
+to:Rule_EN_12 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "EN Rule 12"@en,
+        "กฎ EN 12: อักษรสระสั้น"@th ;
+    to:appliedToLanguage to:English ;
+    to:ruleNumber 12 ;
+    to:ruleText "Short vowel glyph requires context not available from IPA alone."@en .
+
+to:accuracyScore a owl:DatatypeProperty ;
+    rdfs:label "accuracy score"@en,
+        "คะแนนความแม่นยำ"@th ;
+    rdfs:domain to:EvaluationResult ;
+    rdfs:range xsd:decimal .
+
+to:additionNumber a owl:DatatypeProperty ;
+    rdfs:label "addition number"@en,
+        "หมายเลขการเพิ่มเติม"@th ;
+    rdfs:domain to:RuleAddition ;
+    rdfs:range xsd:integer .
+
+to:ambiguityDescription a owl:DatatypeProperty ;
+    rdfs:label "ambiguity description"@en,
+        "คำอธิบายความคลุมเครือ"@th ;
+    rdfs:domain to:RuleAmbiguity ;
+    rdfs:range xsd:string .
+
 to:appliedToLanguage a owl:ObjectProperty ;
-    rdfs:label "applied to language"@en, "ใช้กับภาษา"@th ;
-    rdfs:domain to:Rule ; rdfs:range to:Language .
+    rdfs:label "applied to language"@en,
+        "ใช้กับภาษา"@th ;
+    rdfs:domain to:Rule ;
+    rdfs:range to:Language .
+
+to:characterAccuracy a owl:DatatypeProperty ;
+    rdfs:label "character accuracy"@en,
+        "ความแม่นยำระดับอักขระ"@th ;
+    rdfs:domain to:EvaluationResult ;
+    rdfs:range xsd:decimal .
+
+to:crlEvidence a owl:DatatypeProperty ;
+    rdfs:label "CRL evidence"@en,
+        "หลักฐาน CRL"@th ;
+    rdfs:domain to:ComputationalReadinessLevel ;
+    rdfs:range xsd:string .
+
+to:crlScore a owl:DatatypeProperty ;
+    rdfs:label "CRL score"@en,
+        "คะแนน CRL"@th ;
+    rdfs:comment "Integer 1-5: 1=directly executable (CRL-1, no expert intervention needed), 5=requires most extensive expert intervention (CRL-5, least ready for automation). Higher score = less computationally ready."@en ;
+    rdfs:domain to:ComputationalReadinessLevel ;
+    rdfs:range xsd:integer .
+
+to:decisionJustification a owl:DatatypeProperty ;
+    rdfs:label "decision justification"@en,
+        "เหตุผลการตัดสินใจ"@th ;
+    rdfs:domain to:ExpertDecision ;
+    rdfs:range xsd:string .
 
 to:evaluatesPhenomenon a owl:ObjectProperty ;
-    rdfs:label "evaluates phenomenon"@en, "ประเมินปรากฏการณ์"@th ;
-    rdfs:domain to:BenchmarkItem ; rdfs:range to:RuleAmbiguity .
+    rdfs:label "evaluates phenomenon"@en,
+        "ประเมินปรากฏการณ์"@th ;
+    rdfs:domain to:BenchmarkItem ;
+    rdfs:range to:RuleAmbiguity .
 
 to:evaluatesRule a owl:ObjectProperty ;
-    rdfs:label "evaluates rule"@en, "ประเมินกฎ"@th ;
-    rdfs:domain to:BenchmarkItem ; rdfs:range to:Rule .
+    rdfs:label "evaluates rule"@en,
+        "ประเมินกฎ"@th ;
+    rdfs:domain to:BenchmarkItem ;
+    rdfs:range to:Rule .
 
 to:exemplifiesRule a owl:ObjectProperty ;
-    rdfs:label "exemplifies rule"@en, "แสดงตัวอย่างกฎ"@th ;
-    rdfs:domain to:LexicalEntry ; rdfs:range to:Rule .
+    rdfs:label "exemplifies rule"@en,
+        "แสดงตัวอย่างกฎ"@th ;
+    rdfs:domain to:LexicalEntry ;
+    rdfs:range to:Rule .
 
 to:fromSourceLanguage a owl:ObjectProperty ;
     rdfs:label "from source language"@en ;
-    rdfs:domain to:LexicalEntry ; rdfs:range to:Language .
+    rdfs:domain to:LexicalEntry ;
+    rdfs:range to:Language .
+
+to:guidelineVersion a owl:DatatypeProperty ;
+    rdfs:label "guideline version"@en,
+        "เวอร์ชันแนวทาง"@th ;
+    rdfs:domain to:Guideline ;
+    rdfs:range xsd:string .
+
+to:guidelineYear a owl:DatatypeProperty ;
+    rdfs:label "guideline year"@en,
+        "ปีแนวทาง"@th ;
+    rdfs:domain to:Guideline ;
+    rdfs:range xsd:gYear .
 
 to:hasAddition a owl:ObjectProperty ;
-    rdfs:label "has addition"@en, "มีการเพิ่มเติม"@th ;
-    rdfs:domain to:Guideline ; rdfs:range to:RuleAddition ;
+    rdfs:label "has addition"@en,
+        "มีการเพิ่มเติม"@th ;
+    rdfs:domain to:Guideline ;
+    rdfs:range to:RuleAddition ;
     rdfs:subPropertyOf to:hasRule .
 
 to:hasAmbiguity a owl:ObjectProperty ;
-    rdfs:label "has ambiguity"@en, "มีความคลุมเครือ"@th ;
+    rdfs:label "has ambiguity"@en,
+        "มีความคลุมเครือ"@th ;
     rdfs:comment "Attaches a documented ambiguity to a rule."@en ;
-    rdfs:domain to:Rule ; rdfs:range to:RuleAmbiguity .
+    rdfs:domain to:Rule ;
+    rdfs:range to:RuleAmbiguity .
 
 to:hasErrorType a owl:ObjectProperty ;
-    rdfs:label "has error type"@en, "มีประเภทข้อผิดพลาด"@th ;
-    rdfs:domain to:EvaluationResult ; rdfs:range to:ErrorType .
+    rdfs:label "has error type"@en,
+        "มีประเภทข้อผิดพลาด"@th ;
+    rdfs:domain to:EvaluationResult ;
+    rdfs:range to:ErrorType .
 
 to:hasGoldLabel a owl:ObjectProperty ;
-    rdfs:label "has gold label"@en, "มีป้ายกำกับมาตรฐาน"@th ;
-    rdfs:domain to:BenchmarkItem ; rdfs:range to:GoldLabel .
+    rdfs:label "has gold label"@en,
+        "มีป้ายกำกับมาตรฐาน"@th ;
+    rdfs:domain to:BenchmarkItem ;
+    rdfs:range to:GoldLabel .
 
 to:hasGuideline a owl:ObjectProperty ;
-    rdfs:label "has guideline"@en, "มีแนวทาง"@th ;
+    rdfs:label "has guideline"@en,
+        "มีแนวทาง"@th ;
     rdfs:comment "Links a language to its Royal Society transliteration guideline."@en ;
-    rdfs:domain to:Language ; rdfs:range to:Guideline .
+    rdfs:domain to:Language ;
+    rdfs:range to:Guideline .
 
 to:hasLexicalEntry a owl:ObjectProperty ;
-    rdfs:label "has lexical entry"@en, "มีรายการศัพท์"@th ;
-    rdfs:domain to:Guideline ; rdfs:range to:LexicalEntry .
+    rdfs:label "has lexical entry"@en,
+        "มีรายการศัพท์"@th ;
+    rdfs:domain to:Guideline ;
+    rdfs:range to:LexicalEntry .
 
 to:hasReadinessLevel a owl:ObjectProperty ;
-    rdfs:label "has readiness level"@en, "มีระดับความพร้อมด้านการคำนวณ"@th ;
-    rdfs:domain to:Language ; rdfs:range to:ComputationalReadinessLevel .
-
-to:hasRule a owl:ObjectProperty ;
-    rdfs:label "has rule"@en, "มีกฎ"@th ;
-    rdfs:comment "Associates a guideline with a constituent transliteration rule."@en ;
-    rdfs:domain to:Guideline ; rdfs:range to:Rule .
+    rdfs:label "has readiness level"@en,
+        "มีระดับความพร้อมด้านการคำนวณ"@th ;
+    rdfs:domain to:Language ;
+    rdfs:range to:ComputationalReadinessLevel .
 
 to:hasThaiForm a owl:ObjectProperty ;
-    rdfs:label "has Thai form"@en, "มีรูปแบบภาษาไทย"@th ;
-    rdfs:domain to:LexicalEntry ; rdfs:range to:ThaiForm .
+    rdfs:label "has Thai form"@en,
+        "มีรูปแบบภาษาไทย"@th ;
+    rdfs:domain to:LexicalEntry ;
+    rdfs:range to:ThaiForm .
 
 to:hasVariant a owl:ObjectProperty ;
-    rdfs:label "has variant"@en, "มีรูปแบบทางเลือก"@th ;
-    rdfs:domain to:ThaiForm ; rdfs:range to:TransliterationVariant .
+    rdfs:label "has variant"@en,
+        "มีรูปแบบทางเลือก"@th ;
+    rdfs:domain to:ThaiForm ;
+    rdfs:range to:TransliterationVariant .
+
+to:ipa a owl:DatatypeProperty ;
+    rdfs:label "IPA transcription"@en,
+        "การถอดเสียง IPA"@th ;
+    rdfs:domain to:LexicalEntry ;
+    rdfs:range xsd:string .
+
+to:isPreferred a owl:DatatypeProperty ;
+    rdfs:label "is preferred"@en,
+        "เป็นที่นิยม"@th ;
+    rdfs:domain to:ThaiForm ;
+    rdfs:range xsd:boolean .
 
 to:justifiedByDecision a owl:ObjectProperty ;
-    rdfs:label "justified by decision"@en, "มีเหตุผลจากการตัดสินใจ"@th ;
-    rdfs:domain to:RuleAmbiguity ; rdfs:range to:ExpertDecision .
+    rdfs:label "justified by decision"@en,
+        "มีเหตุผลจากการตัดสินใจ"@th ;
+    rdfs:domain to:RuleAmbiguity ;
+    rdfs:range to:ExpertDecision .
+
+to:languageCode a owl:DatatypeProperty ;
+    rdfs:label "ISO 639-1 code"@en,
+        "รหัสภาษา ISO 639-1"@th ;
+    rdfs:domain to:Language ;
+    rdfs:range xsd:string .
 
 to:madeByExpert a owl:ObjectProperty ;
-    rdfs:label "made by expert"@en, "จัดทำโดยผู้เชี่ยวชาญ"@th ;
-    rdfs:domain to:ExpertDecision ; rdfs:range to:Expert .
+    rdfs:label "made by expert"@en,
+        "จัดทำโดยผู้เชี่ยวชาญ"@th ;
+    rdfs:domain to:ExpertDecision ;
+    rdfs:range to:Expert .
 
 to:producedEvaluationResult a owl:ObjectProperty ;
     rdfs:label "produced evaluation result"@en ;
-    rdfs:domain to:Guideline ; rdfs:range to:EvaluationResult .
-
-# === Datatype Properties ===
-to:accuracyScore a owl:DatatypeProperty ;
-    rdfs:label "accuracy score"@en, "คะแนนความแม่นยำ"@th ;
-    rdfs:domain to:EvaluationResult ; rdfs:range xsd:decimal .
-
-to:additionNumber a owl:DatatypeProperty ;
-    rdfs:label "addition number"@en, "หมายเลขการเพิ่มเติม"@th ;
-    rdfs:domain to:RuleAddition ; rdfs:range xsd:integer .
-
-to:ambiguityDescription a owl:DatatypeProperty ;
-    rdfs:label "ambiguity description"@en, "คำอธิบายความคลุมเครือ"@th ;
-    rdfs:domain to:RuleAmbiguity ; rdfs:range xsd:string .
-
-to:characterAccuracy a owl:DatatypeProperty ;
-    rdfs:label "character accuracy"@en, "ความแม่นยำระดับอักขระ"@th ;
-    rdfs:domain to:EvaluationResult ; rdfs:range xsd:decimal .
-
-to:crlEvidence a owl:DatatypeProperty ;
-    rdfs:label "CRL evidence"@en, "หลักฐาน CRL"@th ;
-    rdfs:domain to:ComputationalReadinessLevel ; rdfs:range xsd:string .
-
-to:crlScore a owl:DatatypeProperty ;
-    rdfs:label "CRL score"@en, "คะแนน CRL"@th ;
-    rdfs:comment "Integer 1-5: 1=directly executable (CRL-1, no expert intervention needed), 5=requires most extensive expert intervention (CRL-5, least ready for automation). Higher score = less computationally ready."@en ;
-    rdfs:domain to:ComputationalReadinessLevel ; rdfs:range xsd:integer .
-
-to:decisionJustification a owl:DatatypeProperty ;
-    rdfs:label "decision justification"@en, "เหตุผลการตัดสินใจ"@th ;
-    rdfs:domain to:ExpertDecision ; rdfs:range xsd:string .
-
-to:guidelineVersion a owl:DatatypeProperty ;
-    rdfs:label "guideline version"@en, "เวอร์ชันแนวทาง"@th ;
-    rdfs:domain to:Guideline ; rdfs:range xsd:string .
-
-to:guidelineYear a owl:DatatypeProperty ;
-    rdfs:label "guideline year"@en, "ปีแนวทาง"@th ;
-    rdfs:domain to:Guideline ; rdfs:range xsd:gYear .
-
-to:ipa a owl:DatatypeProperty ;
-    rdfs:label "IPA transcription"@en, "การถอดเสียง IPA"@th ;
-    rdfs:domain to:LexicalEntry ; rdfs:range xsd:string .
-
-to:isPreferred a owl:DatatypeProperty ;
-    rdfs:label "is preferred"@en, "เป็นที่นิยม"@th ;
-    rdfs:domain to:ThaiForm ; rdfs:range xsd:boolean .
-
-to:languageCode a owl:DatatypeProperty ;
-    rdfs:label "ISO 639-1 code"@en, "รหัสภาษา ISO 639-1"@th ;
-    rdfs:domain to:Language ; rdfs:range xsd:string .
+    rdfs:domain to:Guideline ;
+    rdfs:range to:EvaluationResult .
 
 to:readinessScore a owl:DatatypeProperty ;
-    rdfs:label "readiness score"@en, "คะแนนความพร้อม"@th ;
+    rdfs:label "readiness score"@en,
+        "คะแนนความพร้อม"@th ;
     rdfs:comment "Formula-based readiness score: |Additions| + 2x|Ambiguities| + |Decisions|. Used to determine CRL assignment: 0=CRL-1, 1-15=CRL-2, 16-40=CRL-3, 41-70=CRL-4, >70=CRL-5."@en ;
-    rdfs:domain to:ComputationalReadinessLevel ; rdfs:range xsd:integer .
+    rdfs:domain to:ComputationalReadinessLevel ;
+    rdfs:range xsd:integer .
 
 to:ruleNumber a owl:DatatypeProperty ;
-    rdfs:label "rule number"@en, "หมายเลขกฎ"@th ;
-    rdfs:domain to:Rule ; rdfs:range xsd:integer .
+    rdfs:label "rule number"@en,
+        "หมายเลขกฎ"@th ;
+    rdfs:domain to:Rule ;
+    rdfs:range xsd:integer .
 
 to:ruleText a owl:DatatypeProperty ;
-    rdfs:label "rule text"@en, "เนื้อหากฎ"@th ;
-    rdfs:domain to:Rule ; rdfs:range xsd:string .
+    rdfs:label "rule text"@en,
+        "เนื้อหากฎ"@th ;
+    rdfs:domain to:Rule ;
+    rdfs:range xsd:string .
 
 to:sourceForm a owl:DatatypeProperty ;
-    rdfs:label "source form"@en, "รูปแบบต้นทาง"@th ;
-    rdfs:domain to:LexicalEntry ; rdfs:range xsd:string .
+    rdfs:label "source form"@en,
+        "รูปแบบต้นทาง"@th ;
+    rdfs:domain to:LexicalEntry ;
+    rdfs:range xsd:string .
 
 to:sourceGrapheme a owl:DatatypeProperty ;
-    rdfs:label "source grapheme"@en, "กราฟีมต้นทาง"@th ;
-    rdfs:domain to:Rule ; rdfs:range xsd:string .
+    rdfs:label "source grapheme"@en,
+        "กราฟีมต้นทาง"@th ;
+    rdfs:domain to:Rule ;
+    rdfs:range xsd:string .
 
 to:syllableAccuracy a owl:DatatypeProperty ;
-    rdfs:label "syllable accuracy"@en, "ความแม่นยำระดับพยางค์"@th ;
-    rdfs:domain to:EvaluationResult ; rdfs:range xsd:decimal .
+    rdfs:label "syllable accuracy"@en,
+        "ความแม่นยำระดับพยางค์"@th ;
+    rdfs:domain to:EvaluationResult ;
+    rdfs:range xsd:decimal .
 
 to:targetGrapheme a owl:DatatypeProperty ;
-    rdfs:label "target grapheme"@en, "กราฟีมเป้าหมาย"@th ;
-    rdfs:domain to:Rule ; rdfs:range xsd:string .
+    rdfs:label "target grapheme"@en,
+        "กราฟีมเป้าหมาย"@th ;
+    rdfs:domain to:Rule ;
+    rdfs:range xsd:string .
 
 to:thaiScript a owl:DatatypeProperty ;
-    rdfs:label "Thai script"@en, "อักษรไทย"@th ;
-    rdfs:domain to:ThaiForm ; rdfs:range xsd:string .
+    rdfs:label "Thai script"@en,
+        "อักษรไทย"@th ;
+    rdfs:domain to:ThaiForm ;
+    rdfs:range xsd:string .
 
-# === Languages ===
-to:English a owl:NamedIndividual, to:Language ;
-    rdfs:label "English"@en, "ภาษาอังกฤษ"@th ;
-    to:languageCode "en" ;
-    to:hasGuideline to:Guideline_EN ;
-    to:hasReadinessLevel to:CRL_EN .
-
-to:German a owl:NamedIndividual, to:Language ;
-    rdfs:label "German"@en, "ภาษาเยอรมัน"@th ;
-    to:languageCode "de" ;
-    to:hasGuideline to:Guideline_DE ;
-    to:hasReadinessLevel to:CRL_DE .
-
-to:French a owl:NamedIndividual, to:Language ;
-    rdfs:label "French"@en, "ภาษาฝรั่งเศส"@th ;
-    to:languageCode "fr" ;
-    to:hasGuideline to:Guideline_FR ;
-    to:hasReadinessLevel to:CRL_FR .
-
-# === Guidelines ===
-to:Guideline_EN a owl:NamedIndividual, to:Guideline ;
-    rdfs:label "Royal Society Thai Transliteration Guideline - English"@en, "คู่มือการถ่ายอักษรภาษาอังกฤษ ราชบัณฑิตยสภา"@th ;
-    to:guidelineVersion "2532" ;
-    to:guidelineYear "2532"^^xsd:gYear ;
-    dcterms:description "Standard English-to-Thai transliteration guideline."@en .
-
-to:Guideline_DE a owl:NamedIndividual, to:Guideline ;
-    rdfs:label "Royal Society Thai Transliteration Guideline - German"@en, "คู่มือการถ่ายอักษรภาษาเยอรมัน ราชบัณฑิตยสภา"@th ;
-    to:guidelineVersion "2025" ;
-    dcterms:description "31 rules covering vowels, consonants, umlauts, special clusters, proper nouns, abbreviations, and compound words for German-to-Thai transliteration."@en .
-
-to:Guideline_FR a owl:NamedIndividual, to:Guideline ;
-    rdfs:label "Royal Society Thai Transliteration Guideline - French"@en, "คู่มือการถ่ายอักษรภาษาฝรั่งเศส ราชบัณฑิตยสภา"@th ;
-    to:guidelineVersion "2025" ;
-    dcterms:description "Guideline with 14 documented rule additions for French-to-Thai transliteration."@en .
-
-# === CRL Levels (EN=3, DE=4, FR=5; scale: 1=executable, 5=most intervention) ===
-to:CRL_EN a owl:NamedIndividual, to:ComputationalReadinessLevel ;
-    rdfs:label "CRL - English"@en, "CRL ภาษาอังกฤษ"@th ;
-    to:crlScore 3 ;
-    to:readinessScore 35 ;
-    to:crlEvidence "English orthography is highly irregular; strong G2P dependency. Benchmark-only at present; rules not yet formalized in KG."@en .
-
-to:CRL_DE a owl:NamedIndividual, to:ComputationalReadinessLevel ;
-    rdfs:label "CRL - German"@en, "CRL ภาษาเยอรมัน"@th ;
-    to:crlScore 4 ;
-    to:readinessScore 35 ;
-    to:crlEvidence "German requires G2P pre-processing (IPA conversion) before rule application. Phoneme rules are mostly formal; 31 rules documented with examples. Main challenge: French loanwords and r-vocalization."@en .
-
-to:CRL_FR a owl:NamedIndividual, to:ComputationalReadinessLevel ;
-    rdfs:label "CRL - French"@en, "CRL ภาษาฝรั่งเศส"@th ;
-    to:crlScore 5 ;
-    to:readinessScore 104 ;
-    to:crlEvidence "French requires G2P. 14 additions documented. Nasal vowels and liaison rules add complexity."@en .
-
-# === Error Types ===
-to:ErrorType_G2P a owl:NamedIndividual, to:ErrorType ;
-    rdfs:label "G2P Error"@en, "ข้อผิดพลาด G2P"@th ;
-    rdfs:comment "Errors arising from incorrect grapheme-to-phoneme conversion before the transliteration rule is applied."@en .
-
-to:ErrorType_Ambiguity a owl:NamedIndividual, to:ErrorType ;
-    rdfs:label "Ambiguity Error"@en, "ข้อผิดพลาดจากความคลุมเครือ"@th ;
-    rdfs:comment "Errors due to underspecified rules where multiple valid Thai forms exist."@en .
-
-to:ErrorType_ProperNoun a owl:NamedIndividual, to:ErrorType ;
-    rdfs:label "Proper Noun Error"@en, "ข้อผิดพลาดจากชื่อเฉพาะ"@th ;
-    rdfs:comment "Errors specific to proper nouns (personal names, place names) not covered by general rules."@en .
-
-# === Evaluation Results ===
-to:EvalResult_EN_2025 a owl:NamedIndividual, to:EvaluationResult ;
-    rdfs:label "EN System Evaluation 2025"@en ;
-    rdfs:comment "Accuracy on NECTEC internal benchmark; word-level 67.48% (220/326 items)."@en ;
-    to:accuracyScore "0.6748"^^xsd:decimal .
-
-to:EvalResult_DE_2025 a owl:NamedIndividual, to:EvaluationResult ;
-    rdfs:label "DE System Evaluation 2025"@en ;
-    rdfs:comment "Accuracy on NECTEC internal benchmark; word-level 92.68%, syllable-level 97.35%, character-level 97.34%. Note: this individual is in the ontology file (transonto.ttl), not instantiated as ABox EvaluationResult in kg_all.ttl."@en ;
-    to:accuracyScore "0.9268"^^xsd:decimal ;
-    to:syllableAccuracy "0.9735"^^xsd:decimal ;
-    to:characterAccuracy "0.9734"^^xsd:decimal .
-
-# === DE Ambiguities (7 — ontology TBox/reference individuals; ABox DE ambiguities also in kg_all) ===
-to:Ambiguity_DE_07 a owl:NamedIndividual, to:RuleAmbiguity ;
+to:Ambiguity_DE_07 a owl:NamedIndividual,
+        to:RuleAmbiguity ;
     rdfs:label "DE Ambiguity 7: r-coloring variants"@en ;
     to:ambiguityDescription "When r follows a vowel, multiple Thai renderings are possible depending on syllable position and stress. berg: เบิร์กกี or บริ?"@en ;
     to:justifiedByDecision to:Decision_DE_07 .
 
-to:Ambiguity_DE_17 a owl:NamedIndividual, to:RuleAmbiguity ;
+to:Ambiguity_DE_17 a owl:NamedIndividual,
+        to:RuleAmbiguity ;
     rdfs:label "DE Ambiguity 17: Rad variants"@en ;
     to:ambiguityDescription "Rad allows ร/รา/เรา depending on regional pronunciation accepted."@en .
 
-to:Ambiguity_DE_21 a owl:NamedIndividual, to:RuleAmbiguity ;
+to:Ambiguity_DE_21 a owl:NamedIndividual,
+        to:RuleAmbiguity ;
     rdfs:label "DE Ambiguity 21: Final devoicing optional r"@en ;
     to:ambiguityDescription "Final coda r after short vowel: drop or retain in Thai? Karl->คาร์ล or คาล?"@en .
 
-to:Ambiguity_DE_25 a owl:NamedIndividual, to:RuleAmbiguity ;
+to:Ambiguity_DE_25 a owl:NamedIndividual,
+        to:RuleAmbiguity ;
     rdfs:label "DE Ambiguity 25: French loanword boundary"@en ;
     to:ambiguityDescription "Which German words count as French loanwords requiring French phonology vs standard German rules? No exhaustive list provided."@en .
 
-to:Ambiguity_DE_27 a owl:NamedIndividual, to:RuleAmbiguity ;
+to:Ambiguity_DE_27 a owl:NamedIndividual,
+        to:RuleAmbiguity ;
     rdfs:label "DE Ambiguity 27: von/zu transliteration consistency"@en ;
     to:ambiguityDescription "Whether von->ฟอน or ฟ็อน, and context-dependency of zu->ลู or คุ."@en .
 
-to:Ambiguity_DE_28 a owl:NamedIndividual, to:RuleAmbiguity ;
-    rdfs:label "DE Ambiguity 28: Hyphen retention"@en ;
-    to:ambiguityDescription "When to retain vs omit hyphen in Thai output for compound names."@en .
+to:CRL_DE a owl:NamedIndividual,
+        to:ComputationalReadinessLevel ;
+    rdfs:label "CRL - German"@en,
+        "CRL ภาษาเยอรมัน"@th ;
+    to:crlEvidence "German requires G2P pre-processing (IPA conversion) before rule application. Phoneme rules are mostly formal; 31 rules documented with examples. Main challenge: French loanwords and r-vocalization."@en ;
+    to:crlScore 4 ;
+    to:readinessScore 35 .
 
-to:Ambiguity_DE_30 a owl:NamedIndividual, to:RuleAmbiguity ;
-    rdfs:label "DE Ambiguity 30: Foreign word identification"@en ;
-    to:ambiguityDescription "How to identify italicized foreign words programmatically without typographic information."@en .
+to:CRL_EN a owl:NamedIndividual,
+        to:ComputationalReadinessLevel ;
+    rdfs:label "CRL - English"@en,
+        "CRL ภาษาอังกฤษ"@th ;
+    to:crlEvidence "English orthography is highly irregular; strong G2P dependency. Benchmark-only at present; rules not yet formalized in KG."@en ;
+    to:crlScore 3 ;
+    to:readinessScore 35 .
 
-# === Expert Decisions (11 DE decisions — reference individuals; EN/FR decisions in kg_all) ===
-to:Decision_DE_07 a owl:NamedIndividual, to:ExpertDecision ;
+to:CRL_FR a owl:NamedIndividual,
+        to:ComputationalReadinessLevel ;
+    rdfs:label "CRL - French"@en,
+        "CRL ภาษาฝรั่งเศส"@th ;
+    to:crlEvidence "French requires G2P. 14 additions documented. Nasal vowels and liaison rules add complexity."@en ;
+    to:crlScore 5 ;
+    to:readinessScore 104 .
+
+to:Decision_DE_07 a owl:NamedIndividual,
+        to:ExpertDecision ;
     rdfs:label "Decision: r-coloring resolved by syllable position"@en ;
     to:decisionJustification "Expert committee resolved r-coloring by Duden Band 6 IPA; default to เบิร์กกี for berg-type patterns."@en .
 
-to:Decision_DE_17a a owl:NamedIndividual, to:ExpertDecision ;
-    rdfs:label "Decision: Rad final t devoiced"@en ;
-    to:decisionJustification "Committee: word-final d in Rad is devoiced to t; render as รัด."@en .
+to:Expert a owl:Class ;
+    rdfs:label "Expert"@en,
+        "ผู้เชี่ยวชาญ"@th ;
+    rdfs:comment "A human domain expert who reviews, adjudicates, or justifies transliteration decisions."@en .
 
-to:Decision_DE_17b a owl:NamedIndividual, to:ExpertDecision ;
-    rdfs:label "Decision: regional r-variants accepted"@en ;
-    to:decisionJustification "Both ร and รา accepted as variants for initial r; prefer ร in formal text."@en .
+to:GoldLabel a owl:Class ;
+    rdfs:label "Gold Label"@en,
+        "ป้ายกำกับมาตรฐาน"@th ;
+    rdfs:comment "The authoritative Thai transliteration assigned to a benchmark item."@en .
 
-to:Decision_DE_21a a owl:NamedIndividual, to:ExpertDecision ;
-    rdfs:label "Decision: final r retained in monosyllables"@en ;
-    to:decisionJustification "Monosyllabic words with final r: retain as เออ in Thai."@en .
+to:Guideline_DE a owl:NamedIndividual,
+        to:Guideline ;
+    rdfs:label "Royal Society Thai Transliteration Guideline - German"@en,
+        "คู่มือการถ่ายอักษรภาษาเยอรมัน ราชบัณฑิตยสภา"@th ;
+    dcterms:description "31 rules covering vowels, consonants, umlauts, special clusters, proper nouns, abbreviations, and compound words for German-to-Thai transliteration."@en ;
+    to:guidelineVersion "2025" .
 
-to:Decision_DE_21b a owl:NamedIndividual, to:ExpertDecision ;
-    rdfs:label "Decision: Karl coda r"@en ;
-    to:decisionJustification "Karl: retain as คาร์ล (not คาล) per common convention."@en .
+to:Guideline_EN a owl:NamedIndividual,
+        to:Guideline ;
+    rdfs:label "Royal Society Thai Transliteration Guideline - English"@en,
+        "คู่มือการถ่ายอักษรภาษาอังกฤษ ราชบัณฑิตยสภา"@th ;
+    dcterms:description "Standard English-to-Thai transliteration guideline."@en ;
+    to:guidelineVersion "2532" ;
+    to:guidelineYear "2532"^^xsd:gYear .
 
-to:Decision_DE_25a a owl:NamedIndividual, to:ExpertDecision ;
-    rdfs:label "Decision: French loanword list from Duden"@en ;
-    to:decisionJustification "Use Duden Fremdwoerterbuch as reference for French loanword identification."@en .
+to:Guideline_FR a owl:NamedIndividual,
+        to:Guideline ;
+    rdfs:label "Royal Society Thai Transliteration Guideline - French"@en,
+        "คู่มือการถ่ายอักษรภาษาฝรั่งเศส ราชบัณฑิตยสภา"@th ;
+    dcterms:description "Guideline with 14 documented rule additions for French-to-Thai transliteration."@en ;
+    to:guidelineVersion "2025" .
 
-to:Decision_DE_25b a owl:NamedIndividual, to:ExpertDecision ;
-    rdfs:label "Decision: Genie as French loanword"@en ;
-    to:decisionJustification "Genie confirmed as French loanword; apply French phonology: จีนี."@en .
+to:Rule_DE_05 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "DE Rule 5: Vowel i"@en,
+        "กฎ DE 5: สระ i"@th ;
+    to:appliedToLanguage to:German ;
+    to:ruleNumber 5 ;
+    to:ruleText "Long -> อี, short -> อิ. Examples: immer, Idee."@en ;
+    to:sourceGrapheme "i, ie, ih" ;
+    to:targetGrapheme "อิ, อี" .
 
-to:Decision_DE_27a a owl:NamedIndividual, to:ExpertDecision ;
-    rdfs:label "Decision: von -> ฟอน"@en ;
-    to:decisionJustification "von -> ฟอน in standard contexts; ฟ็อน only in careful pronunciation."@en .
+to:Rule_DE_08 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "DE Rule 8: Vowel o-umlaut"@en,
+        "กฎ DE 8: สระ o-umlaut"@th ;
+    to:appliedToLanguage to:German ;
+    to:ruleNumber 8 ;
+    to:ruleText "Short -> เออ; long -> เออ. Examples: ol, offen."@en ;
+    to:sourceGrapheme "o-umlaut" .
 
-to:Decision_DE_27b a owl:NamedIndividual, to:ExpertDecision ;
-    rdfs:label "Decision: zu -> ซู"@en ;
-    to:decisionJustification "zu -> ซู as particle; คู only in name-initial position."@en .
-
-to:Decision_DE_28 a owl:NamedIndividual, to:ExpertDecision ;
-    rdfs:label "Decision: hyphen retained"@en ;
-    to:decisionJustification "Hyphen retained in compound names following German source form."@en .
-
-to:Decision_DE_30 a owl:NamedIndividual, to:ExpertDecision ;
-    rdfs:label "Decision: italic identification requires metadata"@en ;
-    to:decisionJustification "Italic foreign words require text metadata; apply German rules when italic info unavailable."@en .
-
-# === German Rules (Rule_DE_01-31) ===
-to:Rule_DE_01 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "DE Rule 1: Pronunciation basis"@en, "กฎ DE 1: พื้นฐานการออกเสียง"@th ;
-    to:ruleNumber 1 ; to:appliedToLanguage to:German ;
-    to:ruleText "Transliteration follows Standard German (Hochdeutsch/Standarddeutsch) pronunciation as referenced by Duden Band 6."@en .
-
-to:Rule_DE_02 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "DE Rule 2: Vowel length distinction"@en, "กฎ DE 2: การแยกความยาวสระ"@th ;
-    to:ruleNumber 2 ; to:appliedToLanguage to:German ;
-    to:ruleText "Short and long vowels are distinguished. Short -> อ, long -> อู. Checked by Duden IPA."@en .
-
-to:Rule_DE_03 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "DE Rule 3: Written-to-sound gap"@en, "กฎ DE 3: ช่องว่างระหว่างตัวเขียนกับเสียง"@th ;
-    to:ruleNumber 3 ; to:appliedToLanguage to:German ;
-    to:ruleText "Letters that are not pronounced (e.g. silent h in certain positions) are not represented in the Thai transliteration."@en .
-
-to:Rule_DE_04 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "DE Rule 4: Vowel mapping (core)"@en, "กฎ DE 4: การแมปสระหลัก"@th ;
-    to:ruleNumber 4 ; to:appliedToLanguage to:German ;
-    to:sourceGrapheme "a, e, i, o, u, y, a-umlaut, o-umlaut, u-umlaut" ;
-    to:ruleText "Core vowel mapping covering all German vowels and umlauts."@en .
-
-to:Rule_DE_05 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "DE Rule 5: Vowel i"@en, "กฎ DE 5: สระ i"@th ;
-    to:ruleNumber 5 ; to:appliedToLanguage to:German ;
-    to:sourceGrapheme "i, ie, ih" ; to:targetGrapheme "อิ, อี" ;
-    to:ruleText "Long -> อี, short -> อิ. Examples: immer, Idee."@en .
-
-to:Rule_DE_06 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "DE Rule 6: Vowel u"@en, "กฎ DE 6: สระ u"@th ;
-    to:ruleNumber 6 ; to:appliedToLanguage to:German ;
-    to:sourceGrapheme "u, u-umlaut" ; to:targetGrapheme "อ, อู" ;
-    to:ruleText "Short -> อ; long -> อู. Examples: unter, Urin."@en .
-
-to:Rule_DE_07 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "DE Rule 7: Vowel r-coloring"@en, "กฎ DE 7: r ทำให้สระเปลี่ยน"@th ;
-    to:ruleNumber 7 ; to:appliedToLanguage to:German ;
-    to:hasAmbiguity to:Ambiguity_DE_07 ;
-    to:ruleText "Final r after vowel colors the vowel. berg (two variants possible)."@en .
-
-to:Rule_DE_08 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "DE Rule 8: Vowel o-umlaut"@en, "กฎ DE 8: สระ o-umlaut"@th ;
-    to:ruleNumber 8 ; to:appliedToLanguage to:German ;
-    to:sourceGrapheme "o-umlaut" ;
-    to:ruleText "Short -> เออ; long -> เออ. Examples: ol, offen."@en .
-
-to:Rule_DE_09 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "DE Rule 9: Consonant er"@en, "กฎ DE 9: er พยัญชนะ"@th ;
-    to:ruleNumber 9 ; to:appliedToLanguage to:German ;
+to:Rule_DE_09 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "DE Rule 9: Consonant er"@en,
+        "กฎ DE 9: er พยัญชนะ"@th ;
+    to:appliedToLanguage to:German ;
+    to:ruleNumber 9 ;
     to:ruleText "Word-final er -> เออ. Examples: Mutter, Ober."@en .
 
-to:Rule_DE_10 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "DE Rule 10: Vowel doubling"@en, "กฎ DE 10: สระซ้ำ"@th ;
-    to:ruleNumber 10 ; to:appliedToLanguage to:German ;
-    to:ruleText "Double vowels (aa, ee, oo) treated as long vowels: Hase, Kassel."@en .
-
-to:Rule_DE_11 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "DE Rule 11: Diphthongs"@en, "กฎ DE 11: สระประสม"@th ;
-    to:ruleNumber 11 ; to:appliedToLanguage to:German ;
-    to:sourceGrapheme "ae, ai, eu, au-umlaut, au, ei" ;
-    to:ruleText "Diphthong mapping. Maier, Naumann."@en .
-
-to:Rule_DE_12 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "DE Rule 12: Final -ie and silent -e"@en, "กฎ DE 12: -ie และ e เงียบ"@th ;
-    to:ruleNumber 12 ; to:appliedToLanguage to:German ;
-    to:ruleText "Final -ie -> อี; silent final -e: stem vowel governs. Tschechien, Serie."@en .
-
-to:Rule_DE_13 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "DE Rule 13: Plosives p, t, k"@en, "กฎ DE 13: เสียงระเบิด p, t, k"@th ;
-    to:ruleNumber 13 ; to:appliedToLanguage to:German ;
-    to:sourceGrapheme "p, t, k, sp, st" ; to:targetGrapheme "พ/บ, ท/ด, ค/ก, คว, คท" ;
-    to:ruleText "p->พ(initial)/บ; t->ท(initial)/ด; k->ค(initial)/ก; word-final: บ, ด, ก. Special sp/st clusters."@en .
-
-to:Rule_DE_14 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "DE Rule 14: Lateral l and nasal n"@en, "กฎ DE 14: l และ n"@th ;
-    to:ruleNumber 14 ; to:appliedToLanguage to:German ;
-    to:ruleText "l (pre-consonant) -> ล; n before k -> นก. Kassel, Christen."@en .
-
-to:Rule_DE_15 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "DE Rule 15: Fricatives sch, ch, x"@en, "กฎ DE 15: เสียงเสียดแทรก sch, ch, x"@th ;
-    to:ruleNumber 15 ; to:appliedToLanguage to:German ;
-    to:sourceGrapheme "sch, ch, x" ; to:targetGrapheme "ช, ค, งค" ;
-    to:ruleText "sch->ช; ch (post-front vowel)->ช; ch (post-back vowel)->ค/ก; x->ง/กซ. suchen, Tuch."@en .
-
-to:Rule_DE_16 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "DE Rule 16: Consonant clusters pf, ts, tsch"@en, "กฎ DE 16: กลุ่มพยัญชนะ pf, ts, tsch"@th ;
-    to:ruleNumber 16 ; to:appliedToLanguage to:German ;
-    to:sourceGrapheme "pf, ts, tsch, tz" ;
-    to:ruleText "pf->พฟ; ts->ซ; tsch->ช. Pfaff, schrumpfst."@en .
-
-to:Rule_DE_17 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "DE Rule 17: Consonant r"@en, "กฎ DE 17: พยัญชนะ r"@th ;
-    to:ruleNumber 17 ; to:appliedToLanguage to:German ;
-    to:hasAmbiguity to:Ambiguity_DE_17 ;
-    to:sourceGrapheme "r, rr" ; to:targetGrapheme "ร, เออ" ;
-    to:ruleText "r in onset->ร; r vocalized in coda->เออ. Rad (variants)."@en .
-
-to:Rule_DE_18 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "DE Rule 18: Consonant h"@en, "กฎ DE 18: พยัญชนะ h"@th ;
-    to:ruleNumber 18 ; to:appliedToLanguage to:German ;
-    to:sourceGrapheme "h" ; to:targetGrapheme "ห, (silent)" ;
-    to:ruleText "Initial h->ห; intervocalic h->silent (lengthening). sehen, gehen."@en .
-
-to:Rule_DE_19 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "DE Rule 19: Double consonants"@en, "กฎ DE 19: พยัญชนะซ้ำ"@th ;
-    to:ruleNumber 19 ; to:appliedToLanguage to:German ;
-    to:ruleText "Double consonants signal preceding short vowel; render as single consonant. Mann, Riss."@en .
-
-to:Rule_DE_20 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "DE Rule 20: Consonant ng/ck"@en, "กฎ DE 20: ng, ck"@th ;
-    to:ruleNumber 20 ; to:appliedToLanguage to:German ;
-    to:ruleText "ng->ง; ck->ก; sch+vowel combinations. Fischer, singen, Backer."@en .
-
-to:Rule_DE_21 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "DE Rule 21: Final consonant devoicing and clusters"@en, "กฎ DE 21: เสียงพยัญชนะท้ายคำ"@th ;
-    to:ruleNumber 21 ; to:appliedToLanguage to:German ;
-    to:hasAmbiguity to:Ambiguity_DE_21 ;
-    to:ruleText "Final obstruents devoiced: d->ท/ด, b->พ/บ, g->ค/ก, v->ฟ. Karl (variants). Berg (variants)."@en .
-
-to:Rule_DE_22 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "DE Rule 22: Syllable boundary ss/scharfes-s"@en, "กฎ DE 22: ss และ scharfes-s"@th ;
-    to:ruleNumber 22 ; to:appliedToLanguage to:German ;
-    to:sourceGrapheme "scharfes-s, ss" ; to:targetGrapheme "ซ" ;
-    to:ruleText "scharfes-s -> ซ in all positions. ss (inter-syllabic) governs preceding short vowel. essen, Erntst."@en .
-
-to:Rule_DE_23 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "DE Rule 23: German alphabet letters"@en, "กฎ DE 23: ชื่อตัวอักษรเยอรมัน"@th ;
-    to:ruleNumber 23 ; to:appliedToLanguage to:German ;
-    to:ruleText "German alphabet letter names as Thai: A->เอ, B->เบ, C->เซ, D->เด, E->เอ, F->เอฟ, G->เก, H->ฮา, I->อี, J->โย, K->คา, L->เอล, M->เอม, N->เอน, O->โอ, P->เพ, Q->คู, R->เอร์, S->เอส, T->เท, U->อู, V->เฟา, W->เว, X->อิกส์, Y->อิปซีลอน, Z->เซ็ท."@en .
-
-to:Rule_DE_24 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "DE Rule 24: Abbreviations"@en, "กฎ DE 24: ตัวย่อ"@th ;
-    to:ruleNumber 24 ; to:appliedToLanguage to:German ;
-    to:ruleText "German abbreviations expand and transliterate the full form. DAAD->ดาด, DFB->ดีเอฟบี."@en .
-
-to:Rule_DE_25 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "DE Rule 25: French loanwords in German"@en, "กฎ DE 25: คำยืมภาษาฝรั่งเศสในภาษาเยอรมัน"@th ;
-    to:ruleNumber 25 ; to:appliedToLanguage to:German ;
-    to:hasAmbiguity to:Ambiguity_DE_25 ;
-    to:ruleText "French loanwords in German retain French phonology for transliteration. Genie->จีนี, Blammage->บลามาจ."@en .
-
-to:Rule_DE_26 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "DE Rule 26: Name initials"@en, "กฎ DE 26: อักษรย่อชื่อ"@th ;
-    to:ruleNumber 26 ; to:appliedToLanguage to:German ;
-    to:ruleText "Personal name initials: J. Heuser -> เจ. ฮอยเซอร์."@en .
-
-to:Rule_DE_27 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "DE Rule 27: Titles and nobility particles"@en, "กฎ DE 27: ยศและอนุภาค von/zu"@th ;
-    to:ruleNumber 27 ; to:appliedToLanguage to:German ;
-    to:hasAmbiguity to:Ambiguity_DE_27 ;
-    to:ruleText "Noble particles: von, zu, von und zu. Furst Otto von Bismarck -> เฟิร์สท์ ออทโท ฟอน บิสมาร์ก."@en .
-
-to:Rule_DE_28 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "DE Rule 28: Hyphenated compounds"@en, "กฎ DE 28: คำประสมที่มีเครื่องหมายยัติภังค์"@th ;
-    to:ruleNumber 28 ; to:appliedToLanguage to:German ;
-    to:ruleText "Hyphenated compound transliterations preserve the hyphen between parts. Baden-Wurtemberg."@en .
-
-to:Rule_DE_29 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "DE Rule 29: Long compound names"@en, "กฎ DE 29: ชื่อประสมยาว"@th ;
-    to:ruleNumber 29 ; to:appliedToLanguage to:German ;
-    to:ruleText "Hyphens permitted within long compound proper nouns. Karl-Theodor zu Guttenberg."@en .
-
-to:Rule_DE_30 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "DE Rule 30: Italicized foreign words"@en, "กฎ DE 30: คำต่างประเทศที่พิมพ์เอียง"@th ;
-    to:ruleNumber 30 ; to:appliedToLanguage to:German ;
-    to:ruleText "Foreign words in italic are transliterated according to their source language phonology."@en .
-
-to:Rule_DE_31 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "DE Rule 31: Geographic abbreviations"@en, "กฎ DE 31: ตัวย่อทางภูมิศาสตร์"@th ;
-    to:ruleNumber 31 ; to:appliedToLanguage to:German ;
+to:Rule_DE_31 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "DE Rule 31: Geographic abbreviations"@en,
+        "กฎ DE 31: ตัวย่อทางภูมิศาสตร์"@th ;
+    to:appliedToLanguage to:German ;
+    to:ruleNumber 31 ;
     to:ruleText "Geographic abbreviations (a.M., o.d.T., etc.) expand to full form in transliteration."@en .
 
-# === English Rules (Rule_EN_01-12) ===
-to:Rule_EN_01 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "EN Rule 1: Consonants"@en, "กฎ EN 1: พยัญชนะ"@th ;
-    to:ruleNumber 1 ; to:appliedToLanguage to:English ;
-    to:ruleText "Consonant mapping following Cambridge Dictionary IPA."@en .
+to:Thai_Frankfurt a owl:NamedIndividual,
+        to:ThaiForm ;
+    to:isPreferred true ;
+    to:thaiScript "แฟรงก์ฟูร์ท อัม ไมน์" .
 
-to:Rule_EN_02 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "EN Rule 2: Short vowels"@en, "กฎ EN 2: สระสั้น"@th ;
-    to:ruleNumber 2 ; to:appliedToLanguage to:English ;
-    to:ruleText "Short vowel mapping."@en .
+to:Thai_Mueller_1 a owl:NamedIndividual,
+        to:ThaiForm ;
+    to:isPreferred true ;
+    to:thaiScript "มุลเลอร์" .
 
-to:Rule_EN_03 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "EN Rule 3: Long vowels"@en, "กฎ EN 3: สระยาว"@th ;
-    to:ruleNumber 3 ; to:appliedToLanguage to:English ;
-    to:ruleText "Long vowel mapping."@en .
+to:Thai_Mueller_2 a owl:NamedIndividual,
+        to:ThaiForm ;
+    to:isPreferred false ;
+    to:thaiScript "มุลเลอร์" .
 
-to:Rule_EN_04 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "EN Rule 4: Diphthongs"@en, "กฎ EN 4: สระประสม"@th ;
-    to:ruleNumber 4 ; to:appliedToLanguage to:English ;
-    to:ruleText "Diphthong mapping."@en .
+to:Thai_Schmidt a owl:NamedIndividual,
+        to:ThaiForm ;
+    to:isPreferred true ;
+    to:thaiScript "ชมิดท์" .
 
-to:Rule_EN_05 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "EN Rule 5: Schwa"@en, "กฎ EN 5: สระชวา"@th ;
-    to:ruleNumber 5 ; to:appliedToLanguage to:English ;
-    to:ruleText "Schwa context-dependent rendering."@en .
+to:Thai_Schulze a owl:NamedIndividual,
+        to:ThaiForm ;
+    to:isPreferred true ;
+    to:thaiScript "ชุลเซ" .
 
-to:Rule_EN_06 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "EN Rule 6: Consonant clusters"@en, "กฎ EN 6: กลุ่มพยัญชนะ"@th ;
-    to:ruleNumber 6 ; to:appliedToLanguage to:English ;
-    to:ruleText "Initial and final consonant clusters."@en .
+to:TransliterationVariant a owl:Class ;
+    rdfs:label "Transliteration Variant"@en,
+        "รูปแบบการถ่ายอักษรทางเลือก"@th ;
+    rdfs:comment "An alternative Thai rendering of the same source-language form, arising from ambiguity or rule variation."@en .
 
-to:Rule_EN_07 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "EN Rule 7: Silent letters"@en, "กฎ EN 7: อักษรที่ไม่ออกเสียง"@th ;
-    to:ruleNumber 7 ; to:appliedToLanguage to:English ;
-    to:ruleText "Silent consonant retention is convention-based, not derivable from IPA alone."@en .
+to:hasRule a owl:ObjectProperty ;
+    rdfs:label "has rule"@en,
+        "มีกฎ"@th ;
+    rdfs:comment "Associates a guideline with a constituent transliteration rule."@en ;
+    rdfs:domain to:Guideline ;
+    rdfs:range to:Rule .
 
-to:Rule_EN_08 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "EN Rule 8: Stress and syllable"@en, "กฎ EN 8: การเน้นเสียงและพยางค์"@th ;
-    to:ruleNumber 8 ; to:appliedToLanguage to:English ;
-    to:ruleText "Syllable boundary and stress affect vowel rendering."@en .
+to:Rule_DE_15 a owl:NamedIndividual,
+        to:Rule ;
+    rdfs:label "DE Rule 15: Fricatives sch, ch, x"@en,
+        "กฎ DE 15: เสียงเสียดแทรก sch, ch, x"@th ;
+    to:appliedToLanguage to:German ;
+    to:ruleNumber 15 ;
+    to:ruleText "sch->ช; ch (post-front vowel)->ช; ch (post-back vowel)->ค/ก; x->ง/กซ. suchen, Tuch."@en ;
+    to:sourceGrapheme "sch, ch, x" ;
+    to:targetGrapheme "ช, ค, งค" .
 
-to:Rule_EN_09 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "EN Rule 9: Proper nouns"@en, "กฎ EN 9: ชื่อเฉพาะ"@th ;
-    to:ruleNumber 9 ; to:appliedToLanguage to:English ;
-    to:ruleText "Conventional forms for established loanwords diverge from rule-derived forms."@en .
+to:BenchmarkItem a owl:Class ;
+    rdfs:label "Benchmark Item"@en,
+        "รายการประเมิน"@th ;
+    rdfs:comment "A source-language word included in the evaluation benchmark dataset."@en .
 
-to:Rule_EN_10 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "EN Rule 10: Abbreviations"@en, "กฎ EN 10: ตัวย่อ"@th ;
-    to:ruleNumber 10 ; to:appliedToLanguage to:English ;
-    to:ruleText "English abbreviations: expand or transliterate by letter."@en .
+to:ErrorType a owl:Class ;
+    rdfs:label "Error Type"@en,
+        "ประเภทข้อผิดพลาด"@th ;
+    rdfs:comment "A category of transliteration error, e.g. G2P error, ambiguity error, proper noun error."@en .
 
-to:Rule_EN_11 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "EN Rule 11: G2P dependency"@en, "กฎ EN 11: การพึ่งพา G2P"@th ;
-    to:ruleNumber 11 ; to:appliedToLanguage to:English ;
-    to:ruleText "Strong G2P dependency - Cambridge Dictionary IPA used as reference."@en .
+to:ComputationalReadinessLevel a owl:Class ;
+    rdfs:label "Computational Readiness Level"@en,
+        "ระดับความพร้อมด้านการคำนวณ"@th ;
+    rdfs:comment "A level (CRL-1 to CRL-5) indicating how amenable a language's transliteration guideline is to computational implementation."@en .
 
-to:Rule_EN_12 a owl:NamedIndividual, to:Rule ;
-    rdfs:label "EN Rule 12: Short vowel glyph"@en, "กฎ EN 12: อักษรสระสั้น"@th ;
-    to:ruleNumber 12 ; to:appliedToLanguage to:English ;
-    to:ruleText "Short vowel glyph requires context not available from IPA alone."@en .
+to:EvaluationResult a owl:Class ;
+    rdfs:label "Evaluation Result"@en,
+        "ผลการประเมิน"@th ;
+    rdfs:comment "The outcome of evaluating a transliteration system on the benchmark, including accuracy metrics."@en .
 
-# === French Additions (RuleAddition_FR_01-14) ===
-to:RuleAddition_FR_01 a owl:NamedIndividual, to:RuleAddition ;
-    rdfs:label "FR Addition 1: Nasal vowel"@en, "การเพิ่ม FR 1: สระนาสิก"@th ;
-    to:additionNumber 1 ; to:appliedToLanguage to:French .
+to:Language a owl:Class ;
+    rdfs:label "Language"@en,
+        "ภาษา"@th ;
+    rdfs:comment "A natural language that is a source language for transliteration into Thai."@en .
 
-to:RuleAddition_FR_02 a owl:NamedIndividual, to:RuleAddition ;
-    rdfs:label "FR Addition 2: Nasal vowel 2"@en, "การเพิ่ม FR 2: สระนาสิก 2"@th ;
-    to:additionNumber 2 ; to:appliedToLanguage to:French .
+to:ThaiForm a owl:Class ;
+    rdfs:label "Thai Form"@en,
+        "รูปแบบภาษาไทย"@th ;
+    rdfs:comment "The Thai-script rendering of a source-language lexical entry."@en .
 
-to:RuleAddition_FR_03 a owl:NamedIndividual, to:RuleAddition ;
-    rdfs:label "FR Addition 3: Nasal vowel 3 (UNRESOLVED)"@en, "การเพิ่ม FR 3: สระนาสิก 3 (ยังไม่แก้ไข)"@th ;
-    to:additionNumber 3 ; to:appliedToLanguage to:French .
+to:Guideline a owl:Class ;
+    rdfs:label "Guideline"@en,
+        "คำแนะนำ"@th ;
+    rdfs:comment "A transliteration guideline document issued by the Royal Society of Thailand for a specific source language."@en .
 
-to:RuleAddition_FR_04 a owl:NamedIndividual, to:RuleAddition ;
-    rdfs:label "FR Addition 4: Liaison rule (UNRESOLVED)"@en, "การเพิ่ม FR 4: กฎ liaison (ยังไม่แก้ไข)"@th ;
-    to:additionNumber 4 ; to:appliedToLanguage to:French .
+to:LexicalEntry a owl:Class ;
+    rdfs:label "Lexical Entry"@en,
+        "รายการศัพท์"@th ;
+    rdfs:comment "A word or lexical item in the source language that has a documented Thai transliteration."@en .
 
-to:RuleAddition_FR_05 a owl:NamedIndividual, to:RuleAddition ;
-    rdfs:label "FR Addition 5: h aspire vs h muet"@en, "การเพิ่ม FR 5: h aspire กับ h muet"@th ;
-    to:additionNumber 5 ; to:appliedToLanguage to:French .
+to:RuleAmbiguity a owl:Class ;
+    rdfs:label "Rule Ambiguity"@en,
+        "ความคลุมเครือของกฎ"@th ;
+    rdfs:comment "A documented ambiguity, gap, or underspecification in a transliteration rule."@en .
 
-to:RuleAddition_FR_06 a owl:NamedIndividual, to:RuleAddition ;
-    rdfs:label "FR Addition 6: Final silent consonants"@en, "การเพิ่ม FR 6: พยัญชนะท้ายคำที่ไม่ออกเสียง"@th ;
-    to:additionNumber 6 ; to:appliedToLanguage to:French .
+to:English a owl:NamedIndividual,
+        to:Language ;
+    rdfs:label "English"@en,
+        "ภาษาอังกฤษ"@th ;
+    to:hasGuideline to:Guideline_EN ;
+    to:hasReadinessLevel to:CRL_EN ;
+    to:languageCode "en" .
 
-to:RuleAddition_FR_07 a owl:NamedIndividual, to:RuleAddition ;
-    rdfs:label "FR Addition 7: Vowel y"@en, "การเพิ่ม FR 7: สระ y"@th ;
-    to:additionNumber 7 ; to:appliedToLanguage to:French .
+to:ExpertDecision a owl:Class ;
+    rdfs:label "Expert Decision"@en,
+        "การตัดสินใจของผู้เชี่ยวชาญ"@th ;
+    rdfs:comment "A resolution or decision made by a domain expert to resolve a rule ambiguity or edge case."@en .
 
-to:RuleAddition_FR_08 a owl:NamedIndividual, to:RuleAddition ;
-    rdfs:label "FR Addition 8: Vowel oe"@en, "การเพิ่ม FR 8: สระ oe"@th ;
-    to:additionNumber 8 ; to:appliedToLanguage to:French .
+to:French a owl:NamedIndividual,
+        to:Language ;
+    rdfs:label "French"@en,
+        "ภาษาฝรั่งเศส"@th ;
+    to:hasGuideline to:Guideline_FR ;
+    to:hasReadinessLevel to:CRL_FR ;
+    to:languageCode "fr" .
 
-to:RuleAddition_FR_09 a owl:NamedIndividual, to:RuleAddition ;
-    rdfs:label "FR Addition 9: Consonant zh"@en, "การเพิ่ม FR 9: พยัญชนะ zh"@th ;
-    to:additionNumber 9 ; to:appliedToLanguage to:French .
+to:RuleAddition a owl:Class ;
+    rdfs:label "Rule Addition"@en,
+        "การเพิ่มเติมกฎ"@th ;
+    rdfs:comment "A supplementary rule or addition beyond the main rule set (e.g. French additions documented separately)."@en ;
+    rdfs:subClassOf to:Rule .
 
-to:RuleAddition_FR_10 a owl:NamedIndividual, to:RuleAddition ;
-    rdfs:label "FR Addition 10: Consonant sh"@en, "การเพิ่ม FR 10: พยัญชนะ sh"@th ;
-    to:additionNumber 10 ; to:appliedToLanguage to:French .
+to:German a owl:NamedIndividual,
+        to:Language ;
+    rdfs:label "German"@en,
+        "ภาษาเยอรมัน"@th ;
+    to:hasGuideline to:Guideline_DE ;
+    to:hasReadinessLevel to:CRL_DE ;
+    to:languageCode "de" .
 
-to:RuleAddition_FR_11 a owl:NamedIndividual, to:RuleAddition ;
-    rdfs:label "FR Addition 11: Consonant ny"@en, "การเพิ่ม FR 11: พยัญชนะ ny"@th ;
-    to:additionNumber 11 ; to:appliedToLanguage to:French .
+to:Rule a owl:Class ;
+    rdfs:label "Rule"@en,
+        "กฎการถ่ายอักษร"@th ;
+    rdfs:comment "A single transliteration rule within a guideline, specifying how a grapheme or phoneme maps to Thai script."@en .
 
-to:RuleAddition_FR_12 a owl:NamedIndividual, to:RuleAddition ;
-    rdfs:label "FR Addition 12: Elision"@en, "การเพิ่ม FR 12: การตัดเสียง"@th ;
-    to:additionNumber 12 ; to:appliedToLanguage to:French .
-
-to:RuleAddition_FR_13 a owl:NamedIndividual, to:RuleAddition ;
-    rdfs:label "FR Addition 13: Proper nouns"@en, "การเพิ่ม FR 13: ชื่อเฉพาะ"@th ;
-    to:additionNumber 13 ; to:appliedToLanguage to:French .
-
-to:RuleAddition_FR_14 a owl:NamedIndividual, to:RuleAddition ;
-    rdfs:label "FR Addition 14: Abbreviations"@en, "การเพิ่ม FR 14: ตัวย่อ"@th ;
-    to:additionNumber 14 ; to:appliedToLanguage to:French .
-
-# === Sample Lexical Entries (exemplifiesRule - correct spelling) ===
-to:Entry_DE_Mueller a owl:NamedIndividual, to:LexicalEntry ;
-    rdfs:label "Mueller"@en ;
-    to:sourceForm "Mueller" ;
-    to:ipa "[mYlA, mYlAr]" ;
-    to:fromSourceLanguage to:German ;
-    to:hasThaiForm to:Thai_Mueller_1, to:Thai_Mueller_2 ;
-    to:exemplifiesRule to:Rule_DE_08, to:Rule_DE_09 .
-
-to:Thai_Mueller_1 a owl:NamedIndividual, to:ThaiForm ;
-    to:thaiScript "มุลเลอร์" ;
-    to:isPreferred true .
-
-to:Thai_Mueller_2 a owl:NamedIndividual, to:ThaiForm ;
-    to:thaiScript "มุลเลอร์" ;
-    to:isPreferred false .
-
-to:Entry_DE_Frankfurt a owl:NamedIndividual, to:LexicalEntry ;
-    rdfs:label "Frankfurt am Main"@en ;
-    to:sourceForm "Frankfurt am Main" ;
-    to:fromSourceLanguage to:German ;
-    to:hasThaiForm to:Thai_Frankfurt ;
-    to:exemplifiesRule to:Rule_DE_31 .
-
-to:Thai_Frankfurt a owl:NamedIndividual, to:ThaiForm ;
-    to:thaiScript "แฟรงก์ฟูร์ท อัม ไมน์" ;
-    to:isPreferred true .
-
-to:Entry_DE_Schmidt a owl:NamedIndividual, to:LexicalEntry ;
-    rdfs:label "Schmidt"@en ;
-    to:sourceForm "Schmidt" ;
-    to:ipa "[Smit]" ;
-    to:fromSourceLanguage to:German ;
-    to:hasThaiForm to:Thai_Schmidt ;
-    to:exemplifiesRule to:Rule_DE_05, to:Rule_DE_15 .
-
-to:Thai_Schmidt a owl:NamedIndividual, to:ThaiForm ;
-    to:thaiScript "ชมิดท์" ;
-    to:isPreferred true .
-
-to:Entry_DE_Schulze a owl:NamedIndividual, to:LexicalEntry ;
-    rdfs:label "Schulze"@en ;
-    to:sourceForm "Schulze" ;
-    to:fromSourceLanguage to:German ;
-    to:hasThaiForm to:Thai_Schulze ;
-    to:exemplifiesRule to:Rule_DE_15 .
-
-to:Thai_Schulze a owl:NamedIndividual, to:ThaiForm ;
-    to:thaiScript "ชุลเซ" ;
-    to:isPreferred true .
